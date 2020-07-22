@@ -1,6 +1,6 @@
 # Course Calendar for 431 in Fall 2020
 
-Class sessions are scheduled for Tuesdays and Thursdays from 1:00 to 2:15 PM. All course materials will be delivered remotely using the Zoom platform. We anticipate there will be a total of **24** regular lectures given across the 27 available time slots listed. This will become clearer as the semester approaches.
+Class sessions are scheduled for Tuesdays and Thursdays from 1:00 to 2:15 PM. All course materials will be delivered remotely using the Zoom platform. We anticipate there will be a total of **24** regular lectures given across the 27 class sessions listed below. This will become clearer as the semester approaches.
 
 Date | Link | Description
 -------: | ----: | ---------------------------------------------------------------------------------------
