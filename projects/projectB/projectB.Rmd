@@ -1,0 +1,11 @@
+---
+title: "Project B"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Details on Project B will appear here.
+

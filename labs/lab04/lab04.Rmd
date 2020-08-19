@@ -1,0 +1,11 @@
+---
+title: "Lab 04"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Details on Lab 04 will appear here.
+

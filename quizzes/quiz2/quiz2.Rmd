@@ -1,0 +1,11 @@
+---
+title: "Quiz 2"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Details on Quiz 2 will appear here.
+
