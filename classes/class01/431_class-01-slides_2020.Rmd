@@ -1,0 +1,305 @@
+---
+title: "431 Class 01"
+author: "thomaselove.github.io/431"
+date: "2020-08-25"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 55)
+```
+
+## This is PQHS 431 / CRSP 431 / MPHP 431
+
+![http://imgs.xkcd.com/comics/correlation.png](images/correlation.png)
+
+## First Activity
+
+**First Thing**: Write down your guess of Dr. Love's age in years on a convenient piece of paper nearby. Hang on to the paper, as you'll need it again later. 
+
+Here's a picture of me, in case that's helpful.
+
+```{r cwrulogo1-fig, echo = FALSE, fig.align = "center", out.width = '35%'}
+knitr::include_graphics("images/Thomas_Love.PNG")
+```
+
+## Course Details
+
+Instructor: Thomas E. Love, Ph.D.
+
+Email (best way to reach me): \color{blue} `Thomas dot Love at case dot edu` \color{black}
+
+Our web site: \color{blue} https://thomaselove.github.io/431/ \color{black}
+
+Links there to:
+
+- Course Syllabus
+- Course Calendar, which is the final word for all deadlines, and also links to each day's class page.
+- Course Notes (essentially a textbook)
+- Software Details (R and R Studio, installation, data and code downloads)
+- Assignments: Labs, Minute Papers, Quizzes and Projects
+
+**Getting Help**: Piazza is your first step (please accept the invitation)
+
+## Teaching Assistants (office hours begin 2020-08-31)
+
+![](images/TAs-2020.png)
+
+- All TAs work with PQHS/CRSP/MPHP students and attend to Piazza.
+- TA **office hours** Zoom links posted in Announcements on Canvas.
+
+## What is this course about?
+
+![](images/describing-431-gears.png)
+
+## What is this course about?
+
+- Exploratory Data Analysis, Visualization
+- Statistical Inference, Making Comparisons
+- Linear Regression and related Models
+
+The course is about biostatistics, replicable research, using state-of-the-art tools (R, R Studio, R Markdown), and thinking about how science is most effectively done.
+
+- It is more a course in **how** to do things (highly applied) rather than a theoretical/mathematical justification for **why** we do them. We focus here on practical work.
+- It's mostly about getting you doing data science projects for biological, medical and health applications.
+
+## What is Data Science about?
+
+![](images/data-science.png)
+
+Source: \color{blue} http://r4ds.had.co.nz/introduction.html
+
+
+## What will we be reading?
+
+![](images/books2020.png)
+
+## Attendance
+
+Please understand that it is not necessary for you to tell us if you're going to miss any particular class session. Just watch the recording before the next class to catch up. You are responsible for getting everything done, but we certainly understand that things happen, and we will do what we can to be flexible. 
+
+When we have assignments, those have deadlines. Please meet them, and please get in touch early if meeting those deadlines will not be possible. The Syllabus has more details, and the deadlines are in the Calendar.
+
+If you will need to miss **more than two classes** in a row, or if you are not able to keep up with watching the recordings because of some external issue, that's when you need to get in touch with Dr. Love.
+
+## Great Statisticians in History
+
+![](images/tukey2.jpg)
+
+Photo Source: \color{blue} http://www.azquotes.com/author/14847-John_Tukey
+
+John \color{red} **Tukey** \color{black} (1915-2000)
+
+## Gathering Some Data: Age Guessing Activity
+
+- Shortly, we will be pushing you out to a breakout group.
+- Pay attention to the number of your breakout group.
+- One member of your group will then need to open a Google Form and share their screen. I'll provide the link in a moment.
+- After a few brief introductory questions, your group will then see one of a series of 10 photos, each of a person.
+- For each card your group receives...
+    + estimate the age of the person in the photo (in years)
+    + write your (group) guess into the form (so if you guess age 35, you will just type 35.)
+- When you've produced all 10 guesses, submit the form. The submitter will get an email confirmation.
+- The photos will (I hope) be shown to you in a random order.
+- Later, you will be told the true ages and we'll be able to compute errors.
+
+## Seeing the Form 
+
+One member of your group needs to share their screen and visit
+
+**http://bit.ly/431-2020-class01-breakout**
+
+- To see the form, you must log into Google using your CWRU account.
+- The rest of you can also visit that form, if you like, but only one of you should fill it out for your group.
+- We'll call you back to the main room in about 12 minutes, so try to move quickly.
+
+If you have a little extra time, make sure everyone in your group ...
+
+1. knows the name and field of everyone else in the group, and knows your group's name.
+2. writes down a new guess of my age, now that you know me better.
+
+So if your initial guess was 18, but now you think I'm 19, you should have `18/19`.
+
+## To the Breakout Rooms!
+
+We'll put the link in the Chat
+
+http://bit.ly/431-2020-class01-breakout
+
+## Age Guessing Robots?
+
+Well, yes, of course, there's a tool online to do this. More than one, in fact. 
+
+Visit \color{blue} https://how-old.net/ \color{black} 
+
+![](images/tel-howold.png)
+
+Do you think you did that well?
+
+## Take the Poll!
+
+1. You should have an initial guess of my age written down from the start of the session.
+2. Now, make a second guess of my age based on what you know about me now, and write that down next to the initial guess.
+
+Next, I'll try to use Zoom to poll you about your two guesses of my age.
+
+## Coming back from the poll...
+
+OK. Back to the photos!
+
+## Card 1 
+
+![](images/age01.png)
+
+
+## Card 2
+
+![](images/age02.png)
+
+## Card 3
+
+![](images/age03.png)
+
+## Card 4
+
+![](images/age04.png)
+
+## No, not THAT Kevin Love
+
+![](images/kevin-love.jpg)
+
+## THIS Kevin Love, on the right (January 2019)
+
+![](images/love-family-2019.jpg)
+
+## Card 5
+
+![](images/age05.png)
+
+## Card 6
+
+![](images/age06.png)
+
+## Card 7
+
+![](images/age07.png)
+
+## Card 8
+
+![](images/age08.png)
+
+## Card 9
+
+![](images/age09.png)
+
+## Card 10
+
+![](images/age10.png)
+
+## How did the AI at https://how-old.net do?
+
+![](images/agesandphotoswithai.png)
+
+Robot consulted on 2016-08-27. Algorithm continues to evolve.
+
+## photo-age-history-2019.csv Data Set (excerpt)
+
+```{r get age guess data from history file, message=FALSE, echo=FALSE}
+library(tidyverse)
+ageguess <- read_csv("data/photo-age-history-2019.csv")
+```
+
+```{r show age guess tibble, echo=FALSE}
+knitr::kable(ageguess[1:12,1:8])
+```
+
+## Scatterplot of Prior Results, 1
+
+```{r guess_vs_true_age_by_year_1, echo=FALSE}
+ggplot(ageguess, aes(x = true.age, y = mean.estimate, col = year)) +
+  geom_point(size = 3) +
+  theme(axis.text = element_text(size = 14),
+        axis.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12, face = "bold"))
+```
+
+## Scatterplot of Prior Results, 2
+
+```{r guess_vs_true_age_by_year_2, echo=FALSE}
+ggplot(ageguess, aes(x = true.age, y = mean.estimate, col = year)) +
+  geom_point(position = "jitter", size = 3) +
+  geom_abline(intercept = 0, slope = 1) + 
+  scale_color_viridis_d(end = 0.75) +
+  theme(axis.text = element_text(size = 14),
+        axis.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12, face = "bold")) +
+  labs(title = "Age Guessing in Previous Years",
+       x = "True Age", y = "Mean Class-Wide Estimate")
+```
+
+## Mean Class-Wide Guesses (2014-17 combined)
+
+![](images/ages-and-photos-with-2014-2017-mean-guesses.png)
+
+
+## Mean Class-Wide Errors (2014-17 combined)
+
+![](images/ages-and-photos-with-2014-2017-mean-errors.png)
+
+## Scatterplot of 2019 Results with Labels
+
+```{r error_vs_true_age_2019_labeled, echo = FALSE}
+ggplot(filter(ageguess, year == 2019), aes(x = true.age, y = error, fill = sex)) +
+  geom_label(aes(label = label)) +
+  geom_hline(yintercept = 0) + 
+    guides(fill = FALSE) +
+  theme(axis.text = element_text(size = 14),
+        axis.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12, face = "bold")) +
+  labs(title = "Errors in 2019 Age Guessing, by Subject's Sex",
+       x = "True Age", y = "Error in Class-Wide Estimate") + 
+    theme_bw() + 
+    facet_wrap(~ sex)
+```
+
+## Hans Rosling and "The Joy of Stats"
+
+200 countries over 200 years using 120,000 numbers, in about 4 minutes.
+
+\color{blue} http://bit.ly/431-rosling \color{black}
+
+### And if you liked that ...
+
+- The 20 minute version (from 2007): \color{blue} https://www.youtube.com/watch?v=RUwS1uAdUcI \color{black}
+
+- The full documentary from the BBC: \color{blue} https://www.gapminder.org/videos/the-joy-of-stats/ \color{black}
+
+- Video playlist from Gapminder: \color{blue} https://www.gapminder.org/videos/ \color{black}
+
+
+## What's next?
+
+![](images/next-up-2017.png)
+
+## What's next?
+
+1. Read the Syllabus and do what it asks you to do. It's very long.
+2. Familiarize yourself with the Main Page for the course, especially the Calendar of deadlines, and take a look at the Course Notes.
+3. Follow the R and Data instructions to get R, R Studio, R Packages and 431 Data on your computer.
+4. Obtain Jeff Leek's [\color{blue}{The Elements of Data Analytic Style}](https://leanpub.com/datastyle) and start reading.
+5. Obtain David Spiegelhalter's [\color{blue}{The Art of Statistics}](https://www.amazon.com/Art-Statistics-How-Learn-Data/dp/1541618513) and start reading.
+6. Get the first few Zoom class meetings into your calendar, and make note of how to access TA office hours (those start 2020-08-31) - details at [Canvas](https://canvas.case.edu).
+7. Ask us questions. TA office hours start next week, but Piazza is available now.
+8. Take a look at Lab 01 (due 2020-09-07) which is your first substantial deliverable.
+
+- Course Web Site: \color{blue} https://thomaselove.github.io/431/ \color{black}
