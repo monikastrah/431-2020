@@ -11,7 +11,7 @@ Get here by selecting [Calendar](https://thomaselove.github.io/431/calendar.html
 ## Zoom information
 
 - If you are enrolled in the class, you'll find the Zoom link waiting for you on [Canvas](https://canvas.case.edu) - look in the Zoom folder.
-- The recording of today's class will appear (when available) in the [Zoom folder on Canvas](https://canvas.case.edu).
+- The recording of today's class **is now available** in the [Zoom folder on Canvas](https://canvas.case.edu).
 - If you get kicked off of Zoom for some reason, remember that the class is being recorded. If Dr. Love gets kicked off, he'll get back on as soon as possible. If a catastrophe happens, he'll email all enrolled students as soon as possible.
 
 ## Today's Slides
