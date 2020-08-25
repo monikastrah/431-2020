@@ -8,9 +8,19 @@ The main website for this class is https://thomaselove.github.io/431/.
 
 Get here by selecting [Calendar](https://thomaselove.github.io/431/calendar.html) from the main website, and then select today's class ([Class 01: 2020-08-25](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class01)).
 
-## Today's Materials
+## Today's Slides
 
-1. We'll start today on [the main page](https://thomaselove.github.io/431/) for the course, and look over:
+- Class 1 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class01/431_class-01-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class01/431_class-01-slides_2020.Rmd) if you want to see how I built them.
+
+## Today's Breakout Activity
+
+The Google Form for today's breakout activity (requires CWRU login to Google) is located at http://bit.ly/431-2020-class01-breakout.
+
+## Today's Agenda
+
+1. Thank you for completing the [Welcome to 431 Survey](https://bit.ly/431-2020-welcome-survey). Dr. Love's [summary of the results is here](http://bit.ly/431-2020-welcome-results).
+
+2. We'll start today on [the main page](https://thomaselove.github.io/431/) for the course, and look over:
 
 - the [Syllabus](https://thomaselove.github.io/431-2020-syllabus/)
 - the [Course Notes](https://thomaselove.github.io/431-notes/) (main text for the course)
@@ -22,9 +32,8 @@ Get here by selecting [Calendar](https://thomaselove.github.io/431/calendar.html
 - the [Canvas](https://canvas.case.edu/) page for the course
     - We use [Canvas](https://canvas.case.edu/) as a place to: set up and store Zoom class recordings, maintain the TA office hours Zoom schedule, and turn in assignments. That's it.
 
-While virtually all of the information in [the Pre-Class Website](https://431-2020-preclass-love.netlify.app/) is still correct, we've started the class now, so it's no longer relevant and will not be updated further.
+3. While virtually all of the information in [the Pre-Class Website](https://431-2020-preclass-love.netlify.app/) is still correct, we've started the class now, so it's no longer relevant and will not be updated further.
 
-2. Thank you for completing the [Welcome to 431 Survey](https://bit.ly/431-2020-welcome-survey). Dr. Love's [summary of the results is here](http://bit.ly/431-2020-welcome-results).
 
 ## After class, how do I watch the recording?
 
