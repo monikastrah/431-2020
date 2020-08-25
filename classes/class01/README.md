@@ -43,8 +43,8 @@ The Google Form for today's breakout activity (requires CWRU login to Google) is
 1. Read the Syllabus and do what it asks you to do. It's very long.
 2. Familiarize yourself with the Main Page for the course, especially the Calendar of deadlines, and take a look at the Course Notes.
 3. Follow the R and Data instructions to get R, R Studio, R Packages and 431 Data on your computer.
-4. Obtain Jeff Leek's [\color{blue}{The Elements of Data Analytic Style}](https://leanpub.com/datastyle) and start reading.
-5. Obtain David Spiegelhalter's [\color{blue}{The Art of Statistics}](https://www.amazon.com/Art-Statistics-How-Learn-Data/dp/1541618513) and start reading.
+4. Obtain Jeff Leek's [The Elements of Data Analytic Style](https://leanpub.com/datastyle) and start reading.
+5. Obtain David Spiegelhalter's [The Art of Statistics](https://www.amazon.com/Art-Statistics-How-Learn-Data/dp/1541618513) and start reading.
 6. Get the first few Zoom class meetings into your calendar, and make note of how to access TA office hours (those start 2020-08-31) - details at [Canvas](https://canvas.case.edu).
 7. Ask us questions. TA office hours start next week, but Piazza is available now.
 8. Take a look at Lab 01 (due 2020-09-07) which is your first substantial deliverable.
