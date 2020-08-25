@@ -38,7 +38,16 @@ The Google Form for today's breakout activity (requires CWRU login to Google) is
 - the [Canvas](https://canvas.case.edu/) page for the course
     - We use [Canvas](https://canvas.case.edu/) as a place to: set up and store Zoom class recordings, maintain the TA office hours Zoom schedule, and turn in assignments. That's it.
 
-3. While virtually all of the information in [the Pre-Class Website](https://431-2020-preclass-love.netlify.app/) is still correct, we've started the class now, so it's no longer relevant and will not be updated further.
+## What should I do after class?
+
+1. Read the Syllabus and do what it asks you to do. It's very long.
+2. Familiarize yourself with the Main Page for the course, especially the Calendar of deadlines, and take a look at the Course Notes.
+3. Follow the R and Data instructions to get R, R Studio, R Packages and 431 Data on your computer.
+4. Obtain Jeff Leek's [\color{blue}{The Elements of Data Analytic Style}](https://leanpub.com/datastyle) and start reading.
+5. Obtain David Spiegelhalter's [\color{blue}{The Art of Statistics}](https://www.amazon.com/Art-Statistics-How-Learn-Data/dp/1541618513) and start reading.
+6. Get the first few Zoom class meetings into your calendar, and make note of how to access TA office hours (those start 2020-08-31) - details at [Canvas](https://canvas.case.edu).
+7. Ask us questions. TA office hours start next week, but Piazza is available now.
+8. Take a look at Lab 01 (due 2020-09-07) which is your first substantial deliverable.
 
 ## Links From Today
 
@@ -51,4 +60,8 @@ The Google Form for today's breakout activity (requires CWRU login to Google) is
     - If you liked that, you might enjoy the [20-minute Ted Talk from 2007](https://www.youtube.com/watch?v=RUwS1uAdUcI)
     - Or the [full documentary from the BBC on The Joy of Stats](https://www.gapminder.org/videos/the-joy-of-stats/)
     - Or this [video playlist from the Gapminder Project](https://www.gapminder.org/videos/)
+
+## One Last Thing
+
+While virtually all of the information in [the Pre-Class Website](https://431-2020-preclass-love.netlify.app/) is still correct, we've started the class now, so it's no longer relevant and will not be updated further.
 
