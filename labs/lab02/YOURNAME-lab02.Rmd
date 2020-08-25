@@ -65,5 +65,9 @@ Replace this text with your response to Question 6.
 
 # Question 7
 
-Replace this text with your response to Question 7. Make sure you have changed the title and author of this, back in the YAML section at the very top of this file, and make sure you change this file's name by inserting your actual name, rather than just calling it YOURNAME-deliverableB.Rmd. 
+Replace this text with your response to Question 7. 
+
+## A Few Notes
+
+Make sure you have changed the title and author of this, back in the YAML section at the very top of this file, and make sure you change this file's name by inserting your actual name, rather than just calling it `YOURNAME-lab02.Rmd`. Make the document as attractive as you can. Finally, make sure you have deleted all of the instructions, including these. 
 
