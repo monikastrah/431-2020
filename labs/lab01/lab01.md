@@ -1,9 +1,10 @@
 431 Lab 01
 ================
-Due **2020-09-07** at 9 PM. Last Edited 2020-08-24 22:40:21
+Due **2020-09-07** at 9 PM. Last Edited 2020-08-24 23:06:55
 
 Lab 01 is divided into 4 parts, all of which you need to complete by the
-deadline above.
+deadline posted on the [Course
+Calendar](https://thomaselove.github.io/431/calendar.html).
 
 # Part 1. Make a 30-second video to help us pronounce your name and learn something interesting about you
 
