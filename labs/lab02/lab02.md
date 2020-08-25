@@ -1,8 +1,8 @@
 431 Lab 02
 ================
-Due **2020-09-14** at 9 PM. Last Edited 2020-08-24 23:06:35
+Due **2020-09-14** at 9 PM. Last Edited 2020-08-25 08:41:17
 
-Lab 01 is divided into 7 questions. Be sure to respond to each of them
+Lab 02 is divided into 7 questions. Be sure to respond to each of them
 by the deadline posted on the [Course
 Calendar](https://thomaselove.github.io/431/calendar.html).
 
@@ -13,8 +13,15 @@ file, using R Markdown. We have provided you with a very useful R
 Markdown document template for this assignment called
 `YOURNAME-Lab02.Rmd` that you should use to complete your work.
 
-  - The `YOURNAME-Lab02.Rmd` file [is available to you
+  - The template is part of the [Data and Code
+    repository](https://github.com/THOMASELOVE/431-data) for the course.
+    Follow the instructions posted there to download all of the files
+    you’ll need in a ZIP file, including the template. That’s probably
+    the easiest approach.
+  - If you prefer, the `YOURNAME-Lab02.Rmd` file [is also available
     here](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/labs/lab02/YOURNAME-lab02.Rmd).
+    Just save the plain text file that you’ll see at that link to your
+    computer with the appropriate .Rmd extension.
 
 ## The Data for Homework B
 
