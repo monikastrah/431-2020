@@ -8,10 +8,6 @@ The main website for this class is https://thomaselove.github.io/431/.
 
 Get here by selecting [Calendar](https://thomaselove.github.io/431/calendar.html) from the main website, and then select today's class ([Class 01: 2020-08-25](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class01)).
 
-## How do I watch the recording?
-
-If you are enrolled in the class, the recording of today's class will appear (when available) in the [Zoom folder on Canvas](https://canvas.case.edu)
-
 ## Today's Materials
 
 1. We'll start today on [the main page](https://thomaselove.github.io/431/) for the course, and look over:
@@ -29,4 +25,9 @@ If you are enrolled in the class, the recording of today's class will appear (wh
 While virtually all of the information in [the Pre-Class Website](https://431-2020-preclass-love.netlify.app/) is still correct, we've started the class now, so it's no longer relevant and will not be updated further.
 
 2. Thank you for completing the [Welcome to 431 Survey](https://bit.ly/431-2020-welcome-survey). Dr. Love's [summary of the results is here](http://bit.ly/431-2020-welcome-results).
+
+## After class, how do I watch the recording?
+
+If you are enrolled in the class, the recording of today's class will appear (when available) in the [Zoom folder on Canvas](https://canvas.case.edu)
+
 
