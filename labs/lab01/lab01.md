@@ -1,6 +1,6 @@
 431 Lab 01
 ================
-Due **2020-09-07** at 9 PM. Last Edited 2020-08-24 23:06:55
+Due **2020-09-07** at 9 PM. Last Edited 2020-08-25 08:37:49
 
 Lab 01 is divided into 4 parts, all of which you need to complete by the
 deadline posted on the [Course
@@ -71,7 +71,7 @@ data for some reason, try
 Read the introduction to David Spiegelhalter’s book *The Art of
 Statistics*. Then write a short essay (of 100-150 words, please)
 describing how the PPDAC problem solving cycle might be helpful to you
-in the context of ome “problem” you are interested in solving. Please
+in the context of some “problem” you are interested in solving. Please
 feel free to draw on your own experience solving problems in a
 systematic way, and don’t feel obliged to write about a “problem” that
 is related to biology or medicine or health or science. Anything you can
@@ -82,11 +82,27 @@ explain briefly and that you are interested in could work well here.
 Please complete the survey provided at
 <http://bit.ly/431-2020-lab01-survey>.
 
-You’ll need to log into Google using your CWRU ID in order to access the
-form. The survey asks about your attitudes toward statistics, as well as
-for your opinion about the most important things you learned in the
-first few sessions of 431. It should take less than 10 minutes for you
-to complete the form.
+The survey asks about your attitudes toward statistics, as well as for
+your opinion about the most important things you learned in the first
+few sessions of 431.
+
+  - You’ll need to log into Google using your CWRU ID in order to access
+    the form.
+  - The form won’t open to take any responses until 2020-09-01, since we
+    want you to have gone through a full week of the course before
+    answering the questions.
+  - It should take less than 10 minutes for you to complete the form.
+
+# A Few Tips
+
+You are welcome to discuss Lab 01 with Professor Love, the teaching
+assistants or your colleagues, but your answer must be prepared by you
+alone. Don’t be afraid to ask questions, either via
+[Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab02
+folder), or at [TA office
+hours](https://thomaselove.github.io/431/contact.html) once they get
+started on 2020-08-31, or before/after class with Dr. Love (Zoom classes
+open 15 minutes prior to class for questions.)
 
 # Submitting the Lab
 
