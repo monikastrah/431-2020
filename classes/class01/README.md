@@ -8,6 +8,11 @@ The main website for this class is https://thomaselove.github.io/431/.
 
 Get here by selecting [Calendar](https://thomaselove.github.io/431/calendar.html) from the main website, and then select today's class ([Class 01: 2020-08-25](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class01)).
 
+## Zoom information
+
+- If you are enrolled in the class, you'll find the Zoom link waiting for you on [Canvas](https://canvas.case.edu) - look in the Zoom folder.
+- The recording of today's class will appear (when available) in the [Zoom folder on Canvas](https://canvas.case.edu).
+
 ## Today's Slides
 
 - Class 1 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class01/431_class-01-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class01/431_class-01-slides_2020.Rmd) if you want to see how I built them.
@@ -16,9 +21,9 @@ Get here by selecting [Calendar](https://thomaselove.github.io/431/calendar.html
 
 The Google Form for today's breakout activity (requires CWRU login to Google) is located at http://bit.ly/431-2020-class01-breakout.
 
-## Today's Agenda
+## Today's Agenda and Links
 
-1. Thank you for completing the [Welcome to 431 Survey](https://bit.ly/431-2020-welcome-survey). Dr. Love's [summary of the results is here](http://bit.ly/431-2020-welcome-results).
+1. Thank you for completing the [Welcome to 431 Survey](https://bit.ly/431-2020-welcome-survey). Dr. Love's [summary of the results is here](http://bit.ly/431-2020-welcome-results), although I may not actually get around to reviewing this with you until Class 02.
 
 2. We'll start today on [the main page](https://thomaselove.github.io/431/) for the course, and look over:
 
@@ -34,9 +39,15 @@ The Google Form for today's breakout activity (requires CWRU login to Google) is
 
 3. While virtually all of the information in [the Pre-Class Website](https://431-2020-preclass-love.netlify.app/) is still correct, we've started the class now, so it's no longer relevant and will not be updated further.
 
+## Links From Today
 
-## After class, how do I watch the recording?
-
-If you are enrolled in the class, the recording of today's class will appear (when available) in the [Zoom folder on Canvas](https://canvas.case.edu)
-
+- [XKCD](https://xkcd.com/) is the source of many excellent comics. Today, we saw [Correlation](https://xkcd.com/552/).
+- [R For Data Science](http://r4ds.had.co.nz/) (often abbreviated [R4DS](http://r4ds.had.co.nz/)) is an outstanding book by Garrett Grolemund and Hadley Wickham, and I used part of their Introduction to discuss Data Science ideas.
+- Here's the [Wikipedia page on John Tukey](https://en.wikipedia.org/wiki/John_Tukey) (1915-2000).
+- We looked at the artificial intelligence tool for age guessing from a photograph at https://how-old.net
+- We gathered our new (2019) age guessing data into the Google Sheet at http://bit.ly/431-2019-day1-ageguess
+- The Hans Rosling "Joy of Stats" video we watched is at http://bit.ly/431-rosling
+    - If you liked that, you might enjoy the [20-minute Ted Talk from 2007](https://www.youtube.com/watch?v=RUwS1uAdUcI)
+    - Or the [full documentary from the BBC on The Joy of Stats](https://www.gapminder.org/videos/the-joy-of-stats/)
+    - Or this [video playlist from the Gapminder Project](https://www.gapminder.org/videos/)
 
