@@ -1,11 +1,8 @@
 # 431 Class 02: 2020-08-27
 
 - Class 02 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class02/431_class-02-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class02/431_class-02-slides_2020.Rmd).
-
-## Getting Here 
-
-1. The main class website is https://thomaselove.github.io/431/. Everything you need is linked there.
-    - To get here from the main site, visit the [Calendar](https://thomaselove.github.io/431/calendar.html) then select today's class.
+- The main class website is https://thomaselove.github.io/431/. Everything you need is linked there.
+    - To get to this README page from the main site, visit the [Calendar](https://thomaselove.github.io/431/calendar.html) then select today's class.
     - The Zoom link is posted to [Canvas](https://canvas.case.edu), and the recording will appear (in the cloud recording) when available.
 
 ## What Should I Be Working On?
@@ -16,6 +13,7 @@
     - Install [R and R Studio](https://thomaselove.github.io/431/software_install.html) on your computer, then install the [R packages](https://thomaselove.github.io/431/r_packages.html) on this list so that you're ready to start doing work in R as quickly as possible.
 - Your first substantial assignment is [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md), due on **2020-09-07**.
     - In order to complete Lab 01, you'll need to have read the Introduction to David Spiegelhalter's *The Art of Statistics*
+    - You should be able to complete Parts 1-3 of Lab 01 now, and Part 4 will be possible on 2020-09-01.
 
 ## Getting Help
 
