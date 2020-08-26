@@ -21,7 +21,7 @@
 - If you'd like some one-on-one assistance, Teaching Assistant Office Hours begin on Monday 2020-08-31.
     - The schedule and zoom links are available in the Announcements section of [Canvas](https://canvas.case.edu).
 
-## Agenda
+## Announcements
 
 1. Thank you for completing the [Welcome to 431 Survey](https://bit.ly/431-2020-welcome-survey). Dr. Love's [summary of the results is here](http://bit.ly/431-2020-welcome-results).
 
