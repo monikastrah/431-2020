@@ -1,6 +1,6 @@
 431 Lab 01
 ================
-Due **2020-09-07** at 9 PM. Last Edited 2020-08-25 08:37:49
+Due **2020-09-07** at 9 PM. Last Edited 2020-08-26 08:18:18
 
 Lab 01 is divided into 4 parts, all of which you need to complete by the
 deadline posted on the [Course
@@ -98,7 +98,7 @@ few sessions of 431.
 You are welcome to discuss Lab 01 with Professor Love, the teaching
 assistants or your colleagues, but your answer must be prepared by you
 alone. Don’t be afraid to ask questions, either via
-[Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab02
+[Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab01
 folder), or at [TA office
 hours](https://thomaselove.github.io/431/contact.html) once they get
 started on 2020-08-31, or before/after class with Dr. Love (Zoom classes

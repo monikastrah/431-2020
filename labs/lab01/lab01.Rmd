@@ -57,7 +57,7 @@ The survey asks about your attitudes toward statistics, as well as for your opin
 
 # A Few Tips
 
-You are welcome to discuss Lab 01 with Professor Love, the teaching assistants or your colleagues, but your answer must be prepared by you alone. Don't be afraid to ask questions, either via [Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab02 folder), or at [TA office hours](https://thomaselove.github.io/431/contact.html) once they get started on 2020-08-31, or before/after class with Dr. Love (Zoom classes open 15 minutes prior to class for questions.)
+You are welcome to discuss Lab 01 with Professor Love, the teaching assistants or your colleagues, but your answer must be prepared by you alone. Don't be afraid to ask questions, either via [Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab01 folder), or at [TA office hours](https://thomaselove.github.io/431/contact.html) once they get started on 2020-08-31, or before/after class with Dr. Love (Zoom classes open 15 minutes prior to class for questions.)
 
 # Submitting the Lab
 
