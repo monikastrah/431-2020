@@ -1,0 +1,833 @@
+---
+title: "431 Class 02"
+author: "thomaselove.github.io/431"
+date: "2020-08-27"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 55)
+```
+
+---
+
+![](images/dilbert-nodata.jpg)
+
+## Today's Agenda
+
+1. Asking Questions: The "Short" Survey
+2. Doing Data Analysis and Understanding Limitations
+3. Using R to manage and visualize some data
+
+## Chatfield's Six Rules for Data Analysis
+
+1. Do not attempt to analyze the data until you understand what is being measured and why.
+2. Find out how the data were collected.
+3. Look at the structure of the data.
+4. Carefully examine the data in an exploratory way, before attempting a more sophisticated analysis.
+5. Use your common sense at all times.
+6. Report the results in a clear, self-explanatory way.
+
+Chatfield, Chris (1996) *Problem Solving: A Statistician's Guide*, 2nd ed.
+
+
+## Breakout: The "Short" Survey
+
+- Goal: mimic the process for a telephone or in-person survey.
+
+Each breakout group will have 3 or 4 people.
+
+- Within your group, each of you will respond to the questions in the survey in turn, but **don't fill out the form for yourself**. 
+- Instead, one of you should share their screen and type in the responses spoken by the subject, so that you both know what the response is. Then switch roles, until everyone's responses to the questions have been recorded.
+- The data are collected anonymously in this Google Form, and if you are uncomfortable answering any questions, leave the response blank.
+- When you finish recording one person's results and submit the form, the system will give you a link to fill out the form again for another person.
+
+## Breakout Session Now Underway
+
+The survey is at **http://bit.ly/431-2020-class02-breakout**
+
+Make sure everyone in your breakout session has a submitted set of responses. We hope this will take at most ten minutes. 
+
+- If you have some extra time, make sure you get to know one another a little bit, trying to ensure that everyone knows everyone else's name, and what they are studying or what they do professionally.
+
+## Data Science
+
+![](images/data-science-emphasize-import-and-tidy.png)
+
+## Types of Data
+
+Data can be **quantitative (numerical)** or **qualitative (categorical)**
+
+- **Quantitative**
+    + Variables recorded in numbers that we use as numbers.
+    + All quantitative variables must have units of measurement.
+    + Can break into *continuous* (may take any value in a range) or *discrete* (limited set of potential values.)
+        - Height is certainly continuous as a concept, but how precise is our ruler?
+        - Piano vs. Violin
+    + (less common) *interval* (equal distances between values, but zero point is arbitrary) as compared to *ratio* variables (a meaningful zero point.)
+        - Is *weight* an interval or ratio variable? How about *IQ*?
+    + Taking a mean or median is a reasonable idea.
+
+## Types of Data 
+
+Data can be **quantitative (numerical)** or **qualitative (categorical)**
+
+- Qualitative 
+    + Variables consisting of names of categories.
+    + Each possible value is a code for a category (could use numerical or non-numerical codes.)
+        + *Binary* categorical variables (two categories, often labeled 1 or 0)
+        + *Multi-categorical* variables (usually taken to be 3+ categories)
+    + Also, *nominal* (no underlying order) or *ordinal* (categories are ordered.)
+        - How is your overall health? (Excellent, Very Good, Good, Fair, Poor)
+        - Which candidate would you vote for if the election were held today?
+        - Did this patient receive this procedure?
+
+
+## Evaluating some "Short" Survey variables
+
+1. Do you **smoke**? (1 = Non-Smoker, 2 = Former Smoker, 3 = Smoker)
+2. How much did you pay for your most recent **haircut**? (in $)
+3. What is your favorite **color**?
+4. How many hours did you **sleep** last night?
+5. Statistical thinking in your future **career**? (1 = Not at all important to 7 = Extremely important)
+
+### Are these quantitative or qualitative?
+
+- If quantitative, are they *discrete* or *continuous*? Do they have a meaningful *zero point*?
+- If qualitative, how many categories? *Nominal* or *ordinal*?
+
+## What was different in 2020?
+
+- In the past, I've done this in Class 01, in person and using a paper form, gathering data in pairs (each person writes down the other's responses)
+
+Items asked in 2019 (and earlier) but not 2020:
+
+- `Q03` Has statistical thinking been important in your life **so far**? (1-7 on importance)
+- `Q04` **How old** (in years) do you think Professor Love is?
+- `Q12` Included ruler and asked for a **hand span** measurement in cm
+- `Q15` Record your **pulse** by counting the beats of your heart for 30 seconds, then doubling the result.
+
+Other differences:
+
+- `Q06` 10-item handedness scale with alternate measurement scale
+- `Q09-10` Changed wording of learning / projects stems 
+
+## "Short" Survey Handout from 2019
+
+![](images/day1form_2019.png)
+
+## Ingesting the Paper "Short" Surveys
+
+![](images/2019_setup.png)
+
+## "Short" Survey
+
+Fall | 2019 | 2018 | 2017 | 2016 | 2015 | 2014 | Total
+----: | ----: |----: | ----: | ----: | ----: | -----: | -----:
+*n* | 61 | 51 | 48 | 64 | 49 | 42 | **315**
+
+### Poll Question
+
+What percentage of those 315 paper surveys caused *no problems* in recording responses?
+
+## Day 1 Survey Handout
+
+![](images/day1form_2019.png)
+
+## The 15 Survey Items
+
+\#  | Topic         | \#  | Topic
+--: | -----------   | --: | -----------
+**Q01** | `glasses`      | **Q09**  | `lectures v activities`
+**Q02** | `english`      | **Q10** | `projects alone`
+Q03 | `stats so far` | **Q11** | `height`
+Q04 | `guess TL age` | Q12 | `hand span`
+**Q05** | `smoke`        | **Q13** | `color`
+Q06 | `handedness`   | **Q14** | `sleep`
+**Q07** | `stats future` | Q15 | `pulse rate`
+**Q08** | `haircut`      | -   | -
+
+(Bolded items were asked in the 2020 Google Form version.)
+
+## Question 1
+
+What percentage of those 315 paper surveys caused *no problems* in recording responses?
+
+> - OK. Take the poll now.
+
+> - First, we'll get the poll results.
+
+> - 110/315 were clean and caused no problems, or **35**%.
+
+## Guess My Age
+
+![](images/q04a.png) 
+
+![](images/q04b.png)
+
+![](images/2018-04.png)
+
+What should we do in these cases?
+
+## English best language?
+
+![](images/q02a.png) 
+
+![](images/q02b.png)
+
+![](images/2017-q02c-withdecision.png)
+
+## Favorite color
+
+![](images/q13a.png)
+
+![](images/q13b.png)
+
+![](images/2018-13.png)
+
+## Height
+
+![](images/q11-issues.png)
+
+## Handedness Scale (2014-15 version)
+
+![](images/q06a.png)
+
+## Handedness Scale (2016-19 version)
+
+![](images/q06b.png)
+
+## Following the Rules?
+
+![](images/2017-q15a.png)
+
+### 2019 `pulse` responses, sorted (*n* = 61, 1 NA)
+
+```
+ 33 46 48  56  60  60      Stem-and-Leaf display
+ 62 63 65  65  66  66        3 | 3
+ 68 68 68  69  70  70        4 | 68
+ 70 70 70  70  70  70        5 | 6        
+ 71 72 72  74  74  74        6 | 002355668889 
+ 74 74 75  76  76  76        7 | 00000000122444445666888
+ 78 78 78  80  80  80        8 | 000012445668
+ 80 81 82  84  84  85        9 | 000046
+ 86 86 88  90  90  90       10 | 44
+ 90 94 96 104 104 110       11 | 0
+```
+
+Thanks, John \color{red} **Tukey** \color{black} 
+
+## Garbage in, garbage out ...
+
+![](images/lastlineofdefense.png)
+
+## Working with R and the "Day 1" survey data
+
+- The `surveyday1_2019.csv` file is available to you as part of the Data download for the course.
+- It's a comma-separated version text file, which is pretty future-proof and can be read easily into R.
+- We'll first load the tidyverse set of R packages, which will let us do a lot of things very cleanly. Learn more about the tidyverse in the Course Notes and in *R for Data Science*.
+- Then we'll read the data into R, so we can look it over more closely.
+- This won't be the last time we do this sort of thing in this class.
+
+## Loading the `tidyverse` of R packages
+
+```{r}
+library(tidyverse)
+```
+
+## Reading in (ingesting) the data
+
+We'll place the data in a specialized data frame (called a **tibble**) named `survey1`.
+
+```{r}
+survey1 <- read_csv("data/surveyday1_2019.csv")
+```
+
+## The `survey1` data
+
+```{r}
+survey1
+```
+
+## Most Popular Colors in 2019
+
+```{r}
+survey1 %>% 
+  filter(year == 2019) %>% 
+  count(favcolor) 
+```
+
+## Most Popular Colors in 2019 (code)
+
+Counting and sorting are under-rated parts of exploring data.
+
+```{r, eval = FALSE}
+survey1 %>% 
+  filter(year == 2019) %>% 
+  count(favcolor, sort = TRUE)
+```
+
+## Most Popular Colors in 2019 (result)
+
+```{r, echo = FALSE}
+survey1 %>% 
+  filter(year == 2019) %>% 
+  count(favcolor, sort = TRUE)
+```
+
+
+## What about Haircut Prices?
+
+```{r}
+survey1$haircut
+```
+
+## DTDP: The first rule of working with data
+
+![](images/dtdp.PNG)
+
+## Histogram of Haircut Prices (First Attempt)
+
+```{r, fig.height = 3}
+ggplot(survey1, aes(haircut)) +
+  geom_histogram()
+```
+
+**Uh, oh. What happened here?**
+
+## Numerical Summary of Haircut Prices
+
+```{r}
+survey1 %>% select(haircut) %>% summary
+```
+
+```{r, message = FALSE}
+mosaic::favstats(~ haircut, data = survey1)
+```
+
+
+
+
+## Revising the Histogram
+
+```{r, fig.height = 4}
+survey1 %>%
+  filter(complete.cases(haircut)) %>%
+  ggplot(., aes(x = haircut)) +
+  geom_histogram(binwidth = 10, fill = "salmon", col = "navy") 
+```
+
+## Adding a Title and an Annotation
+
+```{r, fig.height = 4}
+survey1 %>% filter(complete.cases(haircut)) %>%
+  ggplot(., aes(x = haircut)) +
+  geom_histogram(binwidth = 10, fill = "salmon", col = "navy") +
+  annotate("text", x = 210, y = 8, label = "$210?", 
+           col="red", size = 7) +
+  labs(title = "311 Haircut Prices from 2014-19 431")
+```
+
+## What about Height?
+
+```{r, fig.height = 4}
+survey1 %>% 
+  ggplot(., aes(x = height.in)) +
+  geom_histogram(bins = 20, fill = "dodgerblue", col = "magenta")
+```
+
+## Numerical Summaries
+
+```{r}
+mosaic::favstats(height.in ~ year, data = survey1)
+```
+
+What should we do?
+
+## Distribution of Heights, without the outlier
+
+```{r, fig.height = 4}
+survey1 %>% 
+  filter(height.in < 80) %>%
+  ggplot(., aes(x = height.in)) +
+  geom_histogram(bins = 20, 
+                 fill = "dodgerblue", col = "yellow")
+```
+
+
+## Association of Height with Haircut Price
+
+```{r, fig.height = 4}
+survey1 %>%
+  filter(complete.cases(height.in, haircut)) %>%
+  filter(height.in < 84) %>%
+  ggplot(aes(x = height.in, y = haircut)) +
+  geom_point() + 
+  theme_bw()
+```
+
+## Does the relationship look linear?
+
+```{r, fig.height = 3}
+survey1 %>%
+  filter(complete.cases(height.in, haircut)) %>%
+  filter(height.in < 84) %>%
+  ggplot(aes(x = height.in, y = haircut)) +
+  geom_point() + 
+  geom_smooth(method = "loess") + 
+  theme_bw()
+```
+
+## What if we stratify (facet) the plot by sex?
+
+```{r, fig.height = 3, message = F}
+survey1 %>%
+  filter(complete.cases(height.in, haircut)) %>%
+  filter(height.in < 84) %>%
+  ggplot(aes(x = height.in, y = haircut)) +
+  geom_point() +
+  geom_smooth(method = "loess") + 
+  facet_wrap(~ sex) 
+```
+
+## Eliminate the subjects where we didn't collect `sex`
+
+```{r, fig.height = 3, message = F}
+survey1 %>%
+  filter(complete.cases(height.in, haircut, sex)) %>%
+  filter(height.in < 84) %>%
+  ggplot(aes(x = height.in, y = haircut)) +
+  geom_point() +
+  geom_smooth(method = "loess") + 
+  facet_wrap(~ sex) 
+```
+
+## Looking at Hours of Sleep Last Night
+
+```{r, fig.height = 3}
+ggplot(data = survey1, aes(x = lastsleep)) +
+  geom_histogram()
+```
+
+What should we do?
+
+## Looking at Hours of Sleep Last Night
+
+```{r, fig.height = 3}
+survey1 %>% filter(complete.cases(lastsleep)) %>%
+ggplot(data = ., aes(x = lastsleep)) +
+  geom_histogram(binwidth = 1, fill = "aquamarine", 
+                 col = "black")
+```
+
+## Hours of Sleep by Prefers English?
+
+```{r, fig.height = 3}
+survey1 %>% filter(complete.cases(english, lastsleep)) %>%
+ggplot(data = ., aes(x = english, y = lastsleep)) +
+  geom_boxplot() + 
+  coord_flip()
+```
+
+## Hours of Sleep by Survey Year
+
+```{r, fig.height = 3}
+survey1 %>% filter(complete.cases(year, lastsleep)) %>%
+ggplot(data = ., aes(x = year, y = lastsleep)) +
+  geom_boxplot() + 
+  coord_flip()
+```
+
+## Get R to recognize `year` as categorical here
+
+```{r, fig.height = 3}
+survey1 %>% filter(complete.cases(year, lastsleep)) %>%
+ggplot(data = ., aes(x = factor(year), y = lastsleep)) +
+  geom_boxplot() + 
+  coord_flip()
+```
+
+## Or present in a scatterplot
+
+```{r, fig.height = 3}
+survey1 %>% filter(complete.cases(year, lastsleep)) %>%
+ggplot(data = ., aes(x = year, y = lastsleep)) +
+  geom_point() +
+  geom_smooth(method = "loess")
+```
+
+## Maybe jitter the points horizontally?
+
+```{r, fig.height = 3}
+survey1 %>% filter(complete.cases(year, lastsleep)) %>%
+ggplot(data = ., aes(x = year, y = lastsleep)) +
+  geom_jitter(width = 0.2) +
+  geom_smooth(method = "loess")
+```
+
+## Chatfield's Six Rules for Data Analysis
+
+1. Do not attempt to analyze the data until you understand what is being measured and why.
+2. Find out how the data were collected.
+3. Look at the structure of the data.
+4. Carefully examine the data in an exploratory way, before attempting a more sophisticated analysis.
+5. Use your common sense at all times.
+6. Report the results in a clear, self-explanatory way.
+
+Chatfield, Chris (1996) *Problem Solving: A Statistician's Guide*, 2nd ed.
+
+# Another example that we won't discuss in class today
+
+## Analyzing Guesses of My Age
+
+61 students turned in an index card in 2019, meant to contain both a first and a second guess of my age. 
+
+For the slides, I have this information in a subfolder called data in my R Project.
+
+```{r}
+love_2019 <- read_csv("data/love-age-guess-2019.csv")
+```
+
+## The `love_2019` tibble
+
+```{r}
+love_2019
+```
+
+## Histogram of initial guesses?
+
+```{r, eval = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram()
+```
+
+## Histogram of initial guesses?
+
+```{r, echo = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram()
+```
+
+
+## Make the width of the bins 3 years?
+
+```{r, eval = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3)
+```
+
+## Make the width of the bins 3 years?
+
+```{r, echo = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3)
+```
+
+## Fill in the bars with a better color?
+
+```{r, eval = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "blue")
+```
+
+## Fill in the bars with a better color?
+
+```{r, echo = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "blue")
+```
+
+## Make it a little prettier?
+
+```{r, eval = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "navy", color = "white")
+```
+
+## Make it a little prettier?
+
+```{r, echo = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "navy", color = "white")
+```
+
+
+## Add more meaningful labels?
+
+```{r, eval = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "navy", color = "white") +
+  labs(x = "First Guess of Love's Age",
+       y = "# of Students",
+       title = "2019 Guesses of Professor Love's Age",
+       subtitle = "Actual Age was 52.5")
+```
+
+## Add more meaningful labels?
+
+```{r, echo = FALSE}
+ggplot(data = love_2019, aes(x = age1)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "navy", color = "white") +
+  labs(x = "First Guess of Love's Age",
+       y = "# of Students",
+       title = "2019 Guesses of Professor Love's Age",
+       subtitle = "Actual Age was 52.5")
+```
+
+
+## Numerical Summaries of Age Guesses
+
+```{r}
+summary(love_2019)
+```
+
+## Some Additional Summaries
+
+```{r}
+mosaic::favstats(~ age1, data = love_2019)
+```
+
+```{r}
+mosaic::favstats(~ age2, data = love_2019)
+```
+
+## Another Approach
+
+```{r, warning = FALSE}
+mosaic::inspect(love_2019)
+```
+
+## What about the second guess?
+
+```{r, eval = FALSE}
+ggplot(data = love_2019, aes(x = age2)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "forestgreen", color = "white") +
+  labs(x = "Second Guess of Love's Age",
+       y = "# of Students",
+       title = "2019 Guesses of Professor Love's Age",
+       subtitle = "Actual Age was 52.5")
+```
+
+## What about the second guess?
+
+```{r, echo = FALSE}
+ggplot(data = love_2019, aes(x = age2)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "forestgreen", color = "white") +
+  labs(x = "Second Guess of Love's Age",
+       y = "# of Students",
+       title = "2019 Guesses of Professor Love's Age",
+       subtitle = "Actual Age was 52.5")
+```
+
+## Filter to complete cases only
+
+```{r, eval = FALSE}
+love_2019 %>%
+  filter(complete.cases(age2)) %>%
+  ggplot(data = ., aes(x = age2)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "forestgreen", color = "white") +
+  labs(x = "Second Guess of Love's Age",
+       y = "# of Students",
+       title = "2019 Guesses of Professor Love's Age",
+       subtitle = "Actual Age was 52.5")
+```
+
+## Filter to complete cases only
+
+```{r, echo = FALSE}
+love_2019 %>%
+  filter(complete.cases(age2)) %>%
+  ggplot(data = ., aes(x = age2)) +
+  geom_histogram(binwidth = 3, 
+                 fill = "forestgreen", color = "white") +
+  labs(x = "Second Guess of Love's Age",
+       y = "# of Students",
+       title = "2019 Guesses of Professor Love's Age",
+       subtitle = "Actual Age was 52.5")
+```
+
+## Comparing First Guess to Second Guess
+
+```{r, eval = FALSE}
+ggplot(data = love_2019, aes(x = age1, y = age2)) +
+  geom_point()
+```
+
+## Comparing First Guess to Second Guess
+
+```{r, echo = FALSE}
+ggplot(data = love_2019, aes(x = age1, y = age2)) +
+  geom_point()
+```
+
+## Filter to complete cases, add regression line
+
+```{r, eval = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "purple")
+```
+
+## Filter to complete cases, add regression line
+
+```{r, echo = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "purple")
+```
+
+## What's that regression line?
+
+```{r}
+lm(age2 ~ age1, data = love_2019)
+```
+
+- `lm` (by default) filters to complete cases.
+
+We'll have several alternative approaches to fit regressions coming up.
+
+## How about a loess smooth curve, instead?
+
+```{r, eval = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "loess", col = "blue")
+```
+
+## How about a loess smooth curve, instead?
+
+```{r, echo = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "loess", col = "blue")
+```
+
+## Add a y = x line (no change in guess)?
+
+```{r, eval = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "loess", col = "blue") +
+  geom_abline(intercept = 0, slope = 1, col = "red") 
+```
+
+## Add a y = x line (no change in guess)?
+
+```{r, echo = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "loess", col = "blue") +
+  geom_abline(intercept = 0, slope = 1, col = "red") 
+```
+
+## Add more meaningful labels
+
+```{r, eval = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "loess", col = "blue") +
+  geom_abline(intercept = 0, slope = 1, col = "red") +
+  geom_text(x = 60, y = 62, 
+            label = "y = x", col = "red") +
+  labs(x = "First Guess of Love's Age",
+       y = "Second Guess of Love's Age",
+       title = "Comparing 2019 Age Guesses",
+       subtitle = "Love's actual age = 52.5")
+```
+
+## Add more meaningful labels
+
+```{r, echo = FALSE}
+love_2019 %>% 
+  filter(complete.cases(age1, age2)) %>%
+  ggplot(data = ., aes(x = age1, y = age2)) +
+  geom_point() +
+  geom_smooth(method = "loess", col = "blue") +
+  geom_abline(intercept = 0, slope = 1, col = "red") +
+  geom_text(x = 60, y = 62, 
+            label = "y = x", col = "red") +
+  labs(x = "First Guess of Love's Age",
+       y = "Second Guess of Love's Age",
+       title = "Comparing 2019 Age Guesses",
+       subtitle = "Love's actual age = 52.5")
+```
+
+## `age1 - age2` difference in guesses?
+
+```{r, eval = FALSE}
+love_2019 <- love_2019 %>% 
+  mutate(diff = age1 - age2)
+
+mosaic::favstats(~ diff, data = love_2019)
+```
+## How Many Guesses Increased?
+
+```{r}
+love_2019 %>%
+  mutate(diff = age1 - age2) %>%
+  count(diff < 0)
+```
+
+## Increased / Stayed the Same / Decreased
+
+```{r}
+love_2019 %>%
+  mutate(diff = age1 - age2) %>%
+  count(sign(diff))
+```
+
+## Histogram of difference in guesses
+
+```{r, eval = FALSE}
+love_2019 %>%
+  mutate(diff = age1 - age2) %>%
+  filter(complete.cases(diff)) %>%
+  ggplot(data = ., aes(x = diff)) +
+  geom_histogram(binwidth = 1, 
+                 fill = "royalblue", color = "yellow") +
+  labs(x = "Change in Guess of Love's Age")
+```
+
+## Histogram of difference in guesses
+
+```{r, echo = FALSE}
+love_2019 %>%
+  mutate(diff = age1 - age2) %>%
+  filter(complete.cases(diff)) %>%
+  ggplot(data = ., aes(x = diff)) +
+  geom_histogram(binwidth = 1, 
+                 fill = "royalblue", color = "yellow") +
+  labs(x = "Change in Guess of Love's Age")
+```
+
