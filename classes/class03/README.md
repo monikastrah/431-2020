@@ -2,7 +2,7 @@
 
 - [Main Class Website](https://thomaselove.github.io/431/)
 - [Course Calendar](https://thomaselove.github.io/431/calendar.html)
-- Zoom link for today's class (and the recording afterwards) is posted to the Zoom folder in [Canvas](https://canvas.case.edu).
+- Visit [Canvas](https://canvas.case.edu) for the Zoom link for today's class (and to access the recording afterwards.) 
 
 ## Today's Slides
 
