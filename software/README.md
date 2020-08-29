@@ -12,7 +12,7 @@ If you need more help, you might look at [this terrific resource for Installing 
 
 Professor Love's document entitled **Getting Started with R** is a good first step. It demonstrates some of the details on how to use these tools to actually analyze data. 
 
-- [Here is the R Markdown code](https://github.com/THOMASELOVE/431-2020/blob/master/SOFTWARE/431-getting-started-with-R.Rmd).
+- [Here is the R Markdown code](https://github.com/THOMASELOVE/431-2020/blob/master/SOFTWARE/431-getting-started-with-R.Rmd) that produces the other materials.
 - [Here is the downloadable PDF](https://github.com/THOMASELOVE/431-2020/blob/master/SOFTWARE/431-getting-started-with-R.pdf).
 - [Here is an HTML file](http://rpubs.com/TELOVE/getting-started-2020) that the R Markdown code produces, if you'd like to see it.
 - Here is the [431-r-template.Rmd](https://github.com/THOMASELOVE/431-2020/blob/master/SOFTWARE/431-r-template.Rmd) file that Dr. Love refers to in the Getting Started with R materials. 
