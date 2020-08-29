@@ -17,6 +17,7 @@ To be announced
 - Many things you need to know are in the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
     - I have a way of knowing whether you've read the whole thing or not, and you'll know how I know that, too, if you do so. I know it's very long.
 - If you have questions outside of class time, please post them to [Piazza](https://piazza.com/case/fall2020/pqhs431), which is open now.
+    - **NOTE** Several of you have not accepted the invitation, despite my repeated requests. Check your junk/spam folder to see if the invitation from me through Piazza is there.
 - If you'd like some one-on-one assistance, Teaching Assistant Office Hours began on Monday 2020-08-31.
     - The schedule and zoom links are available in the Announcements section of [Canvas](https://canvas.case.edu).
 
