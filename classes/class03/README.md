@@ -15,13 +15,20 @@ To be announced
 ## Getting Help
 
 - Many things you need to know are in the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
-    - I have a way of knowing whether you've read the whole thing or not. Thanks to Amir, Clara, Will, Derrick, Maggie, Sam, Michael Z, Emily Z, Jill and Mia so far.
 - If you have questions outside of class time, please post them to [Piazza](https://piazza.com/case/fall2020/pqhs431), which is open now.
-    - **NOTE** The following people have not accepted the invitation as of 2020-08-31 at 10:30 PM, despite repeated requests sent to the email you told me you preferred. Check your junk/spam folder for the invitation from me through Piazza, and if you cannot find it, please...
-        - Asma Almijlad, Akif Gormez, Jane Hinkle, Natasha Ingles, Jeff Kovach, Joe Magoline, Aman Pande, Lindsay Petrenchik, 
-        - Charlotte Ren, Deja Rose, Zoe Sekyonda, Sarah Simmons, Ananya Subramaniam, Long Vu, Kiara White, Modong Yang and Wail Yar 
 - If you'd like some one-on-one assistance, Teaching Assistant Office Hours began on Monday 2020-08-31.
-    - The schedule and zoom links are available in the Announcements section of [Canvas](https://canvas.case.edu).
+    - Office Hours are held for your benefit. Please visit the TAs, especially if you have questions about how to do things in R, or about the content of the class slides or course notes. They're volunteering their time to  help you, and most of them have been in your shoes in previous years. They want to help you!
+    - The Zoom links for all TA office hours are now available in the Announcements section of [Canvas](https://canvas.case.edu). I'll repeat the schedule here, and it's also on the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
+    
+Day | Morning | Mid-Day | Evening
+--- | ------- | ------ | -------
+Mondays | 10:30 AM to Noon | - | 7:00 to 8:30 PM
+Tuesdays | - | 2:30 to 4:00 PM | -
+Wednesdays | 9:30 to 11:00 AM | - | 6:30 to 8:00 PM
+Thursdays | 10:30 AM to Noon | - | 8:30 to 10:00 PM
+Fridays | 9:00 to 10:30 AM | 11:30 AM to 1:00 PM | 3:30 to 5:00 PM
+Saturdays | 10:30 to 11:30 AM | - | -
+Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
 
 ## Next Deliverables
 
@@ -31,7 +38,12 @@ To be announced
 
 ## What Should I Be Working On?
 
-Details to come.
+1. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Will Patterson, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read the whole thing (as of 2020-08-31 at 10:30 PM). I hope you all will do this very soon.
+2. The following students have not yet accepted the invitation to join the Piazza class discussion forum as of 2020-08-31 at 10:30 PM. 
+    - Check your preferred email's junk/spam folder for the invitation from me through Piazza and get this resolved, please.
+        - Asma Almijlad, Akif Gormez, Jane Hinkle, Natasha Ingles, Jeff Kovach, Joe Magoline, 
+        - Aman Pande, Lindsay Petrenchik, Charlotte Ren, Deja Rose, Zoe Sekyonda, Sarah Simmons, 
+        - Ananya Subramaniam, Long Vu, Kiara White, Modong Yang and Wail Yar 
 
 ## Announcements
 
