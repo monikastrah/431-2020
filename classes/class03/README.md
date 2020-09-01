@@ -8,11 +8,13 @@
 
 ## Today's Slides
 
-- When available, Class 03 slides will be posted in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/431_class-03-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/431_class-03-slides_2020.Rmd).
+- Class 03 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/431_class-03-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/431_class-03-slides_2020.Rmd).
 
-## Materials for Today's Demo
+## Live Demo
 
-- can be found in the [demo folder](https://github.com/THOMASELOVE/431-2020/tree/master/classes/class03/demo) on this page.
+Much of today's class will be occupied by a live demonstration of the use of R and RStudio. 
+
+- Materials supporting this demo are in the [demo folder](https://github.com/THOMASELOVE/431-2020/tree/master/classes/class03/demo) on this page.
 
 ## Getting Help
 
