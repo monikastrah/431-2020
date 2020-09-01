@@ -10,9 +10,9 @@
 
 - When available, Class 03 slides will be posted in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/431_class-03-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/431_class-03-slides_2020.Rmd).
 
-## Today's Breakout Activity
+## Materials for Today's Demo
 
-To be announced
+
 
 ## Getting Help
 
@@ -51,6 +51,7 @@ Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
 4. Continue to make progress on [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md), due 2020-09-07. 
     - You should be able to complete all four parts as soon as Dr. Love opens up the [Survey for Lab 01](http://bit.ly/431-2020-lab01-survey) at http://bit.ly/431-2020-lab01-survey. 
     - Note that the survey for Lab 01 is DIFFERENT than the [Minute Paper after Class 03](http://bit.ly/431-2020-minute-03), which is at http://bit.ly/431-2020-lab01-survey.
+5. The [RStudio Primers](https://rstudio.cloud/learn/primers) are a great place to get started working with R if you've never used it before.
 
 ## Announcements
 
@@ -58,4 +59,12 @@ Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
 2. Names shared by two people in this class include: Ali, Emily, Joe, Lindsay and Michael. I'll try to avoid confusion.
 3. New Data Sets are available at [our Data page](https://github.com/THOMASELOVE/431-data)
     - I've updated the age guesses from the 10 photos we looked at in Class 01, and that's in the [photo-age-history-2020.csv](https://github.com/THOMASELOVE/431-data/blob/master/photo-age-history-2020.csv) file.
-    - I've updated the "simple" survey we did in Class 02, and that's in the [surveyday1_2020.csv](https://github.com/THOMASELOVE/431-data/blob/master/surveyday1_2020.csv) file.
+    - I've updated the "simple" survey we did in Class 02, and that's in the [surveyday1_2020.csv](https://github.com/THOMASELOVE/431-data/blob/master/surveyday1_2020.csv) file, which we'll use for the live demo today, too.
+
+## Links from Today's Class
+
+- [XKCD on Dates](https://xkcd.com/1179/)
+- See https://www.r-project.org/about.html for more about R's origins, strengths and ethos.
+- See https://rstudio.com/products/rstudio/ for more on RStudio and https://rstudio.com/about/ for its mission statement
+- See https://www.tidyverse.org/ for more on the tidyverse
+- The [R for Data Science](https://r4ds.had.co.nz/) online book is a great way to learn more about the tidyverse, and is supported by the [R for Data Science learning community](https://www.rfordatasci.com/), which is also (on [Twitter at @R4DScommunity](https://twitter.com/R4DScommunity)).
