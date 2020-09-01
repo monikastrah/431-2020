@@ -26,7 +26,7 @@ To be announced
 - The Zoom links for all TA office hours are now available in the Announcements section of [Canvas](https://canvas.case.edu). I'll repeat the schedule here, and it's also on the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
     
 Day | Morning | Mid-Day | Evening
---- | ------- | ------ | -------
+:---: | :-------: | :------: | :-------:
 Mondays | 10:30 AM to Noon | - | 7:00 to 8:30 PM
 Tuesdays | - | 2:30 to 4:00 PM | -
 Wednesdays | 9:30 to 11:00 AM | - | 6:30 to 8:00 PM
