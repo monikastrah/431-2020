@@ -3,6 +3,7 @@
 - [Main Class Website](https://thomaselove.github.io/431/)
 - [Course Calendar](https://thomaselove.github.io/431/calendar.html)
 - Visit [Canvas](https://canvas.case.edu) for the Zoom link for today's class (and to access the recording afterwards.) 
+    - Links for all Zoom classes (not just the first four) are now available there. Please be sure to log into Zoom through your CWRU account.
 
 ## Today's Slides
 
@@ -16,9 +17,13 @@ To be announced
 
 - Many things you need to know are in the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
 - If you have questions outside of class time, please post them to [Piazza](https://piazza.com/case/fall2020/pqhs431), which is open now.
+
+### TA Office Hours
+
 - If you'd like some one-on-one assistance, Teaching Assistant Office Hours began on Monday 2020-08-31.
-    - Office Hours are held for your benefit. Please visit the TAs, especially if you have questions about how to do things in R, or about the content of the class slides or course notes. They're volunteering their time to  help you, and most of them have been in your shoes in previous years. They want to help you!
-    - The Zoom links for all TA office hours are now available in the Announcements section of [Canvas](https://canvas.case.edu). I'll repeat the schedule here, and it's also on the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
+    - Office Hours are held for your benefit. Please visit the TAs, especially if you have questions about how to do things in R, or about the content of the class slides or course notes. Most of them are volunteering their time to help you, and most of them have been in your shoes in previous years.
+    - I'll mention here that I'm delighted that Amr Mahran is also joining us as a TA this Fall, and Amr's information is now part of our Syllabus.
+- The Zoom links for all TA office hours are now available in the Announcements section of [Canvas](https://canvas.case.edu). I'll repeat the schedule here, and it's also on the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
     
 Day | Morning | Mid-Day | Evening
 --- | ------- | ------ | -------
