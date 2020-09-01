@@ -17,7 +17,7 @@ Much of today's class will be occupied by a live demonstration of the use of R a
 ## Getting Help
 
 - Many things you need to know are in the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
-- If you have questions outside of class time, please post them to [Piazza](https://piazza.com/case/fall2020/pqhs431), which is open now.
+- If you have questions outside of class time, please post them to [Piazza](https://piazza.com/case/fall2020/pqhs431), which is open now. Please make your posts there public rather than private so that the rest of the class may benefit.
 
 ### TA Office Hours
 
