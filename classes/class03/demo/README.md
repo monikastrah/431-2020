@@ -7,6 +7,8 @@ Materials for the demo are posted in this folder. This includes:
 
 which is all I'll use to start.
 
+The live demo from class is available in HTML at https://rpubs.com/TELOVE/class03-live-demo-431-2020.
+
 I'll build a small live demo in class, but I've also built a more complete document, which is available as 
 
 - [`431-class-03-demo-full.Rmd`](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/demo/431-class-03-demo-full.Rmd)
