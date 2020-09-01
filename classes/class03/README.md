@@ -12,7 +12,7 @@
 
 ## Materials for Today's Demo
 
-
+- can be found in the [demo folder](https://github.com/THOMASELOVE/431-2020/tree/master/classes/class03/demo) on this page.
 
 ## Getting Help
 
