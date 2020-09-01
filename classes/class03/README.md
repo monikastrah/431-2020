@@ -39,7 +39,8 @@ Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
 
 1. Please complete the [Minute Paper after Class 03] by Noon tomorrow (Wed 2020-09-02). 
     - This involves completing a Google Form: be sure to log into Google via your CWRU account to see the form.
-    - Get used to doing these on Tuesdays after class. They are **the main part** of your Class Participation grade now that all of you have completed the pre-class survey.
+    - Get used to doing these on Tuesdays after class. They are **the main part** of your Class Participation grade.
+    - You should complete all of these Minute Papers this semester, regardless of whether you've seen the most recent class (in this case, Class 03) yet.
 2. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Will Patterson, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read all of the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) (as of 2020-08-31 at 10:30 PM). I hope you all will do this very soon.
 3. The following students have not yet accepted the invitation to join the Piazza class discussion forum as of 2020-08-31 at 10:30 PM. 
     - Check your preferred email's junk/spam folder for the invitation from me through Piazza and get this resolved, please.
