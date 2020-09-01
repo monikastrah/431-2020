@@ -13,6 +13,7 @@
 Much of today's class will be occupied by a live demonstration of the use of R and RStudio and R Markdown. 
 
 - Materials supporting this demo are in the [demo folder](https://github.com/THOMASELOVE/431-2020/tree/master/classes/class03/demo) on this page.
+    - The live demo from class is available in HTML at https://rpubs.com/TELOVE/class03-live-demo-431-2020 and [in R Markdown here](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/demo/live-demo.Rmd).
 
 ## Getting Help
 
