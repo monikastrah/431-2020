@@ -43,12 +43,14 @@ Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
 
 ## What Should I Be Working On?
 
-1. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Will Patterson, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read the whole thing (as of 2020-08-31 at 10:30 PM). I hope you all will do this very soon.
-2. The following students have not yet accepted the invitation to join the Piazza class discussion forum as of 2020-08-31 at 10:30 PM. 
+1. Please be sure to complete the [Minute Paper after Class 03] by Noon tomorrow (Wed 2020-09-02). Get used to doing these on Tuesdays after class.
+2. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Will Patterson, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read all of the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) (as of 2020-08-31 at 10:30 PM). I hope you all will do this very soon.
+3. The following students have not yet accepted the invitation to join the Piazza class discussion forum as of 2020-08-31 at 10:30 PM. 
     - Check your preferred email's junk/spam folder for the invitation from me through Piazza and get this resolved, please.
         - Asma Almijlad, Akif Gormez, Jane Hinkle, Natasha Ingles, Jeff Kovach, Joe Magoline, 
         - Aman Pande, Lindsay Petrenchik, Charlotte Ren, Deja Rose, Zoe Sekyonda, Sarah Simmons, 
         - Ananya Subramaniam, Long Vu, Kiara White, Modong Yang and Wail Yar 
+4. Continue to make progress on Lab 01, due 2020-09-07. You should be able to complete all four parts as soon as Dr. Love opens up the survey.
 
 ## Announcements
 
