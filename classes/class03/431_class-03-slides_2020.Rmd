@@ -1,0 +1,191 @@
+---
+title: "431 Class 03"
+author: "thomaselove.github.io/431"
+date: "2020-09-01"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 55)
+```
+
+---
+
+![](images/dates-psa.png)
+
+---
+
+![](images/donohoe_dates_map.png)
+
+## Today's Agenda
+
+1. R, RStudio, R Packages and R Markdown
+2. "Live" Demo: The "Short" Survey
+
+## Everything R
+
+1. **R** is a computer language designed primarily for statistical computing and graphics. We use R to make sense of data.
+2. **RStudio** is an integrated development environment (IDE) for R. It includes a console, editor and tools for plotting, history, debugging and workspace management. We use RStudio to control our R experience. 
+3. **R Packages** are collections of functions and code to help expand what base R can do. A key set of packages for doing data science in a coherent and enjoyable way are collectively known as the tidyverse.
+    - We **install** packages (and occasionally update them) on our computer as if they were apps on our phone.
+    - We then **load** packages within our R code to use those functions in our work.
+4. **R Markdown** is a file format to help us make dynamic documents with R. An R Markdown file ends with .Rmd and is an easy-to-write plain text format containing chunks of embedded R code. Everything we'll build in 431, including our reports, labs, presentation slides, etc., will come from R Markdown.
+
+## Chatfield's Six Rules for Data Analysis
+
+1. Do not attempt to analyze the data until you understand what is being measured and why.
+2. Find out how the data were collected.
+3. Look at the structure of the data.
+4. Carefully examine the data in an exploratory way, before attempting a more sophisticated analysis.
+5. Use your common sense at all times.
+6. Report the results in a clear, self-explanatory way.
+
+Chatfield, Chris (1996) *Problem Solving: A Statistician's Guide*, 2nd ed.
+
+## Data Science
+
+![](images/data-science.png)
+
+## What We'll Do In The Live Demo
+
+1. Create a directory called `431-class-03-demo-live` on our computer.
+2. Download the data and 431-r-template.Rmd files to that folder from Github.
+3. Open RStudio (we'll assume a successful installation) and briefly tour the four main windows.
+4. Start a new R Project to do our work, linked to our chosen directory.
+5. Use the template to start our R Markdown file.
+6. Write code to do things in R with the data.
+7. Write in English to explain the analyses that we're doing.
+8. "Knit" together the R Markdown file to produce an attractive result in HTML.
+9. Share the HTML result so that we can all see it.
+
+## A Worked "Short" Survey Analysis (`431_class-03-demo-full`)
+
+We have updated data on the site in a file called `surveyday1_2020.csv`. 
+
+`431_class-03-demo-full` R Markdown file, used to build HTML (and PDF) results.
+
+- Key verbs in the tidyverse for data wrangling
+  - select, filter, count, arrange, mutate, group_by, summarize
+- Visualizing a single quantitative variable
+- Comparing a distribution of a quantity within groups
+  - Faceted histogram
+  - Comparison boxplot
+- Obtaining numerical summaries
+- Scatterplots to describe associations
+
+## https://rstudio.cloud/learn/primers
+
+![](images/rstudiocloud_primers.png)
+
+# To The Live Demo!
+
+---
+
+![](images/tukey-unexpected.png)
+
+## Suppose we start from here...
+
+```{r}
+library(magrittr); library(tidyverse)
+```
+
+## and here...
+
+```{r}
+day1 <- read_csv("surveyday1_2020.csv")
+```
+
+## Analyzing the Survey Data
+
+```{r}
+mosaic::favstats(~ height.in, data = day1)
+```
+
+## Analyzing the Survey Data - A little challenge
+
+Can you reproduce the following...
+
+## A. That fill color is called *salmon*, I used 20 bins.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(bins = 20, col = "blue", fill = "salmon") +
+  labs(x = "Height (inches) of Students in 431", 
+       y = "# of Students",
+       title = "Heights of 378 students in 431",
+       subtitle = "4 students had missing heights")
+```
+
+## Code for Part A.
+
+```{r, eval = FALSE, warning = FALSE}
+day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(bins = 20, col = "blue", fill = "salmon") +
+  labs(x = "Height (inches) of Students in 431", 
+       y = "# of Students",
+       title = "Heights of 378 students in 431",
+       subtitle = "4 students had missing heights")
+```
+
+## B. Histograms of Heights, Faceted by Year (binwidth = 1 inch)
+
+```{r, echo = FALSE, warning = FALSE}
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in, fill = year)) + 
+  geom_histogram(binwidth = 1, col = "white") + 
+  facet_wrap(~ year) +
+  guides(fill = FALSE) +
+  labs(title = "Student Height, by Year")
+```
+
+## Code for Plot B.
+
+```{r, eval = FALSE}
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in, fill = year)) + 
+  geom_histogram(binwidth = 1, col = "white") + 
+  facet_wrap(~ year) +
+  guides(fill = FALSE) +
+  labs(title = "Student Height, by Year")
+```
+
+
+## C. Boxplots of Age Guesses, by Year
+
+```{r, echo = FALSE, warning = FALSE}
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = factor(year), y = height.in, 
+                    fill = factor(year))) + 
+  geom_boxplot() + 
+  guides(fill = FALSE) +
+  labs(title = "Student Height, by Year")
+```
+
+## Code for Plot C
+
+```{r , eval = FALSE}
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = factor(year), y = height.in, 
+                    fill = factor(year))) + 
+  geom_boxplot() + 
+  guides(fill = FALSE) +
+  labs(title = "Student Height, by Year")
+```
+
+## Table summarizing Student Heights, by Year
+
+```{r}
+library(knitr)
+mosaic::favstats(height.in ~ year, data = day1) %>%
+  kable(digits = 1)
+```
+
