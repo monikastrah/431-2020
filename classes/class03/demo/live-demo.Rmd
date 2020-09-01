@@ -1,0 +1,197 @@
+---
+title: "Live Demo for Class 03"
+author: "Thomas E. Love"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    toc: yes
+    code_folding: show
+---
+
+```{r setup R and load packages, message=FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 70)
+
+## add additional libraries/packages here, as needed
+## leaving the tidyverse as the last package loaded
+library(tidyverse)
+```
+
+Loading in the data ...
+
+```{r load in a data set and make a tibble}
+## if you want to load in a data set called namebeta.csv
+## and then create a tibble from it called namealpha
+## then uncomment the next line by removing the #
+
+day1 <- read_csv("surveyday1_2020.csv") 
+```
+
+# Looking at The Data
+
+```{r}
+day1
+```
+## Variable Names
+
+```{r}
+names(day1)
+```
+
+## Summary of the variables
+
+```{r}
+summary(day1)
+```
+
+## Table of glasses and english
+
+```{r}
+table(day1$glasses, day1$english)
+```
+
+## Table of english and sex
+
+```{r}
+table(day1$english, day1$sex)
+```
+
+```{r}
+library(magrittr)
+
+day1 %$% table(glasses, english)
+```
+
+```{r}
+library(janitor)
+
+day1 %>% tabyl(glasses, english)
+```
+
+# A Few Key Verbs
+
+## filter
+
+filter picks out rows in the data frame
+
+```{r}
+day1
+```
+
+```{r}
+day1 %>% filter(glasses == "y")
+```
+
+```{r}
+day1 %>% filter(glasses == "y", english == "n")
+```
+
+```{r}
+day1 %>% filter(glasses == "y", favcolor == "blue") %>%
+    count()
+```
+
+```{r}
+day1 %>% filter(glasses == "y", favcolor == "blue") %>%
+    count(year)
+```
+
+```{r}
+day1 %>% filter(english == "y", favcolor == "blue") %>%
+    count(year)
+```
+
+## select
+
+select is used to pick out columns (variables) that we want to use
+
+```{r}
+day1 %>% select(smoke, favcolor, lastsleep)
+```
+
+Three key verbs so far: filter, select, count
+
+More to come.
+
+# Histogram of Last Night's Sleep
+
+I build plots using the `ggplot2` package, which is part of the tidyverse. `ggplot2` has a function called `ggplot()`.
+
+```{r}
+ggplot(data = day1, aes(x = lastsleep)) +
+    geom_histogram()
+```
+
+## Improve the Histogram
+
+```{r}
+ggplot(data = day1, aes(x = lastsleep)) +
+    geom_histogram(binwidth = 1, fill = "royalblue", col = "yellow") +
+    labs(title = "Histogram of Sleep for 431 Students")
+```
+
+## Boxplot of Sleep by English
+
+```{r}
+ggplot(data = day1, aes(x = english, y = lastsleep)) +
+    geom_boxplot()
+```
+
+Get rid of the missing values...
+
+```{r}
+day1 %>% 
+    filter(complete.cases(english, lastsleep)) %>%
+    ggplot(data = ., aes(x = english, y = lastsleep)) +
+    geom_boxplot()
+```
+
+## Faceted Histogram of Sleep by English
+
+```{r}
+ggplot(data = day1, aes(x = lastsleep)) +
+    geom_histogram(binwidth = 1) +
+    facet_wrap(~ english)
+```
+
+## Faceted Histogram of Sleep by Year
+
+```{r}
+ggplot(data = day1, aes(x = lastsleep)) +
+    geom_histogram(binwidth = 1) +
+    facet_wrap(~ year)
+```
+
+## Boxplot of Sleep by Year
+
+```{r}
+ggplot(data = day1, aes(x = factor(year), y = lastsleep)) +
+    geom_boxplot()
+```
+
+## Scatterplot of Sleep by Height
+
+```{r}
+ggplot(data = day1, aes(x = height.in, y = lastsleep)) +
+    geom_point()
+```
+
+## Add linear smooth and jitter points a little
+
+```{r}
+ggplot(data = day1, aes(x = height.in, y = lastsleep)) +
+    geom_jitter(pch = 1) +
+    geom_smooth(method = "lm") +
+    labs(title = "Sleep and Height in 431 students",
+         subtitle = "jittered points, with Linear fit")
+```
+
+## Add loess smooth
+
+```{r}
+ggplot(data = day1, aes(x = height.in, y = lastsleep)) +
+    geom_point(pch = 1) +
+    geom_smooth(method = "loess") +
+    labs(x = "New title for X axis")
+```
+
