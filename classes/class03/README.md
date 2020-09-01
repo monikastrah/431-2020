@@ -1,10 +1,8 @@
 # 431 Class 03: 2020-09-01
 
-- [Main Class Website](https://thomaselove.github.io/431/)
-- [Course Calendar](https://thomaselove.github.io/431/calendar.html)
+- [Main Class Website](https://thomaselove.github.io/431/) and the [Course Calendar](https://thomaselove.github.io/431/calendar.html) have some recent updates.
 - Visit [Canvas](https://canvas.case.edu) for the Zoom link for today's class (and to access the recording afterwards.) 
-    - Links for all Zoom classes (not just the first four) are now available there. 
-    - Please be sure to log into Zoom through your CWRU account.
+    - Links for all Zoom classes (not just the first four) are now posted there. Please be sure to log into Zoom through your CWRU account.
 
 ## Today's Slides
 
@@ -12,7 +10,7 @@
 
 ## Live Demo
 
-Much of today's class will be occupied by a live demonstration of the use of R and RStudio. 
+Much of today's class will be occupied by a live demonstration of the use of R and RStudio and R Markdown. 
 
 - Materials supporting this demo are in the [demo folder](https://github.com/THOMASELOVE/431-2020/tree/master/classes/class03/demo) on this page.
 
@@ -44,14 +42,14 @@ Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
     - This involves completing a Google Form at http://bit.ly/431-2020-minute-03: be sure to log into Google via your CWRU account to see the form.
     - The [general page for Minute Papers](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md) is here. Get used to doing these on Tuesdays after class. They are **the main part** of your Class Participation grade.
     - You should complete all of these Minute Papers this semester, regardless of whether you've seen the most recent class (in this case, Class 03) yet.
-2. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Will Patterson, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read all of the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) (as of 2020-08-31 at 10:30 PM). I hope you all will do this very soon.
+2. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Rod Nault, Will Patterson, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read all of the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) (as of 2020-09-01 at Noon). I hope you all will do this very soon.
 3. The following students have not yet accepted the invitation to join the Piazza class discussion forum as of 2020-08-31 at 10:30 PM. 
     - Check your preferred email's junk/spam folder for the invitation from me through Piazza and get this resolved, please.
         - Asma Almijlad, Akif Gormez, Jane Hinkle, Natasha Ingles, Jeff Kovach, Joe Magoline, 
         - Aman Pande, Lindsay Petrenchik, Charlotte Ren, Deja Rose, Zoe Sekyonda, Sarah Simmons, 
         - Ananya Subramaniam, Long Vu, Kiara White, Modong Yang and Wail Yar 
 4. Continue to make progress on [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md), due 2020-09-07. 
-    - You should be able to complete all four parts as soon as Dr. Love opens up the [Survey for Lab 01](http://bit.ly/431-2020-lab01-survey) at http://bit.ly/431-2020-lab01-survey. 
+    - You should be able to complete all four parts now that Dr. Love has opened up the [Survey for Lab 01](http://bit.ly/431-2020-lab01-survey) at http://bit.ly/431-2020-lab01-survey.
     - Note that the survey for Lab 01 is DIFFERENT than the [Minute Paper after Class 03](http://bit.ly/431-2020-minute-03), which is at http://bit.ly/431-2020-lab01-survey.
 5. The [RStudio Primers](https://rstudio.cloud/learn/primers) are a great place to get started working with R if you've never used it before.
 
