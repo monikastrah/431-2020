@@ -42,7 +42,7 @@ Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
     - This involves completing a Google Form at http://bit.ly/431-2020-minute-03: be sure to log into Google via your CWRU account to see the form.
     - The [general page for Minute Papers](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md) is here. Get used to doing these on Tuesdays after class. They are **the main part** of your Class Participation grade.
     - You should complete all of these Minute Papers this semester, regardless of whether you've seen the most recent class (in this case, Class 03) yet.
-2. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Rod Nault, Will Patterson, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read all of the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) (as of 2020-09-01 at Noon). I hope you all will do this very soon.
+2. Thanks to Clara Harb, Derrick Liu, Jill Miracle, Rod Nault, Will Patterson, Joe Powell, Maggie Rybak, Amir Sadri, Sam Waddell, Mia Wang, Emily Zetzer and Michael Zhang for proving to me that they have read all of the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) (as of 2020-09-01 at Noon). I hope you all will do this very soon.
 3. The following students have not yet accepted the invitation to join the Piazza class discussion forum as of 2020-08-31 at 10:30 PM. 
     - Check your preferred email's junk/spam folder for the invitation from me through Piazza and get this resolved, please.
         - Asma Almijlad, Akif Gormez, Jane Hinkle, Natasha Ingles, Jeff Kovach, Joe Magoline, 
