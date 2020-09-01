@@ -11,4 +11,4 @@ I'll build a small live demo in class, but I've also built a more complete docum
 
 - [`431-class-03-demo-full.Rmd`](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/demo/431-class-03-demo-full.Rmd)
 - You can see the resulting HTML file by visiting https://rpubs.com/TELOVE/class03-demo-431-2020-preclass.
-- A PDF of this (pre-class) full demo is also available for download.
+- A PDF of this (pre-class) full demo is [also available for download](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/demo/431-class-03-demo-full.pdf).
