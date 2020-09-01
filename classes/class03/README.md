@@ -3,7 +3,8 @@
 - [Main Class Website](https://thomaselove.github.io/431/)
 - [Course Calendar](https://thomaselove.github.io/431/calendar.html)
 - Visit [Canvas](https://canvas.case.edu) for the Zoom link for today's class (and to access the recording afterwards.) 
-    - Links for all Zoom classes (not just the first four) are now available there. Please be sure to log into Zoom through your CWRU account.
+    - Links for all Zoom classes (not just the first four) are now available there. 
+    - Please be sure to log into Zoom through your CWRU account.
 
 ## Today's Slides
 
