@@ -55,4 +55,6 @@ Sundays | 10:30 to 11:30 AM | - | 6:30 to 8:00 PM
 
 1. The [Main Class Website](https://thomaselove.github.io/431/) now links to new material on [R Tutorials](https://github.com/THOMASELOVE/431-2020/blob/master/software/README.md).
 2. Names shared by two people in this class include: Ali, Emily, Joe, Lindsay and Michael. I'll try to avoid confusion.
-
+3. New Data Sets are available at [our Data page](https://github.com/THOMASELOVE/431-data)
+    - I've updated the age guesses from the 10 photos we looked at in Class 01, and that's in the [photo-age-history-2020.csv](https://github.com/THOMASELOVE/431-data/blob/master/photo-age-history-2020.csv) file.
+    - I've updated the "simple" survey we did in Class 02, and that's in the [surveyday1_2020.csv](https://github.com/THOMASELOVE/431-data/blob/master/surveyday1_2020.csv) file.
