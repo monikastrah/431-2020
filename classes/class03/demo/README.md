@@ -7,7 +7,7 @@ Materials for the demo are posted in this folder. This includes:
 
 which is all I'll use to start.
 
-The live demo from class is available in HTML at https://rpubs.com/TELOVE/class03-live-demo-431-2020.
+The live demo from class is available in HTML at https://rpubs.com/TELOVE/class03-live-demo-431-2020 and [in R Markdown here](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class03/demo/live-demo.Rmd).
 
 I'll build a small live demo in class, but I've also built a more complete document, which is available as 
 
