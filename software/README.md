@@ -22,3 +22,8 @@ Professor Love's document entitled **Getting Started with R** is a good first st
 
 Our Main Recommendation is that you visit and explore the resources at  [RStudio Education's Beginners page](https://education.rstudio.com/learn/beginner/). A particularly nice resource is Chester Ismay and Patrick Kennedy's [Getting Used to R, RStudio and R Markdown](https://rbasics.netlify.app/) for those of you looking for an introduction to the basics.
  
+## RStudio Primers
+ 
+The [RStudio Primers](https://rstudio.cloud/learn/primers) are especially helpful for those of you for whom R or the tidyverse are new things, and who like interactive tutorials. 
+
+- The tutorials I recommend most strongly are: [The Basics](https://rstudio.cloud/learn/primers/1), [Work with Data](https://rstudio.cloud/learn/primers/2), [Visualize Data](https://rstudio.cloud/learn/primers/3) and [Tidy Your Data](https://rstudio.cloud/learn/primers/4), all of which would be helpful to review before our first Quiz.
