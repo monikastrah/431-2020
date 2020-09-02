@@ -30,7 +30,7 @@ To be announced
 ## Announcements
 
 1. Dr. Love will present some reactions to the Minute Paper after Class 03.
-  - Depending on when you completed the Minute Paper, you may have been asked about Leek twice and Spiegelhalter not at all. Sorry about that mistake.
+    - Depending on when you completed the Minute Paper, you may have been asked about Leek twice and Spiegelhalter not at all. Sorry about that mistake.
 2. The best cheat sheets for working with our tools, in my opinion, are the [R Studio Cheatsheets](https://rstudio.com/resources/cheatsheets/).  The ones I use most often are (all are PDF downloads):
     - [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf) with `ggplot2`, 
     - [Data Transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) with `dplyr`, 
