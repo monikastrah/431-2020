@@ -27,7 +27,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
         - The ones I would recommend most strongly are: [The Basics](https://rstudio.cloud/learn/primers/1), [Work with Data](https://rstudio.cloud/learn/primers/2), [Visualize Data](https://rstudio.cloud/learn/primers/3) and [Tidy Your Data](https://rstudio.cloud/learn/primers/4), all of which would be helpful to review before our first Quiz.
     - I strongly recommend the book [R for Data Science](https://r4ds.had.co.nz/) which is incredibly helpful in thinking about how to do data science effectively.
 
-## Next Deliverables: What Should I Be Working On?
+## What Should I Be Working On?
 
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by the end of the day Friday. 
     - As of `2020-09-02 at 6:45 PM`, only 45 of you have done so, out of 73 enrolled students. I've responded via email to each of the 45 who've done this.
