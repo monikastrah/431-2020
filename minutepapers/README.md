@@ -1,5 +1,7 @@
 # Minute Papers for 431
 
+- You'll need to be logged into Google via CWRU to complete the Minute Papers, or to review the feedback.
+
 After Class | due | Link to Minute Paper Form | Link to Dr. Love's Feedback
 ----------: | ------: | --------: | ----------:
 3 (2020-09-01) | 2020-09-02 NOON | http://bit.ly/431-2020-minute-03 | http://bit.ly/431-2020-minute-03-feedback
