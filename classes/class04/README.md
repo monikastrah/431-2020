@@ -11,22 +11,6 @@ for everything | for deadlines | comprehensive | from Dr. Love | ways to get hel
 
 - When available, Class 04 slides will be posted in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.Rmd).
 
-## Today's Breakout Activity
-
-To be announced
-
-## Next Deliverables: What Should I Be Working On?
-
-- Check the [Course Calendar](https://thomaselove.github.io/431/calendar.html) for all deadlines.
-- The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by the end of the day Friday.
-- [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due 2020-09-07 (You should now be able to complete all four parts.)
-- [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due 2020-09-14 (You should be able to do all 7 parts now.)
-- Readings: make sure that you're up to date, including required reading of Leek and also Spiegelhalter (see Lab 02, question 7).
-    - In the [Course Notes](https://thomaselove.github.io/431-notes/), you should read as you like. We're covering material in class that is also covered in Chapters 1-6.
-- Remember that TA office hours are available every day of the week (see [Canvas](https://canvas.case.edu) for details and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
-    - Be sure that you've signed up for Piazza through the link I emailed to your preferred and CWRU emails, and connected to the course. (Check your spam folder for the invitation, if necessary.) 
-    - As of 2020-09-02 at 11 AM, we still are waiting for seven people.
-
 ## Announcements
 
 1. Dr. Love will present some reactions to the Minute Paper after Class 03.
@@ -43,3 +27,14 @@ To be announced
         - The ones I would recommend most strongly are: [The Basics](https://rstudio.cloud/learn/primers/1), [Work with Data](https://rstudio.cloud/learn/primers/2), [Visualize Data](https://rstudio.cloud/learn/primers/3) and [Tidy Your Data](https://rstudio.cloud/learn/primers/4), all of which would be helpful to review before our first Quiz.
     - I strongly recommend the book [R for Data Science](https://r4ds.had.co.nz/) which is incredibly helpful in thinking about how to do data science effectively.
 
+## Next Deliverables: What Should I Be Working On?
+
+- Check the [Course Calendar](https://thomaselove.github.io/431/calendar.html) for all deadlines.
+- The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by the end of the day Friday.
+- [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due 2020-09-07 (You should now be able to complete all four parts.)
+- [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due 2020-09-14 (You should be able to do all 7 parts now.)
+- Readings: make sure that you're up to date, including required reading of Leek and also Spiegelhalter (see Lab 02, question 7).
+    - In the [Course Notes](https://thomaselove.github.io/431-notes/), you should read as you like. We're covering material in class that is also covered in Chapters 1-6.
+- Remember that TA office hours are available every day of the week (see [Canvas](https://canvas.case.edu) for details and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
+    - Be sure that you've signed up for Piazza through the link I emailed to your preferred and CWRU emails, and connected to the course. (Check your spam folder for the invitation, if necessary.) 
+    - As of 2020-09-02 at 11 AM, we still are waiting for seven people.
