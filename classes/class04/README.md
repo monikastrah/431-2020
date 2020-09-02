@@ -38,5 +38,8 @@ To be announced
     - [Factors with forcats](https://github.com/rstudio/cheatsheets/raw/master/factors.pdf), 
     - the [RStudio IDE](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf), and 
     - [Data Import](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
-3. Don't forget about the other great resources provided by [RStudio Education](https://education.rstudio.com/) including [this Beginner pathway](https://education.rstudio.com/learn/beginner/) and especially including the book [R for Data Science](https://r4ds.had.co.nz/) which is incredibly helpful in thinking about how to do data science effectively.
+3. Don't forget about the other great resources provided by [RStudio Education](https://education.rstudio.com/) including [this Beginner pathway](https://education.rstudio.com/learn/beginner/).
+    - The [RStudio Primers](https://rstudio.cloud/learn/primers) are especially helpful for those of you who feel confused. 
+        - The ones I would recommend most strongly are: [The Basics](https://rstudio.cloud/learn/primers/1), [Work with Data](https://rstudio.cloud/learn/primers/2), [Visualize Data](https://rstudio.cloud/learn/primers/3) and [Tidy Your Data](https://rstudio.cloud/learn/primers/4), all of which would be helpful to review before our first Quiz.
+    - I strongly recommend the book [R for Data Science](https://r4ds.had.co.nz/) which is incredibly helpful in thinking about how to do data science effectively.
 
