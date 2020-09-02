@@ -29,15 +29,14 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Next Deliverables: What Should I Be Working On?
 
-- Check the [Course Calendar](https://thomaselove.github.io/431/calendar.html) for all deadlines.
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by the end of the day Friday. 
     - As of `2020-09-02 at 6:45 PM`, only 45 of you have done so, out of 73 enrolled students. I've responded via email to each of the 45 who've done this.
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due on Monday 2020-09-07 at 9 PM (Be sure to complete all four parts.)
 - [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due 2020-09-14 (You should be able to do all 7 parts now.)
-- Readings: make sure that you're up to date, including required reading of Leek and also Spiegelhalter (see Lab 02, question 7).
+- Readings: check the [Calendar](https://thomaselove.github.io/431/calendar.html) to be sure that you're up to date, including required reading of Leek and also Spiegelhalter (see Lab 02, question 7).
     - In the [Course Notes](https://thomaselove.github.io/431-notes/), you should read as you like. We're covering material in class that is also covered in Chapters 1-6.
-- Remember that TA office hours are available every day of the week (see the Announcements folder in [Canvas](https://canvas.case.edu) for schedule and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
+- TA office hours are available every day of the week (see the Announcements folder in [Canvas](https://canvas.case.edu) for schedule and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
     - When asking a question of a TA or on Piazza, be sure to provide enough information so we can help you. 
-        - This might include your R Markdown file, and a screenshot of the error you're getting, for an R question, for example.
+        - For an R question, this might include your R Markdown file, and a screenshot of the error you're getting, for example.
     - As of `2020-09-02 at 6:45 PM`, 6 of you (**Akif Gormez**, **Sarah Simmons**, **Enrique Soltero Mariscal**, **Ananya Subramaniam**, **Kiara White** and **Modong Yang**) are not yet signed up for Piazza and connected to the course. This isn't optional and should be done **today**. Check your spam folder for the invitation, if necessary, and contact Dr. Love via email (`Thomas dot Love at case dot edu`) if you have questions about signing up for Piazza.
 
