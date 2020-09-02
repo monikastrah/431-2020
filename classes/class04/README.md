@@ -4,7 +4,7 @@
 
 [Main Website](https://thomaselove.github.io/431/) | [Course Calendar](https://thomaselove.github.io/431/calendar.html) | [Syllabus](https://thomaselove.github.io/431-2020-syllabus/) | [Course Notes](https://thomaselove.github.io/431-notes/) | [Piazza & TA Office Hours](https://thomaselove.github.io/431/contact.html) | [Canvas](https://canvas.case.edu) | [Data and Code](https://thomaselove.github.io/431/data_index.html)
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
-for everything | for deadlines | comprehensive | from Dr. Love | ways to get help | zoom information | for downloads
+for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
 
 ## Today's Slides
