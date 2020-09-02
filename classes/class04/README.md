@@ -9,7 +9,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Today's Slides
 
-- When available, Class 04 slides will be posted in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.Rmd).
+- Class 04 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.Rmd).
 
 ## Announcements
 
