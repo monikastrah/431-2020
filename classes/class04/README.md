@@ -26,7 +26,6 @@ To be announced
 - Remember that TA office hours are available every day of the week (see [Canvas](https://canvas.case.edu) for details and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
     - Be sure that you've signed up for Piazza through the link I emailed to your preferred and CWRU emails, and connected to the course. (Check your spam folder for the invitation, if necessary.) 
     - As of 2020-09-02 at 11 AM, we still are waiting for seven people.
-    - 
 
 ## Announcements
 
