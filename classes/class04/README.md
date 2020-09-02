@@ -18,7 +18,7 @@ To be announced
 ## Next Deliverables: What Should I Be Working On?
 
 - Check the [Course Calendar](https://thomaselove.github.io/431/calendar.html) for all deadlines.
-- Cpmplete the small task that proves you've reviewed the entire [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) by the end of the day tomorrow.
+- The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by the end of the day Friday.
 - Lab 01 is due 2020-09-07 (You should now be able to complete all four parts.)
 - Lab 02 is due 2020-09-14
 - Readings: make sure that you're up to date
