@@ -3,11 +3,12 @@
 - [Main Class Website](https://thomaselove.github.io/431/)
 - [Course Calendar](https://thomaselove.github.io/431/calendar.html)
 - Visit [Canvas](https://canvas.case.edu) for the Zoom link for today's class (and to access the recording afterwards.) 
-    - Links to the Zoom classes for the rest of the semester should appear on Canvas soon.
 
 ## Today's Slides
 
 - When available, Class 04 slides will be posted in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class04/431_class-04-slides_2020.Rmd).
+
+> Without data, you're just another person with an opinion. (W. Edwards Deming)
 
 ## Today's Breakout Activity
 
@@ -26,7 +27,7 @@ To be announced
 - Lab 01 deadline - see the [Calendar] for all deadlines.
     - You should now be able to complete all four parts of Lab 01.
 - Lab 02 deadline
-- Reading
+- Readings - check the Calendar to see that you're up to date.
 
 ## What Should I Be Working On?
 
