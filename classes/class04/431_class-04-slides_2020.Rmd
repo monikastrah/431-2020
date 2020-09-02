@@ -1,0 +1,502 @@
+---
+title: "431 Class 04"
+author: "thomaselove.github.io/431"
+date: "2020-09-03"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 55)
+```
+
+## Today's Agenda
+
+- Working with the "Simple" Survey data again
+- Dealing with types of variables
+    - Turning characters into factors
+- Numerical summaries of quantities and categorical variables
+- Visualizing distributions
+    - of quantitative variables (histograms)
+    - of quantities stratified by categories (violin plots, boxplots)
+    - using faceting to stratify by categories
+- Some Coding "Tricks" in the tidyverse
+- Bonus Content: Reviewing the Photo Age Guesses from Class 01
+
+## R Packages loaded for today's class
+
+```{r}
+library(patchwork)  # to combine plots
+library(knitr)      # for the kable function 
+```
+
+## Main package for today's class
+
+```{r}
+library(tidyverse)  # includes essential packages
+```
+
+
+### We always load the tidyverse last
+
+It helps resolve some (but not all) conflicts.
+
+## Data Science
+
+![](images/data-science.png)
+
+## Load in some data...
+
+```{r}
+day1 <- read_csv("data/surveyday1_2020.csv")
+```
+
+- `col_double()` means a double-precision (number)
+- `col_character()` means a string (non-numeric)
+
+## `day1`
+
+```{r, echo = FALSE}
+day1
+```
+
+## Summary of some `day1` variables
+
+```{r}
+day1 %>% select(english, lastsleep, year) %>% summary()
+```
+
+# Working with Factors
+
+## Convert a "character" variable to a "factor"
+
+```{r}
+day1 <- day1 %>% mutate(english_fac = as.factor(english))
+
+day1 %>% select(english, english_fac) %>% summary()
+```
+
+## Convert to a factor and recode the levels
+
+```{r}
+day1 <- day1 %>% 
+  mutate(english_fac = as.factor(english)) %>%
+  mutate(english_det = fct_recode(english_fac, 
+                                  "Not English" = "n",
+                                  "English" = "y"))
+
+day1 %>% select(english, english_fac, english_det) %>% 
+  summary()
+```
+
+## Convert a numeric code to a "factor"
+
+```{r}
+day1 <- day1 %>% 
+  mutate(smoke_fac = as.factor(smoke)) %>%
+  mutate(smoke_det = fct_recode(smoke_fac, 
+          Never = "1", Quit = "2", Current = "3"))
+
+day1 %>% select(smoke, smoke_fac, smoke_det) %>% summary()
+```
+
+# Numerical Summaries of Quantities
+
+## Summarizing the Sleep Times
+
+```{r}
+mosaic::favstats(~ lastsleep, data = day1)
+```
+
+## Stop the messages about this...
+
+![](images/drop_messages.png)
+
+
+
+## Breaking down Sleep Hours, by Year
+
+```{r}
+mosaic::favstats(lastsleep ~ year, data = day1)
+```
+
+## Using `kable` to specify decimal places
+
+```{r}
+mosaic::favstats(lastsleep ~ year, data = day1) %>%
+  kable(digits = 2)
+```
+
+# Visualizing the distribution of a variable with a Histogram
+
+## Plot 1. Initial Attempt
+
+```{r, warning = FALSE, fig.height = 4}
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
+  geom_histogram(col = "blue")
+```
+
+## Plot 2. New Version: fill is *salmon*, using 20 bins.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(bins = 20, col = "blue", fill = "salmon") +
+  labs(x = "Height (inches) of Students in 431", 
+       y = "# of Students",
+       title = "Heights of 378 students in 431",
+       subtitle = "4 students had missing heights")
+```
+
+## How do we get from plot 1 to plot 2?
+
+```{r, echo = FALSE, message = FALSE, fig.height = 4}
+p1 <- day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(col = "blue")
+
+p2 <- day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(bins = 20, col = "blue", fill = "salmon") +
+  labs(x = "Height (inches) of Students in 431", 
+       y = "# of Students",
+       title = "Heights of 378 students in 431",
+       subtitle = "4 students had missing heights")
+
+p1 + p2 + plot_annotation(tag_levels = '1')
+```
+
+>- What do we need to change?
+>- salmon color for the "fill" of the histogram's bars
+>- specify 20 bins in the histogram
+>- relabel the x and y axes
+>- add title and subtitle
+
+## Starting with Plot 1. Initial Attempt
+
+```{r, warning = FALSE, fig.height = 4}
+day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(col = "blue")
+```
+
+## Add salmon fill, use 20 bins
+
+```{r, warning = FALSE, message = FALSE, fig.height = 4}
+day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(bins = 20, col = "blue", fill = "salmon")
+```
+
+## Now relabel x and y axes
+
+```{r, warning = FALSE, message = FALSE, fig.height = 4}
+day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(bins = 20, col = "blue", fill = "salmon") +
+  labs(x = "Height (inches) of Students in 431", 
+       y = "# of Students")
+```
+
+## How many students provided their height?
+
+```{r}
+nrow(day1)
+```
+
+
+```{r}
+mosaic::favstats(~ height.in, data = day1)
+```
+
+## Actual Code for Plot 2 (adds title and subtitle)
+
+```{r, warning = FALSE, fig.height = 3.5}
+day1 %>% filter(complete.cases(pulse)) %>%
+  ggplot(data = ., aes(x = pulse)) +
+  geom_histogram(bins = 20, col = "blue", fill = "salmon") +
+  labs(x = "Height (inches) of Students in 431", 
+       y = "# of Students",
+       title = "Heights of 378 students in 431",
+       subtitle = "4 students had missing heights")
+```
+
+# Violin Plots and Boxplots to Compare Distributions of a Quantitative Variable across levels of a Categorical Variable
+
+## Can we look at the Height Distributions by Year?
+
+```{r, fig.height = 3.5}
+ggplot(day1, aes(x = factor(year), y = height.in)) +
+  geom_violin()
+```
+
+## Remove missing values, revise axis labels
+
+```{r, fig.height = 4}
+day1 %>% filter(complete.cases(year, height.in)) %>%
+  ggplot(., aes(x = factor(year), y = height.in)) +
+  geom_violin() +
+  labs(x = "Year", y = "Height (inches)")
+```
+
+## Table summarizing Student Heights, by Year
+
+```{r}
+mosaic::favstats(height.in ~ year, data = day1) %>%
+  kable(digits = 1)
+```
+
+## What's in a Boxplot
+
+- The central box in a boxplot indicates the 25th (Q1), 50th (median) and 75th (Q3) percentiles.
+- It uses the interquartile range (IQR = Q3 - Q1) as a measure of spread.
+- Points more than 1.5 IQR below Q1 or more than 1.5 IQR above Q3 are candidate **outliers**.
+- The "whiskers" in the plot extend from Q1 down to the smallest non-outlier and from Q3 up to the largest non-outlier.
+
+Who invented the boxplot (or box-and-whiskers plot)? John **Tukey**.
+
+---
+
+![](images/tukey-unexpected.png)
+
+## Add Boxplots: Height Distributions by Year?
+
+```{r, fig.height = 4}
+day1 %>% filter(complete.cases(year, height.in)) %>%
+  ggplot(., aes(x = factor(year), y = height.in)) +
+  geom_violin() +
+  geom_boxplot(width = 0.3) +
+  labs(x = "Year", y = "Height (inches)")
+```
+
+## Add fill for the boxes?
+
+```{r, fig.height = 4}
+day1 %>% filter(complete.cases(year, height.in)) %>%
+  ggplot(., aes(x = factor(year), y = height.in)) +
+  geom_violin() +
+  geom_boxplot(aes(fill = factor(year)), width = 0.3) +
+  labs(x = "Year", y = "Height (inches)")
+```
+
+## Drop unnecessary "guides" (legend)
+
+```{r, fig.height = 4}
+day1 %>% filter(complete.cases(year, height.in)) %>%
+  ggplot(., aes(x = factor(year), y = height.in)) +
+  geom_violin() +
+  geom_boxplot(aes(fill = factor(year)), width = 0.3) +
+  guides(fill = FALSE) +
+  labs(x = "Year", y = "Height (inches)")
+```
+
+## Scale violins by sample size and add fill
+
+```{r, fig.height = 4}
+day1 %>% filter(complete.cases(year, height.in)) %>%
+  ggplot(., aes(x = factor(year), y = height.in)) +
+  geom_violin(aes(fill = factor(year)), scale = "count") +
+  geom_boxplot(width = 0.2) +
+  guides(fill = FALSE) +
+  labs(x = "Year", y = "Height (inches)")
+```
+
+## Association of height and language?
+
+```{r, fig.height = 4}
+day1 %>% filter(complete.cases(english_det, height.in)) %>%
+  ggplot(., aes(x = english_det, y = height.in)) +
+  geom_violin(aes(fill = english_det), scale = "count") +
+  geom_boxplot(width = 0.1) +
+  guides(fill = FALSE) +
+  labs(x = "Most Comfortable Language", y = "Height (inches)")
+```
+
+## Height by Language
+
+```{r}
+mosaic::favstats(height.in ~ english_det, data = day1) %>%
+  kable(digits = 1)
+```
+
+## Association of height with smoking status?
+
+```{r, fig.height = 4}
+day1 %>% filter(complete.cases(smoke_det, height.in)) %>%
+  ggplot(., aes(x = smoke_det, y = height.in)) +
+  geom_violin(scale = "count") +
+  geom_boxplot(aes(fill = smoke_det), width = 0.1) +
+  guides(fill = FALSE) +
+  labs(x = "Smoking Status", y = "Height (inches)")
+```
+
+## Height by Smoking Status
+
+```{r}
+mosaic::favstats(height.in ~ smoke_det, data = day1) %>%
+  kable(digits = 1)
+```
+
+# Working with Facets
+
+## Height Distributions, Faceted by Year
+
+```{r, echo = FALSE}
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in, fill = factor(year))) + 
+  geom_histogram(binwidth = 1, col = "white") + 
+  facet_wrap(~ year) +
+  guides(fill = FALSE) +
+  labs(title = "Student Height Distribution, by Year",
+       x = "Height (inches)")
+```
+
+## Code for plot on previous slide
+
+```{r, eval = FALSE}
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in, fill = factor(year))) + 
+  geom_histogram(binwidth = 1, col = "white") + 
+  facet_wrap(~ year) +
+  guides(fill = FALSE) +
+  labs(title = "Student Height Distribution, by Year",
+       x = "Height (inches)")
+```
+
+## What do you think this will do?
+
+```{r, eval = FALSE}
+day1 %>% filter(complete.cases(height.in, english_det, year)) %>%
+  ggplot(data = ., 
+         aes(x = height.in, fill = factor(english_det))) + 
+  geom_histogram(binwidth = 1, col = "white") + 
+  facet_grid(english_det ~ year) +
+  guides(fill = FALSE) +
+  labs(x = "Height (inches)")
+```
+
+Result on next slide...
+
+## Faceted Histograms of Height by Language, Year
+
+```{r, echo = FALSE}
+day1 %>% filter(complete.cases(height.in, english_det, year)) %>%
+  ggplot(data = ., 
+         aes(x = height.in, fill = factor(english_det))) + 
+  geom_histogram(binwidth = 1, col = "white") + 
+  facet_grid(english_det ~ year) +
+  guides(fill = FALSE) +
+  labs(x = "Height (inches)")
+```
+
+## What do you think this will do?
+
+```{r, eval = FALSE}
+day1 %>% 
+  filter(complete.cases(height.in, lastsleep, 
+                        english_det)) %>%
+  ggplot(data = ., 
+         aes(x = height.in, y = lastsleep, 
+             color = english_det)) + 
+  geom_point() +
+  facet_grid(english_det ~ year) +
+  guides(color = FALSE) +
+  labs(x = "Height (inches)", y = "Sleep (hours)")
+```
+
+Result on next slide...
+
+## Faceted Scatterplots from Previous Slide
+
+```{r, echo = FALSE}
+day1 %>% 
+  filter(complete.cases(height.in, lastsleep, 
+                        english_det)) %>%
+  ggplot(data = ., 
+         aes(x = height.in, y = lastsleep, 
+             color = english_det)) + 
+  geom_point() +
+  facet_grid(english_det ~ year) +
+  guides(color = FALSE) +
+  labs(x = "Height (inches)", y = "Sleep (hours)")
+```
+
+## Next Time
+
+That's the end of the slides for Class 03.
+
+- More intricate data work in R
+- Visualizing associations
+- Linking visualizations to models
+- A new example
+
+The remainder of this PDF looks at the age guessing activity we did in Class 01, but now you can compare 2020 results to previous years.
+
+## Age Guessing Activity from Class 01
+
+![](images/agesandphotos.png)
+
+## Age Guessing (including 2020)
+
+```{r, message = FALSE}
+ageguess <- read_csv("data/photo-age-history-2020.csv")
+```
+
+```{r show age guess tibble, echo=FALSE}
+knitr::kable(ageguess[1:10,1:8])
+```
+
+## Scatterplot of Results by Year, 1
+
+```{r guess_vs_true_age_by_year_1, echo=FALSE}
+ggplot(ageguess, aes(x = true.age, y = mean.estimate, col = factor(year))) +
+  geom_point(size = 3) +
+  theme(axis.text = element_text(size = 14),
+        axis.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12, face = "bold")) +
+  guides(col = FALSE) +
+  facet_wrap(~ year)
+```
+
+## Scatterplot of Results by Year, 2
+
+```{r guess_vs_true_age_by_year_2, echo=FALSE}
+ggplot(ageguess, aes(x = true.age, y = mean.estimate, col = factor(year))) +
+  geom_point(position = "jitter", size = 3) +
+  geom_abline(intercept = 0, slope = 1) + 
+  theme(axis.text = element_text(size = 14),
+        axis.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12, face = "bold")) +
+  labs(title = "Age Guessing in Previous Years",
+       x = "True Age", y = "Mean Class-Wide Estimate")
+```
+
+## Mean Class-Wide Guesses (2014-2020 combined)
+
+![](images/agesandphotos2014-2020guesses.png)
+
+## Scatterplot of 2020 Results with Labels
+
+```{r error_vs_true_age_2020_labeled, echo = FALSE}
+ggplot(filter(ageguess, year == 2020), aes(x = true.age, y = error, fill = sex)) +
+  geom_label(aes(label = label)) +
+  geom_hline(yintercept = 0) + 
+    guides(fill = FALSE) +
+  theme(axis.text = element_text(size = 14),
+        axis.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12, face = "bold")) +
+  labs(title = "Errors in 2020 Age Guessing, by Subject's Sex",
+       x = "True Age", y = "Error in Class-Wide Estimate") + 
+    theme_bw() + 
+    facet_wrap(~ sex)
+```
