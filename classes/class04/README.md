@@ -29,7 +29,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by the end of the day Friday. 
-    - As of `2020-09-02 at 6:45 PM`, only 45 of you have done so, out of 73 enrolled students. I've responded via email to each of the 45 who've done this.
+    - As of `2020-09-02 at 7:15 PM`, 47 of you have done so, out of 73 enrolled students. I've responded via email to each of you who've done this.
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due on Monday 2020-09-07 at 9 PM (Be sure to complete all four parts.)
 - [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due 2020-09-14 (You should be able to do all 7 parts now.)
 - Readings: check the [Calendar](https://thomaselove.github.io/431/calendar.html) to be sure that you're up to date, including required reading of Leek and also Spiegelhalter (see Lab 02, question 7).
