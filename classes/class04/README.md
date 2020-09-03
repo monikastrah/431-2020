@@ -38,7 +38,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## OPTIONAL: The [COVID-19 page](https://github.com/THOMASELOVE/covid19)
 
-As the semester continues, I will occasionally post links to things at a page about COVID-19 and news related to it that you might be interested in. I won't discuss this material in regular class sessions, and it's completely optional. Visit the page at https://github.com/THOMASELOVE/covid19.
+I will occasionally post links to things at a page about COVID-19 and news related to it that you might be interested in. I won't discuss this material in regular class sessions, and it's completely optional. Visit the page at https://github.com/THOMASELOVE/covid19.
 
 ## What Should I Be Working On?
 
