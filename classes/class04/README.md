@@ -36,10 +36,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 6. You might also be interested in the series of modules on statistics and R found at [Teacups, Giraffes and Statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/index.html). Included are modules on the Normal distribution, measures of center and spread, covariance and correlation and standard error.
 7. You might be interested in a new video series entitled "[The Philosophy of Data Science](https://www.podofasclepius.com/philosophy-of-data-science)" sponsored by Pod of Ascelepius (which is a health care technology podcast.)  The series is aimed at early-career statisticians and data scientists, to provide an in-depth understanding of how scientific reasoning is essential to good practical data science. It is open to anyone interested in improving their scientific skills as a data scientist or is just generally interested in critical scientific reasoning.
 
-## OPTIONAL: The [COVID-19 page](https://github.com/THOMASELOVE/covid19)
-
-I will occasionally post links to things at a page about COVID-19 and news related to it that you might be interested in. I won't discuss this material in regular class sessions, and it's completely optional. Visit the page at https://github.com/THOMASELOVE/covid19.
-
 ## What Should I Be Working On?
 
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by NOON **Friday** 2020-09-04. 
@@ -58,6 +54,10 @@ Responses | 14 | 13 | 25
 - When asking a question of a TA or on Piazza, be sure to provide enough information so we can help you. 
     - For an R question, this will usually mean including your entire R Markdown file (not just a part of it), and a screenshot of the error you're getting, for example.
 - As of 11:30 AM on 2020-09-03, just one student is still unconnected to the Piazza forum for the course. If you have any questions, please let me know.
+
+## OPTIONAL: The [COVID-19 page](https://github.com/THOMASELOVE/covid19)
+
+I will occasionally post links to things at a page about COVID-19 and news related to it that you might be interested in. I won't discuss this material in regular class sessions, and it's completely optional. Visit the page at https://github.com/THOMASELOVE/covid19.
 
 ## One Last Thing
 
