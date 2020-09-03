@@ -40,7 +40,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - In the [Course Notes](https://thomaselove.github.io/431-notes/), you should read as you like. We're covering material in class that is also covered in Chapters 1-6.
 - TA office hours are available every day of the week (see the Announcements folder in [Canvas](https://canvas.case.edu) for schedule and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
     - When asking a question of a TA or on Piazza, be sure to provide enough information so we can help you. 
-        - For an R question, this might include your R Markdown file, and a screenshot of the error you're getting, for example.
+        - For an R question, this will usually mean including your entire R Markdown file (not just a part of it), and a screenshot of the error you're getting, for example.
     - As of `2020-09-02 at 6:45 PM`, 6 of you (**Akif Gormez**, **Sarah Simmons**, **Enrique Soltero Mariscal**, **Ananya Subramaniam**, **Kiara White** and **Modong Yang**) are not yet signed up for Piazza and connected to the course. This isn't optional and should be done **today**. 
         - Check your spam folder for the invitation, and contact Dr. Love via email (`Thomas dot Love at case dot edu`) if you have questions about signing up for Piazza.
 
