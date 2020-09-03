@@ -43,11 +43,11 @@ I will occasionally post links to things at a page about COVID-19 and news relat
 ## What Should I Be Working On?
 
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by NOON **Friday** 2020-09-04. 
-    - As of `2020-09-03 at 10:30 AM`, 51 of you have done so, leaving 22 still to do so. I've responded via email to each of you who've completed this task.
+    - As of `2020-09-03 at 10:30 AM`, I have this from 51 of you, and I've responded via email to each of you who've completed this task.
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due on Monday 2020-09-07 at 9 PM (Be sure to complete all four parts.)
     - As of 11:30 AM on 2020-09-03, I have:
 
-Lab 01 | Part 1 (video) | Part 2 & 3 (essays) | Part 4 (survey response)
+Lab 01 | Part 1 (video) | Part 2 & 3 (essays) | Part 4 (survey)
 :------: | :------: | :----------------: | :---------:
 Responses | 14 | 13 | 25
 
