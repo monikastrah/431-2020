@@ -14,21 +14,21 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Dr. Love will present some [reactions to the Minute Paper after Class 03](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers).
     - Depending on when you completed the Minute Paper, you may have been asked about Leek twice and Spiegelhalter not at all. Sorry about that mistake.
-2. The best cheat sheets for working with our tools, in my opinion, are the [R Studio Cheatsheets](https://rstudio.com/resources/cheatsheets/).  The ones I use most often are (all are PDF downloads):
+3. The best cheat sheets for working with our tools, in my opinion, are the [R Studio Cheatsheets](https://rstudio.com/resources/cheatsheets/).  The ones I use most often are (all are PDF downloads):
     - [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf) with `ggplot2`, 
     - [Data Transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) with `dplyr`, 
     - [R Markdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf), and the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf), 
     - [Factors with forcats](https://github.com/rstudio/cheatsheets/raw/master/factors.pdf), 
     - the [RStudio IDE](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf), and 
     - [Data Import](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
-3. Don't forget about the other great resources provided by [RStudio Education](https://education.rstudio.com/) including [this Beginner pathway](https://education.rstudio.com/learn/beginner/).
+4. Don't forget about the other great resources provided by [RStudio Education](https://education.rstudio.com/) including [this Beginner pathway](https://education.rstudio.com/learn/beginner/).
     - The [RStudio Primers](https://rstudio.cloud/learn/primers) are especially helpful for those of you for whom R or the tidyverse are new things, and who like interactive tutorials. 
         - The ones I would recommend most strongly are: [The Basics](https://rstudio.cloud/learn/primers/1), [Work with Data](https://rstudio.cloud/learn/primers/2), [Visualize Data](https://rstudio.cloud/learn/primers/3) and [Tidy Your Data](https://rstudio.cloud/learn/primers/4), all of which would be helpful to review before our first Quiz.
     - I strongly recommend the book [R for Data Science](https://r4ds.had.co.nz/) which is incredibly helpful in thinking about how to do data science effectively.
-4. The [R Bootcamp for the tidyverse](https://r-bootcamp.netlify.app/) looks very useful. 
+5. The [R Bootcamp for the tidyverse](https://r-bootcamp.netlify.app/) looks very useful. 
     - Chapters include [The magic of ggplot2](https://r-bootcamp.netlify.app/chapter1), [ggplot2 and categorical data](https://r-bootcamp.netlify.app/chapter2), [Introduction to dplyr](https://r-bootcamp.netlify.app/chapter3), [The Whys and Hows of Tidy Data](https://r-bootcamp.netlify.app/chapter4), and [Simple Stats and Modeling with broom](https://r-bootcamp.netlify.app/chapter5), all of which should be helpful in the early stages of 431 (classes 1-14 or so.)
-5. You might also be interested in the series of modules on statistics and R found at [Teacups, Giraffes and Statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/index.html). Included are modules on the Normal distribution, measures of center and spread, covariance and correlation and standard error.
-6. You might be interested in a new video series entitled "[The Philosophy of Data Science](https://www.podofasclepius.com/philosophy-of-data-science)" sponsored by Pod of Ascelepius (which is a health care technology podcast.)  The series is aimed at early-career statisticians and data scientists, to provide an in-depth understanding of how scientific reasoning is essential to good practical data science. It is open to anyone interested in improving their scientific skills as a data scientist or is just generally interested in critical scientific reasoning.
+6. You might also be interested in the series of modules on statistics and R found at [Teacups, Giraffes and Statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/index.html). Included are modules on the Normal distribution, measures of center and spread, covariance and correlation and standard error.
+7. You might be interested in a new video series entitled "[The Philosophy of Data Science](https://www.podofasclepius.com/philosophy-of-data-science)" sponsored by Pod of Ascelepius (which is a health care technology podcast.)  The series is aimed at early-career statisticians and data scientists, to provide an in-depth understanding of how scientific reasoning is essential to good practical data science. It is open to anyone interested in improving their scientific skills as a data scientist or is just generally interested in critical scientific reasoning.
 
 ## What Should I Be Working On?
 
@@ -45,3 +45,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
         - If you HAVE signed up, then this may just be a matter of you adding your name to the account you are using. To do so, click on the little gear at the top right of any piazza screen, and go into Personal Settings. There, please do include your Full Name, as it requests, and your preferred email should then be visible for the account you want to use. Be sure that the PQHS 431 class is listed for you there. Then hit Save Profile. Let me know that you've done this, and I can then check to see that's come through on my end.
         - If you haven't signed up, check your spam folder for the invitation, and contact Dr. Love via email (`Thomas dot Love at case dot edu`) if you have questions about signing up for Piazza.
 
+## One Last Thing
+
+![https://xkcd.com/2341/](https://imgs.xkcd.com/comics/scientist_tech_help.png)
