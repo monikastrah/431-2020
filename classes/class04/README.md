@@ -39,17 +39,15 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by NOON **Friday** 2020-09-04. 
-    - As of `2020-09-02 at 10 PM`, 49 of you have done so, out of 73 enrolled students. I've responded via email to each of you who've completed this task.
+    - As of `2020-09-03 at 10:30 AM`, 51 of you have done so, leaving 22 still to do so. I've responded via email to each of you who've completed this task.
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due on Monday 2020-09-07 at 9 PM (Be sure to complete all four parts.)
 - [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due 2020-09-14 (You should be able to do all 7 parts now.)
 - Readings: check the [Calendar](https://thomaselove.github.io/431/calendar.html) to be sure that you're up to date with Leek and also with Spiegelhalter (see Lab 02, question 7.)
     - In the [Course Notes](https://thomaselove.github.io/431-notes/), you should read as you like. We're covering material in class that is also covered in Chapters 1-6.
 - TA office hours are available every day of the week (see the Announcements folder in [Canvas](https://canvas.case.edu) for schedule and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
-    - When asking a question of a TA or on Piazza, be sure to provide enough information so we can help you. 
-        - For an R question, this will usually mean including your entire R Markdown file (not just a part of it), and a screenshot of the error you're getting, for example.
-    - As of `2020-09-02 at 10 PM`, 6 of you (**Akif Gormez**, **Sarah Simmons**, **Enrique Soltero Mariscal**, **Ananya Subramaniam**, **Kiara White** and **Modong Yang**) are not yet signed up for Piazza and connected to the course, according to what I can see. This isn't optional and should be done **today**. 
-        - If you HAVE signed up, then this may just be a matter of you adding your name to the account you are using. To do so, click on the little gear at the top right of any piazza screen, and go into Personal Settings. There, please do include your Full Name, as it requests, and your preferred email should then be visible for the account you want to use. Be sure that the PQHS 431 class is listed for you there. Then hit Save Profile. Let me know that you've done this, and I can then check to see that's come through on my end.
-        - If you haven't signed up, check your spam folder for the invitation, and contact Dr. Love via email (`Thomas dot Love at case dot edu`) if you have questions about signing up for Piazza.
+- When asking a question of a TA or on Piazza, be sure to provide enough information so we can help you. 
+    - For an R question, this will usually mean including your entire R Markdown file (not just a part of it), and a screenshot of the error you're getting, for example.
+- As of `2020-09-03 at 10:30 AM`, 2 people (**Akif Gormez** and **Sarah Simmons**) are not yet signed up for Piazza and connected to the course. Please fix this today, and if you have any questions, please let me know.
 
 ## One Last Thing
 
