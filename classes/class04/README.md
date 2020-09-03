@@ -43,7 +43,7 @@ I will occasionally post links to things at a page about COVID-19 and news relat
 ## What Should I Be Working On?
 
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by NOON **Friday** 2020-09-04. 
-    - As of `2020-09-03 at 10:30 AM`, I have this from 51 of you, and I've responded via email to each of you who've completed this task.
+    - As of 11:30 AM on 2020-09-03, I have this from 51 people, and I've responded via email to each of you who've completed this task.
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due on Monday 2020-09-07 at 9 PM (Be sure to complete all four parts.)
     - As of 11:30 AM on 2020-09-03, I have:
 
@@ -57,7 +57,7 @@ Responses | 14 | 13 | 25
 - TA office hours are available every day of the week (see the Announcements folder in [Canvas](https://canvas.case.edu) for schedule and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
 - When asking a question of a TA or on Piazza, be sure to provide enough information so we can help you. 
     - For an R question, this will usually mean including your entire R Markdown file (not just a part of it), and a screenshot of the error you're getting, for example.
-- As of `2020-09-03 at 10:30 AM`, 2 people (**Akif Gormez** and **Sarah Simmons**) are not yet signed up for Piazza and connected to the course. Please fix this today, and if you have any questions, please let me know.
+- As of 11:30 AM on 2020-09-03, just one student is still unconnected to the Piazza forum for the course. If you have any questions, please let me know.
 
 ## One Last Thing
 
