@@ -146,8 +146,8 @@ day1 %>% filter(complete.cases(height.in)) %>%
 ## Plot 2. New Version: fill is *salmon*, using 20 bins.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-day1 %>% filter(complete.cases(pulse)) %>%
-  ggplot(data = ., aes(x = pulse)) +
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
   geom_histogram(bins = 20, col = "blue", fill = "salmon") +
   labs(x = "Height (inches) of Students in 431", 
        y = "# of Students",
@@ -158,12 +158,12 @@ day1 %>% filter(complete.cases(pulse)) %>%
 ## How do we get from plot 1 to plot 2?
 
 ```{r, echo = FALSE, message = FALSE, fig.height = 4}
-p1 <- day1 %>% filter(complete.cases(pulse)) %>%
-  ggplot(data = ., aes(x = pulse)) +
+p1 <- day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
   geom_histogram(col = "blue")
 
-p2 <- day1 %>% filter(complete.cases(pulse)) %>%
-  ggplot(data = ., aes(x = pulse)) +
+p2 <- day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
   geom_histogram(bins = 20, col = "blue", fill = "salmon") +
   labs(x = "Height (inches) of Students in 431", 
        y = "# of Students",
@@ -182,24 +182,24 @@ p1 + p2 + plot_annotation(tag_levels = '1')
 ## Starting with Plot 1. Initial Attempt
 
 ```{r, warning = FALSE, fig.height = 4}
-day1 %>% filter(complete.cases(pulse)) %>%
-  ggplot(data = ., aes(x = pulse)) +
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
   geom_histogram(col = "blue")
 ```
 
 ## Add salmon fill, use 20 bins
 
 ```{r, warning = FALSE, message = FALSE, fig.height = 4}
-day1 %>% filter(complete.cases(pulse)) %>%
-  ggplot(data = ., aes(x = pulse)) +
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
   geom_histogram(bins = 20, col = "blue", fill = "salmon")
 ```
 
 ## Now relabel x and y axes
 
 ```{r, warning = FALSE, message = FALSE, fig.height = 4}
-day1 %>% filter(complete.cases(pulse)) %>%
-  ggplot(data = ., aes(x = pulse)) +
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
   geom_histogram(bins = 20, col = "blue", fill = "salmon") +
   labs(x = "Height (inches) of Students in 431", 
        y = "# of Students")
@@ -219,8 +219,8 @@ mosaic::favstats(~ height.in, data = day1)
 ## Actual Code for Plot 2 (adds title and subtitle)
 
 ```{r, warning = FALSE, fig.height = 3.5}
-day1 %>% filter(complete.cases(pulse)) %>%
-  ggplot(data = ., aes(x = pulse)) +
+day1 %>% filter(complete.cases(height.in)) %>%
+  ggplot(data = ., aes(x = height.in)) +
   geom_histogram(bins = 20, col = "blue", fill = "salmon") +
   labs(x = "Height (inches) of Students in 431", 
        y = "# of Students",
