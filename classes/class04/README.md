@@ -49,7 +49,7 @@ I will occasionally post links to things at a page about COVID-19 and news relat
 
 Lab 01 | Part 1 (video) | Part 2 & 3 (essays) | Part 4 (survey response)
 :------: | :------: | :----------------: | :---------:
-Responses | 1 | 1 | 25
+Responses | 14 | 13 | 25
 
 - [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due 2020-09-14 (You should be able to do all 7 parts now.)
 - Readings: check the [Calendar](https://thomaselove.github.io/431/calendar.html) to be sure that you're up to date with Leek and also with Spiegelhalter (see Lab 02, question 7.)
