@@ -53,4 +53,4 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-![https://xkcd.com/2341/](https://imgs.xkcd.com/comics/scientist_tech_help.png)
+![https://xkcd.com/2341/](https://imgs.xkcd.com/comics/scientist_tech_help.png) [Scientist Tech Help, from XKCD](https://xkcd.com/2341/)
