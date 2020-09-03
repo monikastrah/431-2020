@@ -14,6 +14,12 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Dr. Love will present some [reactions to the Minute Paper after Class 03](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers).
     - Depending on when you completed the Minute Paper, you may have been asked about Leek twice and Spiegelhalter not at all. Sorry about that mistake.
+2. **What should I do if an emergency arises?**
+    - If an emergency arises that will keep you from timely completion of work that has a deadline, like a lab, minute paper, or the like, send an email directly to Dr. Love saying "I have an emergency that will keep me from completing (*list things you're worried about completing*) in a timely fashion. I will contact you again when I am able to make plans." 
+    - Dr. Love will respond with "OK" and temporarily excuse you from things until **you** send a "re-connection" email to make plans for making up the work you missed, at which time he'll evaluate the situation and together you can make that plan. At no time do you owe us any information about your health or the nature of the emergency.
+    - Essentially, doing this will press PAUSE on Dr. Love worrying or pestering you about deadlines until you email him again. 
+    - Dr. Love's email address remains `Thomas dot Love at case dot edu`.
+    - This information is now also available in our [Syllabus](https://thomaselove.github.io/431-2020-syllabus/) thanks to the most recent revision.
 3. The best cheat sheets for working with our tools, in my opinion, are the [R Studio Cheatsheets](https://rstudio.com/resources/cheatsheets/).  The ones I use most often are (all are PDF downloads):
     - [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf) with `ggplot2`, 
     - [Data Transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) with `dplyr`, 
