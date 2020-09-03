@@ -47,7 +47,7 @@ Responses | 14 | 13 | 25 | **73**
 - TA office hours are available every day of the week (see the Announcements folder in [Canvas](https://canvas.case.edu) for schedule and zoom information) and that [Piazza](https://piazza.com/case/fall2020/pqhs431) is always open. We want to help you!
 - When asking a question of a TA or on Piazza, be sure to provide enough information so we can help you. 
     - For an R question, this will usually mean including your entire R Markdown file (not just a part of it), and a screenshot of the error you're getting, for example.
-- As of 11:30 AM on 2020-09-03, one student is still unconnected to the Piazza forum for the course.
+- As of Noon on 2020-09-03, one student is still unconnected to the Piazza forum for the course.
 
 ## OPTIONAL: The [COVID-19 page](https://github.com/THOMASELOVE/covid19)
 
