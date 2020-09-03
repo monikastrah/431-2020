@@ -39,7 +39,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 - The [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) includes a small task that needs to be completed by NOON **Friday** 2020-09-04. 
-    - As of 11:30 AM on 2020-09-03, I have this from 51 people, and I've responded via email to each of you who've completed this task.
+    - As of Noon on 2020-09-03, I have this from 52 people, and I've responded via email to each of you who've completed this task.
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due on Monday 2020-09-07 at 9 PM (Be sure to complete all four parts.)
     - As of 11:30 AM on 2020-09-03, I have:
 
