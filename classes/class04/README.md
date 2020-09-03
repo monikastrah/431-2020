@@ -37,9 +37,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) is due on Monday 2020-09-07 at 9 PM (Be sure to complete all four parts.)
     - As of Noon on 2020-09-03, I have:
 
-Lab 01 | Part 1 (video) | Part 2 & 3 (essays) | Part 4 (survey)
-:------: | :------: | :----------------: | :---------:
-Responses | 14 | 13 | 25
+Lab 01 | Part 1 (video) | Part 2 & 3 (essays) | Part 4 (survey) | Enrolled Students
+:------: | :------: | :----------------: | :---------: | :------------:
+Responses | 14 | 13 | 25 | **73**
 
 - [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due 2020-09-14 (You should be able to do all 7 parts now.)
 - Readings: check the [Calendar](https://thomaselove.github.io/431/calendar.html) to be sure that you're up to date with Leek and also with Spiegelhalter (see Lab 02, question 7.)
