@@ -12,7 +12,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-To come.
+1. Detailed instructions for downloading individual .csv or .Rmd files using various browser and operating system combinations are now found [here on our Data and Code page](https://github.com/THOMASELOVE/431-data/blob/master/README.md#detailed-steps-for-downloading-individual-csv-or-rmd-files-from-github).
 
 ## What Should I Be Working On?
 
