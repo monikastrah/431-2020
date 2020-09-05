@@ -1,6 +1,6 @@
 431 Lab 02
 ================
-Due **2020-09-14** at 9 PM. Last Edited 2020-08-25 08:41:17
+Due **2020-09-14** at 9 PM. Last Edited 2020-09-04 22:44:52
 
 Lab 02 is divided into 7 questions. Be sure to respond to each of them
 by the deadline posted on the [Course
@@ -23,17 +23,17 @@ Markdown document template for this assignment called
     Just save the plain text file that you’ll see at that link to your
     computer with the appropriate .Rmd extension.
 
-## The Data for Homework B
+## The Data for Lab 02
 
-Homework B uses data from the `midwest` data set, which is part of the
+Lab 02 uses data from the `midwest` data set, which is part of the
 `ggplot2` package (which is part of the `tidyverse`) so by loading the
 `tidyverse` package, we will have direct access to the `midwest` data by
 typing `midwest`. The `midwest` data describe demographic information
 for 437 counties in the midwestern United States. You might use
 `?midwest` to obtain a little bit of additional information about these
 data, and/or use `View(midwest)` to get a look at a spreadsheet-style
-view of the data. We will focus on just four variables in Homework B
-taken from this data set:
+view of the data. We will focus on just four variables in Lab 02 taken
+from this data set:
 
   - `county` = the name of the county
   - `state` = the name of the state (each county is contained in a
@@ -92,9 +92,10 @@ category. Two sentences should be sufficient here.
 
 By now, we’d like you to have read the Introduction and Chapters 1-3 of
 David Spiegelhalter’s *The Art of Statistics*. What is the most
-important question you have after reading this material? Please cite the
-book appropriately when describing what Dr. Spiegelhalter has brought to
-your attention. Remember that a question ends with a question mark.
+important question you have after reading this material? Begin by citing
+the book appropriately to describe what Dr. Spiegelhalter has brought to
+your attention. Then state your question. Remember that a question ends
+with a question mark.
 
 # Submitting your Response
 
