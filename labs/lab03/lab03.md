@@ -1,4 +1,187 @@
-Lab 03
+431 Lab 03
 ================
+Last Edited 2020-09-04 23:43:02
 
-Details on Lab 03 will appear here.
+# General Instructions
+
+Lab 03 is divided into 10 questions (including a short essay in Question
+10.)
+
+Be sure to respond to each question by the deadline posted on the
+[Course Calendar](https://thomaselove.github.io/431/calendar.html). You
+are welcome (encouraged, really) to discuss Lab 03 with Dr. Love, the
+teaching assistants and even your colleagues, but your answer must be
+prepared by you alone. Don’t be afraid to ask questions, either via
+[Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab03
+folder), at [TA office
+hours](https://thomaselove.github.io/431/contact.html) or before/after
+class.
+
+## An R Markdown Template for Lab 03
+
+We have provided a useful R Markdown document template for this
+assignment called `YOURNAME-Lab03.Rmd` that you are welcome to use to
+help guide your work, but this is not mandatory.
+
+  - The `YOURNAME-Lab03.Rmd` file is available in the [main folder for
+    Lab 03](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab03),
+    and also on the [Data and Code
+    repository](https://github.com/THOMASELOVE/431-data) for the course.
+
+The minimal setup for this assignment involves loading two relevant R
+packages, as shown below.
+
+``` r
+library(MASS); library(tidyverse)
+```
+
+    -- Attaching packages ---------------------------------------------------------------- tidyverse 1.3.0 --
+
+    v ggplot2 3.3.2     v purrr   0.3.4
+    v tibble  3.0.3     v dplyr   1.0.2
+    v tidyr   1.1.2     v stringr 1.4.0
+    v readr   1.3.1     v forcats 0.5.0
+
+    -- Conflicts ------------------------------------------------------------------- tidyverse_conflicts() --
+    x dplyr::filter() masks stats::filter()
+    x dplyr::lag()    masks stats::lag()
+    x dplyr::select() masks MASS::select()
+
+``` r
+## make sure these libraries are installed in R
+## always need tidyverse, also need MASS for Lab 03
+```
+
+## Data Description for Questions 1-7
+
+The data come from the `faithful` data frame contained in the base
+installation of R, specifically, within the `datasets` package. These
+data describe the duration of an eruption for the Old Faithful geyser in
+Wyoming’s Yellowstone National Park, as well as the waiting time until
+the next eruption.
+
+The commands below place the `faithful` data frame in a tibble called
+`lab03`, then display the tibble. We encourage you to use this `lab03`
+tibble to develop your answers to Questions 1-10.
+
+    lab03 <- tibble(faithful)
+    lab03
+
+Use the command `?faithful` to see some additional details about these
+data. The `lab03` tibble contains observations on two variables:
+
+  - `eruptions` = eruption time in minutes
+  - `waiting` = waiting time to next eruption, also in minutes
+
+# Question 1
+
+Plot a histogram or other summary plot which meaningfully describes the
+distribution of the waiting times. Be sure it is very clearly labeled.
+
+# Question 2 (on the center of the distribution)
+
+What appears to be a typical waiting time? Compare the mean, median and
+80% trimmed mean (mean of the middle 80% of the observed waiting times.)
+
+# Question 3 (on the spread of the distribution)
+
+What is the inter-quartile range, and how does it compare to the
+standard deviation?
+
+# Question 4 (on the shape of the distribution)
+
+Describe the shape of the distribution in a few complete sentences. You
+should address the following questions in your response.
+
+  - Is the distribution multi-modal or unimodal? How do you know?
+  - Is the distribution skewed (and if so, in which direction) or is it
+    essentially symmetric? How do you know?
+  - Are there any unusual (outlier) values in the distribution, and if
+    so, what are they?
+
+# Question 5
+
+In light of your work in Questions 1-4, would a model using the Normal
+distribution be an appropriate way to summarize the waiting time data?
+Why or why not?
+
+# Question 6
+
+Plot a scatterplot of the waiting times (y-axis) vs. the eruption
+durations (x-axis) and be sure your plot is very clearly labeled.
+Include the result of fitting a straight line regression model in your
+plot. Then describe your general impression of the plot: what sort of
+relationship do you see?
+
+# Question 7
+
+Does a linear model seem like an appropriate thing to use in attempting
+to predict the waiting time given the most recent eruption duration,
+based on these data? Why or why not? Your response should reference the
+Pearson correlation coefficient for the plot you’ve developed, but
+should also react to the appearance of the plot beyond what you learn
+from the correlation coefficient.
+
+# Question 8
+
+Investigate question 6 again, but now use the `geyser` data in the
+`MASS` package, and compare your results to what you obtained
+originally, in an appropriate way.
+
+# Question 9
+
+Investigate question 7 again, but now use the `geyser` data.
+
+## Important Hints for Questions 8-9
+
+1.  Be sure to use the command `?MASS::geyser` to see some additional
+    details about these data, and to learn more about how they differ
+    from the data in our original data set.
+2.  There is at least one key difference between the variables available
+    in `geyser` and those which you dealt with in the `faithful` data.
+    For full credit, you must specify that difference (and describe its
+    impact) in your response.
+3.  The commands below will place the relevant data for Questions 8 and
+    9 in the `lab03extra` tibble.
+
+<!-- end list -->
+
+    lab03extra <- tibble(MASS::geyser)
+    lab03extra
+
+# Question 10
+
+In your reading of Jeff Leek’s book so far (you should have completed at
+least Sections 1-5 and 9-12), what is the most important thing you’ve
+learned?
+
+  - This could be an idea that has stuck with you, a phrase or sentence
+    that clarified something of importance, or a tip for working with
+    data that you want to remember.
+
+In a short essay (or perhaps 100-150 words), identify the relevant
+passage from Leek’s book appropriately (be sure to specify the section
+of the book and perhaps provide a short quotation), and then provide a
+brief argument as to why this particular thing is something you value,
+and how it might apply to your work.
+
+# Submitting your Response
+
+Build your entire response as an R Markdown file (if you like you are
+free to use the `YOURNAME-lab03.Rmd` template we have provided but this
+is not mandatory.) Then use the Knit button in RStudio to create the
+resulting HTML document. Submit both your revised R Markdown file and
+the HTML output file to [Canvas in the Lab 03 section of the Assignments
+folder](https://canvas.case.edu) by the deadline specified in [the
+Course Calendar](https://thomaselove.github.io/431/calendar.html).
+
+# On Grading
+
+Lab 03 will be graded on a 0-100 scale, with question 10 weighted more
+heavily than the other questions. You will receive some credit for
+making a reasonable effort to build a good response to each question,
+and then additional credit if your response is (essentially) correct,
+your code is clean and you’ve written any text using complete English
+sentences.
+
+A more detailed grading rubric will accompany the answer sketch.
