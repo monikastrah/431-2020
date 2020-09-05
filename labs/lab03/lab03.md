@@ -1,6 +1,6 @@
 431 Lab 03
 ================
-Last Edited 2020-09-04 23:43:02
+Last Edited 2020-09-04 23:52:07
 
 # General Instructions
 
@@ -33,21 +33,6 @@ packages, as shown below.
 
 ``` r
 library(MASS); library(tidyverse)
-```
-
-    -- Attaching packages ---------------------------------------------------------------- tidyverse 1.3.0 --
-
-    v ggplot2 3.3.2     v purrr   0.3.4
-    v tibble  3.0.3     v dplyr   1.0.2
-    v tidyr   1.1.2     v stringr 1.4.0
-    v readr   1.3.1     v forcats 0.5.0
-
-    -- Conflicts ------------------------------------------------------------------- tidyverse_conflicts() --
-    x dplyr::filter() masks stats::filter()
-    x dplyr::lag()    masks stats::lag()
-    x dplyr::select() masks MASS::select()
-
-``` r
 ## make sure these libraries are installed in R
 ## always need tidyverse, also need MASS for Lab 03
 ```
@@ -91,7 +76,10 @@ standard deviation?
 # Question 4 (on the shape of the distribution)
 
 Describe the shape of the distribution in a few complete sentences. You
-should address the following questions in your response.
+are welcome to use the histogram you built to help address these issues,
+and you may also be interested in building an additional plot or two -
+that’s your choice. You should address the following questions in your
+response.
 
   - Is the distribution multi-modal or unimodal? How do you know?
   - Is the distribution skewed (and if so, in which direction) or is it
@@ -110,17 +98,21 @@ Why or why not?
 Plot a scatterplot of the waiting times (y-axis) vs. the eruption
 durations (x-axis) and be sure your plot is very clearly labeled.
 Include the result of fitting a straight line regression model in your
-plot. Then describe your general impression of the plot: what sort of
-relationship do you see?
+plot. Then describe your general impression of the plot in a sentence or
+two: what sort of relationship do you see?
 
 # Question 7
 
 Does a linear model seem like an appropriate thing to use in attempting
 to predict the waiting time given the most recent eruption duration,
-based on these data? Why or why not? Your response should reference the
-Pearson correlation coefficient for the plot you’ve developed, but
-should also react to the appearance of the plot beyond what you learn
-from the correlation coefficient.
+based on these data? Why or why not?
+
+  - Your response should specify the regression line you fit for
+    Question 6 and also provide a relevant summary statistic (or two)
+    that provide an indication about how well that line fits the data.
+  - For full credit, your response should describe the appearance of the
+    plot in addition to stating what you learn from your summary
+    statistic.
 
 # Question 8
 
@@ -164,6 +156,53 @@ passage from Leek’s book appropriately (be sure to specify the section
 of the book and perhaps provide a short quotation), and then provide a
 brief argument as to why this particular thing is something you value,
 and how it might apply to your work.
+
+# Add the Session Information
+
+Adding a `sessionInfo()` chunk at the end of your document helps with
+reproducibility. Just take a look to see what it produces in my case.
+
+``` r
+sessionInfo()
+```
+
+``` 
+R version 4.0.2 (2020-06-22)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19041)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] forcats_0.5.0   stringr_1.4.0   dplyr_1.0.2     purrr_0.3.4    
+ [5] readr_1.3.1     tidyr_1.1.2     tibble_3.0.3    ggplot2_3.3.2  
+ [9] tidyverse_1.3.0 MASS_7.3-52    
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.5       cellranger_1.1.0 pillar_1.4.6     compiler_4.0.2  
+ [5] dbplyr_1.4.4     tools_4.0.2      digest_0.6.25    lubridate_1.7.9 
+ [9] jsonlite_1.7.0   evaluate_0.14    lifecycle_0.2.0  gtable_0.3.0    
+[13] pkgconfig_2.0.3  rlang_0.4.7      reprex_0.3.0     cli_2.0.2       
+[17] rstudioapi_0.11  DBI_1.1.0        yaml_2.2.1       haven_2.3.1     
+[21] xfun_0.16        withr_2.2.0      xml2_1.3.2       httr_1.4.2      
+[25] knitr_1.29       fs_1.5.0         hms_0.5.3        generics_0.0.2  
+[29] vctrs_0.3.3      grid_4.0.2       tidyselect_1.1.0 glue_1.4.2      
+[33] R6_2.4.1         fansi_0.4.1      readxl_1.3.1     rmarkdown_2.3.3 
+[37] modelr_0.1.8     blob_1.2.1       magrittr_1.5     backports_1.1.7 
+[41] scales_1.1.1     ellipsis_0.3.1   htmltools_0.5.0  rvest_0.3.6     
+[45] assertthat_0.2.1 colorspace_1.4-1 stringi_1.4.6    munsell_0.5.0   
+[49] broom_0.7.0      crayon_1.3.4    
+```
 
 # Submitting your Response
 

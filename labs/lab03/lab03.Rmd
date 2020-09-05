@@ -23,7 +23,7 @@ We have provided a useful R Markdown document template for this assignment calle
 
 The minimal setup for this assignment involves loading two relevant R packages, as shown below.
 
-```{r}
+```{r, message = FALSE}
 library(MASS); library(tidyverse)
 ## make sure these libraries are installed in R
 ## always need tidyverse, also need MASS for Lab 03
@@ -59,7 +59,7 @@ What is the inter-quartile range, and how does it compare to the standard deviat
 
 # Question 4 (on the shape of the distribution)
 
-Describe the shape of the distribution in a few complete sentences. You should address the following questions in your response.
+Describe the shape of the distribution in a few complete sentences. You are welcome to use the histogram you built to help address these issues, and you may also be interested in building an additional plot or two - that's your choice. You should address the following questions in your response.
 
 - Is the distribution multi-modal or unimodal? How do you know?
 - Is the distribution skewed (and if so, in which direction) or is it essentially symmetric? How do you know?
@@ -71,11 +71,14 @@ In light of your work in Questions 1-4, would a model using the Normal distribut
 
 # Question 6
 
-Plot a scatterplot of the waiting times (y-axis) vs. the eruption durations (x-axis) and be sure your plot is very clearly labeled. Include the result of fitting a straight line regression model in your plot. Then describe your general impression of the plot: what sort of relationship do you see?
+Plot a scatterplot of the waiting times (y-axis) vs. the eruption durations (x-axis) and be sure your plot is very clearly labeled. Include the result of fitting a straight line regression model in your plot. Then describe your general impression of the plot in a sentence or two: what sort of relationship do you see?
 
 # Question 7
 
-Does a linear model seem like an appropriate thing to use in attempting to predict the waiting time given the most recent eruption duration, based on these data? Why or why not? Your response should reference the Pearson correlation coefficient for the plot you've developed, but should also react to the appearance of the plot beyond what you learn from the correlation coefficient.
+Does a linear model seem like an appropriate thing to use in attempting to predict the waiting time given the most recent eruption duration, based on these data? Why or why not? 
+
+- Your response should specify the regression line you fit for Question 6 and also provide a relevant summary statistic (or two) that provide an indication about how well that line fits the data. 
+- For full credit, your response should describe the appearance of the plot in addition to stating what you learn from your summary statistic.
 
 # Question 8
 
@@ -103,6 +106,14 @@ In your reading of Jeff Leek's book so far (you should have completed at least S
 - This could be an idea that has stuck with you, a phrase or sentence that clarified something of importance, or a tip for working with data that you want to remember. 
 
 In a short essay (or perhaps 100-150 words), identify the relevant passage from Leek's book appropriately (be sure to specify the section of the book and perhaps provide a short quotation), and then provide a brief argument as to why this particular thing is something you value, and how it might apply to your work.
+
+# Add the Session Information
+
+Adding a `sessionInfo()` chunk at the end of your document helps with reproducibility.  Just take a look to see what it produces in my case.
+
+```{r}
+sessionInfo()
+```
 
 # Submitting your Response
 
