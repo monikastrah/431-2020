@@ -14,7 +14,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. So far this semester, Dr. Love (and the TAs) have been chasing you down via email if something isn't submitted on time, or isn't submitted correctly, and reminding you about deadlines outside of class time. Enjoy it while it lasts, because we intend to (essentially) stop doing that after [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) so as to maintain our sanity.
 2. Detailed instructions for downloading individual .csv or .Rmd files using various browser and operating system combinations are now found [here on our Data and Code page](https://github.com/THOMASELOVE/431-data/blob/master/README.md#detailed-steps-for-downloading-individual-csv-or-rmd-files-from-github).
-3. I corrected some typographical errors in [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md). I would be surprised if this changes any of your responses if you've already worked on the Lab.
+3. I corrected some typographical errors in [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md). I would be surprised if this changes any of your responses if you've already worked on the Lab. Lab 02 submission will open today (2020-09-08) on Canvas.
+4. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) is now available.
 
 ## What Should I Be Working On?
 
