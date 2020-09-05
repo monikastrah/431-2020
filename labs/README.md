@@ -5,7 +5,7 @@ Details on the Labs will appear at the links below. See [the Course Calendar for
 
 - [Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md)
 - [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md)
-- Lab 03
+- [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md)
 - Lab 04
 - Lab 05
 - Lab 06
