@@ -26,7 +26,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 7. I encourage you to adjust your email settings for the class on [Piazza](https://piazza.com/case/fall2020/pqhs431) if the messages become overwhelming. If you click on the gear at the top right of any Piazza screen, then select Account Settings and scroll down to Class & Email Settings, you can edit your email notifications. 
     - The Daily Digest seems like a good option for new Questions or Notes from my perspective, although I recommend Real Time for updates to Questions or Notes you follow. 
     - Any announcements I designate as necessary reading for the whole class on Piazza will be sent to you via email immediately regardless of your settings.
-8. The [modelsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package has finally reached a sufficiently steady state that I'm recommending it as a package to install in the class. I've modified the Packages list appropriately. 
+8. The [modelsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package has finally reached a sufficiently steady state that I'm recommending it as a package to install in the class. I've modified [our R Packages list](https://thomaselove.github.io/431/r_packages.html) appropriately. 
     - The package provides some great tools for creating summary tables (including things like Table 1) for models and tibbles. More to come, but you can see lots of examples at the [github repository for the package](https://vincentarelbundock.github.io/modelsummary/index.html) plus I've added a couple of examples to Chapter 10 of the [Course Notes](https://thomaselove.github.io/431-notes/).
 
 ## What Should I Be Working On?
