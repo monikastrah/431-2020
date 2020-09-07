@@ -12,10 +12,11 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-1. So far this semester, Dr. Love (and the TAs) have been chasing you down via email if something isn't submitted on time, or isn't submitted correctly, and reminding you about deadlines outside of class time. Enjoy it while it lasts, because we intend to (essentially) stop doing that after [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) so as to maintain our sanity.
+1. So far this semester, Dr. Love (and the TAs) have been chasing you down via email if something isn't submitted on time, or isn't submitted correctly, and reminding you about deadlines outside of class time. Enjoy it while it lasts, because we intend to (essentially) stop doing that after [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md).
 2. Detailed instructions for downloading individual .csv or .Rmd files using various browser and operating system combinations are now found [here on our Data and Code page](https://github.com/THOMASELOVE/431-data/blob/master/README.md#detailed-steps-for-downloading-individual-csv-or-rmd-files-from-github).
+3. Chapters 7-10 in the [Course Notes](https://thomaselove.github.io/431-notes/) are now available. All 10 Chapters so far touch on issues of visualization and data management that we are discussing in class through this week.
 3. I corrected some typographical errors in [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md). I would be surprised if this changes any of your responses if you've already worked on the Lab. Lab 02 submission will open today (2020-09-08) on Canvas.
-4. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) and [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) are now available.
+4. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) and [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) are now available, for those of you eager to get ahead of things.
 5. I encourage you to adjust your email setting for the class on [Piazza] if the messages become overwhelming. If you click on the gear at the top right of any Piazza screen, then select Account Settings and scroll down to Class & Email Settings, you can edit your email notifications. The Daily Digest is a good option for new Questions or Notes from my perspective, although I recommend Real Time for updates to Questions or Notes you follow. 
 
 ## What Should I Be Working On?
