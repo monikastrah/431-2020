@@ -27,7 +27,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - The Daily Digest seems like a good option for new Questions or Notes from my perspective, although I recommend Real Time for updates to Questions or Notes you follow. 
     - Any announcements I designate as necessary reading for the whole class on Piazza will be sent to you via email immediately regardless of your settings.
 8. The [modelsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package has finally reached a sufficiently steady state that I'm recommending it as a package to install in the class. I've modified [our R Packages list](https://thomaselove.github.io/431/r_packages.html) appropriately. 
-    - The package provides some great tools for creating summary tables (including things like Table 1) for models and tibbles. More to come, but you can see lots of examples at the [github repository for the package](https://vincentarelbundock.github.io/modelsummary/index.html) plus I've added a couple of examples to Chapter 10 of the [Course Notes](https://thomaselove.github.io/431-notes/).
+    - The package provides some great tools for creating summary tables (including things like Table 1) for models and tibbles. More to come, but you can see lots of examples at the [github repository for the package](https://vincentarelbundock.github.io/modelsummary/index.html).
+    - Some `modelsummary` functions, especially functions used by the `datasummary` tools, fight with functions in the `Hmisc` package, so there can be some problems if you have `Hmisc` or `rms` (which loads `Hmisc`) loaded when you try to use `modelsummary` and vice versa. We'll usually avoid this by looking at either `modelsummary` or `rms` tools in a particular example. 
 
 ## What Should I Be Working On?
 
