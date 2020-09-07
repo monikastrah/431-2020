@@ -23,13 +23,17 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - People having trouble with technology issues / remote learning / etc. can contact Professor Love via email to discuss, but the Labs will go on without you, according to these rules. You should submit your work as soon as you can.
 5. I corrected some typographical errors in [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md). I would be surprised if this changes any of your responses if you've already worked on the Lab. Lab 02 submission will open today (2020-09-08) on Canvas.
 6. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) and [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) are now available, for those of you eager to get ahead of things.
-7. I encourage you to adjust your email setting for the class on [Piazza] if the messages become overwhelming. If you click on the gear at the top right of any Piazza screen, then select Account Settings and scroll down to Class & Email Settings, you can edit your email notifications. The Daily Digest is a good option for new Questions or Notes from my perspective, although I recommend Real Time for updates to Questions or Notes you follow. 
+7. I encourage you to adjust your email settings for the class on [Piazza](https://piazza.com/case/fall2020/pqhs431) if the messages become overwhelming. If you click on the gear at the top right of any Piazza screen, then select Account Settings and scroll down to Class & Email Settings, you can edit your email notifications. 
+    - The Daily Digest seems like a good option for new Questions or Notes from my perspective, although I recommend Real Time for updates to Questions or Notes you follow. 
+    - Any announcements I designate as necessary reading for the whole class on Piazza will be sent to you via email immediately regardless of your settings.
+8. The [modelsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package has finally reached a sufficiently steady state that I'm recommending it as a package to install in the class. I've modified the Packages list appropriately. 
+    - The package provides some great tools for creating summary tables (including things like Table 1) for models and tibbles. More to come, but you can see lots of examples at the [github repository for the package](https://vincentarelbundock.github.io/modelsummary/index.html) plus I've added a couple of examples to Chapter 10 of the [Course Notes](https://thomaselove.github.io/431-notes/).
 
 ## What Should I Be Working On?
 
 As always, check the [Course Calendar](https://thomaselove.github.io/431/calendar.html) for links to and deadlines for all deliverables (labs, minute papers, quizzes and projects.)
 
-1. There is a Minute Paper after Class 05, due Wednesday at noon. The link will appear on [the Minute Paper page](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md). Please remember to do this, as it's an important part of your class participation grade.
+1. There is a Minute Paper after Class 05, due Wednesday (tomorrow) at noon. The link will appear on [the Minute Paper page](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md). Please remember to do this, as it's an important part of your class participation grade, and it provides very important feedback to Dr. Love and the TAs as we make course adjustments.
 2. [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is the next deliverable after the Minute Paper, and requires some coding (and knitting) in R Markdown. You will also need to have read Spiegelhalter Chapters 1-3 to complete it.
 
 ## One Last Thing
