@@ -50,7 +50,7 @@ As always, check the [Course Calendar](https://thomaselove.github.io/431/calenda
 
 ## One Last Thing
 
-!()[https://github.com/THOMASELOVE/431-2020/blob/master/classes/class05/images/g2.png]
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class05/images/g2.png)
 
 In section 17 of the Course Syllabus, I [asked you to send me a poster from your favorite movie](https://thomaselove.github.io/431-2020-syllabus/movies.html).  69 of you did, and this included three movies that were mentioned by two students each, specifically: About Time (2013), Inception (2010) and La La Land (2016). We'll get back to your data, but for now, I'll list my twenty favorite movies, [according to my account on Flickchart](https://www.flickchart.com/), three of which were also mentioned by students in the class.
 
