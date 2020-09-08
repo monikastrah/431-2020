@@ -49,19 +49,19 @@ As always, check the [Course Calendar](https://thomaselove.github.io/431/calenda
 
 ## One Last Thing
 
-In section 17 of the Course Syllabus, I asked you to send me a poster from your favorite movie. We'll get back to that data soon, but for now, I'll tell you my twenty favorite movies, [according to Flickchart](https://www.flickchart.com/).
+In section 17 of the Course Syllabus, I [asked you to send me a poster from your favorite movie](https://thomaselove.github.io/431-2020-syllabus/movies.html).  69 of you did, and this included three movies that were mentioned by two students each, specifically: About Time (2013), Inception (2010) and La La Land (2016). We'll get back to your data, but for now, I'll list my twenty favorite movies, [according to my account on Flickchart](https://www.flickchart.com/), three of which were also mentioned by students in the class.
 
 1. The Godfather Part II (1974)
 2. The Manchurian Candidate (1962)
 3. The Sting (1973)
 4. Sleuth (1972)
-5. The Godfather (1972)
+5. The Godfather (1972), which was mentioned by one student in the class
 6. Dead Again (1991)
 7. Field of Dreams (1989)
 8. Die Hard (1988)
-9. The Dark Knight (2008)
+9. The Dark Knight (2008), which was mentioned by one student
 10. Ocean's Eleven (2001)
-11. When Harry Met Sally (1989)
+11. When Harry Met Sally (1989), which was also mentioned by one student
 12. Forrest Gump (1994)
 13. Citizen Kane (1941)
 14. Bull Durham (1988)
@@ -71,8 +71,4 @@ In section 17 of the Course Syllabus, I asked you to send me a poster from your 
 18. The Untouchables (1987)
 19. The Usual Suspects (1995)
 20. The Hudsucker Proxy (1994)
-
-
-
-
 
