@@ -10,9 +10,11 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - Class 05 slides will be available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class05/431_class-05-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class05/431_class-05-slides_2020.Rmd).
 
-## Today's Main Example
+## Today's Main Examples
 
 - Dr. Love used R Markdown to explore [your responses to the survey (part 4) of Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/survey-results-2020/README.md), which we'll discuss at some length in class today.
+- The [CWRU Color Guide](https://case.edu/umc/our-brand/visual-guidelines/color) is something I'll mention today in class.
+- We'll be starting a discussion of data from [NHANES](https://www.cdc.gov/nchs/nhanes/index.htm) today, as well. The Course Notes also make use of similar data in several chapters.
 
 ## Announcements
 
