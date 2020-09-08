@@ -43,6 +43,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 As always, check the [Course Calendar](https://thomaselove.github.io/431/calendar.html) for links to and deadlines for all deliverables (labs, minute papers, quizzes and projects.)
 
-1. There is a Minute Paper after Class 05, due Wednesday (tomorrow) at noon. The link will appear on [the Minute Paper page](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md). Please remember to do this, as it's an important part of your class participation grade, and it provides very important feedback to Dr. Love and the TAs as we make course adjustments.
+1. There is a **Minute Paper after Class 05** at http://bit.ly/431-2020-minute-05, due Wednesday (tomorrow) at noon. The link is also available on [the Minute Paper page](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md). 
+    - Please remember to do this, as it's an important part of your class participation grade, and it provides very important feedback to Dr. Love and the TAs as we make course adjustments.
 2. [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is the next deliverable after the Minute Paper, and requires some coding (and knitting) in R Markdown. You will also need to have read Spiegelhalter Chapters 1-3 to complete it.
 
