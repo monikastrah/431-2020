@@ -15,6 +15,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 - Dr. Love used R Markdown to explore [your responses to the survey (part 4) of Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/survey-results-2020/README.md), which we'll discuss at some length in class today.
 - The [CWRU Color Guide](https://case.edu/umc/our-brand/visual-guidelines/color) is something I'll mention today in class.
 - We'll be starting a discussion of data from [NHANES](https://www.cdc.gov/nchs/nhanes/index.htm) today, as well. The Course Notes also make use of similar data in several chapters.
+- Today's cartoon (from the Slides) is from [PhD Comics](http://phdcomics.com/comics/archive.php?comicid=1531).
 
 ## Announcements
 
@@ -45,6 +46,3 @@ As always, check the [Course Calendar](https://thomaselove.github.io/431/calenda
 1. There is a Minute Paper after Class 05, due Wednesday (tomorrow) at noon. The link will appear on [the Minute Paper page](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md). Please remember to do this, as it's an important part of your class participation grade, and it provides very important feedback to Dr. Love and the TAs as we make course adjustments.
 2. [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is the next deliverable after the Minute Paper, and requires some coding (and knitting) in R Markdown. You will also need to have read Spiegelhalter Chapters 1-3 to complete it.
 
-## One Last Thing
-
-To come.
