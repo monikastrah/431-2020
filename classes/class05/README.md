@@ -21,7 +21,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. Instructions for Project A will be available by Saturday morning.
-2. So far this semester, Dr. Love (and the TAs) have been chasing you down via email if something isn't submitted on time, or isn't submitted correctly, and reminding you about deadlines outside of class time. Enjoy it while it lasts, because we intend to (essentially) stop doing that after [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md).
+2. So far this semester, Dr. Love (and the TAs) have been chasing you down via email if something isn't submitted on time, or isn't submitted correctly, and reminding you about deadlines outside of class time. Enjoy it while it lasts, because we intend to (essentially) stop doing that after [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md). The final word on all deadlines is always the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
 3. Detailed instructions for downloading individual .csv or .Rmd files using various browser and operating system combinations are now found [here on our Data and Code page](https://github.com/THOMASELOVE/431-data/blob/master/README.md#detailed-steps-for-downloading-individual-csv-or-rmd-files-from-github).
 4. Chapters 7-10 in the [Course Notes](https://thomaselove.github.io/431-notes/) are now available. All 10 Chapters so far touch on issues of visualization and data management that we are discussing in class through this week.
 5. I adjusted the late penalty for Labs in the Syllabus.
