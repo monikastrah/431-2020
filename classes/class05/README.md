@@ -47,3 +47,32 @@ As always, check the [Course Calendar](https://thomaselove.github.io/431/calenda
     - Please remember to do this, as it's an important part of your class participation grade, and it provides very important feedback to Dr. Love and the TAs as we make course adjustments.
 2. [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is the next deliverable after the Minute Paper, and requires some coding (and knitting) in R Markdown. You will also need to have read Spiegelhalter Chapters 1-3 to complete it.
 
+## One Last Thing
+
+In section 17 of the Course Syllabus, I asked you to send me a poster from your favorite movie. We'll get back to that data soon, but for now, I'll tell you my twenty favorite movies, [according to Flickchart](https://www.flickchart.com/).
+
+1. The Godfather Part II (1974)
+2. The Manchurian Candidate (1962)
+3. The Sting (1973)
+4. Sleuth (1972)
+5. The Godfather (1972)
+6. Dead Again (1991)
+7. Field of Dreams (1989)
+8. Die Hard (1988)
+9. The Dark Knight (2008)
+10. Ocean's Eleven (2001)
+11. When Harry Met Sally (1989)
+12. Forrest Gump (1994)
+13. Citizen Kane (1941)
+14. Bull Durham (1988)
+15. The Princess Bride (1987)
+16. Murder on the Orient Express (1974)
+17. The Prestige (2006)
+18. The Untouchables (1987)
+19. The Usual Suspects (1995)
+20. The Hudsucker Proxy (1994)
+
+
+
+
+
