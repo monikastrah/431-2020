@@ -13,6 +13,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Today's Main Examples
 
 - Dr. Love used R Markdown to explore [your responses to the survey (part 4) of Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/survey-results-2020/README.md), which we'll discuss at some length in class today.
+    - We'll also discuss the [Answer Sketch and Grading Rubric for Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/README.md), which also contains some survey-based analyses of the Attitudes Towards Statistics scales.
 - The [CWRU Color Guide](https://case.edu/umc/our-brand/visual-guidelines/color) is something I'll mention today in class.
 - We'll be starting a discussion of data from [NHANES](https://www.cdc.gov/nchs/nhanes/index.htm) today, as well. The Course Notes also make use of similar data in several chapters.
 - Today's cartoon (from the Slides) is from [PhD Comics](http://phdcomics.com/comics/archive.php?comicid=1531).
