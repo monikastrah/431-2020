@@ -50,9 +50,13 @@ As always, check the [Course Calendar](https://thomaselove.github.io/431/calenda
 
 ## One Last Thing
 
+In section 17 of the Course Syllabus, I [asked you to send me a poster from your favorite movie](https://thomaselove.github.io/431-2020-syllabus/movies.html) by noon on 2020-09-04.  
+
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class05/images/g2.png)
 
-In section 17 of the Course Syllabus, I [asked you to send me a poster from your favorite movie](https://thomaselove.github.io/431-2020-syllabus/movies.html).  69 of you did, and this included three movies that were mentioned by two students each, specifically: About Time (2013), Inception (2010) and La La Land (2016). We'll get back to your data, but for now, I'll list my twenty favorite movies, [according to my account on Flickchart](https://www.flickchart.com/), three of which were also mentioned by students in the class.
+- 69 of you did, and this included three movies that were mentioned by two students each: About Time (2013), which I have not seen, along with Inception (2010) and La La Land (2016), which I have seen and enjoyed.
+
+We'll get back to your data, but for now, I'll list my twenty favorite movies, [according to my account on Flickchart](https://www.flickchart.com/), three of which were also mentioned by students in the class.
 
 1. The Godfather Part II (1974)
 2. The Manchurian Candidate (1962)
@@ -75,3 +79,4 @@ In section 17 of the Course Syllabus, I [asked you to send me a poster from your
 19. The Usual Suspects (1995)
 20. The Hudsucker Proxy (1994)
 
+Perhaps this list mostly serves as evidence of my age.
