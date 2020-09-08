@@ -1,0 +1,25 @@
+varname,description
+ats_11,"Attitudes toward Statistics, Part 1 [I feel that statistics will be useful to me in my profession.]"
+ats_12,"Attitudes toward Statistics, Part 1 [Most people would benefit from taking a statistics course.]"
+ats_13,"Attitudes toward Statistics, Part 1 [I have difficulty seeing how statistics relates to my field of study.]"
+ats_14,"Attitudes toward Statistics, Part 1 [Statistics is an inseparable aspect of scientific research.]"
+ats_15,"Attitudes toward Statistics, Part 1 [I am excited at the prospect of using statistics in my work.]"
+lab_1,How far along are you in completing Lab 01 [Part 1 (the video)]
+lab_2,How far along are you in completing Lab 01 [Part 2 (interpreting my visualization)]
+lab_3,How far along are you in completing Lab 01 [Part 3 (reacting to Spiegelhalter's Intro)]
+watch_live,"How often do you anticipate participating in (watching) our 431 classes live, as they happen?"
+watch_rec,"How often do you anticipate watching the recordings of our class Zoom sessions, after they happen?"
+ats_21,"Attitudes toward Statistics, Part 2 [One becomes a more effective ""consumer"" of research findings if one has some training in statistics.]"
+ats_22,"Attitudes toward Statistics, Part 2 [Dealing with numbers makes me uneasy.]"
+ats_23,"Attitudes toward Statistics, Part 2 [Statistical training is relevant to my performance in my field of study.]"
+ats_24,"Attitudes toward Statistics, Part 2 [Statistical analysis is best left to the ""experts"" and should not be part of a typical scientist's job.]"
+ats_25,"Attitudes toward Statistics, Part 2 [Statistical thinking will one day be as necessary for efficient citizenship as the ability to read and write.]"
+tools,"Prior to starting this course, which of the following have you used to do something meaningful? (options were R, Rstudio, R Markdown, Github, dplyr, ggplot, the pipe, tidyverse and none of these.)"
+other_classes,How many other classes are you taking this semester?
+nervous,Please indicate your feelings about each of the following statements... [I feel nervous about the 431 course right now.]
+election,Please indicate your feelings about each of the following statements... [I am following the 2020 US Presidential Election closely.]
+communicate,Please indicate your feelings about each of the following statements... [I think a lot about how to communicate scientific ideas.]
+biostats,Please indicate your feelings about each of the following statements... [I am taking 431 to help me become a biostatistician or data scientist.]
+pvalue,Please indicate your feelings about each of the following statements... [I can accurately define a p value in a couple of sentences.]
+comfort,Please indicate your feelings about each of the following statements... [I am comfortable writing in English.]
+proj_data,Do you have a data set in mind that you are hoping to analyze as part of a project in this course?

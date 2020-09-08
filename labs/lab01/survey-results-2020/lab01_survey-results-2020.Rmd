@@ -1,0 +1,721 @@
+---
+title: "Exploring Lab 01 Surveys"
+author: "Thomas E. Love"
+date: "`r Sys.time()`"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+# Setup
+
+## Load Packages
+
+```{r, message = FALSE}
+library(janitor)
+library(gt)
+library(patchwork)
+library(modelsummary)
+library(tidyverse)
+
+theme_set(theme_bw())
+```
+
+Note the use of `theme_set` to create ggplots using the `theme_bw()` approach rather than the default theme. That's just my personal preference. There are [several themes available, some of which are displayed here](https://ggplot2.tidyverse.org/reference/ggtheme.html): `theme_light()` is another one I use regularly.
+
+## Load Data
+
+```{r, message = FALSE}
+lab1data <- read_csv("data/lab-01-survey-2020.csv")
+
+names(lab1data)
+```
+
+How many people are included in these data?
+
+```{r}
+nrow(lab1data)
+```
+
+# Project Data Sets?
+
+Let's tabulate the responses to the `proj_data` item, which was:
+
+- Do you have a data set in mind that you are hoping to analyze as part of a project in this course?
+
+Possible responses were Yes, Maybe and No.
+
+```{r}
+lab1data %>% tabyl(proj_data)
+```
+
+One problem with this table is the order of the options. So, we'll change the `proj_data` variable into a factor and also order it in a sensible way, as opposed to the default (alphabetically)
+
+```{r}
+lab1data <- lab1data %>%
+    mutate(proj_data = fct_relevel(factor(proj_data), "Yes", "Maybe", "No"))
+```
+
+## Better Table of Counts
+
+Now, we'll tabulate the `proj_data` counts.
+
+```{r}
+lab1data %>% tabyl(proj_data) %>% adorn_pct_formatting()
+```
+
+The `adorn_pct_formatting()` allows the proportions to be labeled and presented as percentages.
+
+I don't actually expect anyone to have a workable data set in mind yet, since you don't actually know what the projects will require. I will get back soon to people via email regarding their additional comments about their data sets (for the people who answered Yes or Maybe and gave me some additional information about their potential data.)
+
+## Plotting the `proj_data` counts
+
+The most common choice is a bar chart for plotting a factor.
+
+```{r}
+ggplot(lab1data, aes(x = proj_data)) +
+    geom_bar()
+```
+
+That's a reasonable start.
+
+# Lab 01 Status
+
+## How far along are you in completing Part 1 (the video)?
+
+```{r}
+lab1data %>% tabyl(lab_1) 
+```
+
+I don't love the ordering there, and I would like this to make more sense. So let's put I've completed this at the end of the group (behind the other two options.) 
+
+Let's try:
+
+```{r}
+lab1data <- lab1data %>%
+    mutate(lab_1 = 
+               fct_relevel(factor(lab_1), 
+                           "I've completed this.", after = 2))
+```
+
+The `after = 2` causes "I've completed this." to be placed after the other two options, which are left in the same order they were in originally.
+
+For more on `fct_relevel` (which is part of the `forcats` package in the `tidyverse`) see our Course Notes and the RStudio Cheat Sheet for "Working with Factors".
+
+Now, let's redraw the table to see the new order, and also place it in a `kable` and round the percentages.
+
+```{r}
+lab1data %>% tabyl(lab_1) %>% knitr::kable(digits = 3)
+```
+
+## How far along are you in completing Part 2 (interpreting my visualization)?
+
+Again, we'll re-order the responses to produce a sensible order. Then we'll use a different option to create the tabyl.
+
+```{r}
+lab1data <- lab1data %>%
+    mutate(lab_2 = fct_relevel(factor(lab_2), 
+                           "I've completed this.", after = 2))
+
+lab1data %>% tabyl(lab_2) %>% adorn_pct_formatting()
+```
+
+## How far along are you in completing Part 3 (reacting to Spiegelhalter's Intro)?
+
+This time, we'll use `fct_relevel` to resort all three levels into the reverse order that we've used so far.
+
+```{r}
+lab1data <- lab1data %>%
+    mutate(lab_3 = fct_relevel(factor(lab_3), 
+                               "I've completed this.",
+                               "I've started but not finished this.",
+                               "I've not yet started this."))
+```
+
+And now we'll use the `gt()` function from the `gt` package to make the table look nice.
+
+```{r}
+lab1data %>% tabyl(lab_3) %>% adorn_pct_formatting() %>%
+    gt()
+```
+
+### How many completed each part of the lab?
+
+```{r}
+lab1data %>% 
+    count(lab_1, lab_2, lab_3) %>% gt()
+```
+
+# Other Classes
+
+I asked "How many other classes are you taking this semester?"
+
+Which of these summaries seems more useful in this setting?
+
+```{r}
+mosaic::favstats(~ other_classes, data = lab1data)
+```
+
+```{r}
+lab1data %>% tabyl(other_classes) %>% adorn_pct_formatting()
+```
+
+## Plotting other class counts
+
+And which plot seems more useful?
+
+```{r}
+ggplot(lab1data, aes(x = other_classes)) +
+    geom_bar()
+```
+
+
+```{r, warning = FALSE}
+ggplot(lab1data, aes(x = other_classes)) +
+    geom_histogram(binwidth = 1, fill = "#626262", col = "#0a304e") +   
+    scale_x_discrete(limits = seq(0, 7, by = 1))
+```
+
+Note the use of `scale_x_discrete` to set the limits on the `x` axis here so that each observed value would appear.
+
+# Your Feelings on...
+
+I asked you to react to six statements, in each case on a Strongly Agree to Strongly Disagree scale.
+
+- I feel nervous about the 431 course right now.
+- I think a lot about how to communicate scientific ideas.
+- I am taking 431 to help me become a biostatistician or data scientist.
+- I can accurately define a p value in a couple of sentences.
+- I am comfortable writing in English.
+- I am following the 2020 US Presidential Election closely.
+
+## Creating Factors all at once
+
+First, we'll make create factors out of each of these variables, and attribute the same set of levels (in the same order) to all six of them.
+
+```{r}
+feel_levels <- c("Strongly Disagree", "Disagree", 
+                 "Neutral", "Agree", "Strongly Agree")
+
+lab1data <- lab1data %>%
+    mutate(across(nervous:comfort, ~ factor(., levels = feel_levels)))
+```
+
+The `across` function allows us to include all variables in the data set from nervous through comfort. The ~ allows us to apply the factor function with appropriate levels to all six variables in one line of code.
+
+## Following the US Election?
+
+We'd like to plot these results. As an example, we'll look at responses to the last of these items: "I am following the 2020 US Presidential Election closely."
+
+### A First Attempt
+
+```{r}
+ggplot(lab1data, aes(x = election)) + 
+    geom_bar(col = "black")
+```
+
+### Improving the Plot
+
+Let's add a title, and also change the fill depending on the response.
+
+```{r}
+ggplot(lab1data, aes(x = election, fill = election)) + 
+    geom_bar(col = "black") + 
+    labs(x = "", 
+         title = "I am following the 2020 US Presidential Election closely")
+```
+
+We don't really need the legend here, so we'll drop that. 
+
+### Getting Closer
+
+```{r}
+ggplot(lab1data, aes(x = election, fill = election)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    labs(x = "", 
+         title = "I am following the 2020 US Presidential Election closely")
+```
+
+I'm going to switch the choice of colors in the fill of the bars to an approach which may be better for people who don't distinguish colors well, using the `viridis` scale built into `ggplot2`. 
+
+```{r}
+ggplot(lab1data, aes(x = election, fill = election)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_fill_viridis_d() +
+    labs(x = "", 
+         title = "I am following the 2020 US Presidential Election closely")
+```
+
+For this `election` variable, all five options were selected by at least one student. But for one of the other items, not all options were selected. Consider this plot:
+
+```{r}
+ggplot(lab1data, aes(x = comfort, fill = comfort)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_fill_viridis_d() +
+    labs(x = "", 
+         title = "I am comfortable writing in English")
+```
+
+I'd like to make sure that all five possible values (SA, A, N, D, and SD) appear in the plot even if no one gave that response, so I'll use `drop = FALSE` in the scale calls for the x axis and the fill. 
+
+Repairing the writing in English plot in this way, we have:
+
+```{r}
+ggplot(lab1data, aes(x = comfort, fill = comfort)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "I am comfortable writing in English")
+```
+
+### Using `drop = FALSE` on Election data
+
+```{r}
+ggplot(lab1data, aes(x = election, fill = election)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "I am following the 2020 US Presidential Election closely")
+```
+
+Finally, I'd like to flip the axes, so that the bars extend out to the right instead of up from the bottom.
+
+### A Final Version
+
+```{r}
+ggplot(lab1data, aes(x = election, fill = election)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "I am following the 2020 US Presidential Election closely")
+```
+
+The reason to flip these will become clearer is mostly convenience as we put plots together in the next section.
+
+## Plots for all Six Items
+
+Here are some plots of those results, gathered two at a time using the `patchwork` package.
+
+```{r}
+p1 <- ggplot(lab1data, aes(x = nervous, fill = nervous)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "I feel nervous about the 431 course right now")
+
+p2 <- ggplot(lab1data, aes(x = communicate, fill = communicate)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "I think a lot about how to communicate scientific ideas")
+
+p1 / p2
+```
+
+```{r}
+p1 <- ggplot(lab1data, aes(x = biostats, fill = biostats)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "I am taking 431 to help me become a biostatistician or data scientist")
+
+p2 <- ggplot(lab1data, aes(x = pvalue, fill = pvalue)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "I can accurately define a p value in a couple of sentences")
+
+p1 / p2
+```
+
+
+```{r}
+p1 <- ggplot(lab1data, aes(x = comfort, fill = comfort)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "I am comfortable writing in English")
+
+p2 <- ggplot(lab1data, aes(x = election, fill = election)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "I am following the 2020 US Presidential Election closely")
+
+p1 / p2
+```
+
+Do any of these results surprise you?
+
+
+# Attitudes Toward Statistics
+
+Here's a tabyl of the responses to the first of the ten items I asked about your attitudes towards statistics. Each had five responses, ranging from Strongly Agree through Strongly Disagree.
+
+The first item, labeled `ats_11` in the data, was the statement: "I feel that statistics will be useful to me in my profession."
+
+Here are the results:
+
+```{r}
+lab1data %>% tabyl(ats_11)
+```
+
+There are several things to clean up here. 
+
+First, let's assign levels in the correct order (from Strongly Agree down to Strongly Disagree) for this item, and make it a factor while we're at it. We'll do this in a temporary tibble, since we'll show another way to accomplish this shortly.
+
+```{r}
+ats_levels <- c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree")
+
+temp <- lab1data %>% 
+    mutate(ats_11 = factor(ats_11, levels = ats_levels))
+```
+
+Now, let's see what happens when we create a tabyl of the `ats_11` data from this new `temp` tibble.
+
+```{r}
+temp %>% tabyl(ats_11)
+```
+
+That's fine, but it takes quite a while to repeat the mutate process for all 10 `ats` items. We could use the `across()` function from `dplyr` to help us do this all at once.
+
+```{r}
+lab1data <- lab1data %>%
+    mutate(across(starts_with("ats_"), ~ factor(., levels = ats_levels)))
+```
+
+The `across()` function is a new piece of `dplyr` and was not available for 431 last year.
+
+## Item Group A
+
+Let's start with a closer look at three of the ten items, which we'll call Group A.
+
+Item | Description
+:---: | :-------------------------------------------------------:
+`ats_11` | I feel that statistics will be useful to me in my profession.
+`ats_12` | Most people would benefit from taking a statistics course.
+`ats_14` | Statistics is an inseparable aspect of scientific research.
+
+### Tabulating Group A
+
+```{r}
+lab1data %>% tabyl(ats_11) %>% adorn_pct_formatting()
+```
+
+```{r, warning = FALSE}
+lab1data %>% tabyl(ats_12) %>% adorn_pct_formatting() %>%
+    adorn_title(row_name = "Most people would benefit from a course.", 
+                col_name = "")
+```
+
+Note that I had to adjust the chunk to include `warnings = FALSE` to avoid a warning here. This is because the `adorn_title()` function is being used here on a one-way table, when it is designed for cross-classifications (two-way tables.)
+
+```{r, warning = FALSE}
+lab1data %>% tabyl(ats_14, show_missing_levels = FALSE) %>% 
+    adorn_pct_formatting() %>%
+    knitr::kable()
+```
+
+
+### Plotting Group A
+
+We'll use ggplot functions to build the plots for each of the three items separately, and then combine them into a single plot with some tools from the patchwork package.
+
+```{r, fig.height = 7}
+p11 <- ggplot(lab1data, aes(x = ats_11, fill = ats_11)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "I feel that statistics will be useful to me in my profession.")
+
+p12 <- ggplot(lab1data, aes(x = ats_12, fill = ats_12)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "Most people would benefit from taking a statistics course.")
+
+p14 <- ggplot(lab1data, aes(x = ats_14, fill = ats_14)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "Statistics is an inseparable aspect of scientific research.")
+
+
+(p11 / p12 / p14) +
+    plot_annotation("Attitudes towards Statistics Items with Positive Frames")
+```
+
+## Item Group B
+
+Group B consists of four additional items that were also framed positively, in that I was hoping for answers closer to "Strongly Agree" than "Strongly Disagree".
+
+Item | Description
+:---: | :-------------------------------------------------------:
+`ats_15` | I am excited at the prospect of using statistics in my work.
+`ats_21` | One becomes a more effective "consumer" of research findings if one has some training in statistics.
+`ats_23` | Statistical training is relevant to my performance in my field of study.
+`ats_25` | Statistical thinking will one day be as necessary for efficient citizenship as the ability to read and write.
+
+### Plotting Group B
+
+```{r, fig.height = 7}
+p15 <- ggplot(lab1data, aes(x = ats_15, fill = ats_15)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "Excited to use in my work")
+
+p21 <- ggplot(lab1data, aes(x = ats_21, fill = ats_21)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "Effective consumer")
+
+p23 <- ggplot(lab1data, aes(x = ats_23, fill = ats_23)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "Relevant to my field")
+
+p25 <- ggplot(lab1data, aes(x = ats_25, fill = ats_25)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    coord_flip() +
+    labs(x = "", 
+         title = "Necessary for citizenship")
+
+
+(p15 + p21) / (p23 + p25) +
+    plot_annotation(
+        "Attitudes towards Statistics: Four More Positively Framed Items")
+```
+
+The last of these items (on the bottom right of the plot) appears to be the least agreeable of these responses among students in this year's class. 
+
+You'll note that I used `coord_flip()` to switch the X and Y axes here so that the categories (in particular Strongly Disagree) would be legible even when I put plots next to each other horizontally.
+
+### Tabulating Group B
+
+We could use the approach we took previously (with `tabyl`) to look at these pieces, or We might also consider using the `datasummary` function from the `modelsummary` package here to obtain a contingency table. More on this function at https://vincentarelbundock.github.io/modelsummary/articles/datasummary.html.
+
+```{r}
+datasummary(
+    ('Excited to use in my work' = ats_15) + 
+        ('Effective consumer' = ats_21) +
+        ('Relevant to my field' = ats_23) +
+        ('Necessary for citizenship' = ats_25)
+    ~ (N = 1) + Percent(),
+    data = lab1data, fmt = NULL)
+```
+
+## Item Group C 
+
+The remaining three 10 items were framed negatively, so that I was hoping for answers closer to "Strongly Disagree" than "Strongly Agree". We'll call those Group C.
+
+Item | Description
+:---: | :-------------------------------------------------------:
+`ats_13` | I have difficulty seeing how statistics relates to my field of study.
+`ats_22` | Dealing with numbers makes me uneasy.
+`ats_24` | Statistical analysis is best left to the "experts" and should not be part of a typical scientist's job.
+
+### Plotting Group C
+
+```{r, fig.height = 7}
+p13 <- ggplot(lab1data, aes(x = ats_13, fill = ats_13)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "I have difficulty seeing how statistics relates to my field of study.")
+
+p22 <- ggplot(lab1data, aes(x = ats_22, fill = ats_22)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "Dealing with numbers makes me uneasy.")
+
+p24 <- ggplot(lab1data, aes(x = ats_24, fill = ats_24)) + 
+    geom_bar(col = "black") + 
+    guides(fill = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_viridis_d(drop = FALSE) +
+    labs(x = "", 
+         title = "Statistical analysis is best left to the 'experts'...")
+
+(p13 / p22 / p24) +
+    plot_annotation("Attitudes towards Statistics Items with Negative Frames")
+```
+
+It's gratifying, and not especially surprising, that people in this course tended to respond to these items further towards the "Strongly Disagree" side of the scale.
+
+### Tabulating Group C
+
+```{r}
+datasummary(
+    ('Difficulty relating to my field' = ats_13) + 
+        ('Uneasy dealing with numbers' = ats_22) +
+        ('Best left to the experts' = ats_24)
+    ~ (N = 1) + Percent(),
+    data = lab1data, fmt = NULL)
+```
+
+
+# Tools Used Before 431
+
+I asked **Prior to starting this course, which of the following have you used to do something meaningful?** The options available to you (picking all that apply) included:
+
+- none of these
+- R
+- RStudio
+- R Markdown
+- Github
+- dplyr
+- ggplot2
+- the pipe `%>%`
+- the tidyverse
+
+Working with data from "choose all that apply" questions is always an extra effort. Let's start with the folks who chose "none of the above" meaning that all of this is new to them.
+
+```{r}
+lab1data %>% tabyl(tools_None) %>% adorn_pct_formatting()
+```
+
+Here, 1 indicates that the option was selected, and 0 indicates that it was not. That's a substantial fraction of the class who gave the response "none of these", certainly. You folks are not alone.
+
+- I'll note that this 1/0 coding means that the mean of the `tools_None` variable also gives us the proportion of respondents who chose this option, and the sum gives us the count.
+
+```{r}
+lab1data %>% 
+    summarize(People = sum(tools_None), 
+              Proportion = mean(tools_None))
+```
+
+We can use the `across` function again here to help with our summarizing, and then show the results four at a time, so that they fit in the available space, like...
+
+```{r}
+lab1data %>% summarize(across(starts_with("tools_"), sum)) %>%
+    select(2:5) 
+```
+
+```{r}
+lab1data %>% summarize(across(starts_with("tools_"), sum)) %>%
+    select(6:9) 
+```
+
+It is a bit odd to see people who said that they had used RStudio, but not R, but there are definitely people who use RStudio as an editor or development environment for work in languages other than R, like Python or SQL.
+
+## Plotting the Tools
+
+```{r}
+our_table <- lab1data %>% summarize(across(starts_with("tools_"), mean)) %>%
+    pivot_longer(cols = starts_with("tools_"), names_to = "tools_used", values_to = "proportion") %>%
+    mutate(tools = str_remove(tools_used, "tools_")) %>%
+    mutate(tools = fct_reorder(factor(tools), -proportion))
+
+our_table
+```
+
+OK. Now, I'm ready to plot the table. Since we're plotting an actual value here for each tool (the proportion) we'll use `geom_col` rather than `geom_bar`, and just for fun, I'll be using CWRU's blue (for the fill) and grey (for the lines around the bars.)
+
+```{r}
+ggplot(our_table,  aes(x = tools, y = proportion)) +
+    geom_col(col = "#626262", fill = "#0a304e") + 
+    labs(title = "Proportion of 431 students with prior experience")
+```
+
+I hope that's helpful for you.
+
+# How You'll Take 431
+
+Two remaining items, each on a five point scale from Always to Never...
+
+- How often do you anticipate participating in (watching) our 431 classes live, as they happen? (stored in `watch_live`)
+- How often do you anticipate watching the recordings of our class Zoom sessions, after they happen? (stored in `watch_rec`)
+
+```{r}
+lab1data %>% count(watch_live)
+```
+
+```{r}
+lab1data %>% count(watch_rec)
+```
+
+First, let's change these variables to factors, and re-order them in a sensible way.
+
+```{r}
+watch_levels <- 
+    c("Always", "Usually", "About half of the time", "Seldom", "Never")
+
+lab1data <- lab1data %>%
+    mutate(across(starts_with("watch_"), ~ factor(., levels = watch_levels)))
+```
+
+Now, let's build a two-way table, with titles...
+
+```{r}
+lab1data %>% tabyl(watch_live, watch_rec) %>% adorn_title()
+```
+
+The most common combination appears to be watching live always with watching the recording seldom.
+
+I am obviously concerned about the one student who listed that they were never going to watch the live version or the recording. That's something I need to look into.
+
+# Session Information
+
+```{r}
+sessionInfo()
+```
+
