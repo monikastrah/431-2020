@@ -10,6 +10,11 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - Class 05 slides will be available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class05/431_class-05-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class05/431_class-05-slides_2020.Rmd).
 
+## Today's Main Example
+
+- Dr. Love used R Markdown to explore [your responses to the survey (part 4) of Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/survey-results-2020/README.md), which we'll discuss at some length in class today.
+
+
 ## Announcements
 
 1. So far this semester, Dr. Love (and the TAs) have been chasing you down via email if something isn't submitted on time, or isn't submitted correctly, and reminding you about deadlines outside of class time. Enjoy it while it lasts, because we intend to (essentially) stop doing that after [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md).
@@ -29,7 +34,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 8. The [modelsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package is now a recommended package to install in the class. I've modified [our R Packages list](https://thomaselove.github.io/431/r_packages.html) appropriately. 
     - The package provides some great tools for creating summary tables (including things like Table 1) for models and tibbles. More to come, but you can see lots of examples at the [github repository for the package](https://vincentarelbundock.github.io/modelsummary/index.html).
     - Some `modelsummary` functions, especially functions used by the `datasummary` tools, fight with functions in the `Hmisc` package, so there can be some problems if you have `Hmisc` or `rms` (which loads `Hmisc`) loaded when you try to use `modelsummary` and vice versa. We'll usually avoid this by looking at either `modelsummary` or `rms` tools in a particular example. 
-9. Dr. Love used R Markdown to explore [your responses to the survey (part 4) of Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/survey-results-2020/README.md), which we'll discuss at some length in class today.
 
 ## What Should I Be Working On?
 
