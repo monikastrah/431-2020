@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> **Quote to come.** 
+> My biggest regret as a 1st year grad student was pretending to say I knew X when I didn't really. Learning to say "No, tell me about X" became a gateway for (1) learning stuff, (2) getting to know a person, and (3) learning how to say no in other areas of my life. - [Josephine Lutko](https://twitter.com/JosephineLukito/status/1303081582492889088)
 
 ## Today's Slides
 
@@ -29,6 +29,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 8. The [modelsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package is now a recommended package to install in the class. I've modified [our R Packages list](https://thomaselove.github.io/431/r_packages.html) appropriately. 
     - The package provides some great tools for creating summary tables (including things like Table 1) for models and tibbles. More to come, but you can see lots of examples at the [github repository for the package](https://vincentarelbundock.github.io/modelsummary/index.html).
     - Some `modelsummary` functions, especially functions used by the `datasummary` tools, fight with functions in the `Hmisc` package, so there can be some problems if you have `Hmisc` or `rms` (which loads `Hmisc`) loaded when you try to use `modelsummary` and vice versa. We'll usually avoid this by looking at either `modelsummary` or `rms` tools in a particular example. 
+9. Dr. Love used R Markdown to explore [your responses to the survey (part 4) of Lab 01](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/survey-results-2020/README.md), which we'll discuss at some length in class today.
 
 ## What Should I Be Working On?
 
