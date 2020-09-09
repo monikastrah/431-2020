@@ -12,15 +12,20 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-To come.
+1. [Feedback on the Minute Paper after Class 05](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers) is now available.
+2. 
 
 ## What Should I Be Working On?
 
-To come.
+1. [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due to Canvas on Monday.
 
 ## One Last Thing
 
-To come.
+The American Statistical Association and The New York Times have an ongoing collaboration entitled "[What's Going On In This Graph?](https://www.nytimes.com/column/whats-going-on-in-this-graph)" which is a great way to force yourself to think through some interesting visualization challenges and get a bit inspired. Here's one I particularly liked [from 2017-10-10](https://www.nytimes.com/2017/10/09/learning/whats-going-on-in-this-graph-oct-10-2017.html):
+
+![]()
+
+
 
 
 
