@@ -23,7 +23,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 The American Statistical Association and The New York Times have an ongoing collaboration entitled "[What's Going On In This Graph?](https://www.nytimes.com/column/whats-going-on-in-this-graph)" which is a great way to force yourself to think through some interesting visualization challenges and get a bit inspired. Here's one I particularly liked [from 2017-10-10](https://www.nytimes.com/2017/10/09/learning/whats-going-on-in-this-graph-oct-10-2017.html):
 
-![]()
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class06/images/nyt_2017-10-10.png)
 
 
 
