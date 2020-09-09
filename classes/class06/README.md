@@ -25,7 +25,12 @@ The American Statistical Association and The New York Times have an ongoing coll
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class06/images/nyt_2017-10-10.png)
 
+### Questions we might ask here...
 
-
-
+1. What do the axis labels tell us about what is being shown?
+2. How would you describe the relationship between the variables under study?
+3. What does the diagonal line indicate about the pattern?
+4. What characterizes the foods (granola, coconut oil, granola bats and frozen yogurt, for example) which appear in the lower right portion of the graph?
+5. Do these results surprise you or confirm your prior beliefs about the phenomenon under study?
+6. Is there anything else worth noting about the graph?
 
