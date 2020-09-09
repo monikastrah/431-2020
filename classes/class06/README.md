@@ -12,7 +12,18 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## For Today's Breakouts
 
-- I've created a small data set (`movies_2020.csv`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB).
+- I've created a small data set (`movies_2020.csv`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB), specifically:
+    - `film`
+    - `mentions`
+    - `year`
+    - `imdb_categories`
+    - `imdb_ratings`
+    - `imdb_average`
+    
+For instance, for my favorite film this is the screen I would use to gather the data...
+
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class06/images/g2.png)
+
 
 ## Announcements
 
