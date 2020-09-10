@@ -1,6 +1,6 @@
 # Movies: Breakout Session Materials for Class 06 (2020-09-10)
 
-I've created a small data set (`movies_2020-09-10.csv`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). We're going to use this example in several breakout sessions this semester.
+I've created a small data set (`[movies_2020-09-10.csv](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv)`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). We're going to use this example in several breakout sessions this semester.
 
 As an example, for my favorite film, this is the screen I would have used to gather the data...
 
@@ -20,7 +20,7 @@ Length of Film (in minutes) | `length` | 202
 
 ## Task for today's first breakout session (Class 06)
 
-1. Identify two exploratory questions about films in this sample that could be addressed using these data, as they are.
+1. Identify two exploratory questions about films in this sample that could be addressed using [these data, as they are](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv).
     - A good question (a) explores relationships involving two or more variables from the data set (b) lets us use data from all (or almost all) of the films and (c) ends with a question mark.
     - As an example that fits at least (a) and (c), we might ask "Do dramas last longer than comedy films?" which could be answered using the `length` and `imdb_categories` variables, although (b) is a problem since some films are not listed as either Drama or Comedy.
 
