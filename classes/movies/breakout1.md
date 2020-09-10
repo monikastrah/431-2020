@@ -21,7 +21,7 @@ Length of Film (in minutes) | `length` | 202
 - IMDB updates regularly, so the results may look a little different now. I pulled the `imdb_ratings` and most other data on 2020-09-10. 
 - The `imdb_stars` result is actually a proprietary weighted average. "IMDb publishes weighted vote averages rather than raw data averages. Various filters are applied to the raw data in order to eliminate and reduce attempts at vote stuffing by people more interested in changing the current rating of a movie than giving their true opinion of it. The exact methods we use will not be disclosed." 
     - The arithmetic mean and median rating are also available, if you click through the `imdb_ratings` value.
-- I also added an `id` value, which sorts the 66 film titles alphabetically (while ignoring the word "The" in the start of a title.)
+- I also added a `film_id` value, which sorts the 66 film titles alphabetically (while ignoring the word "The" in the start of a title.)
 
 ## Task for today's first breakout session (Class 06)
 
