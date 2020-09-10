@@ -12,23 +12,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## For Today's Breakouts
 
-- I've created a small data set (`movies_2020.csv`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). 
-
-As an example, for my favorite film this is the screen I would have used to gather the data...
-
-![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class06/images/godfather2_imdb.png)
-
-and here are the results that would produce:
-
-Description | Variable | Value
-----------: | -------- | ---------:
-Film Name | `film` | The Godfather, Part II
-Students selecting this film | `mentions` | 0
-Year of release | `year` | 1974
-Film Categories (up to 3) | `imdb_categories` | Crime, Drama
-Number of Star Ratings (IMDB) | `imdb_ratings` | 1099840
-Weighted Average Rating (IMDB) | `imdb_stars` | 9.0
-Length of Film (in minutes) | `length` | 202
+We'll [head over here](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/breakout1.md) for today's breakout.
 
 ## Announcements
 
