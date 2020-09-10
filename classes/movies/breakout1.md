@@ -20,13 +20,17 @@ Length of Film (in minutes) | `length` | 202
 
 ## Task for today's first breakout session (Class 06)
 
-1. Identify two exploratory questions about films in this sample that could be addressed using [these data, as they are](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv).
+1. Identify **two** exploratory questions about films in this sample that could be addressed using the five key variables (`year`, `imdb_categories`, `imdb_ratings`, `imdb_stars` and `length`) that are contained in [the current version of the movies data](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv).
     - A good question (a) explores relationships involving two or more variables from the data set (b) lets us use data from all (or almost all) of the films and (c) ends with a question mark.
     - As an example that fits at least (a) and (c), we might ask "Do dramas last longer than comedy films?" which could be answered using the `length` and `imdb_categories` variables, although (b) is a problem since some films are not listed as either Drama or Comedy.
+    - You'll be specifying your questions using the google form found at http://bit.ly/431-2020-movies-1.
 
-## What will we do in the next breakout session (so you can anticipate what's coming)
+2. Look at the list of films on the list. What is the first film on the list (alphabetically) that all of the members of your breakout group have seen? If there isn't a film on the list that you've all seen, write in "We couldn't find one."
 
-We'll gather in groups to identify two additional variables available on the internet (and not necessarily on IMDB) that could be added to this data set to expand on what could be studied here in an interesting way. 
+
+## What will we do in our next breakout session (so you can anticipate what's coming next time)
+
+We'll gather in new breakout groups to identify two additional variables available on the internet (and not necessarily on IMDB) that could be added to this data set to expand on what could be studied here in an interesting way. 
 
 - For each variable, we're hoping you will identify a URL on the internet where those data seem to be available.
 - Your first variable should be **categorical** (with 2-10 mutually exclusive and collectively exhaustive levels, and without a lot of missing data.) 
