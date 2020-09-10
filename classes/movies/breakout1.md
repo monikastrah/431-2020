@@ -41,7 +41,7 @@ In brief, you'll ...
 - In another, you'll gather in new breakout groups to identify two additional variables available on the internet (and not necessarily on IMDB) that could be added to the data to expand on what could be studied here in an interesting way. 
     - For each variable, we're hoping you will identify a URL on the internet where those data seem to be available.
     - Your first variable should be **categorical** (with 2-10 mutually exclusive and collectively exhaustive levels, and without a lot of missing data.) 
-        - An example (that you shouldn't use since I have it in a separate file already) would be the Motion Picture Association's Rating (G, PG, PG13, R, NC17 or Not Rated) which is also available on IMDB's page for the film. For my favorite film, this is R.
+        - An example (that you shouldn't use since I have it in a separate file already) would be the Motion Picture Association's Rating (G, PG, PG13, R, NC17 or Not Rated) which is also available on IMDB's page for the film. For my favorite film, this is R. I'll note that only four of these six possible categories are actually relevant to our 66 films.
         - The categories in your suggested variable can be either ordinal or nominal.
     - The other variable you suggest should be **quantitative**, so that it takes values across a range of numerical results, and has units of measurement. 
         - An example (that you shouldn't use since I have it already) would be the percentage of raters on IMDB that rated the film at the maximum level (10 stars) which is a percentage ranging from 0% to 100%. This is available by clicking on the number of people who rated the film on the main IMDB page, and for my favorite film, this would be 43.0%.
