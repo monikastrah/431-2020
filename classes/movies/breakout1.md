@@ -18,7 +18,7 @@ Number of Star Ratings (IMDB) | `imdb_ratings` | 1099840
 Weighted Average Rating (IMDB) | `imdb_stars` | 9.0
 Length of Film (in minutes) | `length` | 202
 
-IMDB updates regularly, so the results may look a little different now. I pulled the `imdb_ratings` and most other data on 2020-09-10.
+IMDB updates regularly, so the results may look a little different now. I pulled the `imdb_ratings` and most other data on 2020-09-10. I also added an `id` value, which sorts the 66 film titles alphabetically (while ignoring the word "The" in the start of a title.)
 
 ## Task for today's first breakout session (Class 06)
 
@@ -30,8 +30,7 @@ In brief, you'll ...
     - A good question (a) explores relationships involving two or more variables from the data set (b) lets us use data from all (or almost all) of the films and (c) ends with a question mark.
     - As an example that fits at least (a) and (c), we might ask "Do dramas last longer than comedy films?" which could be answered using the `length` and `imdb_categories` variables, although (b) is a problem since some films are not listed as either Drama or Comedy.
 
-2. Look at the list of films on the list. What is the first film on the list (alphabetically) that all of the members of your breakout group have seen? If there isn't a film on the list that you've all seen, write in "We couldn't find one."
-
+2. Look at the list of films. Alphabetically, what is the first film (i.e., lowest id value) that all of the members of your breakout group have seen? Write in the name of the film. If there isn't a film on the list that you've all seen, write in "We couldn't find one."
 
 ## What will we do in upcoming breakout sessions
 
