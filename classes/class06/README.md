@@ -25,6 +25,7 @@ We'll [head over here](https://github.com/THOMASELOVE/431-2020/blob/master/class
     - My list is part of the [Course Syllabus](https://thomaselove.github.io/431-2020-syllabus/) but several people [responded to Kelly](https://twitter.com/kellybodwin/status/1303083136046170112) with interesting suggestions.
     - One common suggestion was Nate Silver's *The Signal and the Noise*, which we will read as part of 432 next Spring.
 5.  It's by no means mandatory, but you might want to visit RStudio Community at https://community.rstudio.com/ which is a generally useful place, especially after the course ends and you want to have a community to discuss issues with that's friendly.
+    - There's an [introductory post](https://community.rstudio.com/t/welcome-to-the-rstudio-community/8) which explains the purpose of the Community.
 6. Depending on where you are in the Leek reading, you may have developed a curiosity about Bland-Altman plots, especially because there's nothing in our Course Notes about them, at least not yet.
     - Here's a [nice introduction to one way of accomplishing these plots in R](https://cran.r-project.org/web/packages/BlandAltmanLeh/vignettes/Intro.html).
 
