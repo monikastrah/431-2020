@@ -26,11 +26,13 @@ Length of Film (in minutes) | `length` | 202
 
 ## What will we do in the next breakout session (so you can anticipate what's coming)
 
-2. Identify two additional variables available on the internet (and not necessarily on IMDB) that could be added to this data set to expand on what could be studied here in an interesting way. 
-    - For each variable, we're hoping you will identify a URL on the internet where those data seem to be available.
-    - Your first variable should be **categorical** (with 2-10 mutually exclusive and collectively exhaustive levels, and without a lot of missing data.) 
-        - An example (that you shouldn't use because I'm beating you to making this suggestion) would be the Motion Picture Arts Association's Rating (G, PG, PG13, R, NC17 or Not Rated) which is also available on the front page of IMDB for the film. In the case of my favorite film, this would be R.
-        - The categories in your suggested variable can be either ordinal or nominal.
-    - The other variable you suggest should be **quantitative**, so that it takes values across a range of numerical results, and has units of measurement. 
-        - An example (that you shouldn't use again - I beat you to it) would be the percentage of raters on IMDB that rated the film at the maximum level (10 stars) which would then be a percentage measure ranging anywhere from 0% to 100%. This is available by clicking on the number of people who rated the film on the main IMDB page, and for my favorite film, this would be 43.0%.
-        - In this work, we'll require a quantitative variable to be any quantity that has at minimum 11 different observed values in our set of films. Eleven is too small a count, really, for most quantities, but we'll work with it.
+We'll gather in groups to identify two additional variables available on the internet (and not necessarily on IMDB) that could be added to this data set to expand on what could be studied here in an interesting way. 
+
+- For each variable, we're hoping you will identify a URL on the internet where those data seem to be available.
+- Your first variable should be **categorical** (with 2-10 mutually exclusive and collectively exhaustive levels, and without a lot of missing data.) 
+    - An example (that you shouldn't use because I'm beating you to making this suggestion) would be the Motion Picture Arts Association's Rating (G, PG, PG13, R, NC17 or Not Rated) which is also available on the front page of IMDB for the film. In the case of my favorite film, this would be R.
+    - The categories in your suggested variable can be either ordinal or nominal.
+- The other variable you suggest should be **quantitative**, so that it takes values across a range of numerical results, and has units of measurement. 
+    - An example (that you shouldn't use again - I beat you to it) would be the percentage of raters on IMDB that rated the film at the maximum level (10 stars) which would then be a percentage measure ranging anywhere from 0% to 100%. This is available by clicking on the number of people who rated the film on the main IMDB page, and for my favorite film, this would be 43.0%.
+    - In this work, we'll require a quantitative variable to be any quantity that has at minimum 11 different observed values in our set of films. Eleven is too small a count, really, to declare something "quantitative" in practice, but we'll make the best of it.
+
