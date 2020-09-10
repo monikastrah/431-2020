@@ -18,6 +18,8 @@ Number of Star Ratings (IMDB) | `imdb_ratings` | 1099840
 Weighted Average Rating (IMDB) | `imdb_stars` | 9.0
 Length of Film (in minutes) | `length` | 202
 
+IMDB updates regularly, so the results may look a little different now. I pulled the `imdb_ratings` and most other data on 2020-09-10.
+
 ## Task for today's first breakout session (Class 06)
 
 You'll be reporting the results of your work using the google form found at http://bit.ly/431-2020-movies-1. One person in your group should fill out the form.
