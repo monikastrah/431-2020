@@ -33,7 +33,8 @@ We'll [head over here](https://github.com/THOMASELOVE/431-2020/blob/master/class
 
 1. [Lab 02](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) is due to Canvas on Monday.
 2. Readings: You'll need to have read Spiegelhalter Chapters 1-3 and Leek sections 9-10, but I'd go further and finish Leek and perhaps Spiegelhalter Chapter 4, too, this weekend.
-3. At some point, I will post the Project A instructions (I hope by Saturday) but there is no reason to do anything more than read them before you get the Lab done. I would work on Lab 03, too (due a week after Lab 02) if I were you rather than pay any real attention to Project A, at least until we've had the chance to discuss Project A in class next Tuesday.
+3. At some point, I will post the Project A instructions (I hope by Saturday) but we will discuss them in class on Tuesday 2020-09-15 and I may make some changes right up until class time. 
+    - Once you finish Lab 02, I recommend you work on [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) rather than think about Project A (until after Tuesday's class.)
 
 ## One Last Thing
 
