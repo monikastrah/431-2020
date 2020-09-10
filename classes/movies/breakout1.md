@@ -1,4 +1,4 @@
-# Breakout Session Materials for Class 06 (2020-09-10)
+# Movies: Breakout Session Materials for Class 06 (2020-09-10)
 
 I've created a small data set (`movies_2020.csv`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). We're going to use this example in several breakout sessions this semester.
 
@@ -18,13 +18,13 @@ Number of Star Ratings (IMDB) | `imdb_ratings` | 1099840
 Weighted Average Rating (IMDB) | `imdb_stars` | 9.0
 Length of Film (in minutes) | `length` | 202
 
-## Task for the first breakout session (Class 06)
+## Task for today's first breakout session (Class 06)
 
 1. Identify two exploratory questions about films in this sample that could be addressed using these data, as they are.
     - A good question (a) explores relationships involving two or more variables from the data set (b) lets us use data from all (or almost all) of the films and (c) ends with a question mark.
     - As an example that fits at least (a) and (c), we might ask "Do dramas last longer than comedy films?" which could be answered using the `length` and `imdb_categories` variables, although (b) is a problem since some films are not listed as either Drama or Comedy.
 
-## Task for the second breakout session (Class 07)
+## What will we do in the next breakout session (so you can anticipate what's coming)
 
 2. Identify two additional variables available on the internet (and not necessarily on IMDB) that could be added to this data set to expand on what could be studied here in an interesting way. 
     - For each variable, we're hoping you will identify a URL on the internet where those data seem to be available.
