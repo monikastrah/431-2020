@@ -1,6 +1,6 @@
 # Movies: Breakout Session Materials for Class 06 (2020-09-10)
 
-I've created a small data set (`movies_2020.csv`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). We're going to use this example in several breakout sessions this semester.
+I've created a small data set (`movies_2020-09-10.csv`) containing the list of movies people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) and several characteristics of those films gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). We're going to use this example in several breakout sessions this semester.
 
 As an example, for my favorite film, this is the screen I would have used to gather the data...
 
