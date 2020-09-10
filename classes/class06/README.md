@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> **Quote to come.** 
+> Facts are stubborn things. But statistics are more pliable. (Mark Twain) 
 
 ## Today's Slides
 
