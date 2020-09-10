@@ -48,6 +48,7 @@ The American Statistical Association and The New York Times have an ongoing coll
 2. How would you describe the relationship between the variables under study?
 3. What does the diagonal line indicate about the pattern?
 4. What characterizes the foods (granola, coconut oil, granola bats and frozen yogurt, for example) which appear in the lower right portion of the graph?
-5. Do these results surprise you or confirm your prior beliefs about the phenomenon under study?
-6. Is there anything else worth noting about the graph?
+5. What are the most unusual foods in terms of their position in the plot?
+6. Do these results surprise you or confirm your prior beliefs about the phenomena under study?
+7. Is there anything else worth noting about the graph?
 
