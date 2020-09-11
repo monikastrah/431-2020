@@ -24,7 +24,11 @@ All Labs should be turned in by the deadline specified on the [Course Calendar](
 
 ## Grading Errors and Regrade Requests
 
-The Lab Regrade Request Form is now available at http://bit.ly/431-2020-lab-regrade-requests. Visit [Section 12.3.3 of the Syllabus for more details](https://thomaselove.github.io/431-2020-syllabus/deliverables-assignments.html#labs). Essentially, if you want Dr. Love to review your grade on a Lab, fill out the form any time before 2020-12-10 at Noon. In mid-December, Dr. Love will then open this Regrade Request Form. If the additional points you request could change your course grade, he'll review your request. If not, then he won't. 
+The Lab Regrade Request Form is now available at http://bit.ly/431-2020-lab-regrade-requests. This is how we handle all grading errors and regrade requests on Labs. 
+
+- Essentially, if you want Dr. Love to review your grade on one (or more) of our eight Labs, fill out [the Regrade Request Form](http://bit.ly/431-2020-lab-regrade-requests) anytime before 2020-12-10 at Noon. 
+- In mid-December, Dr. Love will then open [the form](http://bit.ly/431-2020-lab-regrade-requests). If you have requested additional points that could change your course grade, he'll review your request. If not, then he won't. 
+- Visit [Section 12.3.3 of the Syllabus](https://thomaselove.github.io/431-2020-syllabus/deliverables-assignments.html#labs) for more details on this policy.
 
 The [Course Calendar](https://thomaselove.github.io/431/calendar.html) also provides a link to the Lab Regrade Request Form on its deadline. 
 
