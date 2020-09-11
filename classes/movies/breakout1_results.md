@@ -4,7 +4,7 @@
 
 Each of the ten breakout groups identified two questions, and specified the variables they would use in addressing them. I present these results below, unedited except to correct a couple of typographical errors.
 
-Group | Question (as phrased by the group, without editing) | year of release (`year`) | # of ratings (`imdb_ratings`) | average rating (`imdb_stars`) | length (`length`) | categories (`imdb_categories`)
+Group | Question  | `year` | `imdb_ratings` | `imdb_stars` | `length` | `imdb_categories`
 ---: | ------------------------------------- | :---: | :---: | :---: | :---: | :---:  
 1-1 | Are longer movies rated higher? | - | - | X | X | -
 1-2 | Are older movies longer? | X | - | - | X | -
@@ -16,9 +16,6 @@ Group | Question (as phrased by the group, without editing) | year of release (`
 4-2 | Which category of movies typically get the highest rating? | - | - | X | - | X
 5-1 | Does year of movie release correlate with number of ratings? | X | X | - | - | -
 5-2 | Does the number of categories that a film is listed under correlate with star ratings? | - | - | X | - | X
-
-Group | Question (as phrased by the group, without editing) | year of release (`year`) | # of ratings (`imdb_ratings`) | average rating (`imdb_stars`) | length (`length`) | categories (`imdb_categories`)
----: | ------------------------------------- | :---: | :---: | :---: | :---: | :---:  
 6-1 | Does the number of ratings correspond to the year it came out? Do the older movies have more ratings when compared to the newer movies released? | X | X | - | - | -
 6-2 | Do movies with the Drama tag have a longer length time when compared to other movies of different genres? | - | - | - | X | X
 7-1 | Does the length of a movie relate to its star rating? | - | - | X | X | -
