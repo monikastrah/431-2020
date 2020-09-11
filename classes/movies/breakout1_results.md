@@ -4,7 +4,7 @@
 
 Each of the ten breakout groups identified two questions, and specified the variables they would use in addressing them. I present these results below, unedited except to correct a couple of typographical errors.
 
-Group | Question (as phrased by the group, without editing) | year | # of ratings | average rating | length | categories
+Group | Question (as phrased by the group, without editing) | year of release (`year`) | # of ratings (`imdb_ratings`) | average rating (`imdb_stars`) | length (`length`) | categories (`imdb_categories`)
 ---: | ------------------------------------- | :---: | :---: | :---: | :---: | :---:  
 1 | Are longer movies rated higher? | - | - | X | X | -
 1 | Are older movies longer? | X | - | - | X | -
