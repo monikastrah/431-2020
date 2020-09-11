@@ -18,8 +18,9 @@ Lab | Assignment | Answer Sketch and Grading Rubric
 
 All Labs should be turned in by the deadline specified on the [Course Calendar](https://thomaselove.github.io/431/calendar.html). We don't actually give extensions on Labs. Instead, we use the following grading policy.
 
-- Labs that are turned in after the deadline but before the Answer Sketch for the Lab is posted (usually this will before noon on the next day) can receive up to 90% of available points.
+- Labs that are turned in after the deadline but before the Answer Sketch for the Lab is posted (usually noon the next day) can receive up to 90% of available points.
 - Labs turned in after the Answer Sketch is posted, but within one week of the deadline can receive up to 75% of available points.
+- Labs turned in one week or later after the deadline will receive no credit.
 - Your lowest two (of eight) Lab grades over the course of the term will be dropped before we calculate your Lab grade for the course. 
 
 ## Grading Errors and Regrade Requests
