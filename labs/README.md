@@ -31,6 +31,6 @@ The Lab Regrade Request Form is now available at http://bit.ly/431-2020-lab-regr
 - In mid-December, Dr. Love will then open [the form](http://bit.ly/431-2020-lab-regrade-requests). If you have requested additional points that could change your course grade, he'll review your request. If not, then he won't. 
 - Visit [Section 12.3.3 of the Syllabus](https://thomaselove.github.io/431-2020-syllabus/deliverables-assignments.html#labs) for more details on this policy.
 
-The [Course Calendar](https://thomaselove.github.io/431/calendar.html) also provides a link to the Lab Regrade Request Form on its deadline. 
+The [Course Calendar](https://thomaselove.github.io/431/calendar.html) also provides a link to the Lab Regrade Request Form and its associated deadline (2020-12-10 at noon). 
 
 
