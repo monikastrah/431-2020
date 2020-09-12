@@ -26,3 +26,19 @@ Group | Question  | `year` | `imdb_ratings` | `imdb_stars` | `length` | `imdb_ca
 9-2 | Do more recent films have more ratings? | X | X | - | - | -
 10-1 | What is the category of film with the highest average IMDB rating? | - | - | X | - | X
 10-2 | Are the length of a film and the number of star ratings correlated?  | - | X | - | X | -
+
+## Which is the first movie you've all seen (alphabetically)?
+
+Group(s) | Members | First Movie all had seen
+----: | :--: | --------------------------
+2, 3, 6, 9 | 6 | 3. Avatar
+7 | 5 | 3. Avatar
+10 | 4 | 4. Avengers: Endgame
+1, 4 | 6 | 11. Black Panther
+5 | 6 | 15. The Dark Knight
+8 | 6 | 41. Matilda
+
+Based on these ten samples, what do you think is the probability that there is a film on the list of 66 that everyone in the class has seen, including Dr. Love? 
+
+Note: Dr. Love has seen 29 of the 66 films on the list. Of the "stopping places" listed above, he has seen Avengers: Endgame, Black Panther and The Dark Knight, but not Avatar or Matilda.
+
