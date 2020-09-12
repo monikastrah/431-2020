@@ -2,9 +2,9 @@
 
 ## Exploratory Questions (with planned variables)
 
-Each of the ten breakout groups identified two questions, and specified the variables they would use in addressing them. I present these results below, unedited except to correct a couple of typographical errors. In this table, "ratings" refers to the number of ratings on IMDB (`imdb_ratings`) while "stars" refers to the weighted average star rating (`imdb_stars`) for the film.
+Each of the ten breakout groups identified two questions, and specified the variables they would use in addressing them. I present these results below, unedited except to correct a couple of typographical errors. In this table, "ratings" refers to the number of ratings on IMDB (`imdb_ratings`) while "stars" refers to the weighted average star rating (`imdb_stars`) for the film, and "Code" refers to the original breakout group number (1-10), then a dash, then the question number (1 or 2).
 
-Group | Question  | year | ratings | stars | length | categories
+Code | Question  | year | ratings | stars | length | categories
 ---: | ------------------------------------- | :---: | :---: | :---: | :---: | :---:  
 1-1 | Are longer movies rated higher? | - | - | X | X | -
 1-2 | Are older movies longer? | X | - | - | X | -
