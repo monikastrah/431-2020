@@ -2,7 +2,7 @@
 
 ## Exploratory Questions (with planned variables)
 
-Each of the ten breakout groups identified two questions, and specified the variables they would use in addressing them. I present these results below, unedited except to correct a couple of typographical errors. In this table, "# ratings" refers to the number of ratings on IMDB (`imdb_ratings`) while "stars" refers to the weighted average star rating (`imdb_stars`) for the film.
+Each of the ten breakout groups identified two questions, and specified the variables they would use in addressing them. I present these results below, unedited except to correct a couple of typographical errors. In this table, "ratings" refers to the number of ratings on IMDB (`imdb_ratings`) while "stars" refers to the weighted average star rating (`imdb_stars`) for the film.
 
 Group | Question  | year | # ratings | stars | length | categories
 ---: | ------------------------------------- | :---: | :---: | :---: | :---: | :---:  
