@@ -4,7 +4,7 @@
 
 Each of the ten breakout groups identified two questions, and specified the variables they would use in addressing them. I present these results below, unedited except to correct a couple of typographical errors, and grouped by their choice of variables. 
 
-In this table, "ratings" refers to the number of ratings on IMDB (`imdb_ratings`) while "stars" refers to the weighted average star rating (`imdb_stars`) for the film, and "Code" refers to the original breakout group number (1-10), then a dash, then the question number (1 or 2).
+In this table, **ratings** refers to the number of ratings on IMDB (`imdb_ratings`) while **stars** refers to the weighted average star rating (`imdb_stars`) for the film, and **Code** identifies the questions by the breakout group number (1-10), then the question number (1 or 2).
 
 Code | Question  | year | ratings | stars | length | categories
 ---: | ------------------------------------- | :---: | :---: | :---: | :---: | :---:  
