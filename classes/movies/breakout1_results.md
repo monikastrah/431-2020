@@ -19,9 +19,6 @@ Code | Question  | year | ratings | stars | length | categories
 1-1 | Are longer movies rated higher? | - | - | X | X | -
 7-1 | Does the length of a movie relate to its star rating? | - | - | X | X | -
 8-2 | Does length of the movie correlate with the weighted average IMDB rating? | - | - | X | X | -
-
-Code | Question  | year | ratings | stars | length | categories
----: | ------------------------------------- | :---: | :---: | :---: | :---: | :---:  
 10-1 | What is the category of film with the highest average IMDB rating? | - | - | X | - | X
 4-2 | Which category of movies typically get the highest rating? | - | - | X | - | X
 5-2 | Does the number of categories that a film is listed under correlate with star ratings? | - | - | X | - | X
