@@ -30,7 +30,7 @@ Each of the ten breakout groups generated two questions. I've [listed the 20 pro
 
 ## Task for today's second breakout session (Class 07)
 
-Several common themes emerged  in your proposals, including...
+Several common themes emerged  in your proposals. We'll explore two of them today in our breakout sessions.
 
 1. **Do older films have more IMDB ratings?**
     - "Do older movies have more numbers of star ratings at IMDB?"
@@ -42,13 +42,16 @@ Several common themes emerged  in your proposals, including...
     - "Are longer movies rated higher?"
     - "Does the length of a movie relate to its star rating?"
     - "Does length of the movie correlate with the weighted average IMDB rating?"
-3. **Which movie categories (also known as *genres*) have the highest star ratings?**
+
+To help support this work, Dr. Love has completed an analysis of two other questions that were suggested, specifically those listed below.
+
+- **Do films with more IMDB ratings have higher star ratings?**
+    - What's the association between the imdb_ratings and imdb_stars?
+    - Is there an association between the number of ratings versus number of stars?
+- **Which movie categories (also known as *genres*) have the highest star ratings?**
     - "What is the category of film with the highest average IMDB rating?"
     - "Which category of movies typically get the highest rating?"
     - "Does the number of categories that a film is listed under correlate with star ratings?"
-4. **Do films with more IMDB ratings have higher star ratings?**
-    - What's the association between the imdb_ratings and imdb_stars?
-    - Is there an association between the number of ratings versus number of stars?
 
 ## What will we do in upcoming breakout sessions? Expand the data set. 
 
