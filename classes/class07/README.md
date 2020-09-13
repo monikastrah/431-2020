@@ -8,7 +8,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Today's Slides
 
-- Class 07 slides will be available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.Rmd).
+- Class 07 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.Rmd).
 
 ## Today's Breakout Activity
 
@@ -37,7 +37,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-To come.
+[Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) will appear on Tuesday 2020-09-15.
+
 
 
 
