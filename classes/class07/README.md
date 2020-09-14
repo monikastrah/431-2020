@@ -42,17 +42,20 @@ and I can click on the ![](https://github.com/THOMASELOVE/431-2020/blob/master/c
 
 7. I've updated the **COVID-19** repository with [links to some more articles](https://github.com/THOMASELOVE/covid19) if you're interested.
 
-## What Should I Be Working On? ([calendar](https://thomaselove.github.io/431/calendar.html) has all deadlines.)
-
-1. There is a Minute Paper after Class 07. Please complete it by noon Wednesday 2020-09-16.
-2. Lab 03 is the next deliverable after that. You should be able to complete it by the end of today's class.
-3. Readings: By the end of this week, Spiegelhalter through Chapter 4, and Chapter 7, and Leek through section 5, and sections 9-12.
-
-## One Last Thing
+## The Projects
 
 - A draft of [Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) is now available, but an expanded version will be available by class time.
 - I've also added some [information regarding what will make an acceptable Project B data set](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/projectB.md) in response to popular demand, but I don't plan to say any more before Project A is finished.
 
+## What Should I Be Working On? ([calendar](https://thomaselove.github.io/431/calendar.html) has all deadlines.)
 
+1. There is a [Minute Paper after Class 07](http://bit.ly/431-2020-minute-07). Please complete it by noon Wednesday 2020-09-16.
+2. After today's class is an excellent time to read the [Project A Instructions] and see what is ahead of you. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
+3. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) is the next deliverable. You should be able to complete it by the end of today's class.
+4. Readings: By the end of this week, Spiegelhalter through Chapter 4, and Chapter 7, and Leek through section 5, and sections 9-12.
+
+## One Last Thing
+
+To come.
 
 
