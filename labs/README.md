@@ -14,6 +14,10 @@ Lab | Assignment | Answer Sketch and Grading Rubric
 07 | Lab 07 Instructions | Sketch for Lab 07
 08 | Lab 08 Instructions | Sketch for Lab 08
 
+## (Potentially) Helpful Video Recording
+
+Dr. Love built [a short video now available on our Shared Google Drive](http://bit.ly/431-2020-Love-does-Lab02) on creating an R Project and using it to do the first couple of questions for Lab 02, then saving the R Markdown and HTML files.
+
 ## Grading
 
 All labs are graded by the TAs and then reviewed by Dr. Love. Your grades will be available approximately one week after the deadline for each Lab. 
