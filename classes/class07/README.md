@@ -48,7 +48,8 @@ and I can click on the ![](https://github.com/THOMASELOVE/431-2020/blob/master/c
 
 ## One Last Thing
 
-[Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) will appear on Tuesday 2020-09-15.
+- A draft of [Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) is now available, but an expanded version will be available by class time.
+- I've also added some [information regarding what will make an acceptable Project B data set](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/projectB.md) in response to popular demand, but I don't plan to say any more before Project A is finished.
 
 
 
