@@ -4,47 +4,49 @@ Draft of Project A Instructions
 This is a draft. A more complete version (with some changes, perhaps)
 will appear before class on 2020-09-15.
 
-# Working Alone vs. Working in a Group
+# Your “Proposal” will be due 2020-10-02 at Noon
+
+You will submit a short document providing the answers to a series of
+questions related to your Data Development work. The TAs and Dr. Love
+will review these results to ensure that your proposed plan meets the
+requirements for this project, and either approve the plan, or request
+changes. If changes are requested, you’ll have 48 hours to make those
+changes and resubmit until your plan is approved.
+
+## Working Alone vs. Working in a Group
 
 You may work alone on this project, or in a group of two people. If you
-decide to work in a pair, you will specify that in the “proposal” stage.
+decide to work in a pair, you will specify that in the “proposal” stage,
+and you’re stuck with that choice for the rest of Project A.
 
-# Your “Proposal” will be due 2020-10-02
+# Your Final Submission involves Three Parts, all due 2020-10-20 at Noon
 
-1.  No later than noon on 2020-10-02, you will submit a short document
-    providing the answers to a series of questions related to your Data
-    Development work. The TAs and Dr. Love will review these results to
-    ensure that your proposed plan meets the requirements for this
-    project, and either approve the plan, or request changes. If changes
-    are requested, you’ll have 48 hours to make those changes and
-    resubmit until your plan is approved.
+1.  **The Report** You will submit a report in both R Markdown and
+    either HTML or PDF addressing all of the issues described in the
+    Data Development and Analytic Tasks.
 
-# Your Final Submission involves Three Parts
+2.  **The Video** You will produce a video in the mp4 format of no more
+    than 3 minutes in length if you’re working alone, and of no more
+    than 5 minutes in length between you if you are working in a pair.
+    In this video, you will describe what you believe to be the most
+    important findings for your choice of two of the four analyses you
+    will complete.
+    
+      - If you are working in a pair, each of you will present one of
+        the two analyses.
+      - Your video must include your face (so recording in Zoom is
+        preferable) and must share graphs and results taken from the
+        report you build.
+      - The video must stand on its own, in the sense that it must be
+        completely understandable to someone who has not read your
+        report, but who is generally familiar with County Health
+        Rankings and its measurements.
 
-1.  You will submit a report in both R Markdown and either HTML or PDF
-    addressing all of the issues described in the Data Development and
-    Analytic Tasks.
+3.  **The Self-Evaluation** You will each (whether working alone or with
+    a partner) submit a brief self-evaluation via a Google Form Dr. Love
+    will make available.
 
-2.  You will produce a video in the mp4 format of no more than 3 minutes
-    in length if you’re working alone, and of no more than 5 minutes in
-    length between you if you are working in a pair. In this video, you
-    will describe what you believe to be the most important findings for
-    your choice of two of the four analyses you will complete.
-
-If you are working in a pair, each of you will present one of the two
-analyses. Your video must include your face (so recording in Zoom is
-preferable) and must share graphs and results taken from the report you
-build. The video must stand on its own, in the sense that it must be
-completely understandable to someone who has not read your report, but
-who is generally familiar with County Health Rankings and its
-measurements.
-
-3.  You will each (whether working alone or with a partner) submit a
-    brief self-evaluation via a Google Form Dr. Love will make
-    available.
-
-All three of these elements are due at the Project A due deadline of
-Noon 2020-10-20.
+All three elements are due at the Project A deadline.
 
 # The Data
 
@@ -87,7 +89,7 @@ you’ll need to complete the following steps.
     top row before ingesting the data into R (I suggest you do this in
     Excel or perhaps Google Sheets, and then resave a new version of the
     file without this top row as a .csv before ingesting into R)
-2.  Select variables (there will be 9) that you actually need to use and
+2.  Select variables (there will be 8) that you actually need to use and
     rename them into useful formats instead of the default names
     provided by CHR.
 3.  Filter to the subset of observations (counties) that you actually
