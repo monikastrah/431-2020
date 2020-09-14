@@ -13,9 +13,9 @@ knitr::opts_chunk$set(comment = NA)
 
 You may work alone on this project, or in a group of two people. If you decide to work in a pair, you will specify that in the "proposal" stage.
 
-# Your "Proposal" will be due 2020-10-01
+# Your "Proposal" will be due 2020-10-02
 
-1. No later than noon on 2020-10-01, you will submit a short document providing the answers to a series of questions related to your Data Development work. The TAs and Dr. Love will review these results to ensure that your proposed plan meets the requirements for this project, and either approve the plan, or request changes. If changes are requested, you'll have 48 hours to make those changes and resubmit until your plan is approved. 
+1. No later than noon on 2020-10-02, you will submit a short document providing the answers to a series of questions related to your Data Development work. The TAs and Dr. Love will review these results to ensure that your proposed plan meets the requirements for this project, and either approve the plan, or request changes. If changes are requested, you'll have 48 hours to make those changes and resubmit until your plan is approved. 
 
 # Your Final Submission involves Three Parts
 
@@ -27,7 +27,7 @@ If you are working in a pair, each of you will present one of the two analyses. 
 
 3. You will each (whether working alone or with a partner) submit a brief self-evaluation via a Google Form Dr. Love will make available.
 
-All three of these elements are due at the Project A due deadline of NBoon 2020-10-20.
+All three of these elements are due at the Project A due deadline of Noon 2020-10-20.
 
 # The Data
 
@@ -140,16 +140,18 @@ You will then demonstrate main numerical summaries from the tibble by running th
 2. `mosaic::favstats` on each of your final (not raw) versions of the quantitative variables (so variables 1, 2, and 3)
 3. `janitor::tabyl` on your categorical variables 4 and 5 as well as on `state`.
 
-# Your Project "Proposal" due 2020-10-01 at noon
+# Your Project "Proposal" due 2020-10-02 at noon
 
 Your project proposal requires you to create the tibble you plan to use and then send (via Canvas) an R Markdown file and HTML (or PDF) result that contains:
 
 1. A list of the states you chose, and the number of counties you are therefore studying.
-2. A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of how you're creating the categories in variables 4 and 5.
+2. A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of how you're planning to create the categories in variables 4 and 5.
 3. A print-out of your tibble, to prove it is a tibble.
 4. The `Hmisc::describe` result for your tibble
 
 Be sure that your proposal includes your name as the author in R Markdown.
+
+Dr. Love will provide an R Markdown template for the project "proposal" document to you.
 
 ## Working with a partner?
 
@@ -179,8 +181,7 @@ All of these elements should include R code that creates the information you nee
 
 # How Much Help Will You Get?
 
-1. Dr. Love will provide an R Markdown template for the project "proposal" document by 2020-09-22.
-2. Dr. Love will also prepare an (incomplete but useful) sample project report, using a previous year's CHR data. This will also be available to you by 2020-09-22.
+By 2020-09-22, Dr. Love will provide an R Markdown template for the project "proposal", as well as an (incomplete but useful) sample project report, in each case using a previous year's CHR data.
 
 The Teaching Assistants are ready to help you with every stage of the project, and you can ask them questions during office hours or via Piazza starting 2020-09-15.
 

@@ -9,9 +9,9 @@ will appear before class on 2020-09-15.
 You may work alone on this project, or in a group of two people. If you
 decide to work in a pair, you will specify that in the “proposal” stage.
 
-# Your “Proposal” will be due 2020-10-01
+# Your “Proposal” will be due 2020-10-02
 
-1.  No later than noon on 2020-10-01, you will submit a short document
+1.  No later than noon on 2020-10-02, you will submit a short document
     providing the answers to a series of questions related to your Data
     Development work. The TAs and Dr. Love will review these results to
     ensure that your proposed plan meets the requirements for this
@@ -44,7 +44,7 @@ measurements.
     available.
 
 All three of these elements are due at the Project A due deadline of
-NBoon 2020-10-20.
+Noon 2020-10-20.
 
 # The Data
 
@@ -260,7 +260,7 @@ running the following three summaries:
 3.  `janitor::tabyl` on your categorical variables 4 and 5 as well as on
     `state`.
 
-# Your Project “Proposal” due 2020-10-01 at noon
+# Your Project “Proposal” due 2020-10-02 at noon
 
 Your project proposal requires you to create the tibble you plan to use
 and then send (via Canvas) an R Markdown file and HTML (or PDF) result
@@ -270,12 +270,15 @@ that contains:
     therefore studying.
 2.  A list of the five variables (including their original raw names and
     your renamed versions) you are studying, with a clear indication of
-    how you’re creating the categories in variables 4 and 5.
+    how you’re planning to create the categories in variables 4 and 5.
 3.  A print-out of your tibble, to prove it is a tibble.
 4.  The `Hmisc::describe` result for your tibble
 
 Be sure that your proposal includes your name as the author in R
 Markdown.
+
+Dr. Love will provide an R Markdown template for the project “proposal”
+document to you.
 
 ## Working with a partner?
 
@@ -363,11 +366,9 @@ you need, and complete English sentences that interpret those results.
 
 # How Much Help Will You Get?
 
-1.  Dr. Love will provide an R Markdown template for the project
-    “proposal” document by 2020-09-22.
-2.  Dr. Love will also prepare an (incomplete but useful) sample project
-    report, using a previous year’s CHR data. This will also be
-    available to you by 2020-09-22.
+By 2020-09-22, Dr. Love will provide an R Markdown template for the
+project “proposal”, as well as an (incomplete but useful) sample project
+report, in each case using a previous year’s CHR data.
 
 The Teaching Assistants are ready to help you with every stage of the
 project, and you can ask them questions during office hours or via
