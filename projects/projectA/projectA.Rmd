@@ -114,7 +114,7 @@ So, including `OH`, you will need a total of 200-400 counties, from 4-6 states. 
 - two others (variables 2 and 3) will also be treated as quantitative predictors of interest for variable 1
 - variable 4 will be categorized into 2 mutually exclusive and collectively exhaustive levels to create a binary categorical variable of interest in predicting variable 1
 - variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1
-- there will also be a seventh analytic variable, specifically the `state`, which will serve as another multi-categorical (with 4-6 categories) predictor of variable 1
+- the `state` will serve as another multi-categorical (with 4-6 categories) predictor of variable 1, so this will also be part of your tibble
 
 4. **Create your Main Tibble**: Your main data set for analysis then should be gathered into a tibble containing the following information:
 

@@ -205,9 +205,9 @@ checked this to be true.
   - variable 5 will be categorized into 3-5 mutually exclusive and
     collectively exhaustive levels to create a multi-categorical
     variable of interest in predicting variable 1
-  - there will also be a seventh analytic variable, specifically the
-    `state`, which will serve as another multi-categorical (with 4-6
-    categories) predictor of variable 1
+  - the `state` will serve as another multi-categorical (with 4-6
+    categories) predictor of variable 1, so this will also be part of
+    your tibble
 
 <!-- end list -->
 
