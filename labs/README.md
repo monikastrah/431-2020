@@ -14,6 +14,15 @@ Lab | Assignment | Answer Sketch and Grading Rubric
 07 | Lab 07 Instructions | Sketch for Lab 07
 08 | Lab 08 Instructions | Sketch for Lab 08
 
+## Grading
+
+All labs are graded by the TAs and then reviewed by Dr. Love. Your grades will be available approximately one week after the deadline for each Lab. 
+
+**Grades on Labs** (and our records about minute papers) are found in the course grading roster at http://bit.ly/431-2020-grades. 
+
+- You'll need to log into Google via CWRU to see your scores and the comments left there by the Teaching Assistants. 
+- Your **Lab Code** identifies you in the roster. You should have received your three-digit Lab Code via email from Dr. Love on 2020-09-13 or 2020-09-14. (The email's subject is 431 Lab Code.) 
+
 ## Late Work?
 
 All Labs should be turned in by the deadline specified on the [Course Calendar](https://thomaselove.github.io/431/calendar.html). We don't actually give extensions on Labs. Instead, we use the following grading policy.
