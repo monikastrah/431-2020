@@ -40,6 +40,8 @@ and I can click on the ![](https://github.com/THOMASELOVE/431-2020/blob/master/c
 6. **HIP-Cuyahoga**: The [Health Improvement Partnership-Cuyahoga (HIP-Cuyahoga)](https://hipcuyahoga.org/) is a diverse and committed group of people who care about health. HIP-Cuyahoga is building opportunities for everyone in Cuyahoga County to be healthy because we believe everyone should have a fair chance to reach his or her fullest health potential. Their key priorities are eliminating structural racism, healthy eating and active living, chronic disease management and linking clinical and public health. If these are areas of interest for you, I encourage you to join their mailing list, and participate in the programs and other efforts they are making.
     - One closely related such effort is the **[Community Tobacco Survey 2020](https://www.surveymonkey.com/r/2020communitytobaccosurvey)**. The Community Awareness and Prevention Association has received continued funding from the Ohio Department of Health to decrease the initiation and use of tobacco by youth and adults, decrease people's exposure to secondhand smoke, and help current tobacco users embrace cessation. If you are interested in helping to develop strategies to improve the overall health and wellness of youth and adults, please feel encouraged to take a brief [Community Tobacco Survey](https://www.surveymonkey.com/r/2020communitytobaccosurvey). 
 
+7. I've updated the **COVID-19** repository with [links to some more articles](https://github.com/THOMASELOVE/covid19) if you're interested.
+
 ## What Should I Be Working On? ([calendar](https://thomaselove.github.io/431/calendar.html) has all deadlines.)
 
 1. There is a Minute Paper after Class 07. Please complete it by noon Wednesday 2020-09-16.
