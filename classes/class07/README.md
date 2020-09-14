@@ -27,20 +27,27 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 2. **Corrections to Course Notes**: Several enterprising students were good enough to let me know about some typographical and other errors in the Course Notes, Chapter 3. A new version was posted on 2020-09-13 that addresses those concerns. If you find a typo, PLEASE let me know through the corrections folder in Piazza, or via direct email.
 
-3. **A Question about Piazza**: We notice that students don't seem to be including their R Markdown files when they ask questions on Piazza. When I create a new question on Piazza, I see a screen that looks like this:
+3. **Piazza, Issue 1**: We notice that students don't seem to be including their R Markdown files when they ask questions on Piazza. When I create a new question on Piazza, I see a screen that looks like this:
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/images/piazza01.png)
 
-and I can click on the ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/images/piazza02.png) icon if I want to upload, for example, an R Markdown file. Do you, as students, see the same thing?
+and I can click on the ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/images/piazza02.png) icon or I can select Insert ... File if I want to upload, for example, an R Markdown file.
 
-4. **Tables in R**: There's a nice blog from Thomas Mock (2020-09-04) on [10+ Guidelines for Better Tables in R](https://themockup.blog/posts/2020-09-04-10-table-rules-in-r/) with links to many other excellent resources. The `gt` package figures substantially into the examples there, and [RStudio's gt page](https://gt.rstudio.com/) is a great place to get inspired to build a truly publication-ready table of information.
+4. **Piazza, Issue 2**: When posting to Piazza, we want to discourage you from writing a private post to the instructors, instead of one that everyone can see, especially since the first thing Dr. Love will do when he sees that is make it public anyway so that others can benefit from the answer. We promise - if you are confused - someone else is, too, and is counting on you to be brave enough to ask. You are allowed to post questions anonymously, though, frankly, it's hard to understand why you'd do that, because all it really does is prevent you from getting some class participation credit for asking your question. 
+    - We're all here to learn. **THERE ARE NO DUMB QUESTIONS!**
+    - Do not be embarassed to ask a question that is "too simple". 
+    - Simple questions are the easiest ones for us (and for your fellow students) to answer! So they make people happy because they can contribute.
+    - A simple question is just a clear sign (to me, anyway) that my teaching needs to improve in that area. 
+    - If you have a question that's too personal for Piazza for some reason, email Dr. Love.
 
-5. **Data for Good**: The American Statistical Association has a nice post (2020-09-01) on "[Getting Started in Data for Good](https://magazine.amstat.org/blog/2020/09/01/getting-started-in-data-for-good/)" by David Corliss, describing the growing Data for Good movement and providing some ideas for how people can contribute.
+5. **Tables in R**: There's a nice blog from Thomas Mock (2020-09-04) on [10+ Guidelines for Better Tables in R](https://themockup.blog/posts/2020-09-04-10-table-rules-in-r/) with links to many other excellent resources. The `gt` package figures substantially into the examples there, and [RStudio's gt page](https://gt.rstudio.com/) is a great place to get inspired to build a truly publication-ready table of information.
 
-6. **HIP-Cuyahoga**: The [Health Improvement Partnership-Cuyahoga (HIP-Cuyahoga)](https://hipcuyahoga.org/) is a diverse and committed group of people who care about health. HIP-Cuyahoga is building opportunities for everyone in Cuyahoga County to be healthy because we believe everyone should have a fair chance to reach his or her fullest health potential. Their key priorities are eliminating structural racism, healthy eating and active living, chronic disease management and linking clinical and public health. If these are areas of interest for you, I encourage you to join their mailing list, and participate in the programs and other efforts they are making.
+6. **Data for Good**: The American Statistical Association has a nice post (2020-09-01) on "[Getting Started in Data for Good](https://magazine.amstat.org/blog/2020/09/01/getting-started-in-data-for-good/)" by David Corliss, describing the growing Data for Good movement and providing some ideas for how people can contribute.
+
+7. **HIP-Cuyahoga**: The [Health Improvement Partnership-Cuyahoga (HIP-Cuyahoga)](https://hipcuyahoga.org/) is a diverse and committed group of people who care about health. HIP-Cuyahoga is building opportunities for everyone in Cuyahoga County to be healthy because we believe everyone should have a fair chance to reach his or her fullest health potential. Their key priorities are eliminating structural racism, healthy eating and active living, chronic disease management and linking clinical and public health. If these are areas of interest for you, I encourage you to join their mailing list, and participate in the programs and other efforts they are making.
     - One closely related such effort is the **[Community Tobacco Survey 2020](https://www.surveymonkey.com/r/2020communitytobaccosurvey)**. The Community Awareness and Prevention Association has received continued funding from the Ohio Department of Health to decrease the initiation and use of tobacco by youth and adults, decrease people's exposure to secondhand smoke, and help current tobacco users embrace cessation. If you are interested in helping to develop strategies to improve the overall health and wellness of youth and adults, please feel encouraged to take a brief [Community Tobacco Survey](https://www.surveymonkey.com/r/2020communitytobaccosurvey). 
 
-7. I've updated the **COVID-19** repository with [links to some more articles](https://github.com/THOMASELOVE/covid19) if you're interested.
+8. I've updated the **COVID-19** repository with [links to some more articles](https://github.com/THOMASELOVE/covid19) if you're interested.
 
 ## The Projects
 
