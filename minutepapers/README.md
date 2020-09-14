@@ -17,3 +17,16 @@ After Class | due | Link to Minute Paper Form | Link to Dr. Love's Feedback
 3 (2020-09-01) | 2020-09-02 NOON | http://bit.ly/431-2020-minute-03 | http://bit.ly/431-2020-minute-03-feedback
 5 (2020-09-08) | 2020-09-09 NOON | http://bit.ly/431-2020-minute-05 | http://bit.ly/431-2020-minute05-feedback
 
+**Dr. Love's records about submission of minute papers** are found in the course grading roster at http://bit.ly/431-2020-grades. 
+
+- You'll need to log into Google via CWRU to see your status regarding each Minute Paper in Dr. Love's records. 
+- Your **Lab Code** identifies you in the roster. You should have received your three-digit Lab Code via email from Dr. Love on 2020-09-13 or 2020-09-14. (The email's subject is 431 Lab Code.) 
+
+## Course Participation Grades
+
+Details on how course participation is affected by Minute Papers are provided [in Section 12 of the Syllabus](https://thomaselove.github.io/431-2020-syllabus/deliverables-assignments.html#minute-papers-and-class-participation). The most common ways to earn additional class participation besides the Minute Papers are:
+
+(1) doing bonus things Dr. Love offers during the semester (for example, the movie poster to prove you read the syllabus), 
+(2) asking and answering useful questions on Piazza, and 
+(3) finding typos in the materials and helping Dr. Love to fix them
+
