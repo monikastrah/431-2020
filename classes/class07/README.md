@@ -31,7 +31,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/images/piazza01.png)
 
-and I can click on the ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/images/piazza02.png) icon if I want to upload a file. Do you, as students, see the same thing?
+and I can click on the ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/images/piazza02.png) icon if I want to upload, for example, an R Markdown file. Do you, as students, see the same thing?
 
 4. **Tables in R**: There's a nice blog from Thomas Mock (2020-09-04) on [10+ Guidelines for Better Tables in R](https://themockup.blog/posts/2020-09-04-10-table-rules-in-r/) with links to many other excellent resources. The `gt` package figures substantially into the examples there, and [RStudio's gt page](https://gt.rstudio.com/) is a great place to get inspired to build a truly publication-ready table of information.
 
