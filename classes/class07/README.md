@@ -62,7 +62,7 @@ and you can either click on the ![](https://github.com/THOMASELOVE/431-2020/blob
 ## What Should I Be Working On? ([calendar](https://thomaselove.github.io/431/calendar.html) has all deadlines.)
 
 1. There is a [Minute Paper after Class 07](http://bit.ly/431-2020-minute-07). Please complete it by noon Wednesday 2020-09-16.
-2. Tomorrow (wait for the complete version) or Thursday would be an excellent time to read the [Project A Instructions] and see what is ahead of you. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
+2. Tomorrow (wait for the complete version) or Thursday would be an excellent time to read the Project A Instructions and see what is ahead of you. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
 3. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) is the next deliverable. You should be able to complete it by the end of today's class.
 4. Readings: By the end of this week, Spiegelhalter through Chapter 4, and Chapter 7, and Leek through section 5, and sections 9-12.
 
