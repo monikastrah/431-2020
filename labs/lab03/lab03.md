@@ -1,6 +1,6 @@
 431 Lab 03
 ================
-Last Edited 2020-09-04 23:52:07
+Last Edited 2020-09-15 15:55:04
 
 # General Instructions
 
@@ -16,6 +16,12 @@ prepared by you alone. Don’t be afraid to ask questions, either via
 folder), at [TA office
 hours](https://thomaselove.github.io/431/contact.html) or before/after
 class.
+
+**PLEASE NOTE**: Your response to **every** question, whether we
+explicitly ask for it or not, should include a complete English sentence
+responding to the question. Code alone is not a sufficient response,
+even if the code is correct. Some responses might not need any code, but
+every response needs at least one complete sentence.
 
 ## An R Markdown Template for Lab 03
 
