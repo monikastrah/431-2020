@@ -20,13 +20,19 @@ options(width = 55)
 
 NHANES data from 2011-12: a sample of 1000 adults.
 
-- Fix a problem with the old `nh3` data I'd built in Classes 5 and 6
+- Fix a problem with the old `nh2` data I'd built in Classes 5 and 6
 - Create `nh3` which solves this problem.
-- How should we explore these data before modeling?
-  - What can we learn about the center, spread, outliers, and shape of quantitative data?
-  - Are these blood pressure data well described by a Normal distribution?
-- How might we start to look at Associations between our quantities?
-  - Scatterplots, Correlation, Linear Models, Smoothing
+
+How should we explore these data before modeling?
+
+- What can we learn about the center, spread, outliers, and shape of quantitative data?
+- Are these blood pressure data well described by a Normal distribution?
+
+### Next Time
+
+How might we look at Associations between our quantities?
+
+- Scatterplots, Correlation, Linear Models, Smoothing
 
 ## Loading our R Packages
 
@@ -41,8 +47,6 @@ library(tidyverse)
 
 theme_set(theme_bw())
 ```
-
-We'll also load another package later that I'll keep secret for now.
 
 ## Creating the `old_nh2` data set (from last week)
 
@@ -100,6 +104,12 @@ nh3 <- nh_deduplicated %>%
   slice_sample(n = 1000) %>%
   clean_names()
 ```
+
+## The importance of clean names
+
+![](images/janitor_clean_names.png)
+
+Source: https://github.com/allisonhorst/stats-illustrations
 
 ## Today's Questions
 
@@ -260,7 +270,6 @@ There are multiple hypothesis testing schemes (Kolmogorov-Smirnov, etc.) and eac
 
 Whenever you *can* avoid hypothesis testing and instead actually plot the data, you should plot the data. Sometimes you can't plot (especially with really big data) but the test should be a last resort.
 
-
 ## Can we simulate a Normal model for SBP?
 
 Simulate 1000 observations from a Normal distribution with the same mean and standard deviation as our `nh3` systolic BP values...
@@ -315,6 +324,12 @@ p1 / p2
 ```
 
 - Does a Normal model look appropriate for describing the `nh3` SBP?
+
+## Graphs are our most important tool!
+
+![](images/not_normal.png)
+
+Source: https://github.com/allisonhorst/stats-illustrations
 
 ## Rescale `nh3` SBP histogram as density
 
@@ -641,7 +656,82 @@ ggplot(nh3, aes(sample = sbp)) +
   labs(title = "Normal Q-Q plot of nh3 SBP")
 ```
 
-## Our 1000 observed Systolic Blood Pressures
+## How do we build this slide?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh3, aes(sample = sbp)) +
+  geom_qq(col = "royalblue") + geom_qq_line(col = "red") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3 SBP")
+
+p2 <- ggplot(nh3, aes(x = sbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "royalblue", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3$sbp), 
+                            sd = sd(nh3$sbp)),
+                col = "red", lwd = 1.5) +
+  labs(title = "Density Function: nh3 SBP")
+
+p3 <- ggplot(nh3, aes(x = sbp, y = "")) +
+  geom_boxplot(fill = "royalblue", outlier.color = "royalblue") + 
+  labs(title = "Boxplot: nh3 SBP", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ sbp, data = nh3) %>% kable(digits = 1)
+```
+
+## Code for `sbp` in `nh3` (First of Three Plots)
+
+```{r, eval = FALSE}
+p1 <- ggplot(nh3, aes(sample = sbp)) +
+  geom_qq(col = "royalblue") + 
+  geom_qq_line(col = "red") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3 SBP")
+```
+
+## Code for `sbp` in `nh3` (Second of Three Plots)
+
+```{r, eval = FALSE}
+p2 <- ggplot(nh3, aes(x = sbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, 
+                 fill = "royalblue", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3$sbp), 
+                            sd = sd(nh3$sbp)),
+                col = "red", lwd = 1.5) +
+  labs(title = "Density Function: nh3 SBP")
+```
+
+## Code for `sbp` in `nh3` (Third of Three Plots)
+
+```{r, eval = FALSE}
+p3 <- ggplot(nh3, aes(x = sbp, y = "")) +
+  geom_boxplot(fill = "royalblue", 
+               outlier.color = "royalblue") + 
+  labs(title = "Boxplot: nh3 SBP", y = "")
+```
+
+## Putting the plots together...
+
+![](images/patchwork_1.jpg)
+
+## Using patchwork
+
+```{r, eval = FALSE}
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+```
+
+Also added...
+
+```{r}
+mosaic::favstats(~ sbp, data = nh3) %>% kable(digits = 1)
+```
+
+## Result: 1000 observed Systolic BP values
 
 ```{r, echo = FALSE}
 p1 <- ggplot(nh3, aes(sample = sbp)) +
@@ -842,7 +932,7 @@ As for numerical summaries, we'd like to see
 5. No real evidence of too many outlier candidates (more than 5% starts to get us concerned about a Normal model)
 6. No real evidence of individual outliers outside the reasonable range for the size of our data (we might expect about 3 observations in 1000 to fall more than 3 standard deviations away from the mean.)
 
-# How can we describe the relationship between SBP and DBP? 
+# NEXT TIME: How can we describe the relationship between SBP and DBP? 
 
 ## Scatterplot to study the SBP-DBP association
 
@@ -851,211 +941,4 @@ ggplot(nh3_new, aes(x = dbp, y = sbp)) +
   geom_point(col = "purple") + 
   theme(aspect.ratio = 1) # make the plot square for slide
 ```
-
-## Try to predict `sbp` from `dbp`?
-
-```{r, fig.height = 4.5}
-ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
-  geom_point(col = "purple") + theme(aspect.ratio = 1) +
-  geom_smooth(method = "lm", formula = y ~ x, 
-              col = "red", se = TRUE)
-```
-
-## What should we conclude from this scatterplot?
-
-1. Each of the 989 subjects in `nh3_new` is represented by one of the points.
-2. The association appears generally to be "positive" or "direct" in that as `dbp` increases, so does `sbp`.
-3. The association appears fairly linear, in that most of the points cluster around a pattern fit well by a straight line.
-4. The association is not particularly strong in that the range of `sbp` values associated with any particular `dbp` value is still pretty wide. 
-  - If we know someone's `dbp`, that should help us make better predictions of their sbp, but perhaps not much better than if we didn't know their `dbp`.
-5. I don't see any substantial outliers that are far away from all other points.
-
-## What line is being fit there?
-
-Least Squares Regression Line (a linear model) to predict `sbp` using `dbp`
-
-```{r}
-m1 <- lm(sbp ~ dbp, data = nh3_new)
-m1
-```
-
-Model m1 is **sbp = 76.13 + 0.62 dbp**. 
-
-- What do the slope and intercept mean?
-
-## Linear Model `m1`: sbp = 76.13 + 0.62 dbp
-
-76.13 is the intercept = predicted value of `sbp` when `dbp` = 0.
-
-- Is that reasonable in this setting?
-
-0.62 is the slope = predicted change in `sbp` per 1 unit change in `dbp`
-
-- What are the units here?
-- What does the fact that this estimated slope is positive mean?
-- What would the line look like if the slope was negative? What if the slope was zero?
-
-
-## Does R like this linear model?
-
-```{r}
-tidy(m1) %>% kable(digits = 2)
-```
-
-Yes. Wow. It **really** does. Look at those *p* values!
-
-## Does a linear model really work well here?
-
-```{r, fig.height = 4.5}
-ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
-  geom_point() + theme(aspect.ratio = 1) +
-  geom_smooth(method = "loess", formula = y ~ x, 
-              col = "blue", se = TRUE)
-```
-
-Hmmm...
-
-## How much of the variation in `sbp` does m1 capture?
-
-```{r}
-glance(m1) %>% select(r.squared, sigma, p.value) 
-```
-
-## Who can we make predictions for using model m1?
-
-We sampled 1000 observations from a group, and then dropped those with `dbp` below 40, leaving n = 989.) How many people in total would be eligible?
-
-```{r}
-nh3_eligible <- nh_deduplicated %>%
-  clean_names() %>%
-  filter(dbp > 39) 
-
-dim(nh3_eligible)
-dim(nh3_new)
-```
-
-## Can we look at the other (1709 - 989 = 720) subjects?
-
-```{r}
-nh3_therest <- anti_join(nh3_eligible, nh3_new, by = "id")
-
-dim(nh3_therest)
-```
-
-## Can we use m1 to predict SBP in our `nh3_therest` data?
-
-```{r}
-new720_nh3 <- augment(m1, newdata = nh3_therest)
-
-new720_nh3 %>% select(id, sbp, dbp, .fitted, .resid) %>% 
-  head() %>% kable(digits = 2)
-```
-
-## Out of Sample: Actual SBP vs. Fitted SBP by `m1` (n = 720)
-
-```{r, fig.height = 4.5}
-ggplot(new720_nh3, aes(x = .fitted, y = sbp)) +
-  geom_abline(slope = 1, intercept = 0, col = "red") +
-  geom_point() + theme(aspect.ratio = 1) 
-```
-
-## Out of Sample: Residuals vs. Fitted SBP by `m1` (n = 720)
-
-```{r, fig.height = 4.5}
-ggplot(new720_nh3, aes(x = .fitted, y = .resid)) +
-  geom_point() + theme(aspect.ratio = 1) +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE)
-```
-
-
-## Numerical Summary: Pearson Correlation
-
-The Pearson correlation ranges from -1 to +1.
-
-- The closer the absolute value of the correlation is to 1, the stronger a linear fit will be to the data, (in a limited sense).
-- A strong positive correlation (near +1) will indicate a strong model with a positive slope.
-- A strong negative correlation (near -1) will indicate a strong linear model with a negative slope.
-- A weak correlation (near 0) will indicate a poor fit for a linear model, although a non-linear model may still fit the data quite well.
-
-## Correlation in our sbp-dbp scatterplot?
-
-```{r, fig.height = 3}
-ggplot(nh3_new, aes(x = dbp, y = sbp)) +
-  geom_point() + theme(aspect.ratio = 1)
-
-nh3_new %$% cor(sbp, dbp)
-```
-
-What does a correlation of +0.53 imply about a linear fit to the data?
-
-## How is the r-squared ($r^2$)?
-
-```{r}
-glance(m1) %>% select(r.squared) %>% kable()
-```
-
-- R-squared describes the proportion of the variation in `sbp` accounted for by the linear model `m1` using `dbp`. 
-- About 28% in this case. Is that good?
-- Why is this called R-squared? What is the R?
-
-```{r}
-nh3_new %$% cor(sbp, dbp)
-```
-
-```{r}
-nh3_new %$% cor(sbp, dbp)^2
-```
-
-
-## Is this the only linear model R can fit to these data?
-
-Nope.
-
-```{r}
-library(rstanarm)
-```
-
-## Fit linear model using `stan_glm`?
-
-```{r}
-m2 <- stan_glm(sbp ~ dbp, data = nh3_new)
-```
-
-## Bayesian fitted linear model for our sbp data
-
-```{r}
-print(m2)
-```
-
-## Is the Bayesian model (with default prior) very different from our `lm` in this situation?
-
-```{r}
-coef(m1) # fit with lm
-
-coef(m2) # stan_glm with default priors
-```
-
-
-## How about a robust linear model?
-
-```{r}
-# requires installation of robust package
-# which I doubt we'll use again
-
-m3 <- robust::lmRob(sbp ~ dbp, data = nh3_new)
-
-tidy(m3) %>% kable(digits = 3)
-```
-
-## Or another kind of robust linear model?
-
-```{r}
-# requires installation of robustbase package
-# which I doubt we'll ever use again
-
-m4 <- robustbase::lmrob(sbp ~ dbp, data = nh3_new)
-
-tidy(m4) %>% kable(digits = 3)
-```
-
 
