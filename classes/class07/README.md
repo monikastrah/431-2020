@@ -10,10 +10,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - Class 07 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.Rmd). These slides also include some materials for Class 08.
 
-## Today's Breakout Activity
-
-- We'll be working on the movies data again.
-
 ## Announcements
 
 1. **Lab Policies** (Reminders: visit [Section 12.3 of the Syllabus](https://thomaselove.github.io/431-2020-syllabus/deliverables-assignments.html#labs) for more details.)
@@ -57,7 +53,7 @@ and you can either click on the ![](https://github.com/THOMASELOVE/431-2020/blob
 
 ## The Projects
 
-- A draft of [Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) is now available, but an expanded version will be available later tonight.
+- A draft of [Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) is now available, but an expanded version will be available later tonight. We'll spend a little time today hitting the highlights.
 - I've also added some [information regarding what will make an acceptable Project B data set](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/projectB.md) in response to popular demand, but I don't plan to say any more before Project A is finished.
 
 ## What Should I Be Working On? ([calendar](https://thomaselove.github.io/431/calendar.html) has all deadlines.)
