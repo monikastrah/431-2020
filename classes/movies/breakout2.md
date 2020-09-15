@@ -1,6 +1,6 @@
-# Movies: Breakout Session Materials for Class 07 (2020-09-15)
+# Movies: Breakout Session Materials for Class 08 (2020-09-17)
 
-As we discussed last time, I've created the [movies_2020-09-10.csv](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv) data set about the 66 films people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) which includes several characteristics for each film gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). The first three variables in the data set are:
+As we discussed last week, I've created the [movies_2020-09-10.csv](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv) data set about the 66 films people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) which includes several characteristics for each film gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). The first three variables in the data set are:
 
 Description | Variable 
 ----------: | -------- 
@@ -28,7 +28,7 @@ I described a good exploratory question as one which:
 
 Each of the ten breakout groups generated two questions. I've [listed the 20 proposed questions here](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/breakout1_results.md).
 
-## Task for today's second breakout session (Class 07)
+## Task for today's second breakout session (Class 08)
 
 Several common themes emerged  in your proposals. We'll explore two of them today in our breakout sessions.
 
