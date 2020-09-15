@@ -65,7 +65,7 @@ and you can either click on the ![](https://github.com/THOMASELOVE/431-2020/blob
 
 ## One Last Thing
 
-A video recording (nearly 15 minute .mp4) of Dr Love demonstrating the real-time use of R Studio to do (part of) Lab 02 is [now available on our Shared Google Drive](http://bit.ly/431-2020-Love-does-Lab02). This may be helpful to those of you having trouble saving your .Rmd and .HTML files or working with R Projects.
+A video recording (nearly 15 minute .mp4) of Dr Love demonstrating the real-time use of R Studio to do (part of) Lab 02 is [now available on our Shared Google Drive](http://bit.ly/431-2020-Love-does-Lab02). This may be especially helpful to those of you having trouble saving your .Rmd and .HTML files or working with R Projects.
 
 
 
