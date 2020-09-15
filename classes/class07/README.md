@@ -57,7 +57,7 @@ and you can either click on the ![](https://github.com/THOMASELOVE/431-2020/blob
 
 ## The Projects
 
-- A draft of [Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) is now available, but an expanded version will be available by class time.
+- A draft of [Project A instructions](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/projectA.md) is now available, but an expanded version will be available later tonight.
 - I've also added some [information regarding what will make an acceptable Project B data set](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectB/projectB.md) in response to popular demand, but I don't plan to say any more before Project A is finished.
 
 ## What Should I Be Working On? ([calendar](https://thomaselove.github.io/431/calendar.html) has all deadlines.)
