@@ -4,11 +4,11 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> **Quote to come.** 
+> It pays to keep wide awake in studying any graph. The thing looks so simple, so frank, and so appealing that the careless are easily fooled. (M. J. Moroney)
 
 ## Today's Slides
 
-- Class 07 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.Rmd).
+- Class 07 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/431_class-07-slides_2020.Rmd). These slides also include some materials for Class 08.
 
 ## Today's Breakout Activity
 
@@ -71,3 +71,6 @@ and you can either click on the ![](https://github.com/THOMASELOVE/431-2020/blob
 
 A video recording (nearly 15 minute .mp4) of Dr Love demonstrating the real-time use of R Studio to do (part of) Lab 02 is [now available on our Shared Google Drive](http://bit.ly/431-2020-Love-does-Lab02). This may be especially helpful to those of you having trouble saving your .Rmd and .HTML files or working with R Projects.
 
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class07/images/rmarkdown_wizards.png)
+
+Today's cartoons come from https://github.com/allisonhorst/stats-illustrations.
