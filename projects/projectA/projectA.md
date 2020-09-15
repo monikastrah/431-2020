@@ -2,7 +2,7 @@ Draft of Project A Instructions
 ================
 
 This is a draft. A more complete version (with some changes, perhaps)
-will appear before class on 2020-09-15.
+will appear late in the evening on 2020-09-15.
 
 # Your “Proposal” will be due 2020-10-02 at Noon
 
