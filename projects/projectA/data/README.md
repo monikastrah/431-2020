@@ -1,8 +1,8 @@
 # Project A Data for 431 in Fall 2020
 
-The data files contained in this folder each come from [the County Health Rankings Data & Documentation site](https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-documentation) and are part of the National Data & Documentation section of that site for the **2020 County Health Rankings**.
+The data files contained in this folder each come from [the County Health Rankings Data & Documentation site](https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-documentation) and are part of the National Data & Documentation section of that site for the **2020 County Health Rankings (CHR)**.
 
-Links to these files follow. You'll need all three files.
+Links to these files follow. You'll need all three files, but you can grab them from either my Github source or the CHR page.
 
 Element | Link on Github | Link at County Health Rankings
 ----------: | ------------ | -----------
