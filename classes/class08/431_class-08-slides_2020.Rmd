@@ -1,0 +1,1157 @@
+---
+title: "431 Class 08"
+author: "thomaselove.github.io/431"
+date: "2020-09-17"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 55)
+```
+
+## Today's R Packages
+
+```{r, message = FALSE}
+library(NHANES)
+library(janitor)
+library(knitr)
+library(broom)
+library(magrittr)
+library(patchwork)
+library(tidyverse)
+
+theme_set(theme_bw())
+```
+
+Later today (I hope) I'll also load the `rstanarm` package.
+
+# Learning By Example(s)
+
+## Six Simulated Data Sets
+
+I built six example data sets, each containing 500 observations, and each drawing from a known distribution
+
+Set | Shape of Simulation Source
+-----:  | ----------------------
+1 | Normal distribution (symmetric, bell-shaped)
+2 | Left-skewed
+3 | Right-skewed
+4 | (Roughly) symmetric counts (integers)
+5 | Uniform on (0, 100) Symmetric, but flatter than a Normal
+6 | Symmetric, but with substantial outliers
+
+## Does a Normal model fit well for these data?
+
+1. Is a Normal Q-Q plot showing something close to a straight line, without clear signs of skew (as indicated by a curve in the plot) or indications of problems like outliers in the tails of the distribution (S-shape or reverse S-shape)?
+
+2. Does a boxplot, violin plot and/or histogram show a symmetric distribution, where both the number of outliers is modest, and the distance of those outliers from the mean is modest?
+
+3. Do numerical measures match up with the expectations of a normal model?
+
+## Example 1: Data from a Normal Distribution
+
+```{r, echo = FALSE, message = FALSE}
+set.seed(431)
+example1 <- rnorm(n = 500, mean = 100, sd = 10)
+sim_study <- tibble(example1)
+
+p1 <- ggplot(sim_study, aes(sample = example1)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: Example 1")
+
+p2 <- ggplot(sim_study, aes(x = example1)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(sim_study$example1), 
+                            sd = sd(sim_study$example1)),
+                col = "navy", lwd = 1.5) +
+  labs(title = "Density Function: Example 1")
+
+p3 <- ggplot(sim_study, aes(x = example1, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot: Example 1", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ example1, data = sim_study) %>% kable(digits = 1)
+```
+
+
+## Example 2: Data from a Left-Skewed Distribution
+
+```{r, echo = FALSE}
+set.seed(431)
+sim_study$example2 <- rbeta(n = 500, shape1 = 2, shape2 = 5, ncp = 100)
+
+p1 <- ggplot(sim_study, aes(sample = example2)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: Example 2")
+
+p2 <- ggplot(sim_study, aes(x = example2)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(sim_study$example2), 
+                            sd = sd(sim_study$example2)),
+                col = "navy", lwd = 1.5) +
+  labs(title = "Density Function: Example 2")
+
+p3 <- ggplot(sim_study, aes(x = example2, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot: Example 2", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ example2, data = sim_study) %>% kable(digits = 2)
+```
+
+## Example 3: Data from a Right-Skewed Distribution
+
+```{r, echo = FALSE}
+set.seed(431)
+sim_study$example3 <- exp(rnorm(n = 500, mean = 1, sd = 0.5))
+
+p1 <- ggplot(sim_study, aes(sample = example3)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: Example 3")
+
+p2 <- ggplot(sim_study, aes(x = example3)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(sim_study$example3), 
+                            sd = sd(sim_study$example3)),
+                col = "navy", lwd = 1.5) +
+  labs(title = "Density Function: Example 3")
+
+p3 <- ggplot(sim_study, aes(x = example3, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot: Example 3", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ example3, data = sim_study) %>% kable(digits = 1)
+```
+
+## Example 4: Discrete "Symmetric" Distribution
+
+```{r, echo = FALSE}
+set.seed(431)
+sim_study$example4 <- rpois(n = 500, lambda = 8)
+
+p1 <- ggplot(sim_study, aes(sample = example4)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: Example 4")
+
+p2 <- ggplot(sim_study, aes(x = example4)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(sim_study$example4), 
+                            sd = sd(sim_study$example4)),
+                col = "navy", lwd = 1.5) +
+  labs(title = "Density Function: Example 4")
+
+p3 <- ggplot(sim_study, aes(x = example4, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot: Example 4", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ example4, data = sim_study) %>% kable(digits = 1)
+```
+
+## Example 5: Data from a Uniform Distribution
+
+```{r, echo = FALSE, warning = FALSE}
+set.seed(431)
+sim_study$example5 <- runif(n = 500, min = 0, max = 100)
+
+p1 <- ggplot(sim_study, aes(sample = example5)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: Example 5")
+
+p2 <- ggplot(sim_study, aes(x = example5)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(sim_study$example5), 
+                            sd = sd(sim_study$example5)),
+                col = "navy", lwd = 1.5) +
+  scale_x_continuous(limits = c(0, 100)) +
+  labs(title = "Density Function: Example 5")
+
+p3 <- ggplot(sim_study, aes(x = example5, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot: Example 5", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ example5, data = sim_study) %>% kable(digits = 1)
+```
+
+## Example 6: Symmetric data with outliers
+
+```{r, echo = FALSE, message = FALSE}
+set.seed(431)
+sim_study$example6 <- rnorm(n = 500, mean = 50, sd = 10)
+sim_study$example6[14] <- 5
+sim_study$example6[15] <- 3
+sim_study$example6[39] <- 93
+sim_study$example6[38] <- 97
+
+p1 <- ggplot(sim_study, aes(sample = example6)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: Example 6")
+
+p2 <- ggplot(sim_study, aes(x = example6)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(sim_study$example6), 
+                            sd = sd(sim_study$example6)),
+                col = "navy", lwd = 1.5) +
+  labs(title = "Density Function: Example 6")
+
+p3 <- ggplot(sim_study, aes(x = example6, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot: Example 6", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ example6, data = sim_study) %>% kable(digits = 1)
+```
+
+
+# Returning to the blood pressure data
+
+## Today's Data and Agenda
+
+NHANES data from 2011-12: our `nh3` sample of 1000 adults.
+
+1. Are the systolic (SBP) and diastolic (DBP) blood pressure data in our sample well described by a Normal distribution?
+
+2. How might we look at the association between SBP and DBP in our sample?
+
+## The `nh3` data
+
+```{r}
+set.seed(20200914) 
+
+nh3 <- NHANES %>%
+    filter(SurveyYr == "2011_12") %>%
+    select(ID, SurveyYr, Age, Height, Weight, BMI, Pulse,
+           SleepHrsNight, BPSysAve, BPDiaAve, Gender, 
+           PhysActive, SleepTrouble, Smoke100, 
+           Race1, HealthGen, Depressed) %>%
+    rename(SleepHours = SleepHrsNight, Sex = Gender,
+           SBP = BPSysAve, DBP = BPDiaAve) %>%
+    filter(Age > 20 & Age < 80) %>% 
+    drop_na() %>%
+    distinct() %>%
+    slice_sample(n = 1000) %>%
+    clean_names()
+```
+
+
+## Plots for the `nh3` SBP data. How do we build this?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh3, aes(sample = sbp)) +
+  geom_qq(col = "royalblue") + geom_qq_line(col = "red") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3 SBP")
+
+p2 <- ggplot(nh3, aes(x = sbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "royalblue", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3$sbp), 
+                            sd = sd(nh3$sbp)),
+                col = "red", lwd = 1.5) +
+  labs(title = "Density Function: nh3 SBP")
+
+p3 <- ggplot(nh3, aes(x = sbp, y = "")) +
+  geom_boxplot(fill = "royalblue", outlier.color = "royalblue") + 
+  labs(title = "Boxplot: nh3 SBP", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ sbp, data = nh3) %>% kable(digits = 1)
+```
+
+## Code for `sbp` in `nh3` (First of Three Plots)
+
+```{r, eval = FALSE}
+p1 <- ggplot(nh3, aes(sample = sbp)) +
+  geom_qq(col = "royalblue") + 
+  geom_qq_line(col = "red") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3 SBP")
+```
+
+## Code for `sbp` in `nh3` (Second of Three Plots)
+
+```{r, eval = FALSE}
+p2 <- ggplot(nh3, aes(x = sbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, 
+                 fill = "royalblue", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3$sbp), 
+                            sd = sd(nh3$sbp)),
+                col = "red", lwd = 1.5) +
+  labs(title = "Density Function: nh3 SBP")
+```
+
+## Code for `sbp` in `nh3` (Third of Three Plots)
+
+```{r, eval = FALSE}
+p3 <- ggplot(nh3, aes(x = sbp, y = "")) +
+  geom_boxplot(fill = "royalblue", 
+               outlier.color = "royalblue") + 
+  labs(title = "Boxplot: nh3 SBP", y = "")
+```
+
+## Putting the plots together...
+
+![](images/patchwork_1.jpg)
+
+## Using patchwork
+
+```{r, eval = FALSE}
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+```
+
+Learn more about **patchwork** at https://patchwork.data-imaginist.com/. In particular, the package can also be used to add annotations to your plots.
+
+Here, outside of patchwork, I added...
+
+```{r}
+mosaic::favstats(~ sbp, data = nh3) %>% kable(digits = 1)
+```
+
+## Result: 1000 observed Systolic BP values
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh3, aes(sample = sbp)) +
+  geom_qq(col = "royalblue") + geom_qq_line(col = "red") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3 SBP")
+
+p2 <- ggplot(nh3, aes(x = sbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "royalblue", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3$sbp), 
+                            sd = sd(nh3$sbp)),
+                col = "red", lwd = 1.5) +
+  labs(title = "Density Function: nh3 SBP")
+
+p3 <- ggplot(nh3, aes(x = sbp, y = "")) +
+  geom_boxplot(fill = "royalblue", outlier.color = "royalblue") + 
+  labs(title = "Boxplot: nh3 SBP", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ sbp, data = nh3) %>% kable(digits = 1)
+```
+
+## More Extensive Numerical Summaries?
+
+We could try
+
+```
+nh3 %>% Hmisc::describe(sbp)
+```
+
+>- but that will throw an error message, specifically `Error in describe.data.frame(., sbp) : object 'sbp' not found`. What is wrong? How can we fix that?
+
+>- We could drop the pipe and use `$` notation, so `Hmisc::describe(nh3$sbp)`
+
+>- Another option is to change the pipe (to the `%$%` pipe available in the `magrittr` package): `nh3 %$% Hmisc::describe(sbp)`
+
+>- We use the `%>%` pipe most of the time within the tidyverse, but will need `%$%` sometimes for functions (like those in `Hmisc`) that are less tidy-friendly.
+
+## What do these summaries tell us?
+
+```{r}
+nh3 %$% Hmisc::describe(sbp)
+```
+
+- `Gmd` = Gini's mean difference (a robust measure of spread) = mean absolute difference between any pairs of observations. Larger `Gmd` indicates more spread.
+- `Info` = a measure of relative information describing how "continuous" the data are. Higher `Info` indicates fewer ties (more distinct values.)
+
+## What Summaries to Report
+
+Focus on the shape, center and spread of a distribution. From Bock, Velleman and DeVeaux...
+
+- If the data are **skewed**, report the median and IQR (or the three middle quantiles). You may want to include the mean and standard deviation, but you should point out why the mean and median differ. The fact that the mean and median do not agree is a sign that the distribution may be skewed. A histogram will help you make that point.
+
+- If the data are **symmetric**, report the mean and standard deviation, and possibly the median and IQR as well.
+
+- If there are **clear outliers** and you are reporting the mean and standard deviation, report them with the outliers present and with the outliers removed. The differences may be revealing. The median and IQR are not likely to be seriously affected by outliers.
+
+## OK, what about Diastolic Blood Pressure?
+
+```{r, fig.height = 4.5}
+ggplot(data = nh3, aes(x = dbp)) + 
+  geom_histogram(bins = 20, fill = "tomato", col = "gold")
+```
+
+- We'll generate the exploratory summaries we've been using...
+
+## DBP in nh3: Center/Spread/Outliers/Shape?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh3, aes(sample = dbp)) +
+  geom_qq(col = "tomato") + geom_qq_line(col = "black") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3 DBP")
+
+p2 <- ggplot(nh3, aes(x = dbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "tomato", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3$dbp), 
+                            sd = sd(nh3$dbp)),
+                col = "black", lwd = 1.5) +
+  labs(title = "Density Function: nh3 DBP")
+
+p3 <- ggplot(nh3, aes(x = dbp, y = "")) +
+  geom_boxplot(fill = "tomato", outlier.color = "tomato") + 
+  labs(title = "Boxplot: nh3 DBP", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ dbp, data = nh3) %>% kable(digits = 1)
+```
+
+## Hmisc::describe for `dbp`?
+
+```{r}
+nh3 %$% Hmisc::describe(dbp)
+```
+
+What is a plausible diastolic blood pressure?
+
+## Stem-and-Leaf of `dbp` values?
+
+```{r}
+stem(nh3$dbp)
+```
+
+## Who are those people with tiny `dbp` values?
+
+```{r}
+nh3 %>%
+  filter(dbp < 40) %>% 
+  select(id, sbp, dbp)
+```
+
+## Let's reset.
+
+```{r}
+nh3_new <- nh3 %>%
+  filter(dbp > 39)
+
+nrow(nh3)
+nrow(nh3_new)
+```
+
+We'll work with `nh3_new` going forward. 
+
+## nh3_new: Systolic Blood Pressure
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh3_new, aes(sample = sbp)) +
+  geom_qq(col = "royalblue") + geom_qq_line(col = "red") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3_new SBP")
+
+p2 <- ggplot(nh3_new, aes(x = sbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "royalblue", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3_new$sbp), 
+                            sd = sd(nh3_new$sbp)),
+                col = "red", lwd = 1.5) +
+  labs(title = "Density Function: nh3_new SBP")
+
+p3 <- ggplot(nh3_new, aes(x = sbp, y = "")) +
+  geom_boxplot(fill = "royalblue", outlier.color = "royalblue") + 
+  labs(title = "Boxplot: nh3_new SBP", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ sbp, data = nh3_new) %>% kable(digits = 1)
+```
+
+## nh3_new: Diastolic Blood Pressure
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh3_new, aes(sample = dbp)) +
+  geom_qq(col = "tomato") + geom_qq_line(col = "black") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot: nh3_new DBP")
+
+p2 <- ggplot(nh3_new, aes(x = dbp)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "tomato", col = "gold") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(nh3_new$dbp), 
+                            sd = sd(nh3_new$dbp)),
+                col = "black", lwd = 1.5) +
+  labs(title = "Density Function: nh3_new DBP")
+
+p3 <- ggplot(nh3_new, aes(x = sbp, y = "")) +
+  geom_boxplot(fill = "tomato", outlier.color = "tomato") + 
+  labs(title = "Boxplot: nh3_new DBP", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ dbp, data = nh3_new) %>% kable(digits = 1)
+```
+
+## Summing Up: Does a Normal Model fit well?
+
+If a Normal model fits our data well, then we should see the following graphical indications:
+
+1. A histogram that is symmetric and bell-shaped.
+2. A boxplot where the box is symmetric around the median, as are the whiskers, without a serious outlier problem.
+3. A normal Q-Q plot that essentially falls on a straight line.
+
+As for numerical summaries, we'd like to see
+
+4. The mean and median within 0.2 standard deviation of each other.
+5. No real evidence of too many outlier candidates (more than 5% starts to get us concerned about a Normal model)
+6. No real evidence of individual outliers outside the reasonable range for the size of our data (we might expect about 3 observations in 1000 to fall more than 3 standard deviations away from the mean.)
+
+# How can we describe the relationship between SBP and DBP? 
+
+## Scatterplot to study the SBP-DBP association
+
+One point for each of the 989 subjects in the `nh3_new` data set...
+
+```{r, fig.height = 4}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point() +
+  theme(aspect.ratio = 1) # make plot square
+```
+
+## Add a fitted regression line?
+
+```{r, fig.height = 4}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point(alpha = 0.3) + # add some transparency
+  theme(aspect.ratio = 1) +
+  geom_smooth(method = "lm", formula = y ~ x, 
+              col = "red", se = TRUE) 
+```
+
+## What are we looking for in this plot?
+
+```{r, echo = FALSE, fig.height = 3}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point(alpha = 0.3) + theme(aspect.ratio = 1) + # make plot square
+  geom_smooth(method = "lm", formula = y ~ x, col = "red")
+```
+
+Is the association...
+
+1. **Linear or Non-Linear?** (is there a curve here?)
+2. **Direction?** (as X increases, what happens to Y?)
+3. **Outliers?** (far away on X, or Y, or the combination?)
+4. **Strength?** (points closely clustered together around a line?)
+
+## What might we conclude here?
+
+```{r, echo = FALSE, fig.height = 4}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point(alpha = 0.3) + theme(aspect.ratio = 1) + # make plot square
+  geom_smooth(method = "lm", formula = y ~ x, col = "red")
+```
+
+1. **Linear?**: Most of the points cluster around the straight line.
+
+## What might we conclude here?
+
+```{r, echo = FALSE, fig.height = 4}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point(alpha = 0.3) + theme(aspect.ratio = 1) + # make plot square
+  geom_smooth(method = "lm", formula = y ~ x, col = "red")
+```
+
+1. **Linear?**: Most of the points cluster around the straight line.
+2. **Direction?**: As `dbp` increases, so does `sbp`, generally.
+
+## What might we conclude here?
+
+```{r, echo = FALSE, fig.height = 4}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point(alpha = 0.3) + theme(aspect.ratio = 1) + # make plot square
+  geom_smooth(method = "lm", formula = y ~ x, col = "red")
+```
+
+1. **Linear?**: Most of the points cluster around the straight line.
+2. **Direction?**: As `dbp` increases, so does `sbp`, generally.
+3. **Outliers?**: A few (out of 1000) worth another look, probably.
+
+## What might we conclude here?
+
+```{r, echo = FALSE, fig.height = 3.5}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point(alpha = 0.3) + theme(aspect.ratio = 1) + # make plot square
+  geom_smooth(method = "lm", formula = y ~ x, col = "red")
+```
+
+4. **Strength?**: The association does not seem very strong.
+
+- The range of `sbp` values associated with any particular `dbp` value is still pretty wide. 
+- If we know someone's `dbp`, that should help us make better predictions of their `sbp`, but maybe only a little better than if we didn't know `dbp`.
+
+What do you think the correlation of `sbp` and `dbp` might be?
+
+## Summarizing Strength with the Pearson Correlation
+
+The Pearson correlation (abbreviated *r*) ranges from -1 to +1.
+
+- The closer the absolute value of the correlation is to 1, the stronger a linear fit will be to the data, (in a limited sense).
+- A strong positive correlation (near +1) will indicate a strong model with a positive slope.
+- A strong negative correlation (near -1) will indicate a strong linear model with a negative slope.
+- A weak correlation (near 0) will indicate a poor fit for a linear model, although a non-linear model may still fit the data quite well.
+
+## Gaining Some Insight into Correlation
+
+```{r, echo = FALSE}
+set.seed(4312020)
+
+correxs <- tibble(x = seq(10.5,110, by = 0.5),
+                  y1 = -0.01*x + rpois(200, lambda = 14),
+                  y2 = 0.023*x + rpois(200, lambda = 16),
+                  y3 = -0.049*x + rpois(200, lambda = 20),
+                  y4 = 0.0504*x + rpois(200, lambda = 20),
+                  y5 = -0.085*x + rpois(200, lambda = 18),
+                  y6 = -0.095*x + rpois(200, lambda = 19),
+                  y7 = 0.15*x + rpois(200, lambda = 20),
+                  y8 = -0.185*x + rpois(200, lambda = 20),
+                  y0 = rpois(200, lambda = 16),
+                  y9 = 0.315*x + rpois(200, lambda = 19),
+                  y10 = -0.435*x + rpois(200, lambda = 16),
+                  y11 = 1.01*x + rpois(200, lambda = 17))
+```
+
+```{r, echo = FALSE, eval = FALSE}
+correxs %$% cor(x, y0)
+correxs %$% cor(x, y1)
+correxs %$% cor(x, y2)
+correxs %$% cor(x, y3)
+correxs %$% cor(x, y4)
+correxs %$% cor(x, y5)
+correxs %$% cor(x, y6)
+correxs %$% cor(x, y7)
+correxs %$% cor(x, y8)
+correxs %$% cor(x, y9)
+correxs %$% cor(x, y10)
+correxs %$% cor(x, y11)
+
+```
+
+```{r, echo = FALSE, eval = FALSE}
+correxs %$% cor(x, y0)^2
+correxs %$% cor(x, y1)^2
+correxs %$% cor(x, y2)^2
+correxs %$% cor(x, y3)^2
+correxs %$% cor(x, y4)^2
+correxs %$% cor(x, y5)^2
+correxs %$% cor(x, y6)^2
+correxs %$% cor(x, y7)^2
+correxs %$% cor(x, y8)^2
+correxs %$% cor(x, y9)^2
+correxs %$% cor(x, y10)^2
+correxs %$% cor(x, y11)^2
+
+```
+
+```{r, echo = FALSE}
+p0 <- ggplot(correxs, aes(x = x, y = y0)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.004", y = "", x = "")
+
+p1 <- ggplot(correxs, aes(x = x, y = y1)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.101", y = "", x = "")
+
+p2 <- ggplot(correxs, aes(x = x, y = y2)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = +0.199", y = "", x = "")
+
+p3 <- ggplot(correxs, aes(x = x, y = y3)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.301", y = "", x = "")
+
+p4 <- ggplot(correxs, aes(x = x, y = y4)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = +0.400", y = "", x = "")
+
+p5 <- ggplot(correxs, aes(x = x, y = y5)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.498", y = "", x = "")
+
+p6 <- ggplot(correxs, aes(x = x, y = y6)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.601", y = "", x = "")
+
+p7 <- ggplot(correxs, aes(x = x, y = y7)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = +0.700", y = "", x = "")
+
+p8 <- ggplot(correxs, aes(x = x, y = y8)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.801", y = "", x = "")
+
+p9 <- ggplot(correxs, aes(x = x, y = y9)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = +0.900", y = "", x = "")
+
+p10 <- ggplot(correxs, aes(x = x, y = y10)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.951", y = "", x = "")
+
+p11 <- ggplot(correxs, aes(x = x, y = y11)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = 0.990", y = "", x = "")
+
+```
+
+```{r, echo = FALSE}
+(p0 + p1 + p2) / (p3 + p4 + p5)
+```
+
+## Some Stronger Correlations
+
+```{r, echo = FALSE}
+(p6 + p7 + p8) / (p9 + p10 + p11)
+```
+
+## Correlation in our sbp-dbp scatterplot?
+
+```{r, echo = FALSE, fig.height = 3}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point(alpha = 0.3) + theme(aspect.ratio = 1) + # make plot square
+  geom_smooth(method = "lm", formula = y ~ x, col = "red")
+```
+
+```{r}
+nh3_new %$% cor(sbp, dbp)
+```
+
+What does a correlation of +0.53 imply about a linear fit to the data?
+
+## What line is being fit?
+
+Least Squares Regression Line (a linear model) to predict `sbp` using `dbp`
+
+```{r}
+m1 <- lm(sbp ~ dbp, data = nh3_new)
+m1
+```
+
+Model m1 is **sbp = 64.270 + 0.795 dbp**. 
+
+## What does the slope mean?
+
+![](images/dragons_continuous.png)
+
+## Linear Model `m1`: sbp = 64.27 + 0.795 dbp
+
+64.27 is the intercept = predicted value of `sbp` when `dbp` = 0.
+
+0.795 is the slope = predicted change in `sbp` per 1 unit change in `dbp`
+
+- What are the units?
+- What does the fact that this estimated slope is positive mean?
+- What would the line look like if the slope was negative? 
+- What if the slope was zero?
+
+## Summarizing the Fit
+
+The `summary` function when applied to a linear model (`lm`) produces a lot of output that is not organized in a way that we can plot/manipulate it well.
+
+Here's the start of what it looks like... (complete snapshot on next slide)
+
+```{r}
+summary(m1)
+```
+
+## `summary(m1)` in its entirety
+
+![](images/m1_summary.png)
+
+## Why I like `tidy()` and other `broom` functions
+
+![](images/broom_package.png)
+
+https://github.com/allisonhorst/stats-illustrations
+
+## Does R like this linear model?
+
+```{r}
+tidy(m1) %>% kable(digits = 2)
+```
+
+Yes. Wow. It **really** does. Look at those *p* values!
+
+## How much of the variation in `sbp` does m1 capture?
+
+The `glance` function can help us (again from `broom`.) 
+
+```{r}
+glance(m1) %>% select(r.squared, p.value, sigma) %>% kable()
+```
+
+- `r.squared` = $R^2$, the proportion of variation in `sbp` accounted for by the model using `dbp`. 
+  - indicates improvement over predicting mean(`sbp`) for everyone
+- `p.value` = refers to a global F test 
+  - indicates something about combination of $r^2$ and sample size
+- `sigma` = residual standard error 
+
+`glance` provides 9 additional summaries for a linear model.
+
+## How is the r-squared ($r^2$)?
+
+R-squared describes the proportion of the variation in `sbp` accounted for by the linear model `m1` using `dbp`. 
+
+- $R^2$ is about 28% (or 0.28) in this case. Is that good?
+- Why is this called R-squared? What is the R?
+
+```{r}
+nh3_new %$% cor(sbp, dbp)
+```
+
+```{r}
+nh3_new %$% cor(sbp, dbp)^2
+```
+
+## Can you guess the missing R-squares?
+
+```{r, echo = FALSE}
+p4a <- ggplot(correxs, aes(x = x, y = y4)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "C. R-square = ?", y = "", x = "")
+
+p5a <- ggplot(correxs, aes(x = x, y = y5)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "E. R-square = ?", y = "", x = "")
+
+p7a <- ggplot(correxs, aes(x = x, y = y7)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "D. R-square = ?", y = "", x = "")
+
+p8a <- ggplot(correxs, aes(x = x, y = y8)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "B. R-square = ?", y = "", x = "")
+
+p9a <- ggplot(correxs, aes(x = x, y = y9)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "A. R-square = ?", y = "", x = "")
+
+p10a <- ggplot(correxs, aes(x = x, y = y10)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "R-sq = 0.905", y = "", x = "")
+
+```
+
+```{r, echo = FALSE}
+(p9a + p8a + p4a) / (p7a + p5a + p10a)
+```
+
+## Gaining Insight into what R-square implies
+
+```{r, echo = FALSE}
+p4b <- ggplot(correxs, aes(x = x, y = y4)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = +0.4, R-sq = 0.16", y = "", x = "")
+
+p5b <- ggplot(correxs, aes(x = x, y = y5)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.5, R-sq = 0.25", y = "", x = "")
+
+p7b <- ggplot(correxs, aes(x = x, y = y7)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = +0.7, R-sq = 0.49", y = "", x = "")
+
+p8b <- ggplot(correxs, aes(x = x, y = y8)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.8, R-sq = 0.64", y = "", x = "")
+
+p9b <- ggplot(correxs, aes(x = x, y = y9)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = +0.9, R-sq = 0.81", y = "", x = "")
+
+p10b <- ggplot(correxs, aes(x = x, y = y10)) + 
+  geom_point(col = "blue", pch = 1) + 
+  geom_smooth(method = "lm", col = "red", formula = "y ~ x", se = FALSE) + 
+  theme(aspect.ratio = 1) +
+  labs(title = "r = -0.95, R-sq = 0.905", y = "", x = "")
+
+```
+
+```{r, echo = FALSE}
+(p9b + p8b + p4b) / (p7b + p5b + p10b)
+```
+
+
+## Predict using `m1`: `sbp` = 64.27 + 0.795 `dbp`
+
+Use `augment` (also from `broom`) to capture results.
+
+```{r}
+m1_insample <- augment(m1, data = nh3_new)
+
+m1_insample %>% select(id, sbp, dbp, .fitted, .resid) %>% 
+  head(2) %>% kable(digits = 2)
+```
+
+For subject 69036, as an example, we have:
+
+- `m1`'s fitted `sbp` = 64.27 + 0.795 (44) = 99.25 mm Hg
+- **residual** = observed - fitted = 136 - 99.25 = 36.75 mm Hg
+
+## Plot residuals from `m1` in our sample (n = 989)
+
+```{r, echo = FALSE}
+p1 <- ggplot(m1_insample, aes(sample = .resid)) +
+  geom_qq(col = "tomato") + geom_qq_line(col = "black") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q: 989 m1 Residuals")
+
+p2 <- ggplot(m1_insample, aes(x = .resid)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "tomato", col = "yellow") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(m1_insample$.resid), 
+                            sd = sd(m1_insample$.resid)),
+                col = "black", lwd = 1.5) +
+  labs(title = "Hist + Normal Density: m1 Residuals")
+
+p3 <- ggplot(m1_insample, aes(x = .resid, y = "")) +
+  geom_boxplot(fill = "tomato", outlier.color = "tomato") + 
+  labs(title = "Boxplot: m1 Residuals", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ .resid, data = m1_insample) %>% kable(digits = 1)
+```
+
+## Plot Residuals vs. Predicted (Fitted) Values
+
+```{r, echo = FALSE}
+ggplot(m1_insample, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, col = "red") + 
+  geom_smooth(method = "loess", formula = y ~ x, se = FALSE, col = "blue") +
+  labs(title = "Residual Plot for m1 in nh3_new (n = 989)", 
+       x = "Fitted sbp values", y = "Residuals")
+```
+
+## Who else could we make predictions for with `m1`?
+
+Consider NHANES subjects who we didn't choose for the `nh3` sample?
+
+```{r}
+nh_deduplicated <- NHANES %>%
+    filter(SurveyYr == "2011_12") %>%
+    select(ID, SurveyYr, Age, Height, Weight, BMI, Pulse,
+           SleepHrsNight, BPSysAve, BPDiaAve, Gender, 
+           PhysActive, SleepTrouble, Smoke100, 
+           Race1, HealthGen, Depressed) %>%
+    rename(SleepHours = SleepHrsNight, Sex = Gender,
+           SBP = BPSysAve, DBP = BPDiaAve) %>%
+    filter(Age > 20 & Age < 80) %>% 
+    drop_na() %>%
+    distinct() 
+```
+
+This `nh_deduplicated` group is who we sampled from to get `nh3`.
+
+## Identifying those not sampled, but still eligible.
+
+We sampled 1000 observations from a group, and then dropped those with `dbp` below 40, leaving n = 989. How many people in total would be eligible?
+
+```{r}
+nh3_new_eligible <- nh_deduplicated %>%
+  clean_names() %>%
+  filter(dbp > 39) 
+
+dim(nh3_new_eligible)
+dim(nh3_new)
+```
+
+## Identify the rest: 1709-989 = 720 not sampled
+
+```{r}
+nh3_therest <- 
+  anti_join(nh3_new_eligible, nh3_new, by = "id")
+
+dim(nh3_therest)
+```
+
+## Use model `m1` to predict SBP in `nh3_therest`?
+
+```{r}
+new720_nh3 <- augment(m1, newdata = nh3_therest)
+
+new720_nh3 %>% select(id, sbp, dbp, .fitted, .resid) %>% 
+  head() %>% kable(digits = 2)
+```
+
+## Actual SBP vs. Fitted SBP by `m1` (n = 720)
+
+```{r, fig.height = 4.5}
+ggplot(new720_nh3, aes(x = .fitted, y = sbp)) +
+  geom_abline(slope = 1, intercept = 0, col = "red") +
+  geom_point() + theme(aspect.ratio = 1) 
+```
+
+## New Sample (n = 720): `m1` Prediction Errors
+
+```{r, echo = FALSE}
+p1 <- ggplot(new720_nh3, aes(sample = .resid)) +
+  geom_qq(col = "darkorchid") + geom_qq_line(col = "black") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q: 720 m1 Errors")
+
+p2 <- ggplot(new720_nh3, aes(x = .resid)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 20, fill = "darkorchid", col = "green") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(new720_nh3$.resid), 
+                            sd = sd(new720_nh3$.resid)),
+                col = "black", lwd = 1.5) +
+  labs(title = "Hist + Normal Density: 720 m1 Errors")
+
+p3 <- ggplot(new720_nh3, aes(x = .resid, y = "")) +
+  geom_boxplot(fill = "darkorchid", outlier.color = "darkorchid") + 
+  labs(title = "Boxplot: 720 m1 Errors", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ .resid, data = new720_nh3) %>% kable(digits = 1)
+```
+
+## Prediction Errors vs. Fitted SBP (n = 720)
+
+```{r, fig.height = 4.5}
+ggplot(new720_nh3, aes(x = .fitted, y = .resid)) +
+  geom_point() + theme(aspect.ratio = 1) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE)
+```
+
+## Back to `sbp` and `dbp`. Does `m1` work well here?
+
+```{r, fig.height = 4.5}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point() + theme(aspect.ratio = 1) +
+  geom_smooth(method = "lm", formula = y ~ x, 
+              col = "red", se = TRUE)
+```
+
+## Is this the only linear model R can fit to these data?
+
+Nope.
+
+```{r}
+library(rstanarm)
+```
+
+## Fit linear model using `stan_glm`?
+
+```{r}
+m2 <- stan_glm(sbp ~ dbp, data = nh3_new)
+```
+
+## Bayesian fitted linear model for our sbp data
+
+```{r}
+print(m2)
+```
+
+## Is the Bayesian model (with default prior) very different from our `lm` in this situation?
+
+```{r}
+coef(m1) # fit with lm
+
+coef(m2) # stan_glm with default priors
+```
+
+Note that we could use `tidy` and other `broom` functions for the `lm` model but not (yet) for the `stan_glm` model.
+
+## Again, consider `sbp` and `dbp`. Does `m1` work well?
+
+```{r, fig.height = 4.5}
+ggplot(nh3_new, aes(x = dbp, y = sbp)) + 
+  geom_point() + theme(aspect.ratio = 1) +
+  geom_smooth(method = "loess", formula = y ~ x, 
+              col = "blue", se = TRUE)
+```
