@@ -29,8 +29,8 @@ Thomas E. Love, Ph.D.
     Report](#analytic-task-list-for-your-report)
   - [How Much Help Will You Get?](#how-much-help-will-you-get)
 
-This is still a draft. A more complete version (with some changes,
-perhaps) will appear before the end of the evening on 2020-09-15.
+This is still a draft. A slightly more complete version (with minor changes,
+perhaps) will appear **AS SOON AS POSSIBLE**
 
 # Your “Proposal” will be due 2020-10-02 at Noon
 
@@ -334,8 +334,8 @@ checked this to be true.
     appended with `_raw` so that, for example, if you choose to use
     variable `v009_rawvalue` which is about adult smoking, your variable
     name should be `adult_smoking_raw`
-  - your six “clean” versions of the data as described above, with your
-    variables 2, 5 and 6 categorized appropriately using R code, and all
+  - your six “clean” version of the data as described above, with your
+    variables 4 and 5 categorized appropriately using R code, and all
     of them renamed to be useful, so, for instance, if you’ve
     categorized the adult smoking variable, you might name that
     `adult_smoking_cat`, and if you’ve treated it as quantitative, you
