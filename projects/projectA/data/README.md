@@ -4,7 +4,9 @@ The data files contained in this folder each come from [the County Health Rankin
 
 Links to these files:
 
-the 2020 CHR CSV Analytic Data (csv) | [Link to raw file on Github](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/projects/projectA/data/downloaded_CHR_2020_analytic_data_0.csv) | [Link on CHR page](https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020_0.csv) (a .csv file)
-the 2020 CHR Analytic Data Documentation (pdf) | [Link to pdf on Github](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/data/2020%20Analytic%20Documentation_0.pdf) | [Link on CHR page](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf) file (PDF), 
-the 2020 Data Dictionary (pdf) | [Link to pdf on Github](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/data/DataDictionary_2020_2.pdf) | [Link on CHR page](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf) (PDF)
+Element | Link on Github | Link at County Health Rankings
+----------: | ------------ | -----------
+the 2020 CHR CSV Analytic Data (csv) | [Raw file on Github](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/projects/projectA/data/downloaded_CHR_2020_analytic_data_0.csv) | [Link on CHR page](https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020_0.csv) (a .csv file)
+the 2020 CHR Analytic Data Documentation (pdf) | [pdf on Github](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/data/2020%20Analytic%20Documentation_0.pdf) | [Link on CHR page](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf) file (PDF), 
+the 2020 Data Dictionary (pdf) | [pdf on Github](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/data/DataDictionary_2020_2.pdf) | [Link on CHR page](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf) (PDF)
 
