@@ -1,6 +1,6 @@
 431 Lab 04
 ================
-Last Edited 2020-09-17 01:01:37
+Last Edited 2020-09-17 01:37:30
 
 # Instructions
 
@@ -142,35 +142,37 @@ tidyverse (specifically the ggplot2 package) to do so.
 Suppose we are interested in which of the three species of penguin
 (*Adelie*, *Chinstrap* or *Gentoo*) shows the strongest *linear*
 relationship between bill length and body mass, now using all 342
-penguins (not just those captured on Biscoe) with complete data on the
-two variables we’re studying (bill length and body mass.)
+penguins with complete data on the two variables we’re studying (bill
+length and body mass.)
 
 Draw an attractive and thoughtfully labeled plot (including a title) to
 show the association of bill length (placed on the horizontal x axis)
 and body mass (on the vertical y axis) for these 342 penguins, and facet
 the plot by species (so that one facet shows the 151 Adelie, one shows
 the 68 Chinstrap and one shows the 123 Gentoo.) Use `geom_smooth()` to
-add an appropriate smooth curve to each facet of the plot.
+add an appropriate smooth curve (using `lm` or `loess` or both, as you
+prefer) to each facet of the plot.
 
-Then write a sentence or two describing which of the three penguin
-species shows the strongest *linear* relationship for the prediction of
-body mass on the basis of bill length, and how you know that. There is
-no need to incorporate a numerical summary in your response.
+Then write a sentence or two describing what your plot reveals.
 
 # Question 7 (15 points)
 
-Build a linear model for the species you identified in Question 7 as
-displaying the strongest correlation for predicting body mass using bill
-length, and specify its equation.
+Build a linear model predicting body mass using bill length for the
+species which has the largest body mass (on average) across the three
+species.
 
 Then use that equation to estimate the difference in the predicted body
-mass for two new penguins (named Pingu and Skipper), where Pingu whom
-has a bill length at the 75th percentile of the original data for that
-species, and Skipper has a bill length at the 25th percentile of the
-original data for that species?
+mass for two new penguins of that species (named Pingu and Skipper),
+where Pingu whom has a bill length at the 75th percentile of the
+original data for that species, and Skipper has a bill length at the
+25th percentile of the original data for that species? Maintain two
+decimal places for any intermediate calculations, although your final
+response should be provided in grams (as an integer.)
 
-Be sure to specify which of the two new penguins (Pingu or Skipper)
-would be expected to have a larger body mass, according to your model.
+In a summary sentence or two describing your results, be sure to specify
+which species you are studying and which of the two new penguins (Pingu
+or Skipper) would be expected to have a larger body mass (and by how
+much), according to your model.
 
 # Question 8 (15 points)
 
@@ -178,13 +180,14 @@ Now, let’s focus just on our outcome, and how it is associated with
 species and island. Build a plot that shows the distribution of body
 mass (in grams) within each penguin species, and which also identifies
 the three islands (through the use of facets) in an attractive way. Your
-plot should have an appropriate title, axis labels and a legend. Please
-restrict the plot to the 342 penguins with complete body mass
-information.
+plot should have a meaningful title as well as useful axis and facet
+labels. Please restrict the plot to the 342 penguins with complete body
+mass information.
 
 Then, in a sentence or two, describe the results from your plot, and any
-conclusions you can draw from the plot about the relationships between
-island and species, and between body mass and the other two variables.
+reasonable conclusions you can draw from the plot about the
+relationships between island and species, and between body mass and the
+other two variables.
 
 ## On Grading
 
