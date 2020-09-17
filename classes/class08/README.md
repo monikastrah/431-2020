@@ -21,7 +21,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - I would probably wait to get started on anything (other than potentially finding a partner to work with) too seriously until you see my Example materials early next week. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
     - I will post the Example materials as soon as I finish writing them.
 7. I haven't forgotten about the movies, but we won't get back to them today.
-8. I'm also going to switch us over to a Shared Google Drive properly after class today, so that we'll retain foldering. Look for an email from me.
+8. I'm also going to switch us over to a Shared Google Drive for a couple of things after class today, so that we'll retain foldering. Look for an email from me.
 
 ## What Should I Be Working On?
 
