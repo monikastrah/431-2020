@@ -17,13 +17,14 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 3. I added a line to [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) and to [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) about wanting complete sentences in responses to all questions on those Labs. Just presenting your code, without any discussion, isn't sufficient for full credit on Labs. I also shortened [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) a bit, by eliminating a question.
 4. RStudio is sponsoring a [Table Contest](https://blog.rstudio.com/2020/09/15/announcing-the-2020-rstudio-table-contest/)!
 5. The introductory videos you all made (as part of Lab 01) are gradually becoming available for viewing on our Shared Google Drive in the Introductory Student Videos folder, so that you can listen again if you miss something. Today, we're meeting Oindila De, Razaq Durodoye, Ali Elsharkawi, Akif Gormez, Caitlyn Grubbs, Anniya Gu and Clara Harb.
+6. [Project A instructions](https://thomaselove.github.io/431-2020-projectA/) were modified this morning to shorten the task list and provide some additional context. Please review them over the weekend.
+    - I would probably wait to get started on anything (other than potentially finding a partner to work with) too seriously until you see my Example materials early next week. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
 
 ## What Should I Be Working On?
 
 1. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) is the next deliverable. You should be able to complete it by the end of today's class. This could easily be the second longest lab of the semester (we expect Lab 08 to be the longest.)
 2. [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) requires some searching through the literature in Questions 1-5. You will also need to read and use [this article by Jeff Leek](https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) to do Questions 1-5. Questions 6-8 are about the [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins), from [Chapter 2 of the Course Notes](https://thomaselove.github.io/431-notes/looking-at-the-palmer-penguins.html).
-3. This weekend, you should [read the Project A Instructions at their spiffy new website](https://thomaselove.github.io/431-2020-projectA/). 
-    - I would probably wait to get started on anything (other than potentially finding a partner to work with) too seriously until you see my Example materials early next week. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
+3. This weekend, you should [read the (revised) Project A Instructions](https://thomaselove.github.io/431-2020-projectA/). 
 4. Readings: Spiegelhalter through Chapter 4, and Chapter 7, and Leek through section 5, and sections 9-12.
 
 ## One Last Thing
