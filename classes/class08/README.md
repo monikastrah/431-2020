@@ -16,11 +16,12 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 2. [Feedback on the Minute Paper after Class 07](http://bit.ly/431-2020-minute-07-feedback) is now available.
 3. I added a line to [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) and to [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) about wanting complete sentences in responses to all questions on those Labs. Just presenting your code, without any discussion, isn't sufficient for full credit on Labs. I also shortened [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) a bit, by eliminating a question.
 4. RStudio is sponsoring a [Table Contest](https://blog.rstudio.com/2020/09/15/announcing-the-2020-rstudio-table-contest/)!
-5. The introductory videos you all made (as part of Lab 01) are gradually becoming available for viewing on our Shared Google Drive in the Introductory Student Videos folder, so that you can listen again if you miss something. Today, we're meeting Oindila De, Razaq Durodoye, Ali Elsharkawi, Akif Gormez, Caitlyn Grubbs, Anniya Gu and Clara Harb.
+5. The [introductory videos](https://drive.google.com/drive/folders/1j35B6f_9fHyK8PT2LwRy172qD5Cx0U_j?usp=sharing) you all made (as part of Lab 01) are gradually becoming available for viewing, so that you can listen again if you miss something. Today, we're meeting Oindila De, Razaq Durodoye, Ali Elsharkawi, Akif Gormez, Caitlyn Grubbs, Anniya Gu and Clara Harb.
 6. [Project A instructions](https://thomaselove.github.io/431-2020-projectA/) were modified this morning to shorten the task list and provide some additional context. Please review them over the weekend.
     - I would probably wait to get started on anything (other than potentially finding a partner to work with) too seriously until you see my Example materials early next week. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
     - I will post the Example materials as soon as I finish writing them.
 7. I haven't forgotten about the movies, but we won't get back to them today.
+8. I'm also going to switch us over to a Shared Google Drive properly after class today, so that we'll retain foldering. Look for an email from me.
 
 ## What Should I Be Working On?
 
