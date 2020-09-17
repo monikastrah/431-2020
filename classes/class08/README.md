@@ -20,8 +20,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## What Should I Be Working On?
 
-1. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) is the next deliverable. You should be able to complete it by the end of today's class.
-2. [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) requires some searching through the literature in Questions 1-5, so I would get started on that, especially because there isn't a lot in that Lab that you can't do now.
+1. [Lab 03](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) is the next deliverable. You should be able to complete it by the end of today's class. This is, we admit, the second longest lab of the semester.
+2. [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) requires some searching through the literature in Questions 1-5. You will also need to read and use [this article by Jeff Leek](https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) to do Questions 1-5.
 3. This weekend, you should [read the Project A Instructions at their spiffy new website](https://thomaselove.github.io/431-2020-projectA/). 
     - I would probably wait to get started on anything (other than potentially finding a partner to work with) too seriously until you see my Example materials early next week. The "proposal" deadline is 2020-10-02 and the project is due 2020-10-20.
 4. Readings: Spiegelhalter through Chapter 4, and Chapter 7, and Leek through section 5, and sections 9-12.
