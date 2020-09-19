@@ -1,0 +1,404 @@
+---
+title: "YOUR PROJECT A TITLE"
+author: "YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    number_sections: TRUE
+---
+
+## Note to Students
+
+This proposal includes a lot of description from Dr. Love about what he's doing and what's happening in the R code chunks that **should not** be included in your proposal (as an example, this whole section shouldn't be in your proposal.) It also doesn't include several things that you will need to include in your proposal. 
+
+Think of this document as an annotated starting point for thinking about developing your proposal, rather than as a rigid template that just requires you to fill in a few gaps. There is still a lot of work for you to do. Your job in building your proposal requires you to (at a minimum): 
+
+1. adapt the code provided here to address your own decisions and requirements (more than just filling in your title and name, although that's an important thing to do.)
+2. edit what is provided here so that you wind up only including things that are appropriate for your project
+3. write your own descriptions of the states/measures you're using and the results you obtain (which Dr. Love has mostly left out of this document.)
+4. knitting the R Markdown document into an HTML or PDF report, and then proofreading and spell-checking all of your work before you submit it.
+
+You should be certain you have a real title and author list in this file.
+
+# Preliminaries
+
+```{r setup, echo=FALSE, cache=FALSE}
+## Dr Love recommends you leave this code chunk exactly as it is
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(comment=NA)
+opts_knit$set(width=75)
+```
+
+## My R Packages
+
+```{r load_packages_here, message = FALSE}
+library(janitor)
+library(magrittr)
+library(tidyverse)
+```
+
+Note that I have loaded the `tidyverse` last, and that I have not loaded any of the `tidyverse` packages individually. We'll be checking to see that you've done this properly. These are the three packages that Dr. Love has used in preparing this proposal, and don't include packages (like patchwork and broom, for instance) that he almost certainly would need to use in his analyses, yet. The final project itself should include all packages that get used.
+
+## Data Ingest
+
+Note that Dr. Love is working here with 2019 data, rather than 2020, as you'll use. The `guess_max` result ensures that `read_csv` will look through the entire data set (which has less than 4000 rows) instead of just the first 1000 rows (which is the default.)
+
+```{r read_in_data_here, message = FALSE}
+chr_2019_raw <- read_csv("chr_2019_raw.csv", guess_max = 4000)
+```
+
+# Data Development
+
+## Selecting My Data
+
+I'll be selecting data from the six "states" (Washington DC, Delaware, Connecticut, Hawaii, New Hampshire and Rhode Island) that are not available to you (because they each have only a few counties: in total there are just 31 counties in those six states.) Note that in your work, you will include Ohio, and other states, but all of the states I've selected are not available to you. Also, you'll have to describe a reason why you selected your group of states, which I'll skip here.
+
+I've selected five variables (v147, v145, v021, v023 and v139) which I'll describe shortly. You will make your own choices, of course, and you'll need to provide more information on each variable in a codebook.
+
+To help you think about the chunk of code below, note that the code below does the following things:
+
+1. Filter the data to the actual counties that are ranked in the Rankings (this eliminates state and USA totals, mainly.)
+2. Filter to the states we've selected (the `%in%` command lets us include any state that is in the list we then create with the c() function).
+3. Select the variables that we're going to use in our study, including the three mandatory variables (fipscode, state and county).
+4. Rename the five variables we've selected with more meaningful names. These names are motivated by the actual meaning of the variables, as shown in the top row (that we deleted) in the original csv, the PDF files I've included for you, and the more detailed variable descriptions on the County Health Ranking site.
+
+```{r}
+chr_2019 <- chr_2019_raw %>%
+    filter(county_ranked == 1) %>%
+    filter(state %in% c("DC", "DE", "CT", "HI", "NH", "RI")) %>%
+    select(fipscode, state, county, 
+           v147_rawvalue, v145_rawvalue, v021_rawvalue, 
+           v023_rawvalue, v139_rawvalue) %>%
+    rename(life_expectancy = v147_rawvalue,
+           freq_mental_distress = v145_rawvalue,
+           hsgraduation = v021_rawvalue,
+           unemployment = v023_rawvalue,
+           food_insecurity = v139_rawvalue)
+```
+
+### Proposal Requirements 1 and 2
+
+A sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states.
+
+## Repairing the `fipscode` and factoring the `state`
+
+The `fipscode` is just a numerical code, and not a meaningful number (so that, for instance, calculating the mean of `fipscode` would make no sense.) To avoid confusion later, it's worth it to tell R to treat `fipscode` as a character variable, rather than a double-precision numeric variable.
+
+But there's a problem with doing this, as R has already missed the need to pull in some leading zeros (the FIPS code is a 5-digit number which identifies a state (with the first two digits) and then a county (with the remaining three digits) but by reading the `fipscode` in as a numeric variable, some of the values you wind up with will be from states that need an opening zero in order to get to five digits total.)
+
+We can fix this by applying a function from the `stringr` package (part of the tidyverse,) which will both add a "zero" to any fips code with less than 5 digits, but will also turn `fipscode` into a character variable, which is a better choice for a numeric code.
+
+It will also be helpful later to include `state` as a factor variable, rather than a character. 
+
+We can accomplish these two tasks with the following chunk of code.
+
+```{r}
+chr_2019 <- chr_2019 %>%
+    mutate(fipscode = str_pad(fipscode, 5, pad = "0"),
+           state = factor(state))
+```
+
+You can certainly use `as.factor` instead of `factor` here if you like. If you wish to arrange the levels of your `states` factor in an order other than alphabetically by postal abbreviation (perhaps putting Ohio first or something), then you could do so with `fct_recode()`, but I won't do that here.
+
+### Checking Initial Work
+
+Given the "states" I selected, I should have 31 rows, since there are 31 counties across those states, and I should have 8 variables. It's also helpful to glimpse through the data and be sure nothing strange has happened in terms of what the first few values look like. Note the leading zeros in `fipscode` (and that it's now a character variable) and that `state` is now a factor, as we'd hoped.
+
+```{r}
+glimpse(chr_2019)
+```
+
+Looks good. I can check to see that each of my states has the anticipated number of counties, too.
+
+```{r}
+chr_2019 %>% tabyl(state) %>% adorn_pct_formatting() 
+```
+
+OK. These results match up with what I was expecting.
+
+## Creating Binary Categorical Variables
+
+First, I'm going to make a binary categorical variable using the `unemployment` variable. Note that categorizing a quantitative variable like this is (in practice) a terrible idea, but we're doing it here so that you can demonstrate some facility with modeling using a categorical variable.
+
+We have numerous options for creating a binary variable.
+
+### Splitting into two categories based on the median
+
+```{r, message = FALSE}
+chr_2019 <- chr_2019 %>%
+    mutate(temp1_ms = case_when(
+                   unemployment < median(unemployment) ~ "low",
+                   TRUE ~ "high"),
+           temp1_ms = factor(temp1_ms))
+
+mosaic::favstats(unemployment ~ temp1_ms, data = chr_2019) %>% 
+    kable(digits = 3)
+```
+
+### Splitting into two categories based on a specific value
+
+```{r, message = FALSE}
+chr_2019 <- chr_2019 %>%
+    mutate(temp2_4pct = case_when(
+                   unemployment < 0.04 ~ "below4percent",
+                   TRUE ~ "above4percent"),
+           temp2_4pct = factor(temp2_4pct))
+
+mosaic::favstats(unemployment ~ temp2_4pct, data = chr_2019) %>% 
+    kable(digits = 3)
+```
+
+### Using cut2 from Hmisc to split into two categories as evenly as possible
+
+```{r}
+chr_2019 <- chr_2019 %>%
+    mutate(temp3_cut2 = factor(Hmisc::cut2(unemployment, g = 2)))
+
+mosaic::favstats(unemployment ~ temp3_cut2, data = chr_2019) %>% 
+    kable(digits = 3)
+```
+
+This approach is nice in one way, because it specifies the groups with a mathematical interval, but those factor level names can be rather unwieldy in practice. I might tweak them:
+
+```{r}
+chr_2019 <- chr_2019 %>%
+    mutate(temp3_cut2 = factor(Hmisc::cut2(unemployment, g = 2)),
+           temp4_newnames = fct_recode(temp3_cut2,
+                                         lessthan4 = "[0.0218,0.0400)",
+                                         higher = "[0.0400,0.0605]"))
+
+mosaic::favstats(unemployment ~ temp4_newnames, data = chr_2019) %>% 
+    kable(digits = 3)
+```
+
+### Cleaning up
+
+So, I've created four different variables here, when I only need the one. I'll go with the median split approach, (which I'll rename `unemp_cat`) and then drop the other attempts I created from my tibble in this next bit of code. Notice the use of the minus sign (`-`) before the list of variables I'm dropping in the select statement.
+
+```{r}
+chr_2019 <- chr_2019 %>%
+    rename(unemp_cat = temp1_ms) %>%
+    select(-c(temp2_4pct, temp3_cut2, temp4_newnames))
+```
+
+Let's check - we should still have 31 rows, but now we should have 9 columns (variables), since we've added the `unemp_cat` column to the data.
+
+```{r}
+names(chr_2019)
+```
+
+```{r}
+nrow(chr_2019)
+```
+
+OK. Still looks fine.
+
+## Creating Multi-Category Variables
+
+Now, I'm going to demonstrate the creation of a multi-category variable based on the `hsgraduation` variable. I'll briefly reiterate that categorizing a quantitative variable like this is (in practice) a terrible, no good, very bad idea, but we're doing it anyway for pedagogical rather than scientific reasons.
+
+### Creating a Three-Category Variable
+
+Suppose we want to create three groups of equal size (which, since we have only 31 observations and need to have at least 10 in each group, is really our only choice in my example) and want to use the `cut2` function from the `Hmisc` package.
+
+```{r}
+chr_2019 <- chr_2019 %>%
+    mutate(temp3 = factor(Hmisc::cut2(hsgraduation, g = 3)))
+
+mosaic::favstats(hsgraduation ~ temp3, data = chr_2019) %>% 
+    kable(digits = 3)
+```
+
+```{r}
+chr_2019 <- chr_2019 %>%
+    mutate(hsgrad_cat = fct_recode(temp3,
+                                   bottom = "[0.724,0.880)",
+                                   middle = "[0.880,0.909)",
+                                   top = "[0.909,0.946]"))
+
+mosaic::favstats(hsgraduation ~ hsgrad_cat, data = chr_2019) %>% 
+    kable(digits = 3)
+```
+
+1. Note that this same approach (changing `g` to 4 or 5 as appropriate) could be used to create a 4-category or 5-category variable.
+2. Note also that I used (bottom, middle, top) as the names of my categories instead of, for instance, (low, middle, high). 
+    - I did this so that R's default factor sorting (which is alphabetical) would still give me a reasonable order. Otherwise, I'd need to add a `fct_relevel` step to sort the categories by hand in some reasonable way. 
+    - Another good trick might have been to precede names that wouldn't be in the order I want them alphabetically with a number so they sort in a sensible order, perhaps with (1_high, 2_med, 3_low.)
+
+### Creating a 5-Category variable with Specified Cutpoints
+
+Suppose we want to split our `hsgraduation` data so that we have five categories, based on the cutpoints (0.8, 0.85, 0.9 and 0.92). These four cutpoints will produce five **mutually exclusive** (no county can be in more than one category) and **collectively exhaustive** (every county is assigned to a category) categories: 
+
+1. `hsgraduation` rate below 0.80, 
+2. 0.80 up to but not including 0.85, 
+3. 0.85 up to but not including 0.90, 
+4. 0.90 up to but not including 0.92, and 
+5. `hsgraduation` rate of 0.92 or more
+
+```{r, message = FALSE}
+chr_2019 <- chr_2019 %>%
+    mutate(temp4 = case_when(
+        hsgraduation < 0.8 ~ "1_lowest",
+        hsgraduation < 0.85 ~ "2_low",
+        hsgraduation < 0.9 ~ "3_middle",
+        hsgraduation < 0.92 ~ "4_high",
+        TRUE ~ "5_highest"),
+        temp4 = factor(temp4))
+
+mosaic::favstats(hsgraduation ~ temp4, data = chr_2019) %>% 
+    kable(digits = 3)
+```
+
+I'll just note that it is also possible to set cutpoints with `Hmisc::cut2`.
+
+### Cleaning up
+
+So, I've created two multi-categorical variables, but I will just retain the 3-category version (which I called `hsgrad_cat`) and drop the other temporary efforts.
+ 
+```{r}
+chr_2019 <- chr_2019 %>%
+    select(-c(temp3, temp4))
+```
+
+## Structure of My Tibble
+
+Next, I'll print the structure of my tibble. I'm checking to see that:
+
+- the initial row tells me that this is a tibble and specifies its dimensions
+- I still have the complete set of 31 rows (counties)
+- I've included only 10 variables:
+    - the three required variables `fipscode`, `county` and `state`, where I'll also check that `fipscode` and `county` should be character (<chr>) variables, and `state` should be a factor variable (<fct>), with an appropriate number of levels
+    - my original five selected variables, properly renamed and all of numerical (<num>) type (this may also be specified as double-precision or <dbl>, which is fine)
+    - my two categorical variables `unemp_cat` and `hsgrad_cat` which should each be factors <fct> with appropriate levels specified, followed by numerical codes
+
+```{r}
+str(chr_2019)
+```
+
+Looks good so far. I think we are ready to go.
+
+## Codebook
+
+This is a table listing all 10 variables that are included in your tibble, and providing some important information about them, mostly drawn from [the County Health Ranking web site](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures). For each of your five selected variables, be sure to include the original code (vXXX) from the raw file.
+
+Variable | Description
+--------- | ------------------------------------------------
+fipscode | FIPS code
+state | State: my six states are CT, DC, DE, HI, NH, RI
+county | County Name
+life_expectancy | (v147) Life Expectancy
+freq_mental_distress | (v145) Frequent Mental Distress Rate
+hsgraduation | (v021) High School Graduation Rate
+unemployment | (v023) Unemployment Rate
+food_insecurity | (v139) Food Insecurity Rate
+unemp_cat | 2 levels: low = unemployment below 3.9%, or high
+hsgrad_cat | 3 levels: bottom = hsgraduation below 88%, middle or top = 90.9% or above
+
+Note that I've provided details on the definition of our categorical variables.
+
+More details on two of our original five variables are specified below. These results are rephrased versions of [the summaries linked on the County Health Rankings site](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures). You'll need to provide information of this type as part of the codebook for all five of your selected variables.
+
+- `lifeexpectancy` was originally variable `v147_rawvalue`, and is listed in the Length of Life subcategory under Health Outcomes at County Health Rankings. It describes the average number of years a person residing in the county can expect to live, according to the current mortality experience (age-specific death rates) of the county's population. It is based on data from the National Center for Health Statistics Mortality Files from 2016-18.
+
+- `hsgraduation` was originally variable `v021_rawvalue`, and is listed in the Education subcategory under Social & Economic Factors at County Health Rankings. It describes the proportion of the county's ninth grade cohort that graduates with a high school diploma in four years, and is based on EDFacts data from 2016-17. Comparisons across state lines are not recommended because of differences in how states define the data, according to County Health Rankings.
+
+### Proposal Requirements 1 and 2
+
+Remember that you will need to do five things in the proposal. We'd like you to place the first two here. They are:
+
+1. a sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states. 
+
+2. A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of the cutpoints you chose to create the binary categories out of variable 4 and the multiple categories out of variable 5. Think of this as an early version of what will eventually become your codebook. For each variable, provide a sentence describing your motivation for why this variable was interesting to you.
+
+Again, placing that material here, in the codebook section, will make it easy for us to find.
+
+## Summarizing the tibble
+
+To meet proposal requirements 3 and 4, at this stage, we should **print** the tibble, so that we verify that it is in fact a tibble that prints the first 10 rows, etc., and then run `describe` from the `Hmisc` package.
+
+```{r}
+chr_2019
+```
+
+```{r}
+Hmisc::describe(chr_2019)
+```
+
+## Three Important Checks
+
+There are three important things I have to demonstrate, as described in Tasks C (Identify Your Variables) and D (Create Categorical Variables) in our Data Development work. They are:
+
+- Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study.
+
+Do we have any missing data here?
+
+```{r}
+chr_2019 %>% 
+    summarize(across(life_expectancy:food_insecurity, ~ sum(is.na(.))))
+```
+
+Nope, so we're OK!
+
+If I did have some missingness, then I would probably want to summarize this by state, so that I could compare the results. Here's a way to look at this just for the `life_expectancy` variable.
+
+```{r, message = FALSE}
+mosaic::favstats(life_expectancy ~ state, data = chr_2019) %>%
+    select(state, n, missing) %>%
+    mutate(pct_available = 100*(n - missing)/n) %>%
+    kable()
+```
+
+We're OK, because 100% of the data are available. In my example, this is true for all five of the variables I used. In yours, that may or may not be the case. Remember that all of your selected variables need to be available in at least 75% of the counties in EACH state you study.
+
+- The raw versions of each of your five selected variables must have at least 10 distinct non-missing values.
+
+```{r}
+chr_2019 %>% 
+    summarize(across(life_expectancy:food_insecurity, ~ n_distinct(.)))
+```
+
+OK. We're fine there.
+
+- For each of the categorical variables you create, every level of the resulting factor must include at least 10 counties.
+
+```{r}
+chr_2019 %>% tabyl(unemp_cat)
+chr_2019 %>% tabyl(hsgrad_cat)
+```
+
+OK. I have at least 10 counties in each category for each of the categorical variables that I created.
+
+## Saving the Tibble
+
+Finally, we'll save this tibble as an R data set into the same location as our original data set within our R Project directory.
+
+```{r}
+saveRDS(chr_2019, file = "chr_2019_Thomas_Love.Rds")
+```
+
+You'll want to substitute in your own name, of course.
+
+## Final Proposal Requirement
+
+Having done all of this work, the set of Proposal Requirements (repeated below) should be straightforward. We've already dealt with the first four. The fifth is repeated below.
+
+5. In a paragraph, describe the most challenging (or difficult) part of completing the work so far, and how you were able to overcome whatever it was that was difficult.
+
+*OK. That's your job.*
+
+# Analyses
+
+This isn't part of the proposal.
+
+# Session Information
+
+```{r}
+sessionInfo()
+```
+
+
