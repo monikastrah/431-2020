@@ -18,7 +18,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. There will be a Minute Paper after Class 09. Please complete it by Noon Wednesday 2020-09-23.
-2. We welcome a new Teaching Assistant, Claudia Cabrera, who has extensive experience as a TA for 431-432. Claudia is now in her second year of a PhD at CWRU. Read more about Claudia in the Syllabus, and look for her in our new Monday 3-4:30 PM TA Office Hours, and on Piazza.
+2. We welcome a new Teaching Assistant, Claudia Cabrera, who has extensive experience as a TA for 431-432. Read more about Claudia in the Syllabus, and look for her in our new Monday 3-4:30 PM TA Office Hours, and on Piazza.
 3. For those of you looking for a paper you can cite if you need a reference about "not testing for Normality" being an OK idea, I recommend [The importance of the Normality assumption in public health data sets](https://pubmed.ncbi.nlm.nih.gov/11910059/) by Thomas Lumley, Paula Diehr, Scott Emerson and Lu Chen.
     - I also recommend [this blog post](https://notstatschat.rbind.io/2019/02/09/what-have-i-got-against-the-shapiro-wilk-test/) specifically about the problems inherent in one particular type of test (the Shapiro-Wilk test.) 
 4. You can still [sign up for the mailing list for The Philosophy of Data Science Series](https://docs.google.com/forms/d/1YDZUkLmzIiujcaEVl3JkjIffKSwK_orFMjEkkyLvFUQ/), which now has [a welcome video on YouTube](https://www.youtube.com/watch?v=yeHEfHN39Cc). The next session is about "Critical Reasoning in Medical Machine Learning".
