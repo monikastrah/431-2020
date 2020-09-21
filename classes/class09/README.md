@@ -13,7 +13,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Meeting Our Colleagues
 
 1. I've created a true Shared Drive on Google called **431 Fall 2020 Dr Love and Students** that you should now all have access to (but only when logged into Google via CWRU). Let us know if you have any trouble accessing that material.
-    - Among other things, you should find a folder there of **Introductory Student Videos**. Those with stars there are the folks we've already met. 
+    - Among other things, you should find a folder of **Introductory Student Videos**. Starred videos feature the people we've already met. 
     - Today, we'll meet students numbered 70-72 and 13-15, specifically **Peng Zhang, Chenya Zhao, Lin Zhu, Jane Hinkle, Leila Hojat and Natasha Ingles**.
 
 ## Announcements
