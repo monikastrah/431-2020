@@ -4,8 +4,6 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> Quote to come...
-
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class09/images/normalitytesttweet.png)
 
 ## Today's Slides
@@ -30,17 +28,14 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - This includes a 30-minute video about getting the data ready and using RStudio most effectively, and 
     - A very very important sample proposal, using 2019 data, and including the R Markdown to produce [this HTML result](https://rpubs.com/TELOVE/projA-proposal-example-431-2020).
 
-
-
-
 ## What Should I Be Working On?
 
-1. Please complete the [Minute Paper after Class 09](
+1. Please complete the [Minute Paper after Class 09](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers) by Wednesday 2020-09-23 at Noon. Thank you.
 2. [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) requires some searching through the literature in Questions 1-5. You will also need to read and use [this article by Jeff Leek](https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) to do Questions 1-5. Questions 6-8 are about the [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins), from [Chapter 2 of the Course Notes](https://thomaselove.github.io/431-notes/looking-at-the-palmer-penguins.html).
 3. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. Watch the video (if you like) and use the Example R Markdown file I've provided as a template. Those two tools should be just about all you need to get your proposal moving well.
 
 ## One Last Thing
 
-To come.
+Let's take the first of our looks today at the [2020 Election Forecast at FiveThirtyEight.com](https://projects.fivethirtyeight.com/2020-election-forecast/).
 
 
