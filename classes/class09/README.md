@@ -19,7 +19,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. There will be a [Minute Paper after Class 09](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers). Please complete it by Noon Wednesday 2020-09-23.
-2. **STILL TO COME** Grades for Lab 02 will be posted by class time.
+2. [Grades for Lab 02](https://bit.ly/431-2020-grades) are now posted. They are part of the shared Google Drive, so you'll have to log in via CWRU to see them.
 3. **STILL TO COME** The Lab 03 answer sketch and grading rubric will be posted by class time.
 4. We welcome a new Teaching Assistant, Claudia Cabrera, who has extensive experience as a TA for 431-432. Read more about Claudia in [the Syllabus](https://thomaselove.github.io/431-2020-syllabus/), and look for her in our new Monday 3-4:30 PM TA Office Hours, and on Piazza.
 5. For those of you looking for a paper you can cite if you need a reference about "not testing for Normality" being an OK idea, I recommend [The importance of the Normality assumption in public health data sets](https://pubmed.ncbi.nlm.nih.gov/11910059/) by Thomas Lumley, Paula Diehr, Scott Emerson and Lu Chen.
