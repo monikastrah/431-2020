@@ -1,6 +1,6 @@
 431 Lab 03
 ================
-Last Edited 2020-09-15 15:55:04
+Last Edited 2020-09-21 12:01:30
 
 # General Instructions
 
@@ -76,16 +76,16 @@ What appears to be a typical waiting time? Compare the mean, median and
 
 # Question 3 (on the spread of the distribution)
 
-What is the inter-quartile range, and how does it compare to the
-standard deviation?
+What is the inter-quartile range of the waiting times, and how does it
+compare to the standard deviation of the waiting times?
 
 # Question 4 (on the shape of the distribution)
 
-Describe the shape of the distribution in a few complete sentences. You
-are welcome to use the histogram you built to help address these issues,
-and you may also be interested in building an additional plot or two -
-that’s your choice. You should address the following questions in your
-response.
+Describe the shape of the waiting times distribution in a few complete
+sentences. You are welcome to use the histogram you built to help
+address these issues, and you may also be interested in building an
+additional plot or two - that’s your choice. You should address the
+following questions in your response.
 
   - Is the distribution multi-modal or unimodal? How do you know?
   - Is the distribution skewed (and if so, in which direction) or is it
