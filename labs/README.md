@@ -7,7 +7,7 @@ Lab | Assignment | Answer Sketch and Grading Rubric
 :---: | :---------: | :---------------------------------:
 01 | [Lab 01 Instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01/lab01.md) | [Sketch (and Rubric) and Survey Analysis](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab01)
 02 | [Lab 02 Instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab02/lab02.md) | [Sketch and Video for Lab 02](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab02)
-03 | [Lab 03 Instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) | Sketch for Lab 03
+03 | [Lab 03 Instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab03/lab03.md) | [Sketch for Lab 03](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab03)
 04 | [Lab 04 Instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) | Sketch for Lab 04
 05 | Lab 05 Instructions | Sketch for Lab 05
 06 | Lab 06 Instructions | Sketch for Lab 06
