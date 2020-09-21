@@ -32,7 +32,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Please complete the [Minute Paper after Class 09](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers) by Wednesday 2020-09-23 at Noon. Thank you.
 2. [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) requires some searching through the literature in Questions 1-5. You will also need to read and use [this article by Jeff Leek](https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) to do Questions 1-5. Questions 6-8 are about the [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins), from [Chapter 2 of the Course Notes](https://thomaselove.github.io/431-notes/looking-at-the-palmer-penguins.html).
-3. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. Watch the video (if you like) and use the Example R Markdown file I've provided as a template. Those two tools should be just about all you need to get your proposal moving well.
+3. [Project A](https://thomaselove.github.io/431-2020-projectA/), and the Proposal, which is due 2020-10-02. I suggest a visit to [the Examples page](https://thomaselove.github.io/431-2020-projectA/examples.html) to watch the video (if you like) and use the R Markdown Example I've provided as a template. Those two tools should be just about all you need to get your proposal moving well.
 
 ## One Last Thing
 
