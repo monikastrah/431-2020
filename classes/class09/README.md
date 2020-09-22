@@ -37,9 +37,10 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 2. [Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) requires some searching through the literature in Questions 1-5. You will also need to read and use [this article by Jeff Leek](https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) to do Questions 1-5. Questions 6-8 are about the [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins), from [Chapter 2 of the Course Notes](https://thomaselove.github.io/431-notes/looking-at-the-palmer-penguins.html).
 3. The [Project A](https://thomaselove.github.io/431-2020-projectA/) Proposal, which is due 2020-10-02. I suggest a visit to [the Examples page](https://thomaselove.github.io/431-2020-projectA/examples.html) to watch the video (if you like) and use the R Markdown Example I've provided as a template. Those two tools should be just about all you need to get your proposal moving well.
     - If you are interested in working with a partner, getting that figured out soon will be helpful. We'll ask about it on today's Minute Paper.
+4. Reading: The most urgent thing is reading [Jeff Leek's article for Lab 04](https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) from 538. By the time you turn in your project proposal and receive the Quiz on 2020-10-02, you'll need to have finished the Leek text and chapters 8-9 of Spiegelhalter.
 
 ## One Last Thing
 
-Let's take the first of our looks today at the [2020 Election Forecast at FiveThirtyEight.com](https://projects.fivethirtyeight.com/2020-election-forecast/).
+Let's take a first look today at the [2020 US Election Forecast at FiveThirtyEight.com](https://projects.fivethirtyeight.com/2020-election-forecast/).
 
 
