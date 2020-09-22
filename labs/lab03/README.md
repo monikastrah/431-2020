@@ -4,5 +4,5 @@ Instructions for Lab 03 are in this [.md file](https://github.com/THOMASELOVE/43
 
 ## After the Lab
 
-- The Answer Sketch will be posted before class on 2020-09-22 in R Markdown and PDF.
+- The Answer Sketch is now available [in R Markdown and in PDF](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab03/sketch).
 
