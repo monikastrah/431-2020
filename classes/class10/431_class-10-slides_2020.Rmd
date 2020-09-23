@@ -1,0 +1,834 @@
+---
+title: "431 Class 10"
+author: "thomaselove.github.io/431"
+date: "2020-09-24"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 55)
+```
+
+## Today's R Packages
+
+```{r, message = FALSE}
+library(NHANES)
+library(janitor)
+library(knitr)
+library(broom)
+library(magrittr)
+library(patchwork)
+library(ggrepel)
+library(tidyverse)
+
+theme_set(theme_bw())
+```
+
+
+## `nh3_new` data (n = 989, 17 variables)
+
+```{r}
+set.seed(20200914) 
+
+nh3_new <- NHANES %>%
+    filter(SurveyYr == "2011_12") %>%
+    select(ID, SurveyYr, Age, Height, Weight, BMI, Pulse,
+           SleepHrsNight, BPSysAve, BPDiaAve, Gender, 
+           PhysActive, SleepTrouble, Smoke100, 
+           Race1, HealthGen, Depressed) %>%
+    rename(Subject = ID, SleepHours = SleepHrsNight, 
+           Sex = Gender, SBP = BPSysAve, DBP = BPDiaAve) %>%
+    filter(Age > 20 & Age < 80) %>%
+    drop_na() %>%
+    distinct() %>%
+    slice_sample(n = 1000) %>%
+    clean_names() %>%
+    filter(dbp > 39) %>%
+    mutate(subject = as.character(subject))
+```
+
+## Today's Data (nh4)
+
+```{r}
+set.seed(431)
+
+nh4 <- nh3_new %>%
+  select(subject, sbp, dbp, age, smoke100, race1) %>%
+  slice_sample(n = 800, replace = FALSE)
+```
+
+- Outcome (quantitative): `sbp`
+- Quantitative predictors: `dbp`, `age`
+- Binary predictor: `smoke100` (Yes/No)
+- 5-category predictor: `race1` (White, Black, Hispanic, Mexican, Other)
+- Identification code: `subject`
+
+```{r}
+dim(nh4)
+```
+
+## Association of `sbp` and `dbp`
+
+```{r, fig.height = 5}
+ggplot(nh4, aes(x = dbp, y = sbp)) +
+  geom_point() + 
+  geom_smooth(method = "lm", col = "red", formula = y ~ x)
+```
+
+## Adding text to the plot (Pearson correlation)
+
+```{r, echo = FALSE}
+ggplot(nh4, aes(x = dbp, y = sbp)) +
+  geom_point() + 
+  geom_smooth(method = "lm", col = "red", formula = y ~ x) +
+  geom_text(aes(x = 60, y = 200), size = 5,
+      label = paste0("Correlation r = ", 
+                      round_half_up(cor(nh4$sbp, nh4$dbp),3)))
+```
+
+## Code for the last slide
+
+```{r, eval = FALSE}
+ggplot(nh4, aes(x = dbp, y = sbp)) +
+  geom_point() + 
+  geom_smooth(method = "lm", col = "red", formula = y ~ x) +
+  geom_text(aes(x = 60, y = 200), size = 5,
+      label = paste0("Correlation r = ", 
+                      round_half_up(
+                        cor(nh4$sbp, nh4$dbp),3)))
+```
+
+## Model `mod_1` description
+
+We'll use a linear model to predict `sbp` using `dbp`:
+
+```{r}
+mod_1 <- lm(sbp ~ dbp, data = nh4)
+mod_1
+```
+
+### Prediction for subject 65867, with `sbp` = 115 and `dbp` =  78?
+
+- predicted sbp = 63.4338 + 0.8091(78) = 126.54
+- actual sbp for subject 65867 is 115, so residual = -11.54 
+
+## Model `mod_1` coefficients and fit measures
+
+```{r}
+tidy(mod_1, conf.int = TRUE, conf.level = 0.90) %>% 
+  select(term, estimate, std.error, conf.low, conf.high) %>% 
+  kable(digits = 2)
+
+glance(mod_1) %>% 
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>% 
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+## `augment` yields `.fitted` values & `.resid` (residuals)
+
+```{r, fig.height = 4}
+mod_1 <- lm(sbp ~ dbp, data = nh4)
+nh4_aug1 <- augment(mod_1, data = nh4)
+```
+
+We include the `data` in the `augment` statement so that all variables from `nh4` are retained here (including those not included in the `mod_1` model.)
+
+```{r}
+names(nh4_aug1)
+```
+
+Here, note that `.resid` = `sbp` - `.fitted`
+
+## Which five subjects are fit worst by model `mod_1`?
+
+We'll identify those with the five largest residuals (in absolute value).
+
+```{r}
+nh4_aug1 %>% select(subject, sbp, dbp, .resid) %>%
+  slice_max(abs(.resid), n = 5) 
+```
+
+## Label the 5 subjects with the largest |residuals|
+
+```{r, echo = FALSE}
+## requires library(ggrepel)
+
+ggplot(nh4_aug1, aes(x = dbp, y = sbp)) +
+  geom_point() +
+  geom_point(data = nh4_aug1 %>% 
+               slice_max(abs(.resid), n = 5), 
+             col = "red", size = 2) +
+  geom_smooth(method = "lm", col = "red", formula = y ~ x) +
+  geom_label_repel(data = nh4_aug1 %>% 
+                     slice_max(abs(.resid), n = 5), 
+                   aes(label = subject), 
+                   fill = "yellow", col = "red")
+```
+
+## Code for the plot on the previous slide
+
+```{r, eval = FALSE}
+## requires library(ggrepel)
+
+ggplot(nh4_aug1, aes(x = dbp, y = sbp)) +
+  geom_point() +
+  geom_point(data = nh4_aug1 %>% 
+               slice_max(abs(.resid), n = 5), 
+             col = "red", size = 2) +
+  geom_smooth(method = "lm", col = "red", formula = y ~ x) +
+  geom_label_repel(data = nh4_aug1 %>% 
+                     slice_max(abs(.resid), n = 5), 
+                   aes(label = subject), 
+                   fill = "yellow", col = "red")
+```
+
+## SBP/DBP for the 3 most negative residuals
+
+```{r, echo = FALSE}
+## requires library(ggrepel)
+
+ggplot(nh4_aug1, aes(x = dbp, y = sbp)) +
+  geom_point() +
+  geom_point(data = nh4_aug1 %>% 
+               slice_min(.resid, n = 3), 
+             col = "red", size = 2) +
+  geom_smooth(method = "lm", col = "red", formula = y ~ x) +
+  geom_text_repel(data = nh4_aug1 %>% 
+                    slice_min(.resid, n = 3), 
+                   aes(label = paste0(sbp, " / ", dbp)), 
+                  col = "red")
+```
+
+## Code for the previous slide
+
+```{r, eval = FALSE}
+## requires library(ggrepel)
+
+ggplot(nh4_aug1, aes(x = dbp, y = sbp)) +
+  geom_point() +
+  geom_point(data = nh4_aug1 %>% 
+               slice_min(.resid, n = 3), 
+             col = "red", size = 2) +
+  geom_smooth(method = "lm", col = "red", formula = y ~ x) +
+  geom_text_repel(data = nh4_aug1 %>% 
+                    slice_min(.resid, n = 3), 
+                   aes(label = paste0(sbp, " / ", dbp)), 
+                  col = "red")
+```
+
+## Residuals vs. Fitted Values for `mod_1`
+
+```{r}
+plot(mod_1, which = 1)
+```
+
+## Normal Q-Q plot of Residuals for `mod_1`
+
+```{r}
+plot(mod_1, which = 2)
+```
+
+## Using `ggplot2` for `mod_1` residual plots
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug1, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug1 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_1 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_1",
+       y = "Residuals from mod_1")
+
+p2 <- ggplot(nh4_aug1, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_1 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug1, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Code for `ggplot2` residual plots (1/2)
+
+```{r, eval = FALSE}
+p1 <- ggplot(nh4_aug1, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug1 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_1 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_1",
+       y = "Residuals from mod_1")
+```
+
+## Code for `ggplot2` residual plots (2/2)
+
+```{r, eval = FALSE}
+p2 <- ggplot(nh4_aug1, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_1 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug1, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Model `mod_2`: add `age` as a predictor
+
+```{r}
+mod_2 <- lm(sbp ~ dbp + age, data = nh4)
+mod_2
+```
+
+### Prediction for subject 65867?
+
+```{r, echo = FALSE}
+nh4 %>% select(subject, sbp, dbp, age) %>% head(1) %>% kable()
+```
+
+## `augment` for `mod_2`
+
+```{r}
+nh4_aug2 <- augment(mod_2, data = nh4)
+
+nh4_aug2 %>% head(4) %>%
+  select(subject, sbp, dbp, age, .fitted, .resid) %>% 
+  kable()
+```
+
+## Compare `mod_1` to `mod_2` with tidy?
+
+```{r}
+tidy(mod_1, conf.int = TRUE, conf.level = 0.90) %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  kable(digits = 2)
+```
+
+```{r}
+tidy(mod_2, conf.int = TRUE, conf.level = 0.90) %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  kable(digits = 2)
+```
+
+## `glance` for `mod_1` and `mod_2`
+
+```{r}
+glance(mod_1) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+```{r}
+glance(mod_2) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+## Residual Plots for `mod_2`?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug2, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug2 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_2 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_2",
+       y = "Residuals from mod_2")
+
+p2 <- ggplot(nh4_aug2, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_2 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug2, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Model `mod_3`: add `smoke100` as a predictor
+
+```{r}
+mod_3 <- lm(sbp ~ dbp + age + smoke100, data = nh4)
+mod_3
+```
+
+### Interpreting the binary predictor (`smoke100`) and its slope
+
+- `smoke100` was binary: either Yes or No for all subjects, so...
+  - `smoke100Yes` = 1 if `smoke100` is Yes, and 
+  - `smoke100Yes` = 0 if `smoke100` is No.
+
+## Prediction for subject 65867?
+
+```{r, echo = FALSE}
+nh4 %>% select(subject, sbp, dbp, age, smoke100) %>% head(1) %>% kable()
+```
+
+From Model 3, our predicted `sbp` for subject 65867 will be:
+
+**49.112 + 0.750 dbp + 0.374 age + 2.381 (indicator of smoke100 = Yes)**
+
+So for subject 65867, we'd predict:
+
+49.112 + 0.750 (78) + 0.374 (60) + 2.381 (0) = 130.05 mm Hg
+
+## `augment` for `mod_3`
+
+```{r}
+nh4_aug3 <- augment(mod_3, data = nh4)
+
+nh4_aug3 %>% head(4) %>%
+  select(subject, sbp, dbp, age, smoke100, .fitted, .resid) %>% 
+  kable()
+```
+
+## Compare `mod_2` coefficients to `mod_3` via tidy?
+
+Here is `mod_2` with 90% confidence intervals:
+
+```{r, echo = FALSE}
+tidy(mod_2, conf.int = TRUE, conf.level = 0.90) %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  kable(digits = 2)
+```
+
+And here is `mod_3`, also with 90% confidence intervals:
+
+```{r, echo = FALSE}
+tidy(mod_3, conf.int = TRUE, conf.level = 0.90) %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  kable(digits = 2)
+```
+
+## `glance` for our 3 models so far
+
+Model `mod_1`: `dbp` only
+
+```{r, echo = FALSE}
+glance(mod_1) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+Model `mod_2`: `dbp` and `age`
+
+```{r, echo = FALSE}
+glance(mod_2) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+and for model `mod_3`: `dbp` and `age` and `smoke100`
+
+```{r, echo = FALSE}
+glance(mod_3) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+## Residual Plots for `mod_3`?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug3, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug3 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_3 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_3",
+       y = "Residuals from mod_3")
+
+p2 <- ggplot(nh4_aug3, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_3 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug3, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Now, we plan to include the `race1` data
+
+Generally, what is measured as race/ethnicity here is more about racism and its impact on health disparities than it is about biological distinctions.
+
+```{r}
+nh4 %>% tabyl(race1)
+```
+
+Today, we'll collapse the data to create two factors here, one comparing White to Non-White, and another using three categories (White/Black/all others.)
+
+## Creating the Binary Variable `race_white`
+
+```{r}
+nh4 <- nh4 %>%
+  mutate(race_white = case_when(race1 == "White" ~ 1,
+                                     TRUE ~ 0))
+
+nh4 %>% tabyl(race_white, race1) # sanity check
+```
+
+`race_white` is a 1/0 numeric variable in R, instead of a factor, but that's fine for use as a predictor in our modeling.
+
+## Creating the 3-category Variable `race_3cat`
+
+We want to retain the two largest categories (White and Black) and then put everyone else into a third category. We can use `fct_lump_n` to help...
+
+```{r}
+nh4 <- nh4 %>%
+  mutate(race_3cat = fct_lump_n(race1, n = 2))
+
+nh4 %>% tabyl(race_3cat, race1) # sanity check
+```
+
+## Change the order in the `race_3cat` factor?
+
+I'd like to change the order of the categories in `race_3cat`. There are several ways to do this, for instance, I can sort them by how commonly they occur.
+
+```{r}
+nh4 <- nh4 %>%
+  mutate(race_3cat = fct_infreq(race_3cat))
+```
+
+```{r}
+nh4 %>% tabyl(race_3cat)
+```
+
+That puts White first, then Other, then Black.
+
+## What if I want to choose a different order?
+
+I can set the order to anything I like, by hand, with `fct_relevel`:
+
+```{r}
+nh4 <- nh4 %>%
+  mutate(race_3cat = fct_relevel(race_3cat, 
+                                 "White", "Black", "Other"))
+```
+
+```{r}
+nh4 %>% tabyl(race_3cat)
+```
+
+I'll go with that order for today.
+
+## Working with Factors using `forcats`
+
+The main `fct_` functions I use are:
+
+- `fct_lump` is used to lump together factor levels into "other"
+  - `fct_lump_min` lumps levels that appear less than `min` times
+  - `fct_lump_n` lumps all levels except the `n` most frequent
+- `fct_recode` lets you change the factor levels by hand
+- `fct_relevel` lets you rearrange existing factor levels by hand
+- `fct_reorder` lets you sort the levels based on another variable
+
+but there are many others. Read more about `forcats` tools at the `forcats` website at https://forcats.tidyverse.org/ which will also link you to the Factors chapter in [R for Data Science](https://r4ds.had.co.nz/factors.html).
+
+## Model `mod_4`: add `race_white` as a predictor
+
+```{r}
+mod_4 <- lm(sbp ~ dbp + age + smoke100 + race_white, data = nh4)
+mod_4
+```
+
+### Interpreting the binary predictor (`race_white`) and its slope
+
+- `race_white` is either 1 or 0 for all subjects ...
+  - if subject's `race1` was "White", then `race_white` = 1, and 
+  - if subject's `race1` was anything else, `race_white` =  0
+
+## Prediction for subject 65867?
+
+```{r, echo = FALSE}
+nh4 %>% select(subject, sbp, dbp, age, smoke100, race1, race_white) %>% head(1) %>% kable()
+```
+
+From Model 4, our predicted `sbp` for subject 65867 will be:
+
+50.061 + 0.748 dbp + 0.384 age + 2.638 (if smoke100 = Yes) - 2.477 (if race = White)
+
+So for subject 65867, we'd predict:
+
+50.061 + 0.748 (78) + 0.384 (60) + 2.638 (0) - 2.477 (1) = 128.97 mm Hg
+
+## `augment` for `mod_4`
+
+```{r}
+nh4_aug4 <- augment(mod_4, data = nh4)
+```
+
+```{r, echo = FALSE}
+nh4_aug4 %>% head(4) %>%
+  select(subject, sbp, dbp, age, smoke100, race_white, .fitted, .resid) %>% 
+  kable()
+```
+
+## Model `mod_4` results from `tidy` and `glance`
+
+Coefficients for `mod_4` with 90% confidence intervals:
+
+```{r, echo = FALSE}
+tidy(mod_4, conf.int = TRUE, conf.level = 0.90) %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  kable(digits = 2)
+```
+
+```{r, echo = FALSE}
+glance(mod_4) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+## Residual Plots for `mod_4`?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug4, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug4 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_4 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_4",
+       y = "Residuals from mod_4")
+
+p2 <- ggplot(nh4_aug4, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_4 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug4, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## `mod_5`: Using three race/ethnicity categories
+
+```{r}
+mod_5 <- lm(sbp ~ dbp + age + smoke100 + race_3cat, data = nh4)
+mod_5
+```
+
+OK. What's happened here?
+- What are our three categories for `race_3cat`? 
+- Why do I only see two of them in the model?
+
+## Prediction for subject 65867?
+
+```{r, echo = FALSE}
+nh4 %>% select(subject, sbp, dbp, age, smoke100, race1, race_3cat) %>% head(1) %>% kable()
+```
+
+- The **referent** category here is White, because that's the one left out of the set of indicators in the model. (We have coefficients for the other two `race_3cat` categories.)
+
+From Model 5, our predicted `sbp` for subject 65867 will be:
+
+47.883 + 0.745 dbp + 0.384 age + 2.566 (if smoke100 = Yes) + 4.715 (if `race_3cat` = Black) + 1.223 (if `race_3cat` = Other)
+
+So for subject 65867, we'd predict:
+
+47.883 + 0.745 (78) + 0.384 (60) + 2.566 (0) + 4.715 (0) + 1.223 (0) = 129.03 mm Hg
+
+
+## `augment` for `mod_5`
+
+```{r}
+nh4_aug5 <- augment(mod_5, data = nh4)
+```
+
+```{r, echo = FALSE}
+nh4_aug5 %>% head(4) %>%
+  select(subject, sbp, dbp, age, smoke100, race_3cat, .fitted, .resid) %>% 
+  kable()
+```
+
+## Model `mod_5` results from `tidy` and `glance`
+
+Coefficients for `mod_5` with 90% confidence intervals:
+
+```{r, echo = FALSE}
+tidy(mod_5, conf.int = TRUE, conf.level = 0.90) %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  kable(digits = 2)
+```
+
+```{r, echo = FALSE}
+glance(mod_5) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+## Residual Plots for `mod_5`?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug5, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug5 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_5 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_5",
+       y = "Residuals from mod_5")
+
+p2 <- ggplot(nh4_aug5, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_5 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug5, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Glancing at our Five Models
+
+```{r, echo = FALSE}
+our_models <- bind_rows(glance(mod_1), glance(mod_2), glance(mod_3), 
+                  glance(mod_4), glance(mod_5)) %>%
+  mutate(model = 1:5) %>%
+  mutate(preds = c("dbp", "1+age", "2+smoke100", "3+race_white", "3+race_3cat")) %>%
+  select(model, preds, r.squared, adj.r.squared, sigma, AIC, BIC)
+
+our_models %>% kable(digits = c(0,0,3,3,2,1,1))
+```
+
+Does there appear to be a clear winner here?
+
+## Which one does best in our holdout sample?
+
+We started with 989 subjects, and sampled 800 of them. How well do these models do when they are asked to predict the other 189 observations?
+
+```{r}
+heldout <- anti_join(nh3_new, nh4, by = "subject") %>%
+  select(subject, sbp, dbp, age, smoke100, race1) %>%
+  mutate(race_white = case_when(race1 == "White" ~ 1,
+                                     TRUE ~ 0)) %>%
+  mutate(race_3cat = fct_lump_n(race1, n = 2)) %>%
+  mutate(race_3cat = 
+           fct_relevel(race_3cat, 
+                       "White", "Black", "Other"))
+
+dim(heldout)
+```
+
+## Sanity Checks
+
+```{r}
+heldout %>% tabyl(race_white, race1)
+```
+
+```{r}
+heldout %>% tabyl(race_3cat, race1)
+```
+
+## How does our `mod_1` do out of sample?
+
+```{r}
+heldout_mod1 <- augment(mod_1, newdata = heldout)
+
+heldout_mod1 %>% select(subject, sbp, .fitted, .resid) %>% 
+  head() %>% kable()
+```
+
+## Out-of-sample crude estimate of R-square
+
+In our new sample, the square of the (Pearson) correlation between the observed `sbp` and the model `mod_1` predicted `sbp` or the `.fitted` values, will be our estimated R-square.
+
+```{r}
+heldout_mod1 %$% cor(sbp, .fitted)
+heldout_mod1 %$% cor(sbp, .fitted)^2
+```
+
+OK. So our estimate of the out-of-sample R-square = `r round_half_up(heldout_mod1 %$% cor(sbp, .fitted)^2,3)` based on this sample. 
+
+- How does this compare to our in-sample R-square for `mod_1`, which was `r round_half_up(glance(mod_1) %>% select(r.squared),3)`?
+- Or maybe our adjusted R-square for `mod_1` which was `r round_half_up(glance(mod_1) %>% select(adj.r.squared),3)`?
+
+## Create predictions for the other four models
+
+```{r}
+heldout_mod2 <- augment(mod_2, newdata = heldout)
+heldout_mod3 <- augment(mod_3, newdata = heldout)
+heldout_mod4 <- augment(mod_4, newdata = heldout)
+heldout_mod5 <- augment(mod_5, newdata = heldout)
+```
+
+## $R^2$ Comparisons for Models 1-5
+
+Model | Predictors | In-sample $R^2$ | In-sample $R^2_{adj}$ | Holdout $R^2$
+----: | ------- | ------: | ------: | -----:
+mod_1 | `dbp` | `r round_half_up(glance(mod_1) %>% select(r.squared),3)` | `r round_half_up(glance(mod_1) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod1 %$% cor(sbp, .fitted)^2,3)`
+mod_2 | 1 + `age` | `r round_half_up(glance(mod_2) %>% select(r.squared),3)` | `r round_half_up(glance(mod_2) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod2 %$% cor(sbp, .fitted)^2,3)`
+mod_3 | 2 + `smoke100` | `r round_half_up(glance(mod_3) %>% select(r.squared),3)` | `r round_half_up(glance(mod_3) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod3 %$% cor(sbp, .fitted)^2,3)`
+mod_4 | 3 + `race_white` | `r round_half_up(glance(mod_4) %>% select(r.squared),3)` |  `r round_half_up(glance(mod_4) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod4 %$% cor(sbp, .fitted)^2,3)`
+mod_5 | 3 + `race_3cat` | `r round_half_up(glance(mod_5) %>% select(r.squared),3)` | `r round_half_up(glance(mod_5) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod5 %$% cor(sbp, .fitted)^2,3)`
+
+What if we look at the $\sigma$ values - the residual standard deviations?
+
+## $\sigma$ Comparisons for Models 1-5
+
+Model | Predictors | In-sample $\sigma$ | Holdout $\sigma$
+----: | ------- | ------: | ------:
+mod_1 | `dbp` | `r round_half_up(glance(mod_1) %>% select(sigma),2)` | `r round_half_up(heldout_mod1 %$% sd(.resid),2)`
+mod_2 | 1 + `age` | `r round_half_up(glance(mod_2) %>% select(sigma),2)` | `r round_half_up(heldout_mod2 %$% sd(.resid),2)`
+mod_3 | 2 + `smoke100` | `r round_half_up(glance(mod_3) %>% select(sigma),2)` | `r round_half_up(heldout_mod3 %$% sd(.resid),2)`
+mod_4 | 3 + `race_white` |`r round_half_up(glance(mod_4) %>% select(sigma),2)` | `r round_half_up(heldout_mod4 %$% sd(.resid),2)`
+mod_5 | 3 + `race_3cat` | `r round_half_up(glance(mod_5) %>% select(sigma),2)` | `r round_half_up(heldout_mod5 %$% sd(.resid),2)`
+
+Looks like our model summaries are just too optimistic?
+
+- What might have tipped us off?
+
