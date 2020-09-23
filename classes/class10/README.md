@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> Quote to come...
+> "You've got to draw the line somewhere." (Unknown)
 
 ## Today's Slides
 
@@ -16,6 +16,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 2. On 2020-09-22, I posted a short (~9 minutes) video to Piazza and the Shared Google Drive (in the Dr Love Special Videos folder) where I created and then debugged some common errors in using RStudio and R Markdown using the iris data, which is sort of like the palmerpenguins data for Lab 04. Take a look, if you are interested.
 3. I fixed an error in the grading for class participation from [the Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
     - I had mistakenly implied that you would receive 5 points for each Minute Paper instead of 4. 
+4. The [Course Notes](https://thomaselove.github.io/431-notes/) are available through Chapter 22. The remaining chapters (I'm still thinking this semester will have about 30 chapters) will discuss regression modeling and will appear in late October, I expect. 
 
 ## What Should I Be Working On?
 
@@ -25,6 +26,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-To come.
+[What's so hard about histograms?](https://tinlizzie.org/histograms/) is an amazing interactive essay by Aran Lunzer and Amelia McNamara. We'll spend a few minutes taking a look.
 
 
