@@ -12,7 +12,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-1. Dr. Love will provide feedback on your comments from the Minute Paper after Class 09.
+1. **STILL TO COME** Dr. Love will provide feedback on your comments from the Minute Paper after Class 09.
 2. On 2020-09-22, I posted a short (~9 minutes) video to Piazza and the Shared Google Drive (in the Dr Love Special Videos folder) where I created and then debugged some common errors in using RStudio and R Markdown using the iris data, which is sort of like the palmerpenguins data for Lab 04. Take a look, if you are interested.
 3. I fixed an error in the grading for class participation from [the Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
     - I had mistakenly implied that you would receive 5 points for each Minute Paper instead of 4. 
