@@ -6,7 +6,7 @@
 
 After Class | due | Link to Minute Paper Form | Link to Dr. Love's Feedback
 :----------: | :------: | :--------: | :----------:
-9 (2020-09-22) | 2020-09-23 NOON | http://bit.ly/431-2020-minute-09 | To come.
+9 (2020-09-22) | 2020-09-23 NOON | http://bit.ly/431-2020-minute-09 | http://bit.ly/431-2020-minute-09-feedback
 11 (2020-09-29) | 2020-09-30 NOON | To come. | To come.
 15 (2020-10-14) | 2020-10-15 NOON | To come. | To come.
 
