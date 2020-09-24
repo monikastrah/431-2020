@@ -32,14 +32,22 @@ Each of the ten breakout groups generated two questions. I've [listed the 20 pro
 
 Several common themes emerged  in your proposals. We'll explore one of them today in our breakout session.
 
-1. **Do older films have more IMDB ratings?**
-    - "Do older movies have more numbers of star ratings at IMDB?"
-    - "Does year of movie release correlate with number of ratings?"
-    - "Do the older movies have more ratings when compared to the newer movies released?"
-    - "Is there a relationship between the year of release and number of ratings?"
-    - "Do more recent films have more ratings?"
+Question A. **Do older films have more IMDB ratings?**
 
-Some other questions that were suggested:
+Other ways people used to ask this question included:
+- "Do older movies have more numbers of star ratings at IMDB?"
+- "Does year of movie release correlate with number of ratings?"
+- "Do the older movies have more ratings when compared to the newer movies released?"
+- "Is there a relationship between the year of release and number of ratings?"
+- "Do more recent films have more ratings?"
+
+The [R Markdown file Dr. Love used to create his report is available now](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/QuestionA/movies_questionA.Rmd).
+
+The HTML result is available to view at https://rpubs.com/TELOVE/movies-A-431-2020.
+
+## What will we do in upcoming breakout sessions?
+
+### Some other questions that were suggested:
 
 - **Do longer films receive higher star ratings?**
     - "Are longer movies rated higher?"
@@ -53,7 +61,7 @@ Some other questions that were suggested:
     - "Which category of movies typically get the highest rating?"
     - "Does the number of categories that a film is listed under correlate with star ratings?"
 
-## What will we do in upcoming breakout sessions? Expand the data set. 
+### Expand the data set. 
 
 - We'll develop, administer, and analyze a survey of this class (students + TAs) regarding these films.
     - Along the way, we'll address whether there is a film on this list that everyone in the class (including Dr. Love) has seen. Some early evidence regarding this issue [is available here](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/breakout1_results.md#which-is-the-first-movie-youve-all-seen-alphabetically).
