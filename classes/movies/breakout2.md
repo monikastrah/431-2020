@@ -1,6 +1,6 @@
-# Movies: Breakout Session Materials for Class 08 (2020-09-17)
+# Movies: Breakout Session Materials for Class 10 (2020-09-24)
 
-As we discussed last week, I've created the [movies_2020-09-10.csv](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv) data set about the 66 films people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) which includes several characteristics for each film gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). The first three variables in the data set are:
+As we discussed a couple of weeks ago, I've created the [movies_2020-09-10.csv](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/data/movies_2020-09-10.csv) data set about the 66 films people listed in response to [my request in Section 17 of the syllabus](https://thomaselove.github.io/431-2020-syllabus/movies.html) which includes several characteristics for each film gathered from the [Internet Movie Data Base](https://www.imdb.com/) (IMDB). The first three variables in the data set are:
 
 Description | Variable 
 ----------: | -------- 
@@ -30,11 +30,11 @@ Each of the ten breakout groups generated two questions. I've [listed the 20 pro
 
 ## Task for today's second breakout session (Class 08)
 
-Several common themes emerged  in your proposals. We'll explore one of them today in our breakout session.
+Several common themes emerged  in your proposals. We'll explore the most commonly selected question today in our breakout session.
 
 Question A. **Do older films have more IMDB ratings?**
 
-Other ways people used to ask this question included:
+Ways our breakout groups used to ask this question included:
 - "Do older movies have more numbers of star ratings at IMDB?"
 - "Does year of movie release correlate with number of ratings?"
 - "Do the older movies have more ratings when compared to the newer movies released?"
@@ -45,7 +45,11 @@ The [R Markdown file Dr. Love used to create his report is available now](https:
 
 The HTML result is available to view at https://rpubs.com/TELOVE/movies-A-431-2020.
 
-## What will we do in upcoming breakout sessions?
+Your task is to review the HTML and R Markdown documents and, as a group, identify 2-3 useful tips in the document that you think will be helpful going forward.
+
+One of the people in your group will type those tips into the Google Doc located at http://bit.ly/431-2020-movies-task-class-10. (You'll need to be logged into Google through CWRU to do so.)
+
+## What might we do in upcoming breakout sessions?
 
 ### Some other questions that were suggested:
 
