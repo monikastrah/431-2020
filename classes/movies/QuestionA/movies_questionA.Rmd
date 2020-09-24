@@ -1,0 +1,573 @@
+---
+title: "Do Older Films Have More IMDB ratings?"
+author: "Thomas E. Love"
+date: "`r Sys.Date()`"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+        number_sections: TRUE
+        theme: readable
+        code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+# Setup
+
+## R packages
+
+```{r, message = FALSE}
+library(broom)
+library(ggrepel)
+library(janitor)
+library(knitr)
+library(magrittr)
+library(patchwork)
+library(tidyverse)
+
+theme_set(theme_bw())
+```
+
+## Read in the data
+
+```{r}
+file_raw <- "https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/classes/movies/data/movies_2020-09-10.csv"
+
+movies <- read_csv(file_raw)
+```
+
+```{r}
+movies
+```
+
+## Sanity Checks
+
+Let's take a quick look at the variables we'll actually use in our work:
+
+```{r}
+movies %>% select(film, year, imdb_ratings) %$%
+  summary(.)
+```
+
+Mostly, I'm checking the minimum and maximum for quantities. These seem plausible, although that minimum in `imdb_ratings` of 6 is impressive.
+
+```{r}
+movies %>% select(film, year, imdb_ratings) %>% 
+  slice_min(imdb_ratings) %>% kable()
+```
+
+OK. It's plausible that film could have very few ratings.
+
+# Visualizing the Association
+
+## Create a new `age` variable
+
+The `year` information tells us about the age of a film. We could calculate a film's age, by subtracting 2020 - `year`, as follows.
+
+```{r}
+movies <- movies %>%
+    mutate(age = 2020 - year)
+```
+
+## Exploratory Data Analyses
+
+### For `imdb_ratings`
+
+`imdb_ratings` will be our outcome in our regression model, so understanding whether or not it is well described by a Normal model is somewhat helpful.
+
+```{r}
+p1 <- ggplot(movies, aes(sample = imdb_ratings)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot of imdb_ratings")
+
+p2 <- ggplot(movies, aes(x = imdb_ratings)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(movies$imdb_ratings), 
+                            sd = sd(movies$imdb_ratings)),
+                col = "navy", lwd = 1.5) +
+  labs(title = "Histogram with Normal Density")
+
+p3 <- ggplot(movies, aes(x = imdb_ratings, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot of imdb_ratings", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+```
+
+It would be better to label the axes of these plots on a more legible scale. One approach to this would be to use the following strategy:
+
+```{r}
+p1 <- p1 +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1))
+
+p2 <- p2 +
+    scale_x_continuous(labels = scales::label_number_si(accuracy = 0.1))
+
+p3 <- p3 +
+    scale_x_continuous(labels = scales::label_number_si(accuracy = 0.1))
+
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+```
+
+If we decide that `imdb_ratings` doesn't follow a Normal distribution, that's not going to change our approach to linear regression modeling. As always, we'll need to look for Normality in the **residuals** from the model, not the outcome.
+
+Here are some numerical summaries, as well.
+
+```{r, message = FALSE}
+mosaic::favstats(~ imdb_ratings, data = movies) %>% kable(digits = 2)
+```
+
+### For `age`
+
+We'll treat `age` as a predictor in our regression model. Whether `age` is Normally distributed or not will be of no consequence in our modeling. We will often be interested in understanding the center, spread, outliers and shape of a predictor's distribution regardless, just so that we have a better sense of the data, and in particular, whether the interesting `ages` are well represented.
+
+```{r}
+p1 <- ggplot(movies, aes(sample = age)) +
+  geom_qq(col = "dodgerblue") + geom_qq_line(col = "navy") + 
+  theme(aspect.ratio = 1) + 
+  labs(title = "Normal Q-Q plot of age")
+
+p2 <- ggplot(movies, aes(x = age)) +
+  geom_histogram(aes(y = stat(density)), 
+                 bins = 10, fill = "dodgerblue", col = "white") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(movies$age), 
+                            sd = sd(movies$age)),
+
+                                col = "navy", lwd = 1.5) +
+  labs(title = "Histogram with Normal Density")
+
+p3 <- ggplot(movies, aes(x = age, y = "")) +
+  geom_boxplot(fill = "dodgerblue", outlier.color = "dodgerblue") + 
+  labs(title = "Boxplot of age", y = "")
+
+p1 + (p2 / p3 + plot_layout(heights = c(4,1)))
+
+mosaic::favstats(~ age, data = movies) %>% kable(digits = 2)
+```
+
+## A First Scatterplot
+
+Now, we want to see the association between two quantitative variables: the `age` of the film, which we'll treat as the predictor, and the the number of IMDB ratings (`imdb_ratings`) which we'll treat as our outcome.
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+This initial picture suggests that `age` alone isn't a strong predictor of `imdb_ratings`. All of the work we do in what follows isn't going to change that.
+
+## Changing the Y Axis
+
+Can we change the Y axis tickmark labels to something more readable?
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1)) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+## Annotating the plot with *r*
+
+Let's add some text to indicate, *r*, the Pearson correlation.
+
+```{r}
+movies %$% cor(age, imdb_ratings)
+```
+
+We could just type in this value...
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1)) +
+    annotate(geom = "label", x = 50, y = 1250000, 
+             label = "Correlation = -0.048") +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+## Pulling the label from the data
+
+A better approach would be to pull it from the data:
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1)) +
+    annotate(geom = "label", x = 50, y = 1250000, 
+        label = paste0("Correlation r = ", 
+                        movies %$% cor(age, imdb_ratings))) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+## Rounding!
+
+Whoops - probably want to round that off...
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1)) +
+    annotate(geom = "label", x = 50, y = 1250000, 
+        label = paste0("Correlation r = ", 
+                        round_half_up(movies %$% cor(age, imdb_ratings),3))) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+Another option is to use `signif_half_up` to specify the number of significant figures you want to see in your response. 
+
+## Can we label the films?
+
+Now, Can we label the films?
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1)) +
+    geom_text_repel(aes(label = film)) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+### Labeling *Some* of the Films
+
+Hmmm, maybe we don't want to label them all. Let's label the films that are at the top of the plot or on the far right. We'll select those films that either have more than 1.7 Million ratings or that are more than 40 years old. Also, we'll use `geom_label_repel` rather than `geom_text_repel` to see what that does.
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1)) +
+    geom_label_repel(aes(label = film),
+        data = movies %>% filter(imdb_ratings > 1700000 | age > 40)) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+I would suggest looking at [the R Graphics Cookbook Chapter on Scatter Plots](https://r-graphics.org/chapter-scatter) for recipes that might improve this work.
+
+## Adding fitted smooths
+
+Let's add a couple of smooths to the plot.
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_continuous(labels = scales::label_number_si(accuracy = 0.1)) +
+    geom_text_repel(aes(label = film),
+        data = movies %>% filter(imdb_ratings > 1700000 | age > 40)) +
+    geom_smooth(method = "loess", se = FALSE, col = "blue", formula = y ~ x) +
+    geom_smooth(method = "lm", se = TRUE, col = "red", formula = y ~ x) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+# Fitting `mod_A`
+
+## The Linear Model?
+
+Let's look at that linear model.
+
+```{r}
+mod_A <- lm(imdb_ratings ~ age, data = movies)
+
+summary(mod_A)
+```
+
+## Tidy Model Coefficients and CIs
+
+```{r}
+tidy(mod_A, conf.int = TRUE, conf.level = 0.90) %>% kable()
+```
+
+## What does `glance` provide?
+
+Here are the `glance` summaries we'll use in the early part of the course.
+
+```{r}
+glance(mod_A) %>% select(r.squared, adj.r.squared, sigma, AIC, BIC, nobs) %>% 
+    kable()
+```
+
+Here are the other summaries that `glance` provides for a linear model fit using `lm`.
+
+```{r}
+glance(mod_A) %>% select(statistic, p.value, df, logLik, deviance, df.residual)
+```
+
+## `mod_A`: Predictions
+
+```{r}
+movies_augA <- augment(mod_A, movies)
+```
+
+Let's look at the predictions for the first few films in the data set.
+
+```{r}
+movies_augA %>% 
+  select(film_id, film, year, age, imdb_ratings, .fitted, .resid) %>% 
+  head(5) %>% kable()
+```
+
+OK. Let's look at the residual plots to see if our regression assumptions are reasonable now.
+
+## `mod_A` Residual Plots
+
+
+```{r}
+p1 <- ggplot(movies_augA, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = movies_augA %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = film)) +
+  labs(title = "mod_A Residuals vs. Fitted",
+       x = "Fitted Values from mod_A",
+       y = "Residuals from mod_A")
+
+p2 <- ggplot(movies_augA, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_A Residuals",
+       y = "")
+
+p3 <- ggplot(movies_augA, aes(y = .resid, x = "")) +
+  geom_violin(fill = "tomato") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+I don't see a lot of curve in the residuals vs. fitted plot, but we definitely have a problem with the Normality assumption for the residuals. The plots show some substantial right skew. It might be wise to consider transforming our outcome with, for instance, a logarithm.
+
+# Consider Transformation?
+
+## Visualizing on the Log Scale
+
+It looks like the relationship is pretty weak, but I am a bit concerned about the few films with very high numbers of ratings. 
+
+Might we try a transformation? Suppose we place the `imdb_rankings` on a logarithmic scale? R has a tool to help us do this for base 10 logs, so let's try that.
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_log10() +
+    geom_smooth(method = "loess", se = FALSE, col = "blue", formula = y ~ x) +
+    geom_smooth(method = "lm", se = TRUE, col = "red", formula = y ~ x) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+## Identifying a new outlier
+
+Now, maybe, we have a different outlier to worry about? What is that smallest value?
+
+```{r}
+ggplot(movies, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_log10() +
+    geom_text_repel(aes(label = film), col = "purple",
+        data = movies %>% slice_min(imdb_ratings)) +
+    geom_smooth(method = "loess", se = FALSE, col = "blue", formula = y ~ x) +
+    geom_smooth(method = "lm", se = TRUE, col = "red", formula = y ~ x) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students")
+```
+
+## Three Least Often Rated Films
+
+What are the three films least often rated?
+
+```{r}
+movies %>% select(film_id, film, imdb_ratings) %>% 
+    slice_min(imdb_ratings, n = 3)
+```
+
+# Fitting `mod_B`
+
+Note that since we've transformed the outcome (from `imdb_ratings` to its logarithm) the summaries here (like $R^2$) are no longer comparable to what we saw in `mod_A`.
+
+For example, the Pearson correlation of `age` with `log10(imdb_ratings)` is different from the Pearson correlation of `age` with the raw `imdb_ratings`.
+
+```{r}
+movies %$% cor(log10(imdb_ratings), age)
+movies %$% cor(imdb_ratings, age)
+```
+
+## What is the resulting model?
+
+```{r}
+mod_B <- lm(log10(imdb_ratings) ~ age, data = movies)
+
+summary(mod_B)
+```
+
+## Coefficients and Summaries
+
+```{r}
+tidy(mod_B, conf.int = TRUE, conf.level = 0.90) %>% kable()
+
+glance(mod_B) %>% select(r.squared, adj.r.squared, sigma, AIC, BIC, nobs) %>% 
+    kable()
+```
+
+What conclusions can you draw here?
+
+## `mod_B`: Predictions 
+
+```{r}
+movies_augB <- augment(mod_B, movies)
+```
+
+Again, let's look at the predictions for the first few films in the data set. Note that we are now predicting the `log10` of `imdb_ratings`, so we need to think about that.
+
+```{r}
+movies_augB %>% 
+  mutate(log10_ratings = log10(imdb_ratings)) %>%
+  select(film_id, film, year, age, 
+         imdb_ratings, log10_ratings, .fitted, .resid) %>% 
+  head(5) %>% kable()
+```
+
+OK. Let's look at the residual plots to see if our regression assumptions are more reasonable now.
+
+## `mod_B` Residual Plots
+
+```{r}
+p1 <- ggplot(movies_augB, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = movies_augB %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = film)) +
+  labs(title = "mod_B Residuals vs. Fitted",
+       x = "Fitted Values from mod_B",
+       y = "Residuals from mod_B")
+
+p2 <- ggplot(movies_augB, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_B Residuals",
+       y = "")
+
+p3 <- ggplot(movies_augB, aes(y = .resid, x = "")) +
+  geom_violin(fill = "tomato") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+
+```
+
+That low outlier certainly stands out. Perhaps we should look at the data excluding that point to see if we can plausibly fit a model.
+
+
+# Fitting `mod_C`
+
+## Dropping One Film
+
+Suppose we decided to look at how well we could predict the logarithm of the `imdb_ratings` if if we dropped "Farewell My Concubine" from the list. Let's create a new tibble, where we filter this film out. 
+
+```{r}
+movies_minus_one <- movies %>% filter(imdb_ratings > 10)
+```
+
+## Redrawing the Association
+
+```{r}
+ggplot(movies_minus_one, aes(x = age, y = imdb_ratings)) + 
+    geom_point() +
+    scale_y_log10() +
+    geom_smooth(method = "loess", se = FALSE, col = "blue", formula = y ~ x) +
+    geom_smooth(method = "lm", se = TRUE, col = "red", formula = y ~ x) +
+    labs(title = "Movies Mentioned as Favorites by 2020 431 Students",
+         subtitle = "Excluding one film with only 6 IMDB Ratings")
+```
+
+## Fitting model `mod_C`
+
+```{r}
+mod_C <- lm(log10(imdb_ratings) ~ age, data = movies_minus_one)
+
+summary(mod_C)
+```
+
+## Coefficients and Summaries
+
+```{r}
+tidy(mod_C, conf.int = TRUE, conf.level = 0.90) %>% kable()
+
+glance(mod_C) %>% select(r.squared, adj.r.squared, sigma, AIC, BIC, nobs) %>% 
+    kable()
+```
+
+Are the $R^2$ values we obtain for Model C comparable to those we developed for Model A? For Model B?
+
+## `mod_C`: Predictions
+
+```{r}
+movies_augC <- augment(mod_C, movies_minus_one)
+```
+
+Again, let's look at the predictions for the first few films in the data set. Note that we are now predicting the `log10` of `imdb_ratings`, so we need to think about that.
+
+```{r}
+movies_augC %>% 
+  mutate(log10_ratings = log10(imdb_ratings)) %>%
+  select(film_id, film, year, age, 
+         imdb_ratings, log10_ratings, .fitted, .resid) %>% 
+  head(5) %>% kable()
+```
+
+OK. Let's look at the residual plots to see if our regression assumptions are more reasonable now.
+
+## `mod_C` Residual Plots
+
+```{r}
+p1 <- ggplot(movies_augC, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = movies_augC %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = film)) +
+  labs(title = "mod_C Residuals vs. Fitted",
+       x = "Fitted Values from mod_C",
+       y = "Residuals from mod_C")
+
+p2 <- ggplot(movies_augC, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_C Residuals",
+       y = "")
+
+p3 <- ggplot(movies_augC, aes(y = .resid, x = "")) +
+  geom_violin(fill = "tomato") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+We still have some low outliers, but the residuals are closer to a Normal distribution, and I don't see a strong curve in the plot against fitted values.
+
+The main problem is that the model remains very weak. `age` alone isn't a strong predictor of `imdb_ratings`. 
+
+# Closing Materials
+
+To view the HTML report generated by this R Markdown file, visit https://rpubs.com/TELOVE/movies-A-431-2020
+
+## Session Info
+
+```{r}
+sessionInfo()
+```
