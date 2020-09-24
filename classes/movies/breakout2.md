@@ -41,7 +41,7 @@ Several common themes emerged  in your proposals. We'll explore one of them toda
 
 Some other questions that were suggested:
 
-= **Do longer films receive higher star ratings?**
+- **Do longer films receive higher star ratings?**
     - "Are longer movies rated higher?"
     - "Does the length of a movie relate to its star rating?"
     - "Does length of the movie correlate with the weighted average IMDB rating?"
