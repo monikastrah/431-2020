@@ -25,10 +25,11 @@ In today's breakout session, we're [going back to the movies](https://github.com
     - Whether during or outside of office hours, TAs are **not** available to proofread or edit your work for you. That is your job. 
 3. On 2020-09-22, I posted a short (~9 minutes) video to Piazza and the Shared Google Drive (in the Dr Love Special Videos folder) where I created and then debugged some common errors in using RStudio and R Markdown using the iris data, which is sort of like the palmerpenguins data for Lab 04. Take a look, if you are interested.
 4. I fixed an error in the grading for class participation from [the Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
-    - I had mistakenly implied that you would receive 5 points for each Minute Paper instead of 4. 
-5. The [Course Notes](https://thomaselove.github.io/431-notes/) are available through Chapter 22. The remaining chapters (I'm still thinking this semester will have about 30 chapters) will discuss regression modeling and will appear in late October, I expect.
-6. You may be interested in this YouTube video on [Critical Reasoning in Medical Machine Learning](https://www.youtube.com/watch?v=o5YmdoCiyug), which is part of the Philosophy of Data Science series.
-7. If you want to watch someone masterfully analyze data in R using the Tidyverse, I cannnot recommend [David Robinson's Tidy Tuesday videos](https://www.youtube.com/channel/UCeiiqmVK07qhY-wvg3IZiZQ) enough. 
+    - I had mistakenly implied that you would receive 5 points for each Minute Paper instead of 4.
+5. I added a package (`ggrepel`) to the [list of R packages you should install](https://thomaselove.github.io/431/r_packages.html).
+6. The [Course Notes](https://thomaselove.github.io/431-notes/) are available through Chapter 22. The remaining chapters (I'm still thinking this semester will have about 30 chapters) will discuss regression modeling and will appear in late October, I expect.
+7. You may be interested in this YouTube video on [Critical Reasoning in Medical Machine Learning](https://www.youtube.com/watch?v=o5YmdoCiyug), which is part of the Philosophy of Data Science series.
+8. If you want to watch someone masterfully analyze data in R using the Tidyverse, I cannnot recommend [David Robinson's Tidy Tuesday videos](https://www.youtube.com/channel/UCeiiqmVK07qhY-wvg3IZiZQ) enough. 
     - Last week's screencast was on [Analyzing government spending on kids in R](https://www.youtube.com/watch?v=dHRPrVsnNwo), but there are many available.
 
 ## What Should I Be Working On?
