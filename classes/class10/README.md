@@ -39,6 +39,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-[What's so hard about histograms?](https://tinlizzie.org/histograms/) is an amazing interactive essay by Aran Lunzer and Amelia McNamara. We'll spend a few minutes taking a look.
+[What's so hard about histograms?](https://tinlizzie.org/histograms/) is an amazing interactive essay by Aran Lunzer and Amelia McNamara. 
 
 
