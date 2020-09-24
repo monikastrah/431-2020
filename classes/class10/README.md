@@ -18,12 +18,16 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Dr. Love has posted [feedback on the Minute Paper after Class 09](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers).
     - Several students expressed interest in finding a partner to work on Project A. I've emailed a Google Form to students on that list to help them provide a few comments that might help someone understand why they're taking the class, and what they're looking for in a partner, and I've provided the results I have so far to the students on that list. Good luck finding a partner!
-2. On 2020-09-22, I posted a short (~9 minutes) video to Piazza and the Shared Google Drive (in the Dr Love Special Videos folder) where I created and then debugged some common errors in using RStudio and R Markdown using the iris data, which is sort of like the palmerpenguins data for Lab 04. Take a look, if you are interested.
-3. I fixed an error in the grading for class participation from [the Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
+2. We've made some efforts now to clarify what TAs will and won't do during office hours. 
+    - We encourage you to visit TA office hours when you need one-on-one support. There, you can share your screen of the work that you're doing, and the TAs will be happy to provide you with oral feedback on specific questions that you have about R coding or statistical issues. 
+    - If you need help with grammar and usage of English, you should look into CWRU's resources for supporting students, [as I've described them in the Syllabus, particularly sections 15.6 through 15.8](https://thomaselove.github.io/431-2020-syllabus/university-resources-for-student-support.html#educational-services-for-students). 
+    - If the TA has time during office hours (i.e. there is no one else waiting) they *may* (at their discretion) also be willing to read over sections of your work with you and make a few suggestions about grammar and syntax. Note that not all TAs will feel comfortable about doing this, and you should be respectful of that, should they decline. TAs are **not** available to proofread your work for you or edit your work for you. That is your job. 
+3. On 2020-09-22, I posted a short (~9 minutes) video to Piazza and the Shared Google Drive (in the Dr Love Special Videos folder) where I created and then debugged some common errors in using RStudio and R Markdown using the iris data, which is sort of like the palmerpenguins data for Lab 04. Take a look, if you are interested.
+4. I fixed an error in the grading for class participation from [the Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
     - I had mistakenly implied that you would receive 5 points for each Minute Paper instead of 4. 
-4. The [Course Notes](https://thomaselove.github.io/431-notes/) are available through Chapter 22. The remaining chapters (I'm still thinking this semester will have about 30 chapters) will discuss regression modeling and will appear in late October, I expect.
-5. You may be interested in this YouTube video on [Critical Reasoning in Medical Machine Learning](https://www.youtube.com/watch?v=o5YmdoCiyug), which is part of the Philosophy of Data Science series.
-6. If you want to watch someone masterfully analyze data in R using the Tidyverse, I cannnot recommend [David Robinson's Tidy Tuesday videos](https://www.youtube.com/channel/UCeiiqmVK07qhY-wvg3IZiZQ) enough. 
+5. The [Course Notes](https://thomaselove.github.io/431-notes/) are available through Chapter 22. The remaining chapters (I'm still thinking this semester will have about 30 chapters) will discuss regression modeling and will appear in late October, I expect.
+6. You may be interested in this YouTube video on [Critical Reasoning in Medical Machine Learning](https://www.youtube.com/watch?v=o5YmdoCiyug), which is part of the Philosophy of Data Science series.
+7. If you want to watch someone masterfully analyze data in R using the Tidyverse, I cannnot recommend [David Robinson's Tidy Tuesday videos](https://www.youtube.com/channel/UCeiiqmVK07qhY-wvg3IZiZQ) enough. 
     - Last week's screencast was on [Analyzing government spending on kids in R](https://www.youtube.com/watch?v=dHRPrVsnNwo), but there are many available.
 
 ## What Should I Be Working On?
