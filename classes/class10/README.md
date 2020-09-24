@@ -10,11 +10,15 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - Class 10 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class10/431_class-10-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class10/431_class-10-slides_2020.Rmd).
 
+## Today's Breakout Session
+
+In today's breakout session, we're [going back to the movies](https://github.com/THOMASELOVE/431-2020/blob/master/classes/movies/breakout2.md)!
+
 ## Announcements
 
 1. Dr. Love has posted [feedback on the Minute Paper after Class 09](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers).
     - Several students expressed interest in finding a partner to work on Project A. I've emailed a Google Form to students on that list to help them provide a few comments that might help someone understand why they're taking the class, and what they're looking for in a partner, and I've provided the results I have so far to the students on that list. Good luck finding a partner!
-2. We've made some efforts now to clarify what TAs will and won't do during office hours. 
+2. We've made some effort to clarify what TAs will and won't do during office hours going forward.
     - We encourage you to visit TA office hours when you need one-on-one support. There, you can share your screen of the work that you're doing, and the TAs will be happy to provide you with oral feedback on specific questions that you have about R coding or statistical issues. 
     - If you need help with grammar and usage of English, you should look into CWRU's resources for supporting students, [as I've described them in the Syllabus, particularly sections 15.6 through 15.8](https://thomaselove.github.io/431-2020-syllabus/university-resources-for-student-support.html#educational-services-for-students). 
     - If the TA has time during office hours (i.e. there is no one else waiting) they *may* (at their discretion) also be willing to read over sections of your work with you and make a few suggestions about grammar and syntax. Note that not all TAs will feel comfortable about doing this, and you should be respectful of that, should they decline.
