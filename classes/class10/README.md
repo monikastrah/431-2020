@@ -10,10 +10,14 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - Class 10 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class10/431_class-10-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class10/431_class-10-slides_2020.Rmd).
 
+## Who Will We Meet Today?
+
+- Michael Zhang, Luke Zhang, Emily Zetzer, Aya Jishi, Naomi Joseph and Ali Klein (67-69 and 16-18 from the Introductory Student Videos in our Shared Google Drive)
+
 ## Announcements
 
 1. Dr. Love has posted [feedback on the Minute Paper after Class 09](https://github.com/THOMASELOVE/431-2020/tree/master/minutepapers).
-    - **COMING SOON** Numerous students expressed interest in finding a partner to work on Project A. I've emailed a Google Form to students on that list to help them provide a few comments that might help someone understand why they're taking the class, and what they're looking for in a partner, and I'll provide those results to all students on the list as soon as possible.
+    - Several students expressed interest in finding a partner to work on Project A. I've emailed a Google Form to students on that list to help them provide a few comments that might help someone understand why they're taking the class, and what they're looking for in a partner, and I've provided the results I have so far to the students on that list. Good luck finding a partner!
 2. On 2020-09-22, I posted a short (~9 minutes) video to Piazza and the Shared Google Drive (in the Dr Love Special Videos folder) where I created and then debugged some common errors in using RStudio and R Markdown using the iris data, which is sort of like the palmerpenguins data for Lab 04. Take a look, if you are interested.
 3. I fixed an error in the grading for class participation from [the Syllabus](https://thomaselove.github.io/431-2020-syllabus/). 
     - I had mistakenly implied that you would receive 5 points for each Minute Paper instead of 4. 
