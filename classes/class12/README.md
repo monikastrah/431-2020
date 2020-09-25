@@ -16,7 +16,7 @@ TBD
 
 ## Who Will We Meet Today?
 
-- Names TBA (61-63 and 22-24 from the Introductory Student Videos in our Shared Google Drive)
+- **Derrick Liu**, **Joe Magoline**, **Nilanjana Majumdar**, **Kiara White**, **Nysia Wise**, and **Patrick Wu**  (22-24 and 61-63 from the Introductory Student Videos in our Shared Google Drive)
 
 ## Announcements
 
