@@ -7,7 +7,7 @@ Details on Quiz 1 will appear here.
 
 - Quiz 1 will be made available to you at 5 PM Eastern time on Friday 2020-10-02. It is due at Noon on 2020-10-07.
     - You will definitely need to be able to do some coding in R to complete the Quiz. There are also questions that involve interpreting R output, and some questions where R is not relevant at all.
-    - The Quiz is meant to take 4 hours, and I have given you 115 hours to do it. Some people will choose to take much, much longer than 4 hours.
+    - The Quiz is meant to take 4 hours, and I have given you 115 hours to do it. Some people will choose to take much, much longer.
 
 ### The Five Key Sources of Material
 
@@ -24,7 +24,7 @@ Note also that I may not use all of these materials in the Quiz. I don't want it
 
 ### Getting Help During the Quiz
 
-If you need clarification on a Quiz question, you have two ways of getting help:
+If you need clarification on a Quiz question, you have exactly two ways of getting help:
 
 - You can ask your question in a **private post on Piazza to the instructors**. (This is the only kind of post you will be able to make on Piazza during the Quiz.)
 - You can ask your question via email to **431-help at case dot edu**. 
