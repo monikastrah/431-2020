@@ -16,7 +16,7 @@ TBD
 
 ## Who Will We Meet Today?
 
-- Names TBA (64-66 and 19-21 from the Introductory Student Videos in our Shared Google Drive)
+- **Modong Yang**, **Wail Yar**, **Kaan Yorgancioglu**, **Danny Lam**, **Jeff Kovach**, and **Arsh Kochar** (64-66 and 19-21 from the Introductory Student Videos in our Shared Google Drive)
 
 ## Announcements
 
