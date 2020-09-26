@@ -31,7 +31,7 @@ TBD
 ## What Should I Be Working On?
 
 1. Minute Paper after Class 11 will be due Wednesday 2020-09-30 at Noon.
-2. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. I fixed a typo in the Example (I had knitting when it should have been knit) on 2020-09-26. Thanks for the help.
+2. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. I fixed a typo in the Example (I had knitting when it should have been knit) on 2020-09-26, and a typo in the Instructions (plus I added the link to the details on measures at the County Health Rankings site on 2020-09-24. Thanks!
 3. Reading: by 2020-10-02, you'll need to have finished the Leek text and chapters 8-9 of Spiegelhalter.
 
 ## One Last Thing
