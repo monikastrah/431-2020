@@ -24,13 +24,14 @@ TBD
     - Minute Paper after Class 11
     - Answer Sketch for Lab 04
     - Grades + TA Comments on Lab 03
+    - Details on how your Project 1 proposal will be evaluated
 2. Some [Quiz 1 information is available now](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md).
   
 
 ## What Should I Be Working On?
 
 1. Minute Paper after Class 11 will be due Wednesday 2020-09-30 at Noon.
-2. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02.
+2. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. I fixed a typo in the Example (I had knitting when it should have been knit) on 2020-09-26. Thanks for the help.
 3. Reading: by 2020-10-02, you'll need to have finished the Leek text and chapters 8-9 of Spiegelhalter.
 
 ## One Last Thing
