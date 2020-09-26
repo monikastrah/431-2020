@@ -17,7 +17,7 @@ Think of this document as an annotated starting point for thinking about develop
 1. adapt the code provided here to address your own decisions and requirements (more than just filling in your title and name, although that's an important thing to do.)
 2. edit what is provided here so that you wind up only including things that are appropriate for your project
 3. write your own descriptions of the states/measures you're using and the results you obtain (which Dr. Love has mostly left out of this document.)
-4. knitting the R Markdown document into an HTML or PDF report, and then proofreading and spell-checking all of your work before you submit it.
+4. knit the R Markdown document into an HTML or PDF report, and then proofreading and spell-checking all of your work before you submit it.
 
 You should be certain you have a real title and author list in this file.
 
