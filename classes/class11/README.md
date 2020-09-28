@@ -22,8 +22,8 @@ will be related to Quiz 1.
 
 1. **STILL TO COME** 
     - [Minute Paper after Class 11](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) will open for responses by class time.
-    - Answer Sketch for Lab 04 will be posted by class time
-    - Grades + TA Comments on Lab 03 will be posted by class time
+    - Answer Sketch for Lab 04 [will be posted](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/README.md) by class time
+    - Grades + TA Comments on Lab 03 will be posted at http://bit.ly/431-2020-grades by class time
     - Details on how your Project 1 proposal will be evaluated
 
 2. **Project A Proposal** 
