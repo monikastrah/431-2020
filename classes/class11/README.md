@@ -42,7 +42,7 @@ On 2020-09-27, I adjusted the Project Proposal Example to incorporate this idea,
 - separating out the codebook, some data checks and the proposal requirements from the data development
 - fixing a typo or two
 
-So I encourage you to use that version. The HTML version of it is at https://rpubs.com/TELOVE/projA-proposal-example-431-2020.
+So I encourage you to use that version. HTML is still at https://rpubs.com/TELOVE/projA-proposal-example-431-2020.
 
 3. Some [Quiz 1 information is available now](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md).
 
