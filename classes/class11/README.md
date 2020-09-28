@@ -12,7 +12,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Today's Breakout Session
 
-TBD
+will be related to Quiz 1.
 
 ## Who Will We Meet Today?
 
@@ -21,9 +21,9 @@ TBD
 ## Announcements
 
 1. **STILL TO COME** 
-    - Minute Paper after Class 11
-    - Answer Sketch for Lab 04
-    - Grades + TA Comments on Lab 03
+    - [Minute Paper after Class 11](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) will open for responses by class time.
+    - Answer Sketch for Lab 04 will be posted by class time
+    - Grades + TA Comments on Lab 03 will be posted by class time
     - Details on how your Project 1 proposal will be evaluated
 
 2. **Project A Proposal** 
@@ -51,10 +51,14 @@ So I encourage you to use that version. HTML is still at https://rpubs.com/TELOV
 
 ## What Should I Be Working On?
 
-1. Minute Paper after Class 11 will be due Wednesday 2020-09-30 at Noon.
+1. [Minute Paper after Class 11](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) is due Wednesday 2020-09-30 at Noon.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. You want the version posted 2020-09-27.
 3. Reading: by 2020-10-02, you'll need to have finished the Leek text and chapters 8-9 of Spiegelhalter.
 
 ## One Last Thing
 
-TBA.
+We'll look for a moment at [the FiveThirtyEight 2020 Senate Election Forecast](https://projects.fivethirtyeight.com/2020-election-forecast/senate/). 
+
+- If you're interested in more of the details of how these state-wide models work, [visit the methodology here](https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/).
+- FiveThirtyEight's podcasts are helpful to me, too. In particular, the [politics podcast](https://fivethirtyeight.com/tag/politics-podcast/) has occasional Model Talk sessions where Nate discusses the models in a lot of detail in what I find to be a compelling way.
+    - from 2020-09-18: "[Why Our Forecast Says Democrats Are Slightly Favored To Win The Senate](https://fivethirtyeight.com/videos/why-our-forecast-says-democrats-are-slightly-favored-to-win-the-senate/)" is most directly relevant to what we'll look at today.
