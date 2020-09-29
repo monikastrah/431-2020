@@ -1,0 +1,551 @@
+---
+title: "431 Class 12"
+author: "thomaselove.github.io/431"
+date: "2020-10-01"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 55)
+```
+
+# Previously Seen in 431
+
+## Today's R Packages
+
+```{r, message = FALSE}
+library(NHANES)
+library(car) # for Box-Cox transformation methods
+library(janitor)
+library(knitr)
+library(broom)
+library(magrittr)
+library(patchwork)
+library(ggrepel)
+library(tidyverse)
+
+theme_set(theme_bw())
+```
+
+## `nh3_new` data (n = 989, 17 variables)
+
+```{r}
+set.seed(20200914) 
+
+nh3_new <- NHANES %>%
+    filter(SurveyYr == "2011_12") %>%
+    select(ID, SurveyYr, Age, Height, Weight, BMI, Pulse,
+           SleepHrsNight, BPSysAve, BPDiaAve, Gender, 
+           PhysActive, SleepTrouble, Smoke100, 
+           Race1, HealthGen, Depressed) %>%
+    rename(Subject = ID, SleepHours = SleepHrsNight, 
+           Sex = Gender, SBP = BPSysAve, DBP = BPDiaAve) %>%
+    filter(Age > 20 & Age < 80) %>%
+    drop_na() %>%
+    distinct() %>%
+    slice_sample(n = 1000) %>%
+    clean_names() %>%
+    filter(dbp > 39) %>%
+    mutate(subject = as.character(subject))
+```
+
+## Today's Data (nh4)
+
+```{r}
+set.seed(431)
+
+nh4 <- nh3_new %>%
+  select(subject, sbp, dbp, age, smoke100, race1) %>%
+  slice_sample(n = 800, replace = FALSE)
+```
+
+- Outcome (quantitative): `sbp`
+- Quantitative predictors: `dbp`, `age`
+- Binary predictor: `smoke100` (Yes/No)
+- 5-category predictor: `race1` (White, Black, Hispanic, Mexican, Other)
+- Identification code: `subject`
+
+## Models we've seen for `sbp`
+
+```{r}
+mod_1 <- lm(sbp ~ dbp, data = nh4)
+nh4_aug1 <- augment(mod_1, data = nh4)
+
+mod_2 <- lm(sbp ~ dbp + age, data = nh4)
+nh4_aug2 <- augment(mod_2, data = nh4)
+
+mod_3 <- lm(sbp ~ dbp + age + smoke100, 
+            data = nh4)
+nh4_aug3 <- augment(mod_3, data = nh4)
+```
+
+## Create and relevel two additional variables
+
+```{r}
+nh4 <- nh4 %>%
+  mutate(race_white = case_when(race1 == "White" ~ 1,
+                                     TRUE ~ 0)) %>%
+  mutate(race_3cat = fct_lump_n(race1, n = 2)) %>%
+  mutate(race_3cat = fct_relevel(race_3cat, 
+                                 "White", "Black", "Other"))
+```
+
+
+## Model `mod_4`: add `race_white` as a predictor
+
+```{r}
+mod_4 <- lm(sbp ~ dbp + age + smoke100 + race_white, 
+            data = nh4)
+nh4_aug4 <- augment(mod_4, data = nh4)
+```
+
+# New Material
+
+## `mod_5`: Using three race/ethnicity categories
+
+```{r}
+mod_5 <- lm(sbp ~ dbp + age + smoke100 + race_3cat, 
+            data = nh4)
+mod_5
+```
+
+OK. What's happened here?
+- What are our three categories for `race_3cat`? 
+- Why do I only see two of them in the model?
+
+## Prediction for subject 65867?
+
+```{r, echo = FALSE}
+nh4 %>% select(subject, sbp, dbp, age, smoke100, race1, race_3cat) %>% 
+  head(1) %>% kable()
+```
+
+- The **referent** category here is White, because that's the one left out of the set of indicators in the model. (We have coefficients for the other two `race_3cat` categories.)
+
+From Model 5, our predicted `sbp` for subject 65867 will be:
+
+47.883 + 0.745 dbp + 0.384 age + 2.566 (if smoke100 = Yes) + 4.715 (if `race_3cat` = Black) + 1.223 (if `race_3cat` = Other)
+
+So for subject 65867, we'd predict:
+
+47.883 + 0.745 (78) + 0.384 (60) + 2.566 (0) + 4.715 (0) + 1.223 (0) = 129.03 mm Hg
+
+
+## `augment` for `mod_5`
+
+```{r}
+nh4_aug5 <- augment(mod_5, data = nh4)
+```
+
+```{r, echo = FALSE}
+nh4_aug5 %>% head(4) %>%
+  select(subject, sbp, dbp, age, smoke100, race_3cat, .fitted, .resid) %>% 
+  kable()
+```
+
+## Model `mod_5` results from `tidy` and `glance`
+
+Coefficients for `mod_5` with 90% confidence intervals:
+
+```{r, echo = FALSE}
+tidy(mod_5, conf.int = TRUE, conf.level = 0.90) %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  kable(digits = 2)
+```
+
+```{r, echo = FALSE}
+glance(mod_5) %>%
+  select(r.squared, adj.r.squared, sigma, AIC, BIC) %>%
+  kable(digits = c(3, 3, 1, 1, 1))
+```
+
+## Residual Plots for `mod_5`?
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug5, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug5 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_5 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_5",
+       y = "Residuals from mod_5")
+
+p2 <- ggplot(nh4_aug5, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_5 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug5, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Glancing at our Five Models
+
+```{r, echo = FALSE}
+our_models <- bind_rows(glance(mod_1), glance(mod_2), glance(mod_3), 
+                  glance(mod_4), glance(mod_5)) %>%
+  mutate(model = 1:5) %>%
+  mutate(preds = c("dbp", "1+age", "2+smoke100", "3+race_white", "3+race_3cat")) %>%
+  select(model, preds, r.squared, adj.r.squared, sigma, AIC, BIC)
+
+our_models %>% kable(digits = c(0,0,3,3,2,1,1))
+```
+
+Does there appear to be a clear winner here?
+
+## Which one does best in our holdout sample?
+
+We started with 989 subjects, and sampled 800 of them. How well do these models do when they are asked to predict the other 189 observations?
+
+```{r}
+heldout <- anti_join(nh3_new, nh4, by = "subject") %>%
+  select(subject, sbp, dbp, age, smoke100, race1) %>%
+  mutate(race_white = case_when(race1 == "White" ~ 1,
+                                     TRUE ~ 0)) %>%
+  mutate(race_3cat = fct_lump_n(race1, n = 2)) %>%
+  mutate(race_3cat = 
+           fct_relevel(race_3cat, 
+                       "White", "Black", "Other"))
+
+dim(heldout)
+```
+
+## Sanity Checks
+
+```{r}
+heldout %>% tabyl(race_white, race1)
+```
+
+```{r}
+heldout %>% tabyl(race_3cat, race1)
+```
+
+## How does our `mod_1` do out of sample?
+
+```{r}
+heldout_mod1 <- augment(mod_1, newdata = heldout)
+
+heldout_mod1 %>% select(subject, sbp, .fitted, .resid) %>% 
+  head() %>% kable()
+```
+
+## Out-of-sample crude estimate of R-square
+
+In our new sample, the square of the (Pearson) correlation between the observed `sbp` and the model `mod_1` predicted `sbp` or the `.fitted` values, will be our estimated R-square.
+
+```{r}
+heldout_mod1 %$% cor(sbp, .fitted)
+heldout_mod1 %$% cor(sbp, .fitted)^2
+```
+
+OK. So our estimate of the out-of-sample R-square = `r round_half_up(heldout_mod1 %$% cor(sbp, .fitted)^2,3)` based on this sample. 
+
+- How does this compare to our in-sample R-square for `mod_1`, which was `r round_half_up(glance(mod_1) %>% select(r.squared),3)`?
+- Or maybe our adjusted R-square for `mod_1` which was `r round_half_up(glance(mod_1) %>% select(adj.r.squared),3)`?
+
+## Create predictions for the other four models
+
+```{r}
+heldout_mod2 <- augment(mod_2, newdata = heldout)
+heldout_mod3 <- augment(mod_3, newdata = heldout)
+heldout_mod4 <- augment(mod_4, newdata = heldout)
+heldout_mod5 <- augment(mod_5, newdata = heldout)
+```
+
+## $R^2$ Comparisons for Models 1-5
+
+Model | Predictors | In-sample $R^2$ | In-sample $R^2_{adj}$ | Holdout $R^2$
+----: | ------- | ------: | ------: | -----:
+mod_1 | `dbp` | `r round_half_up(glance(mod_1) %>% select(r.squared),3)` | `r round_half_up(glance(mod_1) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod1 %$% cor(sbp, .fitted)^2,3)`
+mod_2 | 1 + `age` | `r round_half_up(glance(mod_2) %>% select(r.squared),3)` | `r round_half_up(glance(mod_2) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod2 %$% cor(sbp, .fitted)^2,3)`
+mod_3 | 2 + `smoke100` | `r round_half_up(glance(mod_3) %>% select(r.squared),3)` | `r round_half_up(glance(mod_3) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod3 %$% cor(sbp, .fitted)^2,3)`
+mod_4 | 3 + `race_white` | `r round_half_up(glance(mod_4) %>% select(r.squared),3)` |  `r round_half_up(glance(mod_4) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod4 %$% cor(sbp, .fitted)^2,3)`
+mod_5 | 3 + `race_3cat` | `r round_half_up(glance(mod_5) %>% select(r.squared),3)` | `r round_half_up(glance(mod_5) %>% select(adj.r.squared),3)` | `r round_half_up(heldout_mod5 %$% cor(sbp, .fitted)^2,3)`
+
+What if we look at the $\sigma$ values - the residual standard deviations?
+
+## $\sigma$ Comparisons for Models 1-5
+
+Model | Predictors | In-sample $\sigma$ | Holdout $\sigma$
+----: | ------- | ------: | ------:
+mod_1 | `dbp` | `r round_half_up(glance(mod_1) %>% select(sigma),2)` | `r round_half_up(heldout_mod1 %$% sd(.resid),2)`
+mod_2 | 1 + `age` | `r round_half_up(glance(mod_2) %>% select(sigma),2)` | `r round_half_up(heldout_mod2 %$% sd(.resid),2)`
+mod_3 | 2 + `smoke100` | `r round_half_up(glance(mod_3) %>% select(sigma),2)` | `r round_half_up(heldout_mod3 %$% sd(.resid),2)`
+mod_4 | 3 + `race_white` |`r round_half_up(glance(mod_4) %>% select(sigma),2)` | `r round_half_up(heldout_mod4 %$% sd(.resid),2)`
+mod_5 | 3 + `race_3cat` | `r round_half_up(glance(mod_5) %>% select(sigma),2)` | `r round_half_up(heldout_mod5 %$% sd(.resid),2)`
+
+Looks like our model summaries are just too optimistic?
+
+- What might have tipped us off?
+
+## Residual Plots (`mod_3`)
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug3, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug3 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_3 Residuals vs. Fitted",
+       x = "Fitted SBP from mod_3",
+       y = "Residuals from mod_3")
+
+p2 <- ggplot(nh4_aug3, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_3 Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug3, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Why Transform the Outcome?
+
+We want to try to identify a good transformation for the conditional distribution of the outcome, given the predictors, in an attempt to make the linear regression assumptions of linearity, Normality and constant variance more appropriate.
+
+### Tukey's Ladder of Power Transformations 
+
+Transformation | $y^2$ | y | $\sqrt{y}$ | log(y) | $1/\sqrt{y}$ | $1/y$ | $1/y^2$
+-------------: | ---: | ---: | ---: | ---: | ---: | ---: |---: 
+$\lambda$       | 2 | 1 | 0.5 | 0 | -0.5 | -1 | -2
+
+- The most essential transformations (easy to understand) are the square, square root, logarithm and inverse.
+
+## `sbp` distribution with various transformations
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4, aes(sample = sbp^2)) + geom_qq() + geom_qq_line(col = "red") + labs(title = "sbp squared")
+p2 <- ggplot(nh4, aes(sample = sbp)) + geom_qq() + geom_qq_line(col = "red") + labs(title = "sbp")
+p3 <- ggplot(nh4, aes(sample = log(sbp))) + geom_qq() + geom_qq_line(col = "red") + labs(title = "log(sbp)")
+p4 <- ggplot(nh4, aes(sample = sqrt(sbp))) + geom_qq() + geom_qq_line(col = "red") + labs(title = "square root of sbp")
+p5 <- ggplot(nh4, aes(sample = 1/sbp)) + geom_qq() + geom_qq_line(col = "red") + labs(title = "inverse of sbp")
+p6 <- ggplot(nh4, aes(sample = 1/(sbp^2))) + geom_qq() + geom_qq_line(col = "red") + labs(title = "inverse of (sbp^2)")
+
+(p1 + p2 + p3) / (p4 + p5 + p6) + 
+  plot_annotation(title = "Transformations of sbp in nh4")
+```
+
+## Build model `mod_3` with log(`sbp`)
+
+- Let's try a log transformation. We'll use the natural logarithm (`log`) as opposed to a base 10 logarithm (in R, `log10`) but that choice won't affect the residual plots.
+
+```{r}
+mod_3_log <- lm(log(sbp) ~ dbp + age + smoke100, data = nh4)
+
+mod_3_log
+```
+
+## Prediction for subject 65867?
+
+```{r, echo = FALSE}
+nh4 %>% select(subject, sbp, dbp, age, smoke100) %>% head(1) %>% kable()
+
+mod_3_log
+```
+
+- Fitted **log(sbp)** = `4.21 + 0.006(78) + 0.003(60) + 0.019(0)` = 4.859 
+- Observed **log(sbp)** = 4.745, so residual on the log scale is -0.104
+
+- Predicted **sbp** = exp(4.859) = 128.9, while Observed **sbp** was 115.
+
+
+## Tidied coefficients of our log model
+
+```{r}
+tidy(mod_3_log, conf.int = TRUE, conf.level = 0.90) %>% 
+  select(term, estimate, std.error, conf.low, conf.high) %>% 
+  kable(digits = 3)
+```
+
+- Are these results comparable to our previous models?
+
+## Fit summaries for our log model
+
+```{r}
+glance(mod_3_log) %>% 
+  select(r.squared, adj.r.squared, sigma, AIC, BIC, nobs) %>% 
+  kable(digits = c(3,3,2,1,1,0))
+```
+
+- Are these results comparable to our previous models?
+
+## Using `augment` with our logged model
+
+```{r}
+nh4_aug3_log <- augment(mod_3_log, data = nh4)
+
+nh4_aug3_log %>%
+  mutate(log_sbp = log(sbp)) %>%
+  select(subject, sbp, log_sbp, .fitted, .resid,
+         dbp, age, smoke100) %>% 
+  head(4) %>% kable(digits = c(0,0,3,3,3,0,0,0))
+```
+
+## Residual Plots for `mod_3_log`
+
+```{r, echo = FALSE}
+p1 <- ggplot(nh4_aug3_log, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug3_log %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_3_log Residuals vs. Fitted",
+       x = "Fitted log of SBP",
+       y = "Residuals from mod_3_log")
+
+p2 <- ggplot(nh4_aug3_log, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_3_log Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug3_log, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Using Box-Cox to help select a transformation?
+
+```{r}
+boxCox(mod_3) # requires library(car)
+```
+
+## Remember the ladder!
+
+Power $\lambda$ | -2 | -1 | -0.5 | 0 | 0.5 | 1 | 2
+----: | :---: | :----: | :----: | :----: | :----: | :----:
+transformation | $1/y^2$ | $1/y$ | $1/\sqrt{y}$ | $log(y)$ | $\sqrt{y}$ | $y$ | $y^2$
+
+```{r, echo = FALSE, fig.height = 5}
+boxCox(mod_3) # requires library(car)
+```
+
+## Try the transformation suggested by Box-Cox?
+
+Looks like $1/\sqrt{sbp}$ (where $\lambda = -0.5$) is the suggested transformation, although $1/sbp$ (where $\lambda = -1$) is also within the reach of the provided 95% interval for $\lambda$.
+
+- As compared to the inverse square root, the inverse has the enormous advantage in many studies of being far easier to interpret. 
+
+Let's build each model and then we'll look at their residuals to see how well regression assumptions hold.
+
+```{r}
+mod_3_invsqrt <- 
+  lm((1/sqrt(sbp)) ~ dbp + age + smoke100, data = nh4)
+
+mod_3_inverse <- 
+  lm((1/sbp) ~ dbp + age + smoke100, data = nh4)
+```
+
+## Residual Plots for `mod_3_invsqrt`
+
+```{r, echo = FALSE}
+nh4_aug3_invsqrt <- augment(mod_3_invsqrt, data = nh4)
+
+p1 <- ggplot(nh4_aug3_invsqrt, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug3_invsqrt %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_3_invsqrt Res. vs. Fitted",
+       x = "Fitted inverse square root of SBP",
+       y = "Residuals from mod_3_invsqrt")
+
+p2 <- ggplot(nh4_aug3_invsqrt, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_3_invsqrt Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug3_invsqrt, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Residual Plots for `mod_3_inverse`
+
+```{r, echo = FALSE}
+nh4_aug3_inverse <- augment(mod_3_inverse, data = nh4)
+
+p1 <- ggplot(nh4_aug3_inverse, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = F, 
+              col = "blue") +
+  geom_text_repel(data = nh4_aug3_inverse %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = subject)) +
+  labs(title = "mod_3_inverse Res. vs. Fitted",
+       x = "Fitted inverse of SBP",
+       y = "Residuals from mod_3_inverse")
+
+p2 <- ggplot(nh4_aug3_inverse, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "mod_3_inverse Residuals",
+       y = "")
+
+p3 <- ggplot(nh4_aug3_inverse, aes(y = .resid, x = "")) +
+  geom_violin(fill = "goldenrod") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Early Notes on Transformations
+
+The Box-Cox plot (and indeed the ladder of power transformations) is designed to help identify transformations when:
+
+1. all of the values in the data are strictly positive, so that the log and square root, for instance, are defined
+  - If your outcome includes zeros, you could just add 1 to each value before transforming at the risk of making interpretation harder.
+2. the problems with assuming a linear relationship and/or Normality of residuals are indicated by more than just an outlier, or a few outliers.
+  - In that case, I would focus on the *influence* of those outliers (what happens to the model when you remove them?)
+
+In any case, back-transforming predictions will be necessary at some stage if you apply a re-expression, which isn't too bad, but it can be challenging to write down the regression equation in terms of the original outcome.
+
+## What have we discussed?
+
+- The central role of linear regression in understanding associations between quantitative variables.
+- The interpretation of a regression model as a prediction model.
+- The meaning of key regression summaries, including residuals.
+- Using tidy and glance from the broom package to help with summaries.
+- Measuring association through correlation coefficients.
+- How we might think about "adjusting" for the effect of a categorical predictor on a relationship between two quantitative ones.
+- How a transformation might help us "linearize" the relationship shown in a scatterplot.
+
