@@ -46,6 +46,8 @@ So I encourage you to use [that version (Rmd here)](https://raw.githubuserconten
 
 7. Thomas Mock had a post 2020-09-26 on "[Functions and Themes for gt tables](https://themockup.blog/posts/2020-09-26-functions-and-themes-for-gt-tables/)" which includes some beautiful work, if you're interested, including ways to mimic some of ESPN's and FiveThirtyEight's tables.
 
+8. [Big Book of R](https://www.bigbookofr.com/) from Oscar Baruffa is a reference containing links to about 100 freely-available R-related programming books, including many of my favorites.
+
 ## What Should I Be Working On?
 
 1. [Minute Paper after Class 11](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) is due Wednesday 2020-09-30 at Noon.
