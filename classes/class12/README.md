@@ -8,7 +8,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Today's Slides
 
-- Class 12 slides will be available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/431_class-12-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/431_class-12-slides_2020.Rmd).
+- Class 12 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/431_class-12-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/431_class-12-slides_2020.Rmd).
 
 ## Today's Breakout Session
 
