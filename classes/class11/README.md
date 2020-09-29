@@ -43,7 +43,8 @@ So I encourage you to use [that version (Rmd here)](https://raw.githubuserconten
 5. Some [Quiz 1 information is available now](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md).
 
 6. I updated the [Course Notes](https://thomaselove.github.io/431-notes/) to fix some typos in Chapters 11, 21 and 22. Thank you!
-  
+
+7. Thomas Mock had a post 2020-09-26 on "[Functions and Themes for gt tables](https://themockup.blog/posts/2020-09-26-functions-and-themes-for-gt-tables/)" which includes some beautiful work, if you're interested, including ways to mimic some of ESPN's and FiveThirtyEight's tables.
 
 ## What Should I Be Working On?
 
