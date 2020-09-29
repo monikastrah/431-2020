@@ -4,4 +4,4 @@ Instructions for Lab 04 are in this [.md file](https://github.com/THOMASELOVE/43
 
 ## After the Lab
 
-- The Answer Sketch will be posted [in R Markdown and in PDF] by class time on Tuesday 2020-09-29.
+- The Answer Sketch and Grading Rubric is available [in R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/sketch/lab04_sketch.Rmd) and [in PDF](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/sketch/lab04_sketch.pdf) now.
