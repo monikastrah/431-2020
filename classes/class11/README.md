@@ -16,9 +16,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-1. **STILL TO COME** 
-    - Answer Sketch for Lab 04 [will be posted](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/README.md) by class time
-    - Details on how your Project 1 proposal will be evaluated
+1. The [Answer Sketch for Lab 04](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/README.md) is now available.
 
 2. The [Minute Paper after Class 11](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) is open for responses, which are due tomorrow (2020-09-30) at noon.
 
