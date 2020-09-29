@@ -23,7 +23,11 @@ TBD
 1. **STILL TO COME** 
     - Feedback on Minute Paper after Class 11
     - Quiz 1 details
-2. More to come.
+2. A Few Important Coding Tips 
+
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/images/goodandbadRmd.png)
+
+
 
 ## What Should I Be Working On?
 
