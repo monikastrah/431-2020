@@ -10,6 +10,8 @@ output:
 
 ## Note to Students
 
+Dr. Love updated this document on 2020-09-27 to add some good ideas from an initial set of proposal reviews.
+
 This proposal includes a lot of description from Dr. Love about what he's doing and what's happening in the R code chunks that **should not** be included in your proposal (as an example, this whole section shouldn't be in your proposal.) It also doesn't include several things that you will need to include in your proposal. 
 
 Think of this document as an annotated starting point for thinking about developing your proposal, rather than as a rigid template that just requires you to fill in a few gaps. There is still a lot of work for you to do. Your job in building your proposal requires you to (at a minimum): 
@@ -17,7 +19,7 @@ Think of this document as an annotated starting point for thinking about develop
 1. adapt the code provided here to address your own decisions and requirements (more than just filling in your title and name, although that's an important thing to do.)
 2. edit what is provided here so that you wind up only including things that are appropriate for your project
 3. write your own descriptions of the states/measures you're using and the results you obtain (which Dr. Love has mostly left out of this document.)
-4. knitting the R Markdown document into an HTML or PDF report, and then proofreading and spell-checking all of your work before you submit it.
+4. knit the R Markdown document into an HTML or PDF report, and then proofreading and spell-checking all of your work before you submit it.
 
 You should be certain you have a real title and author list in this file.
 
@@ -48,8 +50,17 @@ Note that I have loaded the `tidyverse` last, and that I have not loaded any of 
 
 Note that Dr. Love is working here with 2019 data, rather than 2020, as you'll use. The `guess_max` result ensures that `read_csv` will look through the entire data set (which has less than 4000 rows) instead of just the first 1000 rows (which is the default.)
 
+The code below actually loads in the data from County Health Rankings directly, using the 2019 period. 
+
 ```{r read_in_data_here, message = FALSE}
-chr_2019_raw <- read_csv("chr_2019_raw.csv", guess_max = 4000)
+data_url <- "https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2019.csv"
+chr_2019_raw <- read_csv(data_url, skip = 1, guess_max = 4000)
+```
+
+Note that you'll need a different `data_url` (listed below) for the 2020 data.
+
+```
+data_url <- "https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020_0.csv"
 ```
 
 # Data Development
@@ -80,10 +91,6 @@ chr_2019 <- chr_2019_raw %>%
            unemployment = v023_rawvalue,
            food_insecurity = v139_rawvalue)
 ```
-
-### Proposal Requirements 1 and 2
-
-A sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states.
 
 ## Repairing the `fipscode` and factoring the `state`
 
@@ -282,7 +289,7 @@ str(chr_2019)
 
 Looks good so far. I think we are ready to go.
 
-## Codebook
+# Codebook
 
 This is a table listing all 10 variables that are included in your tibble, and providing some important information about them, mostly drawn from [the County Health Ranking web site](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures). For each of your five selected variables, be sure to include the original code (vXXX) from the raw file.
 
@@ -291,7 +298,7 @@ Variable | Description
 fipscode | FIPS code
 state | State: my six states are CT, DC, DE, HI, NH, RI
 county | County Name
-life_expectancy | (v147) Life Expectancy
+life_expectancy | (v147) Life Expectancy, which will be my **outcome**
 freq_mental_distress | (v145) Frequent Mental Distress Rate
 hsgraduation | (v021) High School Graduation Rate
 unemployment | (v023) Unemployment Rate
@@ -303,27 +310,31 @@ Note that I've provided details on the definition of our categorical variables.
 
 More details on two of our original five variables are specified below. These results are rephrased versions of [the summaries linked on the County Health Rankings site](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures). You'll need to provide information of this type as part of the codebook for all five of your selected variables.
 
-- `lifeexpectancy` was originally variable `v147_rawvalue`, and is listed in the Length of Life subcategory under Health Outcomes at County Health Rankings. It describes the average number of years a person residing in the county can expect to live, according to the current mortality experience (age-specific death rates) of the county's population. It is based on data from the National Center for Health Statistics Mortality Files from 2016-18.
+- `lifeexpectancy` was originally variable `v147_rawvalue`, and is listed in the Length of Life subcategory under Health Outcomes at County Health Rankings. It describes the average number of years a person residing in the county can expect to live, according to the current mortality experience (age-specific death rates) of the county's population. It is based on data from the National Center for Health Statistics Mortality Files from 2016-18. This will be my **outcome** variable.
 
 - `hsgraduation` was originally variable `v021_rawvalue`, and is listed in the Education subcategory under Social & Economic Factors at County Health Rankings. It describes the proportion of the county's ninth grade cohort that graduates with a high school diploma in four years, and is based on EDFacts data from 2016-17. Comparisons across state lines are not recommended because of differences in how states define the data, according to County Health Rankings.
 
-### Proposal Requirements 1 and 2
+## Proposal Requirement 1 
 
-Remember that you will need to do five things in the proposal. We'd like you to place the first two here. They are:
+Remember that you will need to do five things in the proposal. 
 
 1. a sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states. 
 
-2. A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of the cutpoints you chose to create the binary categories out of variable 4 and the multiple categories out of variable 5. Think of this as an early version of what will eventually become your codebook. For each variable, provide a sentence describing your motivation for why this variable was interesting to you.
+## Proposal Requirement 2
 
-Again, placing that material here, in the codebook section, will make it easy for us to find.
+2. A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of the cutpoints you chose to create the binary categories out of variable 4 and the multiple categories out of variable 5. Think of this as an early version of what will eventually become your codebook. For each variable, provide a sentence describing your motivation for why this variable was interesting to you, and also **please** specify which of your quantitative variables will serve as your outcome.
 
-## Summarizing the tibble
+## Proposal Requirement 3
 
-To meet proposal requirements 3 and 4, at this stage, we should **print** the tibble, so that we verify that it is in fact a tibble that prints the first 10 rows, etc., and then run `describe` from the `Hmisc` package.
+Print the tibble, so we can verify that it is, in fact, a tibble, that prints the first 10 rows.
 
 ```{r}
 chr_2019
 ```
+
+## Proposal Requirement 4
+
+To meet proposal requirement 4, run `describe` from the `Hmisc` package.
 
 ```{r}
 Hmisc::describe(chr_2019)
@@ -383,7 +394,7 @@ saveRDS(chr_2019, file = "chr_2019_Thomas_Love.Rds")
 
 You'll want to substitute in your own name, of course.
 
-## Final Proposal Requirement
+## Proposal Requirement 5
 
 Having done all of this work, the set of Proposal Requirements (repeated below) should be straightforward. We've already dealt with the first four. The fifth is repeated below.
 

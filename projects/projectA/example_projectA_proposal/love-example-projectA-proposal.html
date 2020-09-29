@@ -10,7 +10,7 @@
 
 <meta name="author" content="YOUR NAME HERE" />
 
-<meta name="date" content="2020-09-18" />
+<meta name="date" content="2020-09-27" />
 
 <title>YOUR PROJECT A TITLE</title>
 
@@ -1612,33 +1612,38 @@ $(document).ready(function () {
       <li><a href="#creating-binary-categorical-variables"><span class="toc-section-number">2.3</span> Creating Binary Categorical Variables</a></li>
       <li><a href="#creating-multi-category-variables"><span class="toc-section-number">2.4</span> Creating Multi-Category Variables</a></li>
       <li><a href="#structure-of-my-tibble"><span class="toc-section-number">2.5</span> Structure of My Tibble</a></li>
-      <li><a href="#codebook"><span class="toc-section-number">2.6</span> Codebook</a></li>
-      <li><a href="#summarizing-the-tibble"><span class="toc-section-number">2.7</span> Summarizing the tibble</a></li>
-      <li><a href="#three-important-checks"><span class="toc-section-number">2.8</span> Three Important Checks</a></li>
-      <li><a href="#saving-the-tibble"><span class="toc-section-number">2.9</span> Saving the Tibble</a></li>
-      <li><a href="#final-proposal-requirement"><span class="toc-section-number">2.10</span> Final Proposal Requirement</a></li>
       </ul></li>
-      <li><a href="#analyses"><span class="toc-section-number">3</span> Analyses</a></li>
-      <li><a href="#session-information"><span class="toc-section-number">4</span> Session Information</a></li>
+      <li><a href="#codebook"><span class="toc-section-number">3</span> Codebook</a><ul>
+      <li><a href="#proposal-requirement-1"><span class="toc-section-number">3.1</span> Proposal Requirement 1</a></li>
+      <li><a href="#proposal-requirement-2"><span class="toc-section-number">3.2</span> Proposal Requirement 2</a></li>
+      <li><a href="#proposal-requirement-3"><span class="toc-section-number">3.3</span> Proposal Requirement 3</a></li>
+      <li><a href="#proposal-requirement-4"><span class="toc-section-number">3.4</span> Proposal Requirement 4</a></li>
+      <li><a href="#three-important-checks"><span class="toc-section-number">3.5</span> Three Important Checks</a></li>
+      <li><a href="#saving-the-tibble"><span class="toc-section-number">3.6</span> Saving the Tibble</a></li>
+      <li><a href="#proposal-requirement-5"><span class="toc-section-number">3.7</span> Proposal Requirement 5</a></li>
+      </ul></li>
+      <li><a href="#analyses"><span class="toc-section-number">4</span> Analyses</a></li>
+      <li><a href="#session-information"><span class="toc-section-number">5</span> Session Information</a></li>
       </ul>
     </div>
     
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
               <p class="author"><span class="glyphicon glyphicon-user"></span> YOUR NAME HERE</p>
-                  <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2020-09-18</p>
+                  <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2020-09-27</p>
         </div>
 </div>
 
 <div id="main">
 <div id="note-to-students" class="section level2">
 <h2><span class="header-section-number">0.1</span> Note to Students</h2>
+<p>Dr. Love updated this document on 2020-09-27 to add some good ideas from an initial set of proposal reviews.</p>
 <p>This proposal includes a lot of description from Dr. Love about what he’s doing and what’s happening in the R code chunks that <strong>should not</strong> be included in your proposal (as an example, this whole section shouldn’t be in your proposal.) It also doesn’t include several things that you will need to include in your proposal.</p>
 <p>Think of this document as an annotated starting point for thinking about developing your proposal, rather than as a rigid template that just requires you to fill in a few gaps. There is still a lot of work for you to do. Your job in building your proposal requires you to (at a minimum):</p>
 <ol style="list-style-type: decimal">
 <li>adapt the code provided here to address your own decisions and requirements (more than just filling in your title and name, although that’s an important thing to do.)</li>
 <li>edit what is provided here so that you wind up only including things that are appropriate for your project</li>
 <li>write your own descriptions of the states/measures you’re using and the results you obtain (which Dr. Love has mostly left out of this document.)</li>
-<li>knitting the R Markdown document into an HTML or PDF report, and then proofreading and spell-checking all of your work before you submit it.</li>
+<li>knit the R Markdown document into an HTML or PDF report, and then proofreading and spell-checking all of your work before you submit it.</li>
 </ol>
 <p>You should be certain you have a real title and author list in this file.</p>
 </div>
@@ -1654,7 +1659,11 @@ $(document).ready(function () {
 <div id="data-ingest" class="section level2">
 <h2><span class="header-section-number">1.2</span> Data Ingest</h2>
 <p>Note that Dr. Love is working here with 2019 data, rather than 2020, as you’ll use. The <code>guess_max</code> result ensures that <code>read_csv</code> will look through the entire data set (which has less than 4000 rows) instead of just the first 1000 rows (which is the default.)</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>chr_<span class="dv">2019</span>_raw &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;chr_2019_raw.csv&quot;</span>, <span class="dt">guess_max =</span> <span class="dv">4000</span>)</span></code></pre></div>
+<p>The code below actually loads in the data from County Health Rankings directly, using the 2019 period.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>data_url &lt;-<span class="st"> &quot;https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2019.csv&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>chr_<span class="dv">2019</span>_raw &lt;-<span class="st"> </span><span class="kw">read_csv</span>(data_url, <span class="dt">skip =</span> <span class="dv">1</span>, <span class="dt">guess_max =</span> <span class="dv">4000</span>)</span></code></pre></div>
+<p>Note that you’ll need a different <code>data_url</code> (listed below) for the 2020 data.</p>
+<pre><code>data_url &lt;- &quot;https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020_0.csv&quot;</code></pre>
 </div>
 </div>
 <div id="data-development" class="section level1">
@@ -1670,21 +1679,17 @@ $(document).ready(function () {
 <li>Select the variables that we’re going to use in our study, including the three mandatory variables (fipscode, state and county).</li>
 <li>Rename the five variables we’ve selected with more meaningful names. These names are motivated by the actual meaning of the variables, as shown in the top row (that we deleted) in the original csv, the PDF files I’ve included for you, and the more detailed variable descriptions on the County Health Ranking site.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span>_raw <span class="op">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="st">    </span><span class="kw">filter</span>(county_ranked <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="st">    </span><span class="kw">filter</span>(state <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;DC&quot;</span>, <span class="st">&quot;DE&quot;</span>, <span class="st">&quot;CT&quot;</span>, <span class="st">&quot;HI&quot;</span>, <span class="st">&quot;NH&quot;</span>, <span class="st">&quot;RI&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="st">    </span><span class="kw">select</span>(fipscode, state, county, </span>
-<span id="cb3-5"><a href="#cb3-5"></a>           v147_rawvalue, v145_rawvalue, v021_rawvalue, </span>
-<span id="cb3-6"><a href="#cb3-6"></a>           v023_rawvalue, v139_rawvalue) <span class="op">%&gt;%</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="st">    </span><span class="kw">rename</span>(<span class="dt">life_expectancy =</span> v147_rawvalue,</span>
-<span id="cb3-8"><a href="#cb3-8"></a>           <span class="dt">freq_mental_distress =</span> v145_rawvalue,</span>
-<span id="cb3-9"><a href="#cb3-9"></a>           <span class="dt">hsgraduation =</span> v021_rawvalue,</span>
-<span id="cb3-10"><a href="#cb3-10"></a>           <span class="dt">unemployment =</span> v023_rawvalue,</span>
-<span id="cb3-11"><a href="#cb3-11"></a>           <span class="dt">food_insecurity =</span> v139_rawvalue)</span></code></pre></div>
-<div id="proposal-requirements-1-and-2" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Proposal Requirements 1 and 2</h3>
-<p>A sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states.</p>
-</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span>_raw <span class="op">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="st">    </span><span class="kw">filter</span>(county_ranked <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="st">    </span><span class="kw">filter</span>(state <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;DC&quot;</span>, <span class="st">&quot;DE&quot;</span>, <span class="st">&quot;CT&quot;</span>, <span class="st">&quot;HI&quot;</span>, <span class="st">&quot;NH&quot;</span>, <span class="st">&quot;RI&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="st">    </span><span class="kw">select</span>(fipscode, state, county, </span>
+<span id="cb4-5"><a href="#cb4-5"></a>           v147_rawvalue, v145_rawvalue, v021_rawvalue, </span>
+<span id="cb4-6"><a href="#cb4-6"></a>           v023_rawvalue, v139_rawvalue) <span class="op">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="st">    </span><span class="kw">rename</span>(<span class="dt">life_expectancy =</span> v147_rawvalue,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>           <span class="dt">freq_mental_distress =</span> v145_rawvalue,</span>
+<span id="cb4-9"><a href="#cb4-9"></a>           <span class="dt">hsgraduation =</span> v021_rawvalue,</span>
+<span id="cb4-10"><a href="#cb4-10"></a>           <span class="dt">unemployment =</span> v023_rawvalue,</span>
+<span id="cb4-11"><a href="#cb4-11"></a>           <span class="dt">food_insecurity =</span> v139_rawvalue)</span></code></pre></div>
 </div>
 <div id="repairing-the-fipscode-and-factoring-the-state" class="section level2">
 <h2><span class="header-section-number">2.2</span> Repairing the <code>fipscode</code> and factoring the <code>state</code></h2>
@@ -1693,14 +1698,14 @@ $(document).ready(function () {
 <p>We can fix this by applying a function from the <code>stringr</code> package (part of the tidyverse,) which will both add a “zero” to any fips code with less than 5 digits, but will also turn <code>fipscode</code> into a character variable, which is a better choice for a numeric code.</p>
 <p>It will also be helpful later to include <code>state</code> as a factor variable, rather than a character.</p>
 <p>We can accomplish these two tasks with the following chunk of code.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">fipscode =</span> <span class="kw">str_pad</span>(fipscode, <span class="dv">5</span>, <span class="dt">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
-<span id="cb4-3"><a href="#cb4-3"></a>           <span class="dt">state =</span> <span class="kw">factor</span>(state))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">fipscode =</span> <span class="kw">str_pad</span>(fipscode, <span class="dv">5</span>, <span class="dt">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb5-3"><a href="#cb5-3"></a>           <span class="dt">state =</span> <span class="kw">factor</span>(state))</span></code></pre></div>
 <p>You can certainly use <code>as.factor</code> instead of <code>factor</code> here if you like. If you wish to arrange the levels of your <code>states</code> factor in an order other than alphabetically by postal abbreviation (perhaps putting Ohio first or something), then you could do so with <code>fct_recode()</code>, but I won’t do that here.</p>
 <div id="checking-initial-work" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Checking Initial Work</h3>
 <p>Given the “states” I selected, I should have 31 rows, since there are 31 counties across those states, and I should have 8 variables. It’s also helpful to glimpse through the data and be sure nothing strange has happened in terms of what the first few values look like. Note the leading zeros in <code>fipscode</code> (and that it’s now a character variable) and that <code>state</code> is now a factor, as we’d hoped.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">glimpse</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">glimpse</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
 <pre><code>Rows: 31
 Columns: 8
 $ fipscode             &lt;chr&gt; &quot;09001&quot;, &quot;09003&quot;, &quot;09005&quot;, &quot;09007&quot;, &quot;09009&quot;, &quot;...
@@ -1712,7 +1717,7 @@ $ hsgraduation         &lt;dbl&gt; 0.8942186, 0.8551798, 0.9043855, 0.9460923, 0
 $ unemployment         &lt;dbl&gt; 0.04506580, 0.04842678, 0.04308845, 0.04052900...
 $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.09...</code></pre>
 <p>Looks good. I can check to see that each of my states has the anticipated number of counties, too.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tabyl</span>(state) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">adorn_pct_formatting</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tabyl</span>(state) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">adorn_pct_formatting</span>() </span></code></pre></div>
 <pre><code> state  n percent
     CT  8   25.8%
     DC  1    3.2%
@@ -1729,14 +1734,14 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 <p>We have numerous options for creating a binary variable.</p>
 <div id="splitting-into-two-categories-based-on-the-median" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Splitting into two categories based on the median</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp1_ms =</span> <span class="kw">case_when</span>(</span>
-<span id="cb9-3"><a href="#cb9-3"></a>                   unemployment <span class="op">&lt;</span><span class="st"> </span><span class="kw">median</span>(unemployment) <span class="op">~</span><span class="st"> &quot;low&quot;</span>,</span>
-<span id="cb9-4"><a href="#cb9-4"></a>                   <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;high&quot;</span>),</span>
-<span id="cb9-5"><a href="#cb9-5"></a>           <span class="dt">temp1_ms =</span> <span class="kw">factor</span>(temp1_ms))</span>
-<span id="cb9-6"><a href="#cb9-6"></a></span>
-<span id="cb9-7"><a href="#cb9-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp1_ms, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp1_ms =</span> <span class="kw">case_when</span>(</span>
+<span id="cb10-3"><a href="#cb10-3"></a>                   unemployment <span class="op">&lt;</span><span class="st"> </span><span class="kw">median</span>(unemployment) <span class="op">~</span><span class="st"> &quot;low&quot;</span>,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>                   <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;high&quot;</span>),</span>
+<span id="cb10-5"><a href="#cb10-5"></a>           <span class="dt">temp1_ms =</span> <span class="kw">factor</span>(temp1_ms))</span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp1_ms, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1782,14 +1787,14 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 </div>
 <div id="splitting-into-two-categories-based-on-a-specific-value" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Splitting into two categories based on a specific value</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp2_4pct =</span> <span class="kw">case_when</span>(</span>
-<span id="cb10-3"><a href="#cb10-3"></a>                   unemployment <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.04</span> <span class="op">~</span><span class="st"> &quot;below4percent&quot;</span>,</span>
-<span id="cb10-4"><a href="#cb10-4"></a>                   <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;above4percent&quot;</span>),</span>
-<span id="cb10-5"><a href="#cb10-5"></a>           <span class="dt">temp2_4pct =</span> <span class="kw">factor</span>(temp2_4pct))</span>
-<span id="cb10-6"><a href="#cb10-6"></a></span>
-<span id="cb10-7"><a href="#cb10-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp2_4pct, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp2_4pct =</span> <span class="kw">case_when</span>(</span>
+<span id="cb11-3"><a href="#cb11-3"></a>                   unemployment <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.04</span> <span class="op">~</span><span class="st"> &quot;below4percent&quot;</span>,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>                   <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;above4percent&quot;</span>),</span>
+<span id="cb11-5"><a href="#cb11-5"></a>           <span class="dt">temp2_4pct =</span> <span class="kw">factor</span>(temp2_4pct))</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp2_4pct, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1835,11 +1840,11 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 </div>
 <div id="using-cut2-from-hmisc-to-split-into-two-categories-as-evenly-as-possible" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Using cut2 from Hmisc to split into two categories as evenly as possible</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp3_cut2 =</span> <span class="kw">factor</span>(Hmisc<span class="op">::</span><span class="kw">cut2</span>(unemployment, <span class="dt">g =</span> <span class="dv">2</span>)))</span>
-<span id="cb11-3"><a href="#cb11-3"></a></span>
-<span id="cb11-4"><a href="#cb11-4"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp3_cut2, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp3_cut2 =</span> <span class="kw">factor</span>(Hmisc<span class="op">::</span><span class="kw">cut2</span>(unemployment, <span class="dt">g =</span> <span class="dv">2</span>)))</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp3_cut2, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1883,14 +1888,14 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 </tbody>
 </table>
 <p>This approach is nice in one way, because it specifies the groups with a mathematical interval, but those factor level names can be rather unwieldy in practice. I might tweak them:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp3_cut2 =</span> <span class="kw">factor</span>(Hmisc<span class="op">::</span><span class="kw">cut2</span>(unemployment, <span class="dt">g =</span> <span class="dv">2</span>)),</span>
-<span id="cb12-3"><a href="#cb12-3"></a>           <span class="dt">temp4_newnames =</span> <span class="kw">fct_recode</span>(temp3_cut2,</span>
-<span id="cb12-4"><a href="#cb12-4"></a>                                         <span class="dt">lessthan4 =</span> <span class="st">&quot;[0.0218,0.0400)&quot;</span>,</span>
-<span id="cb12-5"><a href="#cb12-5"></a>                                         <span class="dt">higher =</span> <span class="st">&quot;[0.0400,0.0605]&quot;</span>))</span>
-<span id="cb12-6"><a href="#cb12-6"></a></span>
-<span id="cb12-7"><a href="#cb12-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp4_newnames, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp3_cut2 =</span> <span class="kw">factor</span>(Hmisc<span class="op">::</span><span class="kw">cut2</span>(unemployment, <span class="dt">g =</span> <span class="dv">2</span>)),</span>
+<span id="cb13-3"><a href="#cb13-3"></a>           <span class="dt">temp4_newnames =</span> <span class="kw">fct_recode</span>(temp3_cut2,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>                                         <span class="dt">lessthan4 =</span> <span class="st">&quot;[0.0218,0.0400)&quot;</span>,</span>
+<span id="cb13-5"><a href="#cb13-5"></a>                                         <span class="dt">higher =</span> <span class="st">&quot;[0.0400,0.0605]&quot;</span>))</span>
+<span id="cb13-6"><a href="#cb13-6"></a></span>
+<span id="cb13-7"><a href="#cb13-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(unemployment <span class="op">~</span><span class="st"> </span>temp4_newnames, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1937,15 +1942,15 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 <div id="cleaning-up" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> Cleaning up</h3>
 <p>So, I’ve created four different variables here, when I only need the one. I’ll go with the median split approach, (which I’ll rename <code>unemp_cat</code>) and then drop the other attempts I created from my tibble in this next bit of code. Notice the use of the minus sign (<code>-</code>) before the list of variables I’m dropping in the select statement.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="st">    </span><span class="kw">rename</span>(<span class="dt">unemp_cat =</span> temp1_ms) <span class="op">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="st">    </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(temp2_4pct, temp3_cut2, temp4_newnames))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="st">    </span><span class="kw">rename</span>(<span class="dt">unemp_cat =</span> temp1_ms) <span class="op">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="st">    </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(temp2_4pct, temp3_cut2, temp4_newnames))</span></code></pre></div>
 <p>Let’s check - we should still have 31 rows, but now we should have 9 columns (variables), since we’ve added the <code>unemp_cat</code> column to the data.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">names</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">names</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
 <pre><code>[1] &quot;fipscode&quot;             &quot;state&quot;                &quot;county&quot;              
 [4] &quot;life_expectancy&quot;      &quot;freq_mental_distress&quot; &quot;hsgraduation&quot;        
 [7] &quot;unemployment&quot;         &quot;food_insecurity&quot;      &quot;unemp_cat&quot;           </code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">nrow</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">nrow</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
 <pre><code>[1] 31</code></pre>
 <p>OK. Still looks fine.</p>
 </div>
@@ -1956,11 +1961,11 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 <div id="creating-a-three-category-variable" class="section level3">
 <h3><span class="header-section-number">2.4.1</span> Creating a Three-Category Variable</h3>
 <p>Suppose we want to create three groups of equal size (which, since we have only 31 observations and need to have at least 10 in each group, is really our only choice in my example) and want to use the <code>cut2</code> function from the <code>Hmisc</code> package.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp3 =</span> <span class="kw">factor</span>(Hmisc<span class="op">::</span><span class="kw">cut2</span>(hsgraduation, <span class="dt">g =</span> <span class="dv">3</span>)))</span>
-<span id="cb18-3"><a href="#cb18-3"></a></span>
-<span id="cb18-4"><a href="#cb18-4"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(hsgraduation <span class="op">~</span><span class="st"> </span>temp3, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp3 =</span> <span class="kw">factor</span>(Hmisc<span class="op">::</span><span class="kw">cut2</span>(hsgraduation, <span class="dt">g =</span> <span class="dv">3</span>)))</span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(hsgraduation <span class="op">~</span><span class="st"> </span>temp3, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -2015,14 +2020,14 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">hsgrad_cat =</span> <span class="kw">fct_recode</span>(temp3,</span>
-<span id="cb19-3"><a href="#cb19-3"></a>                                   <span class="dt">bottom =</span> <span class="st">&quot;[0.724,0.880)&quot;</span>,</span>
-<span id="cb19-4"><a href="#cb19-4"></a>                                   <span class="dt">middle =</span> <span class="st">&quot;[0.880,0.909)&quot;</span>,</span>
-<span id="cb19-5"><a href="#cb19-5"></a>                                   <span class="dt">top =</span> <span class="st">&quot;[0.909,0.946]&quot;</span>))</span>
-<span id="cb19-6"><a href="#cb19-6"></a></span>
-<span id="cb19-7"><a href="#cb19-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(hsgraduation <span class="op">~</span><span class="st"> </span>hsgrad_cat, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">hsgrad_cat =</span> <span class="kw">fct_recode</span>(temp3,</span>
+<span id="cb20-3"><a href="#cb20-3"></a>                                   <span class="dt">bottom =</span> <span class="st">&quot;[0.724,0.880)&quot;</span>,</span>
+<span id="cb20-4"><a href="#cb20-4"></a>                                   <span class="dt">middle =</span> <span class="st">&quot;[0.880,0.909)&quot;</span>,</span>
+<span id="cb20-5"><a href="#cb20-5"></a>                                   <span class="dt">top =</span> <span class="st">&quot;[0.909,0.946]&quot;</span>))</span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(hsgraduation <span class="op">~</span><span class="st"> </span>hsgrad_cat, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -2096,17 +2101,17 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 <li>0.90 up to but not including 0.92, and</li>
 <li><code>hsgraduation</code> rate of 0.92 or more</li>
 </ol>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp4 =</span> <span class="kw">case_when</span>(</span>
-<span id="cb20-3"><a href="#cb20-3"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.8</span> <span class="op">~</span><span class="st"> &quot;1_lowest&quot;</span>,</span>
-<span id="cb20-4"><a href="#cb20-4"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.85</span> <span class="op">~</span><span class="st"> &quot;2_low&quot;</span>,</span>
-<span id="cb20-5"><a href="#cb20-5"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.9</span> <span class="op">~</span><span class="st"> &quot;3_middle&quot;</span>,</span>
-<span id="cb20-6"><a href="#cb20-6"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.92</span> <span class="op">~</span><span class="st"> &quot;4_high&quot;</span>,</span>
-<span id="cb20-7"><a href="#cb20-7"></a>        <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;5_highest&quot;</span>),</span>
-<span id="cb20-8"><a href="#cb20-8"></a>        <span class="dt">temp4 =</span> <span class="kw">factor</span>(temp4))</span>
-<span id="cb20-9"><a href="#cb20-9"></a></span>
-<span id="cb20-10"><a href="#cb20-10"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(hsgraduation <span class="op">~</span><span class="st"> </span>temp4, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb20-11"><a href="#cb20-11"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">temp4 =</span> <span class="kw">case_when</span>(</span>
+<span id="cb21-3"><a href="#cb21-3"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.8</span> <span class="op">~</span><span class="st"> &quot;1_lowest&quot;</span>,</span>
+<span id="cb21-4"><a href="#cb21-4"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.85</span> <span class="op">~</span><span class="st"> &quot;2_low&quot;</span>,</span>
+<span id="cb21-5"><a href="#cb21-5"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.9</span> <span class="op">~</span><span class="st"> &quot;3_middle&quot;</span>,</span>
+<span id="cb21-6"><a href="#cb21-6"></a>        hsgraduation <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.92</span> <span class="op">~</span><span class="st"> &quot;4_high&quot;</span>,</span>
+<span id="cb21-7"><a href="#cb21-7"></a>        <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;5_highest&quot;</span>),</span>
+<span id="cb21-8"><a href="#cb21-8"></a>        <span class="dt">temp4 =</span> <span class="kw">factor</span>(temp4))</span>
+<span id="cb21-9"><a href="#cb21-9"></a></span>
+<span id="cb21-10"><a href="#cb21-10"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(hsgraduation <span class="op">~</span><span class="st"> </span>temp4, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-11"><a href="#cb21-11"></a><span class="st">    </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -2190,8 +2195,8 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 <div id="cleaning-up-1" class="section level3">
 <h3><span class="header-section-number">2.4.3</span> Cleaning up</h3>
 <p>So, I’ve created two multi-categorical variables, but I will just retain the 3-category version (which I called <code>hsgrad_cat</code>) and drop the other temporary efforts.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="st">    </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(temp3, temp4))</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>chr_<span class="dv">2019</span> &lt;-<span class="st"> </span>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="st">    </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(temp3, temp4))</span></code></pre></div>
 </div>
 </div>
 <div id="structure-of-my-tibble" class="section level2">
@@ -2207,7 +2212,7 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 <li>my two categorical variables <code>unemp_cat</code> and <code>hsgrad_cat</code> which should each be factors <fct> with appropriate levels specified, followed by numerical codes</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">str</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">str</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
 <pre><code>tibble [31 x 10] (S3: tbl_df/tbl/data.frame)
  $ fipscode            : chr [1:31] &quot;09001&quot; &quot;09003&quot; &quot;09005&quot; &quot;09007&quot; ...
  $ state               : Factor w/ 6 levels &quot;CT&quot;,&quot;DC&quot;,&quot;DE&quot;,..: 1 1 1 1 1 1 1 1 3 3 ...
@@ -2221,8 +2226,9 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
  $ hsgrad_cat          : Factor w/ 3 levels &quot;bottom&quot;,&quot;middle&quot;,..: 2 1 2 3 1 2 3 1 2 1 ...</code></pre>
 <p>Looks good so far. I think we are ready to go.</p>
 </div>
-<div id="codebook" class="section level2">
-<h2><span class="header-section-number">2.6</span> Codebook</h2>
+</div>
+<div id="codebook" class="section level1">
+<h1><span class="header-section-number">3</span> Codebook</h1>
 <p>This is a table listing all 10 variables that are included in your tibble, and providing some important information about them, mostly drawn from <a href="https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures">the County Health Ranking web site</a>. For each of your five selected variables, be sure to include the original code (vXXX) from the raw file.</p>
 <table>
 <colgroup>
@@ -2250,7 +2256,7 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 </tr>
 <tr class="even">
 <td>life_expectancy</td>
-<td>(v147) Life Expectancy</td>
+<td>(v147) Life Expectancy, which will be my <strong>outcome</strong></td>
 </tr>
 <tr class="odd">
 <td>freq_mental_distress</td>
@@ -2281,23 +2287,26 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 <p>Note that I’ve provided details on the definition of our categorical variables.</p>
 <p>More details on two of our original five variables are specified below. These results are rephrased versions of <a href="https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures">the summaries linked on the County Health Rankings site</a>. You’ll need to provide information of this type as part of the codebook for all five of your selected variables.</p>
 <ul>
-<li><p><code>lifeexpectancy</code> was originally variable <code>v147_rawvalue</code>, and is listed in the Length of Life subcategory under Health Outcomes at County Health Rankings. It describes the average number of years a person residing in the county can expect to live, according to the current mortality experience (age-specific death rates) of the county’s population. It is based on data from the National Center for Health Statistics Mortality Files from 2016-18.</p></li>
+<li><p><code>lifeexpectancy</code> was originally variable <code>v147_rawvalue</code>, and is listed in the Length of Life subcategory under Health Outcomes at County Health Rankings. It describes the average number of years a person residing in the county can expect to live, according to the current mortality experience (age-specific death rates) of the county’s population. It is based on data from the National Center for Health Statistics Mortality Files from 2016-18. This will be my <strong>outcome</strong> variable.</p></li>
 <li><p><code>hsgraduation</code> was originally variable <code>v021_rawvalue</code>, and is listed in the Education subcategory under Social &amp; Economic Factors at County Health Rankings. It describes the proportion of the county’s ninth grade cohort that graduates with a high school diploma in four years, and is based on EDFacts data from 2016-17. Comparisons across state lines are not recommended because of differences in how states define the data, according to County Health Rankings.</p></li>
 </ul>
-<div id="proposal-requirements-1-and-2-1" class="section level3">
-<h3><span class="header-section-number">2.6.1</span> Proposal Requirements 1 and 2</h3>
-<p>Remember that you will need to do five things in the proposal. We’d like you to place the first two here. They are:</p>
+<div id="proposal-requirement-1" class="section level2">
+<h2><span class="header-section-number">3.1</span> Proposal Requirement 1</h2>
+<p>Remember that you will need to do five things in the proposal.</p>
 <ol style="list-style-type: decimal">
-<li><p>a sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states.</p></li>
-<li><p>A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of the cutpoints you chose to create the binary categories out of variable 4 and the multiple categories out of variable 5. Think of this as an early version of what will eventually become your codebook. For each variable, provide a sentence describing your motivation for why this variable was interesting to you.</p></li>
+<li>a sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states.</li>
 </ol>
-<p>Again, placing that material here, in the codebook section, will make it easy for us to find.</p>
 </div>
+<div id="proposal-requirement-2" class="section level2">
+<h2><span class="header-section-number">3.2</span> Proposal Requirement 2</h2>
+<ol start="2" style="list-style-type: decimal">
+<li>A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of the cutpoints you chose to create the binary categories out of variable 4 and the multiple categories out of variable 5. Think of this as an early version of what will eventually become your codebook. For each variable, provide a sentence describing your motivation for why this variable was interesting to you, and also <strong>please</strong> specify which of your quantitative variables will serve as your outcome.</li>
+</ol>
 </div>
-<div id="summarizing-the-tibble" class="section level2">
-<h2><span class="header-section-number">2.7</span> Summarizing the tibble</h2>
-<p>To meet proposal requirements 3 and 4, at this stage, we should <strong>print</strong> the tibble, so that we verify that it is in fact a tibble that prints the first 10 rows, etc., and then run <code>describe</code> from the <code>Hmisc</code> package.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>chr_<span class="dv">2019</span></span></code></pre></div>
+<div id="proposal-requirement-3" class="section level2">
+<h2><span class="header-section-number">3.3</span> Proposal Requirement 3</h2>
+<p>Print the tibble, so we can verify that it is, in fact, a tibble, that prints the first 10 rows.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>chr_<span class="dv">2019</span></span></code></pre></div>
 <pre><code># A tibble: 31 x 10
    fipscode state county life_expectancy freq_mental_dis~ hsgraduation
    &lt;chr&gt;    &lt;fct&gt; &lt;chr&gt;            &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;
@@ -2313,7 +2322,11 @@ $ food_insecurity      &lt;dbl&gt; 0.096, 0.119, 0.095, 0.099, 0.124, 0.115, 0.0
 10 10003    DE    New C~            78.7           0.110         0.877
 # ... with 21 more rows, and 4 more variables: unemployment &lt;dbl&gt;,
 #   food_insecurity &lt;dbl&gt;, unemp_cat &lt;fct&gt;, hsgrad_cat &lt;fct&gt;</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>Hmisc<span class="op">::</span><span class="kw">describe</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
+</div>
+<div id="proposal-requirement-4" class="section level2">
+<h2><span class="header-section-number">3.4</span> Proposal Requirement 4</h2>
+<p>To meet proposal requirement 4, run <code>describe</code> from the <code>Hmisc</code> package.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>Hmisc<span class="op">::</span><span class="kw">describe</span>(chr_<span class="dv">2019</span>)</span></code></pre></div>
 <pre><code>chr_2019 
 
  10  Variables      31  Observations
@@ -2374,7 +2387,7 @@ unemployment
      .25      .50      .75      .90      .95 
  0.02608  0.03922  0.04503  0.04974  0.05024 
 
-lowest : 0.02181668 0.02198898 0.02239196 0.02353413 0.02358351
+lowest : 0.02181668 0.02198898 0.02239195 0.02353413 0.02358351
 highest: 0.04842678 0.04973634 0.05018781 0.05028742 0.06051724
 --------------------------------------------------------------------------------
 food_insecurity 
@@ -2403,24 +2416,24 @@ Proportion  0.355  0.323  0.323
 --------------------------------------------------------------------------------</code></pre>
 </div>
 <div id="three-important-checks" class="section level2">
-<h2><span class="header-section-number">2.8</span> Three Important Checks</h2>
+<h2><span class="header-section-number">3.5</span> Three Important Checks</h2>
 <p>There are three important things I have to demonstrate, as described in Tasks C (Identify Your Variables) and D (Create Categorical Variables) in our Data Development work. They are:</p>
 <ul>
 <li>Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study.</li>
 </ul>
 <p>Do we have any missing data here?</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="st">    </span><span class="kw">summarize</span>(<span class="kw">across</span>(life_expectancy<span class="op">:</span>food_insecurity, <span class="op">~</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(.))))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="st">    </span><span class="kw">summarize</span>(<span class="kw">across</span>(life_expectancy<span class="op">:</span>food_insecurity, <span class="op">~</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(.))))</span></code></pre></div>
 <pre><code># A tibble: 1 x 5
   life_expectancy freq_mental_distress hsgraduation unemployment food_insecurity
             &lt;int&gt;                &lt;int&gt;        &lt;int&gt;        &lt;int&gt;           &lt;int&gt;
 1               0                    0            0            0               0</code></pre>
 <p>Nope, so we’re OK!</p>
 <p>If I did have some missingness, then I would probably want to summarize this by state, so that I could compare the results. Here’s a way to look at this just for the <code>life_expectancy</code> variable.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(life_expectancy <span class="op">~</span><span class="st"> </span>state, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="st">    </span><span class="kw">select</span>(state, n, missing) <span class="op">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">pct_available =</span> <span class="dv">100</span><span class="op">*</span>(n <span class="op">-</span><span class="st"> </span>missing)<span class="op">/</span>n) <span class="op">%&gt;%</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="st">    </span><span class="kw">kable</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>mosaic<span class="op">::</span><span class="kw">favstats</span>(life_expectancy <span class="op">~</span><span class="st"> </span>state, <span class="dt">data =</span> chr_<span class="dv">2019</span>) <span class="op">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="st">    </span><span class="kw">select</span>(state, n, missing) <span class="op">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">pct_available =</span> <span class="dv">100</span><span class="op">*</span>(n <span class="op">-</span><span class="st"> </span>missing)<span class="op">/</span>n) <span class="op">%&gt;%</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="st">    </span><span class="kw">kable</span>()</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -2473,8 +2486,8 @@ Proportion  0.355  0.323  0.323
 <ul>
 <li>The raw versions of each of your five selected variables must have at least 10 distinct non-missing values.</li>
 </ul>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="st">    </span><span class="kw">summarize</span>(<span class="kw">across</span>(life_expectancy<span class="op">:</span>food_insecurity, <span class="op">~</span><span class="st"> </span><span class="kw">n_distinct</span>(.)))</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="st">    </span><span class="kw">summarize</span>(<span class="kw">across</span>(life_expectancy<span class="op">:</span>food_insecurity, <span class="op">~</span><span class="st"> </span><span class="kw">n_distinct</span>(.)))</span></code></pre></div>
 <pre><code># A tibble: 1 x 5
   life_expectancy freq_mental_distress hsgraduation unemployment food_insecurity
             &lt;int&gt;                &lt;int&gt;        &lt;int&gt;        &lt;int&gt;           &lt;int&gt;
@@ -2483,11 +2496,11 @@ Proportion  0.355  0.323  0.323
 <ul>
 <li>For each of the categorical variables you create, every level of the resulting factor must include at least 10 counties.</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tabyl</span>(unemp_cat)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tabyl</span>(unemp_cat)</span></code></pre></div>
 <pre><code> unemp_cat  n  percent
       high 16 0.516129
        low 15 0.483871</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tabyl</span>(hsgrad_cat)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>chr_<span class="dv">2019</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tabyl</span>(hsgrad_cat)</span></code></pre></div>
 <pre><code> hsgrad_cat  n   percent
      bottom 11 0.3548387
      middle 10 0.3225806
@@ -2495,13 +2508,13 @@ Proportion  0.355  0.323  0.323
 <p>OK. I have at least 10 counties in each category for each of the categorical variables that I created.</p>
 </div>
 <div id="saving-the-tibble" class="section level2">
-<h2><span class="header-section-number">2.9</span> Saving the Tibble</h2>
+<h2><span class="header-section-number">3.6</span> Saving the Tibble</h2>
 <p>Finally, we’ll save this tibble as an R data set into the same location as our original data set within our R Project directory.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">saveRDS</span>(chr_<span class="dv">2019</span>, <span class="dt">file =</span> <span class="st">&quot;chr_2019_Thomas_Love.Rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">saveRDS</span>(chr_<span class="dv">2019</span>, <span class="dt">file =</span> <span class="st">&quot;chr_2019_Thomas_Love.Rds&quot;</span>)</span></code></pre></div>
 <p>You’ll want to substitute in your own name, of course.</p>
 </div>
-<div id="final-proposal-requirement" class="section level2">
-<h2><span class="header-section-number">2.10</span> Final Proposal Requirement</h2>
+<div id="proposal-requirement-5" class="section level2">
+<h2><span class="header-section-number">3.7</span> Proposal Requirement 5</h2>
 <p>Having done all of this work, the set of Proposal Requirements (repeated below) should be straightforward. We’ve already dealt with the first four. The fifth is repeated below.</p>
 <ol start="5" style="list-style-type: decimal">
 <li>In a paragraph, describe the most challenging (or difficult) part of completing the work so far, and how you were able to overcome whatever it was that was difficult.</li>
@@ -2510,12 +2523,12 @@ Proportion  0.355  0.323  0.323
 </div>
 </div>
 <div id="analyses" class="section level1">
-<h1><span class="header-section-number">3</span> Analyses</h1>
+<h1><span class="header-section-number">4</span> Analyses</h1>
 <p>This isn’t part of the proposal.</p>
 </div>
 <div id="session-information" class="section level1">
-<h1><span class="header-section-number">4</span> Session Information</h1>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<h1><span class="header-section-number">5</span> Session Information</h1>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.0.2 (2020-06-22)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 19041)
@@ -2533,38 +2546,39 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] forcats_0.5.0    stringr_1.4.0    dplyr_1.0.2      purrr_0.3.4     
- [5] readr_1.3.1      tidyr_1.1.2      tibble_3.0.3     ggplot2_3.3.2   
- [9] tidyverse_1.3.0  magrittr_1.5     janitor_2.0.1    rmdformats_0.3.7
-[13] knitr_1.29      
+ [1] ggridges_0.5.2    mosaicData_0.20.1 ggformula_0.9.4   ggstance_0.3.4   
+ [5] Matrix_1.2-18     lattice_0.20-41   forcats_0.5.0     stringr_1.4.0    
+ [9] dplyr_1.0.2       purrr_0.3.4       readr_1.3.1       tidyr_1.1.2      
+[13] tibble_3.0.3      ggplot2_3.3.2     tidyverse_1.3.0   magrittr_1.5     
+[17] janitor_2.0.1     rmdformats_0.3.7  knitr_1.29       
 
 loaded via a namespace (and not attached):
  [1] fs_1.5.0            lubridate_1.7.9     RColorBrewer_1.1-2 
- [4] httr_1.4.2          tools_4.0.2         backports_1.1.7    
+ [4] httr_1.4.2          tools_4.0.2         backports_1.1.10   
  [7] utf8_1.1.4          R6_2.4.1            rpart_4.1-15       
-[10] Hmisc_4.4-1         DBI_1.1.0           lazyeval_0.2.2     
-[13] colorspace_1.4-1    nnet_7.3-14         withr_2.2.0        
-[16] tidyselect_1.1.0    gridExtra_2.3       leaflet_2.0.3      
+[10] Hmisc_4.4-1         DBI_1.1.0           colorspace_1.4-1   
+[13] nnet_7.3-14         withr_2.2.0         tidyselect_1.1.0   
+[16] gridExtra_2.3       leaflet_2.0.3       curl_4.3           
 [19] compiler_4.0.2      cli_2.0.2           rvest_0.3.6        
-[22] htmlTable_2.0.1     xml2_1.3.2          ggdendro_0.1.21    
-[25] bookdown_0.20       checkmate_2.0.0     mosaicCore_0.6.0   
+[22] htmlTable_2.1.0     xml2_1.3.2          ggdendro_0.1.22    
+[25] bookdown_0.20       checkmate_2.0.0     mosaicCore_0.8.0   
 [28] scales_1.1.1        digest_0.6.25       foreign_0.8-80     
-[31] ggformula_0.9.4     rmarkdown_2.3.3     jpeg_0.1-8.1       
-[34] base64enc_0.1-3     pkgconfig_2.0.3     htmltools_0.5.0    
-[37] dbplyr_1.4.4        highr_0.8           htmlwidgets_1.5.1  
-[40] rlang_0.4.7         readxl_1.3.1        rstudioapi_0.11    
-[43] farver_2.0.3        generics_0.0.2      jsonlite_1.7.0     
-[46] crosstalk_1.1.0.1   Formula_1.2-3       mosaicData_0.18.0  
-[49] Matrix_1.2-18       Rcpp_1.0.5          munsell_0.5.0      
-[52] fansi_0.4.1         lifecycle_0.2.0     stringi_1.4.6      
-[55] yaml_2.2.1          snakecase_0.11.0    MASS_7.3-52        
-[58] ggstance_0.3.4      grid_4.0.2          blob_1.2.1         
-[61] ggrepel_0.8.2       crayon_1.3.4        lattice_0.20-41    
-[64] haven_2.3.1         splines_4.0.2       hms_0.5.3          
-[67] pillar_1.4.6        reprex_0.3.0        glue_1.4.2         
-[70] evaluate_0.14       latticeExtra_0.6-29 data.table_1.13.0  
-[73] modelr_0.1.8        png_0.1-7           vctrs_0.3.3        
- [ reached getOption(&quot;max.print&quot;) -- omitted 12 entries ]</code></pre>
+[31] rmarkdown_2.3.3     jpeg_0.1-8.1        base64enc_0.1-3    
+[34] pkgconfig_2.0.3     htmltools_0.5.0     dbplyr_1.4.4       
+[37] highr_0.8           htmlwidgets_1.5.1   rlang_0.4.7        
+[40] readxl_1.3.1        rstudioapi_0.11     farver_2.0.3       
+[43] generics_0.0.2      jsonlite_1.7.1      crosstalk_1.1.0.1  
+[46] Formula_1.2-3       Rcpp_1.0.5          munsell_0.5.0      
+[49] fansi_0.4.1         lifecycle_0.2.0     stringi_1.5.3      
+[52] yaml_2.2.1          snakecase_0.11.0    MASS_7.3-53        
+[55] plyr_1.8.6          grid_4.0.2          blob_1.2.1         
+[58] ggrepel_0.8.2       crayon_1.3.4        haven_2.3.1        
+[61] splines_4.0.2       hms_0.5.3           pillar_1.4.6       
+[64] reprex_0.3.0        glue_1.4.2          evaluate_0.14      
+[67] latticeExtra_0.6-29 data.table_1.13.0   modelr_0.1.8       
+[70] png_0.1-7           vctrs_0.3.4         tweenr_1.0.1       
+[73] cellranger_1.1.0    gtable_0.3.0        polyclip_1.10-0    
+ [ reached getOption(&quot;max.print&quot;) -- omitted 8 entries ]</code></pre>
 </div>
 </div>
 
