@@ -38,7 +38,7 @@ On 2020-09-27, I adjusted the Project Proposal Example to incorporate this idea,
 - separating out the codebook, some data checks and the proposal requirements from the data development
 - fixing a typo or two
 
-So I encourage you to use [that version (Rmd here)](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/projects/projectA/example_projectA_proposal/love-example-projectA-proposal.Rmd). HTML is still at https://rpubs.com/TELOVE/projA-proposal-example-431-2020.
+So I encourage you to use [that version (Rmd here)](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/projects/projectA/example_projectA_proposal/love-example-projectA-proposal.Rmd). HTML is still at https://rpubs.com/TELOVE/projA-proposal-example-431-2020. Links now fixed.
 
 5. Some [Quiz 1 information is available now](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md).
 
@@ -51,7 +51,7 @@ So I encourage you to use [that version (Rmd here)](https://raw.githubuserconten
 ## What Should I Be Working On?
 
 1. [Minute Paper after Class 11](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) is due Wednesday 2020-09-30 at Noon.
-2. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. You want the version posted 2020-09-27.
+2. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due 2020-10-02. You want [this version](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/projects/projectA/example_projectA_proposal/love-example-projectA-proposal.Rmd).
 3. Reading: by 2020-10-02, you'll need to have finished the Leek text and chapters 8-9 of Spiegelhalter.
 
 ## One Last Thing
