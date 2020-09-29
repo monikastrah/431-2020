@@ -58,6 +58,22 @@ So I encourage you to use that version. HTML is still at https://rpubs.com/TELOV
 We'll look for a moment at [the FiveThirtyEight 2020 Senate Election Forecast](https://projects.fivethirtyeight.com/2020-election-forecast/senate/). 
 
 - If you're interested in more of the details of how these state-wide models work, [visit the methodology here](https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/).
+
+### Other Organizations
+
+Other organizations have predictive models for the 2020 Election.
+
+- *The Economist* is analysing polling, economic and demographic data to predict America’s elections in 2020
+    - [Presidential forecast](https://www.economist.com/us-election-2020) and an [explanation of how the model works](https://projects.economist.com/us-2020-forecast/president/how-this-works).
+    - [Senate forecast](https://projects.economist.com/us-2020-forecast/senate) and [explanation of how the Senate model works](https://projects.economist.com/us-2020-forecast/senate/how-this-works).
+    - [House forecast]() and [explanation of how their House forecast works](https://projects.economist.com/us-2020-forecast/house/how-this-works).
+- [270 to Win](https://www.270towin.com/2020-election-forecast-predictions/) aggregates forecasts from several other organizations. [Here are the Senate forecasts, for instance](https://www.270towin.com/2020-senate-election-predictions/), most of which are ratings, rather ther than probabilistic.
+- The *New York Times* Upshot provides [analysis of the day in polls](https://www.nytimes.com/live/2020/presidential-polls-trump-biden)
+
+
+### More from FiveThirtyEight
+
+- There are a LOT of polls in the field right now. Here's an [update on the latest polls](https://projects.fivethirtyeight.com/polls/) from FiveThirtyEight.
 - FiveThirtyEight's podcasts are helpful to me, too. In particular, the [politics podcast](https://fivethirtyeight.com/tag/politics-podcast/) has occasional Model Talk sessions where Nate discusses the models in a lot of detail in what I find to be a compelling way.
     - from 2020-09-18: "[Why Our Forecast Says Democrats Are Slightly Favored To Win The Senate](https://fivethirtyeight.com/videos/why-our-forecast-says-democrats-are-slightly-favored-to-win-the-senate/)" is most directly relevant to what we'll look at today.
 - A few tweets from Nate Silver this morning: [this one](https://twitter.com/NateSilver538/status/1310936019370471426) is about how the presidential forecast reacts to debates, and [this one](https://twitter.com/NateSilver538/status/1310946004041191430) is about the idea that the election could come down to the Supreme Court. 
