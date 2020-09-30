@@ -22,18 +22,18 @@ TBD
 
 1. **STILL TO COME** 
     - Feedback on Minute Paper after Class 11
-    - Quiz 1 details
+    - Quiz 1 details beyond what's up now
     - Project A Proposal Checklist
-2. Dr. Love provided a set of [5 old Quiz questions at this link](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/old_questions/README.md).
-3. A Few Important Coding Tips to keep in mind
+2. A Few Important Coding Tips to keep in mind
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/images/goodandbadRmd.png)
 
 ## What Should I Be Working On?
 
-1. [Project A](https://thomaselove.github.io/431-2020-projectA/), in particular the Proposal, which is due tomorrow (2020-10-02) at Noon.
-2. Reading: by 2020-10-02, you'll need to have finished the Leek text and chapters 8-9 of Spiegelhalter.
-3. Quiz 1, when it becomes available.
+1. The [Project A Proposal](https://thomaselove.github.io/431-2020-projectA/), due Friday (tomorrow, 2020-10-02) at Noon. Please do not be late.
+2. [Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md) will become available to you at 5 PM Friday (tomorrow, 2020-10-02) and is due on Wednesday 2020-10-07 at Noon. Late work is not acceptable.
+    - See the [Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md) page for more details.
+    - Dr. Love provided a set of [5 old Quiz questions at this link](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/old_questions/README.md).
 
 ## One Last Thing
 
