@@ -301,7 +301,7 @@ newdat7 <- tibble(name = c("Pingu", "Skipper"), bill_length_mm = c(49.55, 45.3))
 augment(m7, newdata = newdat7)
 ```
 
-So the predicted body mass for Pingu is 5300 g, and for Skipper it is 4835 g, a difference of 435 grams.
+So the predicted body mass for Pingu is 5300 g, and for Skipper it is 4835 g, a difference of **465** grams. (note that our first draft of this sketch had this as 435, incorrectly.)
 
 ## Grading Question 7
 
