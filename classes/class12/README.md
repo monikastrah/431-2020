@@ -27,7 +27,7 @@ TBD
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/images/goodandbadRmd.png)
 
-
+3. Dr. Love provided a set of [5 old Quiz questions at this link](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/old_questions/README.md).
 
 ## What Should I Be Working On?
 
