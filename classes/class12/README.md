@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> Quote to come.
+> In examinations the foolish ask questions that the wise cannot answer. (Oscar Wilde, *Epigrams: Phrases and Philosophies for the Use of the Young*)
 
 ## Today's Slides
 
@@ -23,11 +23,11 @@ TBD
 1. **STILL TO COME** 
     - Feedback on Minute Paper after Class 11
     - Quiz 1 details
-2. A Few Important Coding Tips 
+    - Project A Proposal Checklist
+2. Dr. Love provided a set of [5 old Quiz questions at this link](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/old_questions/README.md).
+3. A Few Important Coding Tips to keep in mind
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/images/goodandbadRmd.png)
-
-3. Dr. Love provided a set of [5 old Quiz questions at this link](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/old_questions/README.md).
 
 ## What Should I Be Working On?
 
