@@ -21,11 +21,11 @@ TBD
 ## Announcements
 
 1. **STILL TO COME** 
-    - Feedback on Minute Paper after Class 11
     - Quiz 1 details beyond what's up now
     - Project A Proposal Checklist
-2. I had a typo in the [Lab 04 Sketch](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab04) in Question 7, now fixed. The correct response is 465 grams, not 435. Thanks to the student who found this.
-2. A Few Important Coding Tips to keep in mind
+3. Feedback on the [Minute Paper after Class 11](http://bit.ly/431-2020-min11-feedback) is now available.
+4. I had a typo in the [Lab 04 Sketch](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab04) in Question 7, now fixed. The correct response is 465 grams, not 435. Thanks to the student who found this.
+5. A Few Important Coding Tips to keep in mind
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/images/goodandbadRmd.png)
 
