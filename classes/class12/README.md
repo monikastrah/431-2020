@@ -50,3 +50,4 @@ On Tuesday, we're going to talk about *p* values and the notion of statistical s
 From FiveThirtyEight: 
 - [Who Won The Debate?](https://projects.fivethirtyeight.com/trump-biden-debate-poll/) 
 - [Presidential National Polling](https://projects.fivethirtyeight.com/polls/president-general/national/)
+- [Pollster Ratings](https://projects.fivethirtyeight.com/pollster-ratings/)
