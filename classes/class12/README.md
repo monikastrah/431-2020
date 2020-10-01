@@ -23,7 +23,7 @@ TBD
 1. Feedback on the [Minute Paper after Class 11](http://bit.ly/431-2020-min11-feedback) is now available.
 2. There is a 13-item [Project A Proposal Checklist](https://thomaselove.github.io/431-2020-projectA/checklist.html) now available. 
     - Those are the things I've identified to look at in your proposals, so you can pretty much figure out before you submit if your proposal will be accepted.
-    - This is also [available on our Shared Google Drive]((http://bit.ly/431-2020-proposalA-checklist) if you'd rather see it formatted as a Google Doc.
+    - This is also [available on our Shared Google Drive](http://bit.ly/431-2020-proposalA-checklist) if you'd rather see it formatted as a Google Doc.
 3. **STILL TO COME** Quiz 1 details beyond what's up now
 4. I had a typo in the [Lab 04 Sketch](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab04) in Question 7, now fixed. The correct response is 465 grams, not 435. Thanks to the student who found this.
 5. A Few Important Coding Tips to keep in mind:
