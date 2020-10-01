@@ -24,14 +24,15 @@ TBD
 2. There is a 13-item [Project A Proposal Checklist](https://thomaselove.github.io/431-2020-projectA/checklist.html) now available. 
     - Those are the things I've identified to look at in your proposals, so you can pretty much figure out before you submit if your proposal will be accepted.
     - This is also [available on our Shared Google Drive](http://bit.ly/431-2020-proposalA-checklist) if you'd rather see it formatted as a Google Doc.
-3. **STILL TO COME** Quiz 1 details beyond what's up now
-4. I had a typo in the [Lab 04 Sketch](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab04) in Question 7, now fixed. The correct response is 465 grams, not 435. Thanks to the student who found this.
-5. A Few Important Coding Tips to keep in mind:
+3. [Details on Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md) are slowly emerging at that link. Everything you will need to take the Quiz will be linked there at 5 PM on Friday, and you will receive an email from me when the details have been posted.
+4. I made some important additions to Chapter 15 of the Course Notes, describing the use of `tidy` to make coefficient plots, and the summary statistics described by the `glance` function from the `broom` package. Please take a look at the two new sections, labeled **15.X** and **15.Y**.
+5. I had a typo in the [Lab 04 Sketch](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab04) in Question 7, now fixed. The correct response is 465 grams, not 435. Thanks to the student who found this.
+6. A Few Important Coding Tips to keep in mind:
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/images/goodandbadRmd.png)
 
-6. You might be interested in [the colourpicker gadget](https://deanattali.com/blog/colourpicker-ggmarginal-gadgets/) available in RStudio.
-7. The new [preview version of RStudio](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/) includes visual markdown editing, which is a great feature. I hope to be using it in January.
+7. You might be interested in [the colourpicker gadget](https://deanattali.com/blog/colourpicker-ggmarginal-gadgets/) available in RStudio.
+8. The new [preview version of RStudio](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/) includes visual markdown editing, which is a great feature. I hope to be using it in January.
 
 ## What Should I Be Working On?
 
