@@ -37,6 +37,10 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - See the [Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md) page for more details.
     - Dr. Love provided a set of [5 old Quiz questions at this link](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/old_questions/README.md).
 
+## What's Next?
+
+On Tuesday, we're going to talk about *p* values and the notion of statistical significance in a more serious way. Don't miss it!
+
 ## One Last Thing
 
 - A student asked in the minute paper whether I had any opinions on the debate from Tuesday night.
