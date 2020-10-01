@@ -21,7 +21,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - Those are the things I've identified to look at in your proposals, so you can pretty much figure out before you submit if your proposal will be accepted.
     - This is also [available on our Shared Google Drive](http://bit.ly/431-2020-proposalA-checklist) if you'd rather see it formatted as a Google Doc.
 3. [Details on Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md) are slowly emerging at that link, and you'll find a lot more there today than was there on Tuesday. Everything you will need to take the Quiz will be linked there at 5 PM on Friday, and you will receive an email from me when the details have been posted.
-4. I made some important additions to [Chapter 15 of the Course Notes](https://thomaselove.github.io/431-notes/dehydration-recovery-in-kids-a-small-study.html), describing the use of `tidy` to make coefficient plots, and the summary statistics described by the `glance` function from the `broom` package. Please take a look at the two new sections, labeled **15.6** (Coefficient Plots) and **15.9** (Using `glance`...).
+4. I made some important additions to [Chapter 15 of the Course Notes](https://thomaselove.github.io/431-notes/dehydration-recovery-in-kids-a-small-study.html), describing the use of `tidy` to make coefficient plots, and the summary statistics described by the `glance` function from the `broom` package. 
+    - Please take a look at the two new sections, labeled **15.6** (Coefficient Plots) and **15.9** (Using `glance`...).
 5. I had a typo in the [Lab 04 Sketch](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab04) in Question 7, now fixed. The correct response is 465 grams, not 435. Thanks to the student who found this.
 6. A Few Important Coding Tips to keep in mind:
 
