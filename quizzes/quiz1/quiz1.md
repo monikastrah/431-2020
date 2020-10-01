@@ -1,9 +1,7 @@
 Quiz 1
 ================
 
-Details on Quiz 1 will appear here.
-
-## Some Early Notes
+## About the Quiz
 
 - Quiz 1 will be made available to you at 5 PM Eastern time on Friday 2020-10-02. It is due at Noon on 2020-10-07.
     - You will definitely need to be able to do some coding in R to complete the Quiz. There are also questions that involve interpreting R output, and some questions where R is not relevant at all.
@@ -11,12 +9,12 @@ Details on Quiz 1 will appear here.
     - The Quiz will include between 25 and 30 questions. 
     - The questions are not in any particular order, and range in difficulty from "things I expect everyone to get right" to "things that are deliberately tricky". 
     - I expect no one to get every question right, although someone might, in part because it's easy to misclick in a Google Form, or blow a detail.
+    - Your score is based on the number of correct responses, so there's no chance a blank response will be correct, and a guess might be, so you should definitely answer all of the questions.
+    - Occasionally, I ask you to provide a single line of code. In all cases, a single line of code can include at most one pipe for these purposes, although you may or may not need the pipe in any particular setting. Moreover, you need not include the library command at any time for any of your code. Assume in all questions that all relevant packages have been loaded in R.
     
 ## What Sources Are You Allowed to use in Taking the Quiz?
 
-This is an open book, open notes quiz. Anything I've given you is fine. All the books and other texts I've suggested to you in the Syllabus, the READMEs or elsewhere are also fine. 
-
-The one thing that is definitely NOT allowed is discussing the Quiz (even just how well it is going for you) with ANYONE other than Dr. Love and the 431 TAs. This means that, for example, you're not allowed to discuss the quiz with other students in the class, even your Project A partner. You're not allowed to post questions to an online forum (other than our Class Piazza as a private post to the instructors - see below) about the Quiz, either.
+This is an open book, open notes quiz. Anything I've given you is fine. All the books and other texts I've suggested to you in the Syllabus, the READMEs or elsewhere are also fine. You are welcome to consult the materials provided on the course website, but you are not allowed to discuss the questions on this quiz with anyone other than Professor Love and the teaching assistants and you must do so by sending an email to 431-help at case dot edu or by making a private post to the instructors on Piazza. That way, we can track what's been asked. We will not guarantee that questions received after 9 AM on Wednesday 2020-10-07 will be answered in a timely fashion, but otherwise, we will try to keep up.
 
 ### Getting Help During the Quiz
 
@@ -31,6 +29,9 @@ That means we won't answer Quiz questions in that time frame...
 - in TA office hours,
 - in class or before/after class on Tuesday 2020-10-06,
 - via email except through **431-help at case dot edu** 
+
+Again, you are welcome to consult the materials provided on the course website, but you are not allowed to discuss the questions on this quiz with anyone other than Professor Love and the teaching assistants and you must do so by sending an email to 431-help at case dot edu or by making a private post to the instructors on Piazza. That way, we can track what's been asked. We will not guarantee that questions received after 9 AM on Wednesday 2020-10-07 will be answered in a timely fashion, but otherwise, we will try to keep up.
+
 
 ### When Should I Ask for Help?
 
@@ -57,7 +58,7 @@ All of your answers must be submitted through the Google Form by noon on Wednesd
 
 The Google Form will contain places to provide your responses to each question, and a final affirmation where you'll type in your name to tell us that you followed the rules for the Quiz. You must complete that affirmation and then submit your results. When you submit your results (in the same way you submit a Minute Paper) you will receive an email copy of your submission, with a link that will allow you to edit your results.
 
-As a result, if you want to work on the Quiz for a while and then take a break, we recommend you submit the Google Form, and then re-open it (using the link you will receive after submission in your CWRU email) to "edit" your response by answering the remaining questions. We will use the form as it has been submitted at noon on Wednesday 2020-10-07.
+If you wish to work on some of the quiz and then return later, you can do this by [1] completing the final question (the affirmation) which asks you to type in your full name, and then [2] submitting the quiz. You will then receive a link at your CWRU email which will allow you to return to the quiz as often as you like without losing your progress.
 
 ## The Five Key Sources of Material
 
