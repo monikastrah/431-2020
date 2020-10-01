@@ -47,3 +47,6 @@ On Tuesday, we're going to talk about *p* values and the notion of statistical s
 - A student asked in the minute paper whether I had any opinions on the debate from Tuesday night.
 - Someone else asked why our class is cancelled on Election Day.
 
+From FiveThirtyEight: 
+- [Who Won The Debate?](https://projects.fivethirtyeight.com/trump-biden-debate-poll/) 
+- [Presidential National Polling](https://projects.fivethirtyeight.com/polls/president-general/national/)
