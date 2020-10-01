@@ -20,14 +20,16 @@ TBD
 
 ## Announcements
 
-1. **STILL TO COME** 
-    - Quiz 1 details beyond what's up now
-    - Project A Proposal Checklist
-3. Feedback on the [Minute Paper after Class 11](http://bit.ly/431-2020-min11-feedback) is now available.
+1. Feedback on the [Minute Paper after Class 11](http://bit.ly/431-2020-min11-feedback) is now available.
+2. **STILL TO COME** Project A Proposal Checklist
+3. **STILL TO COME** Quiz 1 details beyond what's up now
 4. I had a typo in the [Lab 04 Sketch](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab04) in Question 7, now fixed. The correct response is 465 grams, not 435. Thanks to the student who found this.
 5. A Few Important Coding Tips to keep in mind
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class12/images/goodandbadRmd.png)
+
+6. You might be interested in [the colourpicker gadget](https://deanattali.com/blog/colourpicker-ggmarginal-gadgets/) available in RStudio.
+7. The new [preview version of RStudio](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/) includes visual markdown editing, which is a great feature. I hope to be using it in January.
 
 ## What Should I Be Working On?
 
@@ -38,4 +40,6 @@ TBD
 
 ## One Last Thing
 
-TBA.
+- A student asked in the minute paper whether I had any opinions on the debate from Tuesday night.
+- Someone else asked why our class is cancelled on Election Day.
+
