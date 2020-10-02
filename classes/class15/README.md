@@ -18,6 +18,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Remember that 431 is cancelled on Thursday 2020-10-15. Dr. Love will be at AHRQ Study Section. Class 16 will be held on Tuesday 2020-10-20.
 2. How do we tell a compelling story through visuals? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), you might be interested in [the Visualization section](https://stat150.blog/post/02-visualization/) and the links it provides.
+3. Want to work with census microdata in R? The [tidycensus](https://walker-data.com/tidycensus/index.html) package can help. 
+4. I also recommend [sociome](https://github.com/NikKrieger/sociome), a package developed by Nik Krieger, a former student in this class, that helps the user to operationalize social determinants of health data (specifically measures of area deprivation) into their research, and that makes substantial use of the tools in [tidycensus](https://walker-data.com/tidycensus/index.html).
 
 ## What Should I Be Working On?
 
