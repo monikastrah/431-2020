@@ -11,7 +11,7 @@ Quiz 1
 
 2. The PDF of the Quiz will be available by 5 PM, linked here and on our Shared Google Drive. 
 
-3. The Google Form Answer Sheet for the Quiz will be found at XXXXXXXXXXXXXXX. You must log into Google via CWRU to access the Answer Sheet and you must complete your submission of this Form no later than 12 NOON on 2020-10-07. No late work will be accepted. When you submit the Google Form, your responses will be emailed to your CWRU email address, along with a link to allow you to edit your work before the deadline.
+3. The Google Form Answer Sheet for the Quiz will be found at http://bit.ly/431-2020-quiz1-answer-sheet. You must log into Google via CWRU to access the Answer Sheet and you must complete your submission of this Form no later than 12 NOON on 2020-10-07. No late work will be accepted. When you submit the Google Form, your responses will be emailed to your CWRU email address, along with a link to allow you to edit your work before the deadline.
 
 # Instructions {-}
 
@@ -19,7 +19,7 @@ There are 29 questions on this Quiz, plus an affirmation at the end. It is to yo
 
 ## The Google Form Answer Sheet
 
-All of your answers should be placed in the Google Form Answer Sheet, located at **XXXXXXXXXXXX**. All of your answers must be submitted through the Google Form by noon on Wednesday 2020-10-07, without exception. The form will close at that time, and no extensions will be made available, so do not wait until Wednesday to submit. We will not accept any responses except through the Google Form.
+All of your answers should be placed in the Google Form Answer Sheet, located at http://bit.ly/431-2020-quiz1-answer-sheet. All of your answers must be submitted through the Google Form by noon on Wednesday 2020-10-07, without exception, and the form will close at that time, so do not wait until Wednesday to submit. We will not accept any responses except through [the Google Form](http://bit.ly/431-2020-quiz1-answer-sheet).
 
 The Google Form contains places to provide your responses to each question, and a final affirmation where you'll type in your name to tell us that you followed the rules for the Quiz. You must complete that affirmation and then submit your results. When you submit your results (in the same way you submit a Minute Paper) you will receive an email copy of your submission, with a link that will allow you to edit your results.
 
@@ -27,7 +27,7 @@ If you wish to work on some of the quiz and then return later, you can do this b
 
 ## The Data Sets
 
-I have provided three data sets (called `algae.csv`, `oscar.csv` and `tobacco_boys.csv`) that are mentioned in the Quiz. They may be helpful to you.
+Above, I have provided three data sets (called [algae.csv](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/quizzes/quiz1/data/algae.csv), [oscar.csv](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/quizzes/quiz1/data/oscar.csv) and [tobacco_boys.csv](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/quizzes/quiz1/data/tobacco_boys.csv)) that are mentioned in the Quiz. They may be helpful to you.
 
 ## Getting Help
 
