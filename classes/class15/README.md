@@ -17,7 +17,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. Remember that 431 is cancelled on Thursday 2020-10-15. Dr. Love will be at AHRQ Study Section. Class 16 will be held on Tuesday 2020-10-20.
-2. From the stat150 blog, you might be interested in [the Visualization section](https://stat150.blog/post/02-visualization/) and the links it provides.
+2. How do we tell a compelling story through visuals? From the stat150 blog and [Kelly Bodwin](https://twitter.com/kellybodwin), you might be interested in [the Visualization section](https://stat150.blog/post/02-visualization/) and the links it provides.
 
 ## What Should I Be Working On?
 
