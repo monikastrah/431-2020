@@ -20,6 +20,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 2. Ted Laderas gave an interesting talk at the R/Medicine 2020 virtual conference on [The MD in .rmd: Teaching Clinicians Data Analytics with R](https://www.youtube.com/watch?v=AexI0lZ7J-o) which you can watch on YouTube, if you're interested.
     - Ted has a newsletter called [Ready for R](https://tinyletter.com/ready4r/archive) where he shares lots of useful stuff.
 3. The next [Prevention Research Center for Healthy Neighborhoods seminar](http://www.prchn.org/seminar) on 2020-10-14 will feature Rita Horwitz, President and CEO of Better Health Partnership, where I work as Chief Data Scientist. Rita will be presenting on [The Better Health Pathways Community Hub](https://cwru.zoom.us/webinar/register/WN_GtO_UX54QESF73sEfjEpgA) and follow that link to register if you are interested.
+4. [Scientific Reasoning for Practical Data Science](https://www.youtube.com/watch?v=R6mq5Esjzfw) by Andrew Gelman is now available on YouTube, as part of the Philosophy of Data Science series.
+5. A reminder that optional materials related to COVID-19 are archived at https://github.com/THOMASELOVE/covid19. If you see anything you think I should post there, let me know.
 
 ## What Should I Be Working On?
 
