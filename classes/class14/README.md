@@ -18,6 +18,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Still to come.
     - Quiz 1 results.
+2. Why is it important to clearly document your work? From the stat150 blog, here's some materials on [Reproducibility, Documentation and Communication](https://stat150.blog/post/03-reproducibility/) just in time for your Project A work.
 
 ## What Should I Be Working On?
 
