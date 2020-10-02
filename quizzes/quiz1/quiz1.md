@@ -13,11 +13,11 @@ Quiz 1
 
 3. The Google Form Answer Sheet for the Quiz will be found at http://bit.ly/431-2020-quiz1-answer-sheet. You must log into Google via CWRU to access the Answer Sheet and you must complete your submission of this Form no later than 12 NOON on 2020-10-07. No late work will be accepted. When you submit the Google Form, your responses will be emailed to your CWRU email address, along with a link to allow you to edit your work before the deadline. A short Google Doc containing the link to the Google Form Answer Sheet is also posted to the Quiz 1 folder on our Shared Google Drive.
 
-# Instructions {-}
+# Instructions
 
 There are 29 questions on this Quiz, plus an affirmation at the end. It is to your advantage to answer all 29 Questions. Your score is based on the number of correct responses, so there's no chance a blank response will be correct, and a guess might be, so you should definitely answer all of the questions.
 
-## The Google Form Answer Sheet
+## The Google Form Answer Sheet, at http://bit.ly/431-2020-quiz1-answer-sheet
 
 All of your answers should be placed in the Google Form Answer Sheet, located at http://bit.ly/431-2020-quiz1-answer-sheet. All of your answers must be submitted through the Google Form by noon on Wednesday 2020-10-07, without exception, and the form will close at that time, so do not wait until Wednesday to submit. We will not accept any responses except through [the Google Form](http://bit.ly/431-2020-quiz1-answer-sheet).
 
