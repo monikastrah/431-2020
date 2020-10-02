@@ -16,7 +16,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-1. Still to come.
+1. How do we arrive at reasonable conclusions from data? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Making Arguments from Data](https://stat150.blog/post/01-evidence/) including many great links that may be of interest.
 
 ## What Should I Be Working On?
 
