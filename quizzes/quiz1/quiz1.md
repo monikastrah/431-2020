@@ -3,7 +3,7 @@ Quiz 1
 
 # Materials
 
-1. Three data sets are now available online, and Dr. Love will also place them in the Quiz 1 folder on our Shared Google Drive. They are:
+1. Three data sets are now available online at the links below, and in the Quiz 1 folder on our Shared Google Drive. They are:
 
 - [algae.csv](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/quizzes/quiz1/data/algae.csv), 
 - [oscar.csv](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/quizzes/quiz1/data/oscar.csv) and 
@@ -11,7 +11,7 @@ Quiz 1
 
 2. The [PDF of the Quiz is available here](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/431-2020-quiz1.pdf) and is also posted to the Quiz 1 folder on our Shared Google Drive. The PDF is 37 pages long. Be sure that you have all 37 pages.
 
-3. The Google Form Answer Sheet for the Quiz will be found at http://bit.ly/431-2020-quiz1-answer-sheet. You must log into Google via CWRU to access the Answer Sheet and you must complete your submission of this Form no later than 12 NOON on 2020-10-07. No late work will be accepted. When you submit the Google Form, your responses will be emailed to your CWRU email address, along with a link to allow you to edit your work before the deadline. The link to the Google Form Answer Sheet is also posted to the Quiz 1 folder on our Shared Google Drive.
+3. The Google Form Answer Sheet for the Quiz will be found at http://bit.ly/431-2020-quiz1-answer-sheet. You must log into Google via CWRU to access the Answer Sheet and you must complete your submission of this Form no later than 12 NOON on 2020-10-07. No late work will be accepted. When you submit the Google Form, your responses will be emailed to your CWRU email address, along with a link to allow you to edit your work before the deadline. A short Google Doc containing the link to the Google Form Answer Sheet is also posted to the Quiz 1 folder on our Shared Google Drive.
 
 # Instructions {-}
 
