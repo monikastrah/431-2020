@@ -17,6 +17,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. How do we arrive at reasonable conclusions from data? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Making Arguments from Data](https://stat150.blog/post/01-evidence/) including many great links that may be of interest.
+2. Ted Laderas gave an interesting talk at the R/Medicine 2020 virtual conference on [The MD in .rmd: Teaching Clinicians Data Analytics with R](https://www.youtube.com/watch?v=AexI0lZ7J-o) which you can watch on YouTube, if you're interested.
+    - Ted has a newsletter called [Ready for R](https://tinyletter.com/ready4r/archive) where he shares lots of useful stuff.
 
 ## What Should I Be Working On?
 
