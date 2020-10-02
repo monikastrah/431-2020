@@ -19,6 +19,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 1. Still to come.
     - Quiz 1 results.
 2. Why is it important to clearly document your work? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Reproducibility, Documentation and Communication](https://stat150.blog/post/03-reproducibility/) just in time for your Project A work.
+3. Renaming code in scope is possible in RStudio! To see what I'm talking about, see [Elizabeth Eisenhauer's tweet](https://twitter.com/LizStats/status/1310979707329040384).
+4. Interested in exporting editable ggplot graphics to Powerpoint? [Shannon Pileggi shows you how](https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/).
+
 
 ## What Should I Be Working On?
 
