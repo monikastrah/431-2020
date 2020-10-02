@@ -21,7 +21,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## What Should I Be Working On?
 
-1. Still to come.
+1. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due 2020-10-20 at Noon.
+2. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9.
 
 ## One Last Thing
 
