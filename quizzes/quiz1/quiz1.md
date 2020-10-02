@@ -3,7 +3,7 @@ Quiz 1
 
 # Materials
 
-1. Three data sets are now available online at the links below, and in the Quiz 1 folder on our Shared Google Drive. They are:
+1. Three data sets are now available at the links below, and in the Quiz 1 folder on our Shared Google Drive.
 
 - [algae.csv](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/quizzes/quiz1/data/algae.csv), 
 - [oscar.csv](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/quizzes/quiz1/data/oscar.csv) and 
