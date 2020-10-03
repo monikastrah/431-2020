@@ -22,7 +22,11 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 3. Renaming code in scope is possible in RStudio! To see what I'm talking about, see [Elizabeth Eisenhauer's tweet](https://twitter.com/LizStats/status/1310979707329040384).
 4. Interested in exporting editable ggplot graphics to Powerpoint? [Shannon Pileggi shows you how](https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/).
 5. We have cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings, effective this week. 
-
+6. Saturday 2020-10-10 is World Mental Health Day. Here are some things that you can do for the mental health care of yourself and others:
+    - If in crisis, ask for help. Check [CWRU's Mental Health Resources page](https://case.edu/wellness/campuswide-resources/mental-health-resources) for phone numbers and links.
+    - Join the WHO [Big Event for Mental Health](https://www.who.int/news-room/events/detail/2020/10/10/default-calendar/the-big-event-for-mental-health), a global online advocacy event on mental health.
+    - Review the WHO's [Mental well-being: resources for the public](https://www.who.int/news-room/feature-stories/mental-well-being-resources-for-the-public)
+    - Take a walk. Stretch. Whatever you need.
 
 ## What Should I Be Working On?
 
