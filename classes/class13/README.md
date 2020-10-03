@@ -35,5 +35,5 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 In the slides today, we'll be spending a little time with [this 2015 article](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) by Christie Aschwanden at FiveThirtyEight.
 
-- One of many articles that's worth a look if you have time (!) is [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/) also by Christie Aschwanden at FiveThirtyEight, but we'll get to this more as the semester continues.
+- One of many articles that's worth a look if you have time (!) is [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/) also by Christie Aschwanden at FiveThirtyEight, but we'll get to this more in Class 14.
 
