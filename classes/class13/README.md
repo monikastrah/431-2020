@@ -8,7 +8,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Today's Slides
 
-- Class 13 slides will be available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class13/431_class-13-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class13/431_class-13-slides_2020.Rmd).
+- Class 13 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class13/431_class-13-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class13/431_class-13-slides_2020.Rmd).
 
 ## Who Will We Meet Today?
 
@@ -33,5 +33,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-Still to come.
+In the slides today, we'll be spending a little time with [this 2015 article](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) by Christie Aschwanden at FiveThirtyEight.
+
+- One of many articles that's worth a look if you have time (!) is [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/) also by Christie Aschwanden at FiveThirtyEight, but we'll get to this more as the semester continues.
 
