@@ -26,7 +26,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - If in crisis, ask for help. Check [CWRU's Mental Health Resources page](https://case.edu/wellness/campuswide-resources/mental-health-resources) for phone numbers and links.
     - Join the WHO [Big Event for Mental Health](https://www.who.int/news-room/events/detail/2020/10/10/default-calendar/the-big-event-for-mental-health), a global online advocacy event on mental health.
     - Review the WHO's [Mental well-being: resources for the public](https://www.who.int/news-room/feature-stories/mental-well-being-resources-for-the-public)
-    - Take a walk. Stretch. Whatever you need.
+    - Take a walk. Stretch. Do something that you think will make you happy. Happiness isn't optional.
 
 ## What Should I Be Working On?
 
