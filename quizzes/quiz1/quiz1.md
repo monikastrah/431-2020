@@ -47,6 +47,10 @@ A few cautions:
 - We will not tell you if your answer is correct, or if it is complete.
 - We will email all students if we find an error in the Quiz that needs fixing.
 
+### Notes from Dr. Love
+
+See the [Notes page](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/notes.md) for Quiz 1 for notes written in response to some of the questions students have asked about the Quiz.
+
 ### When Should I ask for help?
 
 We recommend the following process.
