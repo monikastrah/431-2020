@@ -27,6 +27,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 1. [Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md) due on Wednesday 2020-10-07 at Noon. Late work is not acceptable.
+    - See the [Notes page](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/notes.md) for Quiz 1 for notes written in response to some of the questions students have asked about the Quiz.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due 2020-10-20 at Noon.
 3. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9 (so this is adding in Chapters 5 and 6.)
 
