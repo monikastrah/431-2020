@@ -77,7 +77,7 @@ Additional information on the data are provided:
 
 You'll be building plots in Questions 6-8, and we want you to use the tidyverse (specifically the ggplot2 package) to do so. 
 
-# Question 6 (15 points)
+# Question 6 (10 points)
 
 Suppose we are interested in which of the three species of penguin (*Adelie*, *Chinstrap* or *Gentoo*) shows the strongest *linear* relationship between bill length and body mass, now using all 342 penguins with complete data on the two variables we're studying (bill length and body mass.) 
 
@@ -100,6 +100,8 @@ Now, let's focus just on our outcome, and how it is associated with species and 
 Then, in a sentence or two, describe the results from your plot, and any reasonable conclusions you can draw from the plot about the relationships between island and species, and between body mass and the other two variables.
 
 ## On Grading 
+
+Note that Question 6 was graded out of 10 points, even though it was originally intended to be graded out of 15 points. In computing your final score on the Quiz, you received 5 additional points if your R Markdown and HTML files were in and readable, on time, so that the total possible score on the Quiz was actually 105.
 
 Lab 04 will be graded on a 100 point scale, even though there are 105 available points, so that some people may score higher than 100. You will receive some credit for making a reasonable effort to build a good response to each question, and then additional credit if your response is (essentially) correct, your code is clean (in the sense that it is complete and can be run without modification to produce appropriate results) and you've written using complete and grammatically correct English sentences. 
 

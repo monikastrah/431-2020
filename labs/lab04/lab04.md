@@ -1,6 +1,6 @@
 431 Lab 04
 ================
-Last Edited 2020-09-17 01:37:30
+Last Edited 2020-10-04 09:18:26
 
 # Instructions
 
@@ -137,7 +137,7 @@ Additional information on the data are provided:
 You’ll be building plots in Questions 6-8, and we want you to use the
 tidyverse (specifically the ggplot2 package) to do so.
 
-# Question 6 (15 points)
+# Question 6 (10 points)
 
 Suppose we are interested in which of the three species of penguin
 (*Adelie*, *Chinstrap* or *Gentoo*) shows the strongest *linear*
@@ -190,6 +190,12 @@ relationships between island and species, and between body mass and the
 other two variables.
 
 ## On Grading
+
+Note that Question 6 was graded out of 10 points, even though it was
+originally intended to be graded out of 15 points. In computing your
+final score on the Quiz, you received 5 additional points if your R
+Markdown and HTML files were in and readable, on time, so that the total
+possible score on the Quiz was actually 105.
 
 Lab 04 will be graded on a 100 point scale, even though there are 105
 available points, so that some people may score higher than 100. You
