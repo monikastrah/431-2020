@@ -24,7 +24,7 @@ options(width = 55)
     - with the Wilcoxon signed-rank procedure
     - Interpreting the Results
 - *p* values and statistical significance
-- The `dm431` data
+- The `dm431` data and the `dm431_2020` data files
 
 ## Today's R Packages and Data
 
@@ -71,7 +71,7 @@ For more, see Spiegelhalter, Chapter 3.
 Here, I will look at systolic blood pressure values from a sample of 431 adult patients living in Northeast Ohio between the ages of 31 and 70, who have a diagnosis of diabetes, as gathered in the `dm431` data.
 
 - These data are simulated to mirror some details from real data gathered by *Better Health Partnership*.
-- The `dm431` data contains multitudes, but for now, we're just looking at 431 systolic blood pressure values, gathered in the `sbp` variable.
+- The `dm431` data contains multitudes, but for now, we're just looking at the 431 systolic blood pressure values, gathered in the `sbp` variable.
 
 ```{r sbp_summary, message=FALSE}
 mosaic::favstats(~ sbp, data = dm431)
