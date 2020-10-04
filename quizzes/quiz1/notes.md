@@ -6,7 +6,7 @@ When referring to R-square or R-squared in Questions 2, 9, 10 and 27 and anywher
 
 ## Regarding the pipe.
 
-- A "pipe" on this Quiz can be either `%$%` or `%>%`. So the phrase "you may use at most two pipes" means that you could have one %>% and one %$%, or two of either, in your response, but not more.
+- A "pipe" on this Quiz can be either `%$%` or `%>%`. So the phrase "you may use at most two pipes" means that you could have one `%>%` and one `%$%`, or two of either, in your response, but not more.
 
 ## Question 8
 
