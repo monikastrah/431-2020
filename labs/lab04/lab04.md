@@ -1,6 +1,6 @@
 431 Lab 04
 ================
-Last Edited 2020-10-04 09:18:26
+Last Edited 2020-10-04 15:39:14
 
 # Instructions
 
@@ -193,9 +193,9 @@ other two variables.
 
 Note that Question 6 was graded out of 10 points, even though it was
 originally intended to be graded out of 15 points. In computing your
-final score on the Quiz, you received 5 additional points if your R
+final score on the Lab, you received 5 additional points if your R
 Markdown and HTML files were in and readable, on time, so that the total
-possible score on the Quiz was actually 105.
+possible score on the Lab was actually 105.
 
 Lab 04 will be graded on a 100 point scale, even though there are 105
 available points, so that some people may score higher than 100. You
