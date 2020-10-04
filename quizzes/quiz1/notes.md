@@ -1,4 +1,4 @@
-# Notes Dr. Love has written in response to questions about Quiz 1
+# Notes Dr. Love wrote responding to questions about Quiz 1
 
 ## R-square or R-squared
 
