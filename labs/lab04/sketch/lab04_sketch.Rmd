@@ -257,7 +257,7 @@ lab04_penguins %>% group_by(species) %>%
 
 ## Grading Question 6
 
-Note that Question 6 was graded out of 10 points, even though it was originally intended to be graded out of 15 points. In computing your final score on the Quiz, you received 5 additional points if your R Markdown and HTML files were in and readable, on time, so that the total possible score on the Quiz was actually 105, although we'll still treat it as a 100 point Quiz for averaging purposes at the end of the term.
+Note that Question 6 was graded out of 10 points, even though it was originally intended to be graded out of 15 points. In computing your final score on the Lab, you received 5 additional points if your R Markdown and HTML files were in and readable, on time, so that the total possible score on the Lab was actually 105, although we'll still treat it as a 100 point Lab for averaging purposes at the end of the term.
 
 We award up to 5 points for appropriate code, and a correct plot (if they include either the `lm` or the `loess` smooth that is fine.)
 
