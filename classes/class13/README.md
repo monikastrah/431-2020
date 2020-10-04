@@ -27,7 +27,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 6. [Scientific Reasoning for Practical Data Science](https://www.youtube.com/watch?v=R6mq5Esjzfw) by Andrew Gelman is now available on YouTube, as part of the Philosophy of Data Science series.
 7. A reminder that optional materials related to COVID-19 are archived at https://github.com/THOMASELOVE/covid19. If you see anything you think I should post there, let me know.
 8. We revised the [Lab 04 instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) and the [Lab 04 sketch](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04) to reflect a change regarding the scoring of Question 6. The Lab was still graded out of a possible 105 points.
-9. We have cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings, effective this week. 
+9. We have cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings.
 
 ## What Should I Be Working On?
 
