@@ -11,3 +11,8 @@ of the relationship between the solvent and diagnosis variables in the q14 tibbl
 
 - You should read "numerical" as meaning "don't build a ggplot"
 - You should read "summary" as meaning "something that summarizes the two variables and their relationship".
+
+## Regarding R code
+
+- A "pipe" on this Quiz can be either `%$%` or `%>%`. So you could have one %>% and one %$%, or two of either, in your response, but not more.
+
