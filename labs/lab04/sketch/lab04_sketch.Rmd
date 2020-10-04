@@ -209,7 +209,7 @@ The student should reach a logical conclusion and summarize his/her reaction on 
 - Give 12 points only to the top 6-8 responses, across all students.
 - My prior assumption is that a moderate number of students will have a perfect score on Lab 04 for Questions 1-4, so we can grade a little tougher on Question 5.
 
-# Question 6 (10 points)
+# Question 6 (10 points, but see note below)
 
 > Suppose we are interested in which of the three species of penguin (Adelie, Chinstrap or Gentoo) shows the strongest linear relationship between bill length and body mass, using all 342 penguins with complete data on the two variables we're studying (bill length and body mass.) 
 
@@ -256,6 +256,8 @@ lab04_penguins %>% group_by(species) %>%
 ```
 
 ## Grading Question 6
+
+Note that Question 6 was graded out of 10 points, even though it was originally intended to be graded out of 15 points. In computing your final score on the Quiz, you received 5 additional points if your R Markdown and HTML files were in and readable, on time, so that the total possible score on the Quiz was actually 105, although we'll still treat it as a 100 point Quiz for averaging purposes at the end of the term.
 
 We award up to 5 points for appropriate code, and a correct plot (if they include either the `lm` or the `loess` smooth that is fine.)
 
