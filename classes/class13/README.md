@@ -16,13 +16,17 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-1. How do we arrive at reasonable conclusions from data? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Making Arguments from Data](https://stat150.blog/post/01-evidence/) including many great links that may be of interest.
-2. Ted Laderas gave an interesting talk at the R/Medicine 2020 virtual conference on [The MD in .rmd: Teaching Clinicians Data Analytics with R](https://www.youtube.com/watch?v=AexI0lZ7J-o) which you can watch on YouTube, if you're interested.
+1. **STILL TO COME**
+    - Lab 04 results
+2. This [Notes page for Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/notes.md) contains responses to / hints about **some of** the questions students have asked about the Quiz.
+3. How do we arrive at reasonable conclusions from data? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Making Arguments from Data](https://stat150.blog/post/01-evidence/) including many great links that may be of interest.
+4. Ted Laderas gave an interesting talk at the R/Medicine 2020 virtual conference on [The MD in .rmd: Teaching Clinicians Data Analytics with R](https://www.youtube.com/watch?v=AexI0lZ7J-o) which you can watch on YouTube, if you're interested.
     - Ted has a newsletter called [Ready for R](https://tinyletter.com/ready4r/archive) where he shares lots of useful stuff.
-3. The next [Prevention Research Center for Healthy Neighborhoods seminar](http://www.prchn.org/seminar) on 2020-10-14 will feature Rita Horwitz, President and CEO of Better Health Partnership, where I work as Chief Data Scientist. Rita will be presenting on [The Better Health Pathways Community Hub](https://cwru.zoom.us/webinar/register/WN_GtO_UX54QESF73sEfjEpgA) and follow that link to register if you are interested.
-4. [Scientific Reasoning for Practical Data Science](https://www.youtube.com/watch?v=R6mq5Esjzfw) by Andrew Gelman is now available on YouTube, as part of the Philosophy of Data Science series.
-5. A reminder that optional materials related to COVID-19 are archived at https://github.com/THOMASELOVE/covid19. If you see anything you think I should post there, let me know.
-6. We have cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings, effective this week. 
+5. The next [Prevention Research Center for Healthy Neighborhoods seminar](http://www.prchn.org/seminar) on 2020-10-14 will feature Rita Horwitz, President and CEO of Better Health Partnership, where I work as Chief Data Scientist. Rita will be presenting on [The Better Health Pathways Community Hub](https://cwru.zoom.us/webinar/register/WN_GtO_UX54QESF73sEfjEpgA) and follow that link to register if you are interested.
+6. [Scientific Reasoning for Practical Data Science](https://www.youtube.com/watch?v=R6mq5Esjzfw) by Andrew Gelman is now available on YouTube, as part of the Philosophy of Data Science series.
+7. A reminder that optional materials related to COVID-19 are archived at https://github.com/THOMASELOVE/covid19. If you see anything you think I should post there, let me know.
+8. We revised the [Lab 04 instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) and the [Lab 04 sketch](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04) to reflect a change regarding the scoring of Question 6. The Lab was still graded out of a possible 105 points.
+9. We have cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings, effective this week. 
 
 ## What Should I Be Working On?
 
