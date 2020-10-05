@@ -1,3 +1,4 @@
-# Lab 5 Readme
+# Lab 05 Materials
 
-To come.
+Instructions for Lab 05 are in this [.md file](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md)
+
