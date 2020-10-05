@@ -17,16 +17,16 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. Still to come.
-    - Quiz 1 results.
-2. Why is it important to clearly document your work? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Reproducibility, Documentation and Communication](https://stat150.blog/post/03-reproducibility/) just in time for your Project A work.
-3. Renaming code in scope is possible in RStudio! To see what I'm talking about, see [Elizabeth Eisenhauer's tweet](https://twitter.com/LizStats/status/1310979707329040384).
-4. Interested in exporting editable ggplot graphics to Powerpoint? [Shannon Pileggi shows you how](https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/).
-5. We have cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings, effective this week. 
+    - Quiz 1 results. I'll emphasize the [pep talk here](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/notes.md).
+2. If you are annoyed [by the default message whenever you run summarize from dplyr](https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/#summarise-and-grouping), you can use `options(dplyr.summarise.inform = FALSE)` to suppress it.
+3. Why is it important to clearly document your work? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Reproducibility, Documentation and Communication](https://stat150.blog/post/03-reproducibility/) just in time for your Project A work.
+4. Renaming code in scope is possible in RStudio! To see what I'm talking about, see [Elizabeth Eisenhauer's tweet](https://twitter.com/LizStats/status/1310979707329040384).
+5. Interested in exporting editable ggplot graphics to Powerpoint? [Shannon Pileggi shows you how](https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/).
 6. Saturday 2020-10-10 is World Mental Health Day. Here are some things that you can do for the mental health care of yourself and others:
     - If in crisis, ask for help. Check [CWRU's Mental Health Resources page](https://case.edu/wellness/campuswide-resources/mental-health-resources) for phone numbers and links.
     - Join the WHO [Big Event for Mental Health](https://www.who.int/news-room/events/detail/2020/10/10/default-calendar/the-big-event-for-mental-health), a global online advocacy event on mental health.
     - Review the WHO's [Mental well-being: resources for the public](https://www.who.int/news-room/feature-stories/mental-well-being-resources-for-the-public)
-    - Take a walk. Stretch. Do something that you think will make you happy. Happiness isn't optional.
+    - Take a walk. Stretch. Talk with someone. Do something that you think will make you happy. Happiness isn't optional.
 
 ## What Should I Be Working On?
 
