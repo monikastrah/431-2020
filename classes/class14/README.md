@@ -31,7 +31,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 1. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due 2020-10-20 at Noon.
-2. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9.
+2. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
+3. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9.
 
 ## One Last Thing
 
