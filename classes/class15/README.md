@@ -25,6 +25,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. There will be a Minute Paper after Class 15 due at Noon Wednesday 2020-10-14.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due 2020-10-20 at Noon.
+3. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
 
 ## One Last Thing
 
