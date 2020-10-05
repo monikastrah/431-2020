@@ -1,3 +1,11 @@
+# First, a little pep talk (thanks to Andrew Heiss @andrewheiss)
+
+Remember, **your grade on a quiz says nothing about your value as a person**. 
+
+Quiz grades are highly imperfect measures of what you've actually learned. You've worked hard so far this semester, and you've learned a lot, regardless of what your score might say. Graduate school is hard, and just the fact that you're here in one of the top programs in the country is so impressive!
+
+PLUS we're in the middle of a global pandemic, there's an election in less than a month, and the US President is currently hospitalized. Again, we're all kind of faking it right now. Just try your best.
+
 # Notes Dr. Love wrote responding to questions about Quiz 1
 
 ## R-square or R-squared
