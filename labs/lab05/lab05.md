@@ -1,0 +1,182 @@
+Lab 05
+================
+Last Edited 2020-10-04 20:59:52
+
+Lab 05 includes 8 questions. Be sure to respond to each question by the
+deadline posted on the [Course
+Calendar](https://thomaselove.github.io/431/calendar.html).
+
+You are welcome (encouraged, really) to discuss Lab 05 with Dr. Love,
+the teaching assistants and even your colleagues, but your answer must
+be prepared by you alone. Don’t be afraid to ask questions, either via
+[Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab05
+folder), at [TA office
+hours](https://thomaselove.github.io/431/contact.html) or before/after
+class.
+
+We have not provided a template for this Lab. You are encouraged to
+include numbered sections, a table of contents, and use an attractive
+theme (such as `theme_bw()`) for your visualizations.
+
+## Submitting your Response
+
+Build your entire response as an R Markdown file. Then knit the file to
+create an HTML document. Submit both your R Markdown file and the HTML
+output file to [Canvas in the Lab 05 section of the Assignments
+folder](https://canvas.case.edu) by the deadline specified in [the
+Course Calendar](https://thomaselove.github.io/431/calendar.html).
+
+# Study for Lab 05
+
+Our Lab 05 study involves simulated data provided in [the `lab05.csv`
+file](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/labs/lab05/data/lab05.csv),
+based loosely on a research letter\[1\] by Joudrey et al. published
+2019-10-01 in *JAMA*. Quoting that letter:
+
+> Methadone for opioid use disorder can be dispensed only from US
+> Substance Abuse and Mental Health Services Administration (SAMHSA)
+> certified opioid treatment programs (OTPs), creating access barriers
+> in rural counties with a shortage of facilities. … \[W\]e examined
+> drive times to the nearest OTP in urban and rural counties in 5 US
+> states with the highest county rates of opioid-related overdose
+> mortality.
+
+A PDF of the Joudrey et al. letter is [posted at this
+link](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/article/jama_joudrey_2019.pdf),
+should you wish to review it.
+
+In this study, researchers measured drive times (in minutes) to the
+nearest certified opioid treatment program (OTP) from the population
+center for each of 487 US counties in 5 states\[2\]. Each county was
+classified as either **urban** (which included the 217 counties in those
+states defined by the six-level National Center for Health Statistics
+urban-rural county classification scheme as either *large central
+metro*, *large fringe metro*, *medium metro*, or *small metro* counties)
+or as **rural** (which included the 270 counties defined as either
+*micropolitan* or *noncore* counties.)
+
+The Principal Investigator (PI) you are working with has asked you to
+provide a supplemental analysis of the `lab05` data. Quoting the PI, …
+
+> Your analysis should focus on the question of whether rural counties
+> actually have detectably **longer** drive times than urban counties. I
+> am looking for you to provide a detailed description of your analytic
+> process, culminating in a confidence interval estimate to address that
+> specific concern. Please maintain the same level of confidence as was
+> used in the original paper\[3\].
+
+## Description of the `lab05.csv` file
+
+The available data are described below, and [may be found at this
+link](https://raw.githubusercontent.com/THOMASELOVE/431-2020/master/labs/lab05/data/lab05.csv).
+
+|           Variable | Description                                                |
+| -----------------: | ---------------------------------------------------------- |
+|    `county_number` | Identification Code for County (C-001 through C-487)       |
+|      `county_type` | NCHS county classification (6 levels listed above)         |
+| `drive_in_minutes` | Driving time (minutes) to certified OTP from county center |
+
+You will have to do at least some rearrangement work (perhaps including
+creating new variables, pivoting, transformation, rearrangement, etc.)
+in order to answer questions that relate to this study. The data set
+will require some management on your part. It’s up to you to figure out
+what needs to be done. Be sure you check for missingness in the data,
+and note that each of the three footnotes in this Lab are worth your
+attention.
+
+# Question 1. (10 points)
+
+What is the outcome under study? What are the treatment/exposure groups?
+
+# Question 2. (10 points)
+
+Are the data a random sample from the population(s) of interest? Is
+there at least a reasonable argument for generalizing from the sample to
+the population(s) or is there insufficient information provided on this
+point? How do you know?
+
+# Question 3. (10 points)
+
+What is the significance level (or, the confidence level) we require
+here? Are we doing one-tailed or two-tailed confidence interval
+generation? How do you know?
+
+# Question 4. (15 points)
+
+What do you need to do (if anything) to manage the data, create new
+variables, or rearrange the data for analyses? Perform these data
+management tasks using R code, and describe what you’ve done, and why
+you’ve done it.
+
+# Question 5. (10 points)
+
+Were the data collected using matched / paired samples or independent
+samples? How do you know?
+
+# Question 6. (15 points)
+
+Answer either (a) or (b), whichever is appropriate in light of your
+response to Question 4.
+
+  - 1)  If we have paired samples, what does the distribution of sample
+        paired differences tell us about which inferential procedure to
+        use? Display an appropriate visualization that motivates your
+        conclusions, and then describe those conclusions in English.
+
+  - 2)  If we have independent samples, what does the distribution of
+        each individual sample tell us about which inferential procedure
+        to use? Display an appropriate visualization that motivates your
+        conclusions, and then describe those conclusions in English.
+
+# Question 7. (15 points)
+
+Produce and interpret an appropriate confidence interval for a relevant
+population **mean** that addresses the key question from the study,
+following the requirements of the principal investigator. Be sure to
+show and describe the R code that led to your selected confidence
+interval, and describe how your responses to prior Questions led you to
+select this approach.
+
+# Question 8. (15 points)
+
+Interpret your confidence interval from Question 7 in the context of the
+request by the project’s principal investigator using complete English
+sentences.
+
+# Grading
+
+This Lab will be graded on a scale from 0 to 100 points. A detailed
+initial rubric will be provided with the answer sketch, and if any
+changes to that rubric are needed, you will receive them when the grades
+become available.
+
+## Submission Problems
+
+  - Failure to submit a functioning R Markdown file and HTML result
+    derived from that R Markdown file by the deadline specified in the
+    course calendar will cost 10 points.
+  - Failure to submit a functioning R Markdown file and HTML result
+    derived from that R Markdown file by noon on the day after the
+    deadline will cost 25 points.
+  - Work submitted more than one week after the deadline will not be
+    accepted.
+
+-----
+
+1.  Joudrey PJ, Edelman EJ, Wang EA. [Drive Times to Opioid Treatment
+    Programs in Urban and Rural Counties in 5 US
+    States](https://jamanetwork.com/journals/jama/fullarticle/2752051).
+    *JAMA*. 2019;322(13):1310-1312.
+    <https://doi.org/10.1001/jama.2019.12562>
+
+2.  The five states were Indiana, Kentucky, Ohio, Virginia, and West
+    Virginia. Data was unavailable for two counties, so those are
+    excluded from the `lab05` data set.
+
+3.  The Joudrey et al. paper presented a mean drive time across all
+    counties of 37.3 minutes, with a 95% confidence interval of (35.5,
+    39.1) minutes. You should be able to verify that the simulated data
+    in `lab05` matches those results. The simulation mirrors this
+    particular result, and it also mirrors the means by classification
+    shown in the Table accompanying the original letter, but it does not
+    mirror any other elements of that data set.
