@@ -27,14 +27,16 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 6. [Scientific Reasoning for Practical Data Science](https://www.youtube.com/watch?v=R6mq5Esjzfw) by Andrew Gelman is now available on YouTube, as part of the Philosophy of Data Science series.
 7. A reminder that optional materials related to COVID-19 are archived at https://github.com/THOMASELOVE/covid19. If you see anything you think I should post there, let me know.
 8. We revised the [Lab 04 instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) and the [Lab 04 sketch](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04) to reflect a change regarding the scoring of Question 6 and also to fix a typo or two. The Lab was still graded out of a possible 105 points.
-9. We have cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings.
+9. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is now available.
+10. We have permanently cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings.
 
 ## What Should I Be Working On?
 
 1. [Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/quiz1.md) due on Wednesday 2020-10-07 at Noon. Late work is not acceptable.
     - **Before you finalize your submission**, see the [Notes page for Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/notes.md) to read notes responding to some of the questions students have asked about the Quiz.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due 2020-10-20 at Noon.
-3. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9 (so this is adding in Chapters 5 and 6.)
+3. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
+4. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9 (so this is adding in Chapters 5 and 6.)
 
 ## One Last Thing
 
