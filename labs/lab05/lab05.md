@@ -1,6 +1,6 @@
 Lab 05
 ================
-Last Edited 2020-10-04 20:59:52
+Last Edited 2020-10-04 21:03:36
 
 Lab 05 includes 8 questions. Be sure to respond to each question by the
 deadline posted on the [Course
@@ -115,18 +115,18 @@ samples? How do you know?
 
 # Question 6. (15 points)
 
-Answer either (a) or (b), whichever is appropriate in light of your
-response to Question 4.
+Answer either part 1 **or** 2 of this question, whichever is appropriate
+in light of your response to Question 4.
 
-  - 1)  If we have paired samples, what does the distribution of sample
-        paired differences tell us about which inferential procedure to
-        use? Display an appropriate visualization that motivates your
-        conclusions, and then describe those conclusions in English.
+1.  If we have paired samples, what does the distribution of sample
+    paired differences tell us about which inferential procedure to use?
+    Display an appropriate visualization that motivates your
+    conclusions, and then describe those conclusions in English.
 
-  - 2)  If we have independent samples, what does the distribution of
-        each individual sample tell us about which inferential procedure
-        to use? Display an appropriate visualization that motivates your
-        conclusions, and then describe those conclusions in English.
+2.  If we have independent samples, what does the distribution of each
+    individual sample tell us about which inferential procedure to use?
+    Display an appropriate visualization that motivates your
+    conclusions, and then describe those conclusions in English.
 
 # Question 7. (15 points)
 
