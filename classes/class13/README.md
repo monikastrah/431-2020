@@ -17,32 +17,16 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements Specific to 431
 
-1. Project A Proposals
-    - 70 students completed 55 initial proposals. 27 (19 individuals + 8 pairs, so 35 students) are approved, although many have comments to attend to.
-    - The remaining 28 proposals (35 people) have the next deadline at 9 AM Thursday (a few have already resubmitted - thank you!)
-        - If you submit a revision before this deadline, we'll get to it as soon as possible. 
-        - Note that Canvas has now been adjusted to mark as LATE only those revisions arriving after 9 AM Thursday. 
-        - If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
-        - People who need additional revisions after this pass will all have the same deadline, and I'll announce that Thursday.
-    - In producing the next iteration of your project, please follow the comments we've provided on Canvas. 
-    - If you have questions about those comments or how to improve your work, please ask them in TA office hours, or via the channels we've made available for the Quiz.
-    - In writing our comments on Canvas, we focused almost solely on things that needed to be fixed. If you're wondering whether we liked your work the answer is Yes, we did, but we didn't (usually) bother to tell you about that in an effort to get the proposals back in your hands as quickly as possible. Sorry for the lack of encouragement.
-        - On too many occasions, in summarizing comments, I (Dr. Love) was more strident than I should have been, and/or more harsh in my criticism, and for that I apologize. I tend to lose patience with long, repetitive tasks, and I did too much of this work late at night without a break. That was a mistake, and again, I apologize.
-    - A few things came up repeatedly.
-        1. Each of the five variables you select can fill one and only one role (outcome, quantitative predictor 1, quantitative predictor 2, binary predictor, multi-categorical predictor.) 
-        2. When ingesting the data, use message = FALSE in your code chunk setup to suppress the column specifications details. In general, viewers of your HTML shouldn't see messages that are generated automatically but contain no useful content in your specific situation. If you are generating warnings (as opposed to messages) in R, you should fix the problem, rather than suppressing the warnings.
-        3. In creating categories, create categories people can remember. For example, if the median is 49.86, use 50 as your cutoff, so that people can understand this. Don't make things any more complicated for your eventual explanations of your analyses than they have to be.
-        4. It is your job to produce a document (and later a video as well) for an audience. That audience is interested in seeing your code that does things that matter, but is not interested in seeing your play-by-play with R. Edit your code to focus on the things worth writing about, or the things that are critical for your data development or analyses. This certainly includes all of the things I described in the checklist and the instructions, but doesn't include repeated checks on your data.
-        5. In HTML, you have all the vertical space in the world. Your horizontal space, though, is quite limited, so R Markdown creates (in HTML) lots of little scrolling windows for code. We want to avoid those as much as possible. So ... hit ENTER after every %>% and every + in a ggplot. When you have a long list of variables, like in the selection of your initial variables, hit ENTER after a comma somewhere in the middle so that you avoid the scourge of the scrolling window in the HTML result.
-        - Spell check in RStudio and also look closely at the HTML that you've created at the end to make sure that the formatting works, and that things look nice.
-        
+1. Project A Proposals - Dr. Love [has prepared this note](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/proposal_notes_2020-10-06.md).
+           
 2. This [Notes page for Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/notes.md) contains responses to / hints about **some of** the questions students have asked. Good luck!
 
-3. Lab 04 grades and TA comments are now posted to http://bit.ly/431-2020-grades. We revised the [Lab 04 instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) and the [Lab 04 sketch](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04) to reflect a change regarding the scoring of Question 6 and also to fix a typo or two. The Lab was still graded out of a possible 105 points.
+3. [Lab 04 grades and TA comments](http://bit.ly/431-2020-grades) are now posted. 
+    - We revised the [Lab 04 instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) and the [Lab 04 sketch](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04) to reflect a change regarding the scoring of Question 6 and also to fix a typo or two. The Lab was still graded out of a possible 105 points.
 
-4. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is now available.
+4. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is now available, and is due 2020-10-26 at 9 PM. After Class 14, you should be able to tackle most of it.
 
-5. We have permanently cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings.
+5. One of our TAs has moved on to other things, so we have 11 now. We have permanently cancelled the TA office hours formerly held from 10:30 AM to Noon on Thursday mornings as a result. We will revisit the timing of office hours in the next couple of weeks, after Quiz 1 and Project A are done.
 
 ## More General Annoucements
 
