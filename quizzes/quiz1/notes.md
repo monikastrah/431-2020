@@ -22,6 +22,10 @@ When referring to R-square or R-squared in Questions 2, 9, 10 and 27 and anywher
 - Questions 14 and 15 each require a line of R code. No other question's responses should include R code.
 - Questions 20 and 29 each require a sentence in English. No other question's responses should include such a sentence.
 
+## Question 1
+
+While the x-axis has a title, the **tick marks** on the x-axis are unlabelled. The upper and lower plots share the same (unlabeled) scale on the X-axis. The little marks on the bottom margin of each of the two plots in the Figure for Question 1 are rug plots, which indicate where the observed individual values in each distribution fall. They were added to the plots with `geom_rug()`.
+
 ## Question 8
 
 The plot shown is a stem-and-leaf display. Such a plot appears in the slides in Classes 6-8. The `stem()` function can be used to produce one.
