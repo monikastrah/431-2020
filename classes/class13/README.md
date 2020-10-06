@@ -21,7 +21,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
            
 2. This [Notes page for Quiz 1](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/notes.md) contains responses to / hints about **some of** the questions students have asked. Good luck! 
     - The most common problem people are having not listed on the Notes page is that they are trying to make (some of) the questions much, much harder than they actually are by reading all sorts of other ideas into the questions. Overthinking is a sign of an **active, curious mind**, but it's **not necessarily helpful** when attending to details in a prescribed task like this. I wrote the questions as carefully as I could, and chose my words very carefully, in many cases revising things on the basis of other readers. 
-    - "Read the question again" is the most common piece of advice I have had for people so far.
+    - "Read the question again" is the most common piece of advice so far.
 
 3. [Lab 04 grades and TA comments](http://bit.ly/431-2020-grades) are now posted. 
     - We revised the [Lab 04 instructions](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04/lab04.md) and the [Lab 04 sketch](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab04) to reflect a change regarding the scoring of Question 6 and also to fix a typo or two. The Lab was still graded out of a possible 105 points.
