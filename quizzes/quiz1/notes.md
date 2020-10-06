@@ -16,9 +16,19 @@ When referring to R-square or R-squared in Questions 2, 9, 10 and 27 and anywher
 
 - A "pipe" on this Quiz can be either `%$%` or `%>%`. So the phrase "you may use at most two pipes" means that you could have one `%>%` and one `%$%`, or two of either, in your response, but not more.
 
+## Response Types
+
+- Questions 13, 17, 18, 24 and 25 each require a numeric response. Your complete response should be a number, rounded to the appropriate number of decimal places as specified in the question. (Questions 13, 17, 24 and 25 require integer responses, while Question 18 requires you to round your response to one decimal place.) Answers with too many (or too few) decimal places will not receive full credit.
+- Questions 14 and 15 each require a line of R code. No other question's responses should include R code.
+- Questions 20 and 29 each require a sentence in English. No other question's responses should include such a sentence.
+
 ## Question 8
 
 The plot shown is a stem-and-leaf display. Such a plot appears in the slides in Classes 6-8. The `stem()` function can be used to produce one.
+
+## Question 12
+
+The mean prediction error is the mean of the prediction errors.
 
 ## Question 14
 
