@@ -63,9 +63,10 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 3. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
 4. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9 (so this is adding in Chapters 5 and 6.)
 
-## One Last Thing
+## Two Last Things
 
-In the slides today, we'll be spending a little time with [this 2015 article](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) by Christie Aschwanden at FiveThirtyEight.
+1. In the slides today, we'll be spending a little time with [this 2015 article](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) by Christie Aschwanden at FiveThirtyEight.
 
 - One of many articles that's worth a look if you have time (!) is [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/) also by Christie Aschwanden at FiveThirtyEight, but we'll get to this more in Class 14.
 
+2. We'll also spend a few moments on [Biden Has Made Some Modest Gains After The Debate](https://fivethirtyeight.com/features/biden-has-made-some-modest-gains-after-the-debate/) from Nate Silver at FiveThirtyEight.
