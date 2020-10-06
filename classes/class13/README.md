@@ -23,7 +23,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - 70 students have completed 55 initial proposals. 25 (19 individuals + 6 pairs, so 31 students) are approved, although many have comments to attend to.
     - The remaining 30 proposals (39 people) have deadlines of either 9 AM this morning (2 projects / 4 people) or 9 AM Thursday (the rest)
         - If you submit a revision before the deadline, we'll try to get to it as soon as possible.
-        - People who need additional revisions after this pass should expect the deadline for those revisions to be 9 AM Tuesday 2020-10-13.
+        - People who need additional revisions after this pass: deadline for those revisions will be 9 AM Tuesday 2020-10-13.
     - In producing the next iteration of your project, please follow the comments we've provided on Canvas. 
     - If you have questions about those comments or how to improve your work, please ask them in TA office hours, or via the channels we've made available for the Quiz.
     - In writing our comments on Canvas, we focused almost solely on things that needed to be fixed. If you're wondering whether we thought any of your work was good, the answer is Yes, we did, but we didn't (usually) bother to tell you about that in an effort to get the proposals back in your hands as quickly as possible. 
