@@ -4,9 +4,9 @@ as of `2020-10-06`
 
 ## 70 students completed 55 initial proposals. 
 
-- As of 11 AM on 2020-10-06, **27** (19 individuals + 8 pairs, so 35 students) are approved, although many have comments to attend to.
-- The remaining 28 proposals (35 people) have the next deadline at 9 AM Thursday 
-    - If you submit a revision before this deadline, we'll get to it as soon as possible. (I see a few have already resubmitted - thank you!)
+- As of 12:30 PM on 2020-10-06, **28** (19 individuals + 9 pairs, so 37 students) are approved, although many still have comments to attend to in their final project work due later this month.
+- The remaining 27 proposals (33 people) have a revision due at 9 AM Thursday 
+    - If you submit a revision before this deadline, we'll get to it as soon as possible. (I see 3 groups / 4 people have already resubmitted - thank you!)
     - Note that Canvas has now been adjusted to mark as LATE only those revisions arriving after 9 AM Thursday.
     - If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
     - People who need additional revisions after this pass will all have the same deadline, and I'll announce that Thursday.
