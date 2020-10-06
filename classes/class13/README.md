@@ -20,9 +20,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - Lab 04 results
 
 2. Project A Proposal Review Status
-    - 70 students have completed 55 initial proposals. 25 (19 individuals + 6 pairs, so 31 students) are approved, although many have comments to attend to.
-    - The remaining 30 proposals (39 people) have deadlines of either 9 AM this morning (2 projects / 4 people) or 9 AM Thursday (the rest)
-        - If you submit a revision before this deadline, we'll try to get to it as soon as possible. Canvas will mark all revisions as LATE but that doesn't affect our grades. If you need an extension on the revision for an emergency, just let Dr. Love know directly via email, please.
+    - 70 students completed 55 initial proposals. 27 (19 individuals + 8 pairs, so 35 students) are approved, although many have comments to attend to.
+    - The remaining 28 proposals (35 people) have the next deadline at 9 AM Thursday (although a few groups have already resubmitted - thank you!)
+        - If you submit a revision before this deadline, we'll get to it as soon as possible. Note that Canvas has now been adjusted to mark all revisions arriving after 9 AM Thursday as LATE. If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
         - People who need additional revisions after this pass: deadline for those revisions will be 9 AM Tuesday 2020-10-13.
     - In producing the next iteration of your project, please follow the comments we've provided on Canvas. 
     - If you have questions about those comments or how to improve your work, please ask them in TA office hours, or via the channels we've made available for the Quiz.
