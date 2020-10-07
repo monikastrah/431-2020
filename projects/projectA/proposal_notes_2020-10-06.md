@@ -1,15 +1,19 @@
-# Notes on Project A Proposals
+# Project A Proposal Status
 
-as of `2020-10-06`
+As of `2020-10-06 9 PM` | Solo Projects | Pair Projects | Total Projects | Total Students
+------ | -----: | -------: | ------: | -------:
+Approved by Dr. Love | 21 | 11 | 32 | 43
+Revision due 2020-10-08 at 9 AM | 19 | 4 | 23 | 27
+Awaiting Comments on Canvas | 0 | 0 | 0 | 0
+- | - | - | - | -
+**Submitted Work** | 40 | 15 | 55 | 70
 
-## 70 students completed 55 initial proposals. 
+## Notes from 2020-10-06
 
-- As of 12:30 PM on 2020-10-06, **28** (19 individuals + 9 pairs, so 37 students) are approved, although many still have comments to attend to in their final project work due later this month.
-- The remaining 27 proposals (33 people) have a revision due at 9 AM Thursday 
-    - If you submit a revision before this deadline, we'll get to it as soon as possible. (I see 3 groups / 4 people have already resubmitted - thank you!)
-    - Note that Canvas has now been adjusted to mark as LATE only those revisions arriving after 9 AM Thursday.
-    - If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
-    - People who need additional revisions after this pass will all have the same deadline, and I'll announce that Thursday.
+- If you submit a revision before this deadline, we'll get to it as soon as possible. (I see 3 groups / 4 people have already resubmitted - thank you!)
+- Note that Canvas has now been adjusted to mark as LATE only those revisions arriving after 9 AM Thursday.
+- If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
+- People who need additional revisions after this pass will all have the same deadline, and I'll announce that Thursday.
 - In producing the next iteration of your project, please follow the comments we've provided on Canvas. 
 - If you have questions about those comments or how to improve your work, please ask them in TA office hours, or via the channels we've made available for the Quiz, or (after the Quiz deadline has passed) you can ask them on Piazza normally.
 
