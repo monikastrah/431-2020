@@ -9,7 +9,7 @@ Awaiting Comments on Canvas | 0 | 0 | 0 | 0
 
 ## Notes from 2020-10-06
 
-- If you submit a revision before this deadline, we'll get to it as soon as possible. (I see 3 groups / 4 people have already resubmitted - thank you!)
+- The next revisions are due Thursday morning. If you submit a revision on Wednesday, we'll get to it as soon as possible.
 - Note that Canvas has now been adjusted to mark as LATE only those revisions arriving after 9 AM Thursday.
 - If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
 - People who need additional revisions after this pass will all have the same deadline, and I'll announce that Thursday.
