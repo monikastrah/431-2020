@@ -54,5 +54,5 @@ A student asked about visual acuity. If two things look to be the same to you in
 
 ## Question 25
 
-We consider a value of "unknown" in the `starwars` data to be a non-missing value for purposes of this question.
-- Dr. Love has worked through the answer assuming these missing, as well, to establish the two responses that we'll call acceptable for this question.
+We consider a value of "unknown" in the `starwars` data to be a **non-missing** value for purposes of this question.
+- Dr. Love has worked through the answer both ways and 
