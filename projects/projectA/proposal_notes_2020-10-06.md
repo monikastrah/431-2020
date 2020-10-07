@@ -2,11 +2,10 @@
 
 As of `2020-10-06 9 PM` | Solo Projects | Pair Projects | Total Projects | Total Students
 ------ | -----: | -------: | ------: | -------:
+**Submitted Work** | **40** | **15** | **55** | **70**
 Approved by Dr. Love | 21 | 11 | 32 | 43
 Revision due 2020-10-08 at 9 AM | 19 | 4 | 23 | 27
 Awaiting Comments on Canvas | 0 | 0 | 0 | 0
-- | - | - | - | -
-**Submitted Work** | 40 | 15 | 55 | 70
 
 ## Notes from 2020-10-06
 
