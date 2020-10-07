@@ -48,3 +48,8 @@ An acceptable result for Question 14 uses **at most** two pipes. If you feel tha
 
 At first glance, some people seem to think that Question 14 and Question 15 are the same question. I'll emphasize that the wording of the task for each question (especially the final sentence) is not identical across the two questions, and this should give you a strong clue as to the distinction between the questions.
 
+## Question 22
+
+A student asked about visual acuity. If two things look to be the same to you in this plot, then they probably are. There is no tiny difference in play that you are supposed to be able to discern.
+
+
