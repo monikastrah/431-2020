@@ -15,7 +15,6 @@ On Hold | 1 | 0 | 1 | 1
     - Your grade on the proposal will be determined when you have an accepted proposal. Those grades are 25 for people who are accepted at the first deadline, and decreases by 10% for each subsequent deadline, so we anticipate that virtually all students will need to revise will wind up with a grade on the proposal of either 20 or 22.5 points out of a possible 25.
     - Note that Canvas has now been adjusted to mark as LATE only those revisions arriving after Noon Friday.
 - If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
-- People who need additional revisions after this pass will all have the same deadline, and I'll announce that Thursday.
 - In producing the next iteration of your project, please follow the comments we've provided on Canvas. 
 - If you have questions about those comments or how to improve your work, please ask them in TA office hours, or via the channels we've made available for the Quiz, or (after the Quiz deadline has passed) you can ask them on Piazza normally.
 
