@@ -17,6 +17,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. Quiz 1 results are in your email (sent last night.) The [answer sketch is here](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/sketch/README.md). 
+    - **Questions about the Quiz** should be held until after today's class, and should then be sent via Piazza as private notes.
+    - While you are welcome to ask, Dr. Love graded everything, and also thought long and hard about whether and how much partial credit would be awarded for each item. He will only change your grade in the face of a clear error on his part in applying the credit rules described in the sketch, or if you have identified a problem with the item which makes another answer correct.
 2. [Project Proposals Update](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/proposal_notes_2020-10-06.md) is also available.
     - **STILL TO COME**: If you need another revision after today, it will be due at **TIME TO BE SPECIFIED BY DR LOVE**
 3. Why is it important to clearly document your work? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Reproducibility, Documentation and Communication](https://stat150.blog/post/03-reproducibility/) just in time for your Project A work.
