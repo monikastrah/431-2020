@@ -1,11 +1,12 @@
 # Project A Proposal Status
 
-As of `2020-10-06 9 PM` | Solo Projects | Pair Projects | Total Projects | Total Students
+As of `2020-10-08 10 PM` | Solo Projects | Pair Projects | Total Projects | Total Students
 ------ | -----: | -------: | ------: | -------:
 **Submitted Work** | **40** | **15** | **55** | **70**
 Approved by Dr. Love | 21 | 11 | 32 | 43
-Revision due 2020-10-08 at 9 AM | 19 | 4 | 23 | 27
-Awaiting Comments on Canvas | 0 | 0 | 0 | 0
+Revision due 2020-10-08  | 9 | 4 | 13 | 17
+Awaiting Comments on Canvas | 8 | 0 | 8 | 8
+Revision due later | 2 | 0 | 2 | 2
 
 ## Notes from Dr. Love
 
