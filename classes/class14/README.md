@@ -18,9 +18,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Quiz 1 results are in your email (sent last night.) The [answer sketch is here](https://github.com/THOMASELOVE/431-2020/blob/master/quizzes/quiz1/sketch/README.md). 
     - **Questions about the Quiz** should be held until after today's class, and should then be sent via Piazza as private notes.
-    - While you are welcome to ask, Dr. Love graded everything, and also thought long and hard about whether and how much partial credit would be awarded for each item. He will only change your grade in the face of a clear error on his part in applying the credit rules described in the sketch, or if you have identified a problem with the item which makes another answer correct.
+    - Dr. Love rarely changes grades on Quizzes. I graded the Quiz alone, and thought carefully about whether and how much partial credit would be awarded for each item. I will certainly change your grade in the face of a clear error on my part in applying the rules described in the sketch, or if you identify a problem which makes another answer correct, but I hope that won't happen much. If you see something or have question, please let us know before our next class (Tuesday) through a private message on Piazza.
 2. [Project Proposals Update](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/proposal_notes_2020-10-06.md) is also available.
-    - I am caught up with Canvas, as of noon today. Please check my comments on Canvas.
+    - I am caught up with Canvas, as of noon today. Please check my comments on Canvas if you're still in the midst of revising.
 3. Why is it important to clearly document your work? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Reproducibility, Documentation and Communication](https://stat150.blog/post/03-reproducibility/) just in time for your Project A work.
 4. If you are annoyed [by the default message whenever you run summarize from dplyr](https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/#summarise-and-grouping), you can use `options(dplyr.summarise.inform = FALSE)` to suppress it.
 5. Renaming code in scope is possible in RStudio! To see what I'm talking about, see [Elizabeth Eisenhauer's tweet](https://twitter.com/LizStats/status/1310979707329040384).
