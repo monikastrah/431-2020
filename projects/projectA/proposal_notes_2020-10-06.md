@@ -3,8 +3,8 @@
 As of `2020-10-08 10:00 AM` | Solo Projects | Pair Projects | Projects | Students
 ------ | -----: | -------: | ------: | -------:
 **Submitted Work** | **40** | **15** | **55** | **70**
-Approved by Dr. Love | 31 | 12 | 43 | 55
-Submitted, Under Review | 4 | 3 | 7 | 10
+Approved by Dr. Love | 31 | 13 | 44 | 57
+Submitted, Under Review | 4 | 2 | 6 | 8
 Revision due at 6 PM tonight | 4 | 0 | 4 | 4
 On Hold | 1 | 0 | 1 | 1
 
