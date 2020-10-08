@@ -7,10 +7,10 @@ Approved by Dr. Love | 21 | 11 | 32 | 43
 Revision due 2020-10-08 at 9 AM | 19 | 4 | 23 | 27
 Awaiting Comments on Canvas | 0 | 0 | 0 | 0
 
-## Notes from 2020-10-06
+## Notes from Dr. Love
 
 - The next revisions are due Thursday morning. If you submit a revision on Wednesday, we'll get to it as soon as possible.
-- The **grade** that is posted on Canvas if you need a revision is **NOT** your grade. It is the count of how many (out of the 13 elements) on the Checklist you have successfully completed. You need to meet all 13 standards to be approved.
+- The **grade** that is posted on Canvas (if you need a revision) is **NOT** your grade. It is the count of how many (out of the 13 elements) on [the Checklist](https://thomaselove.github.io/431-2020-projectA/checklist.html) you have successfully completed. You need to meet all 13 standards to be approved.
 - Your grade on the proposal will be determined when you have an accepted proposal. Those grades are 25 for people who are accepted at the first deadline, and decreases by 10% for each subsequent deadline, so we anticipate that virtually all students will need to revise will wind up with a grade on the proposal of either 20 or 22.5 points out of a possible 25.
 - Note that Canvas has now been adjusted to mark as LATE only those revisions arriving after 9 AM Thursday.
 - If you need an extension on the revision for an emergency, contact Dr. Love directly via email, please.
