@@ -4,8 +4,8 @@ As of `2020-10-08 9:20 AM` | Solo Projects | Pair Projects | Total Projects | To
 ------ | -----: | -------: | ------: | -------:
 **Submitted Work** | **40** | **15** | **55** | **70**
 Approved by Dr. Love | 28 | 11 | 39 | 50
-Awaiting Comments on Canvas | 8 | 4 | 12 | 16
-Revision required, not due yet | 4 | 0 | 4 | 4
+Submitted, Under Review | 8 | 4 | 12 | 16
+Revision Still Required | 4 | 0 | 4 | 4
 
 ## Notes from Dr. Love
 
