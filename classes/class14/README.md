@@ -20,7 +20,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - **Questions about the Quiz** should be held until after today's class, and should then be sent via Piazza as private notes.
     - While you are welcome to ask, Dr. Love graded everything, and also thought long and hard about whether and how much partial credit would be awarded for each item. He will only change your grade in the face of a clear error on his part in applying the credit rules described in the sketch, or if you have identified a problem with the item which makes another answer correct.
 2. [Project Proposals Update](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/proposal_notes_2020-10-06.md) is also available.
-    - So far, every revision seemed like it could be accomplished today. If you need another revision after today, it will be due at **TIME TO BE SPECIFIED BY DR LOVE**.
+    - I am caught up with Canvas, as of noon today. Please check my comments on Canvas.
 3. Why is it important to clearly document your work? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), here's some materials on [Reproducibility, Documentation and Communication](https://stat150.blog/post/03-reproducibility/) just in time for your Project A work.
 4. If you are annoyed [by the default message whenever you run summarize from dplyr](https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/#summarise-and-grouping), you can use `options(dplyr.summarise.inform = FALSE)` to suppress it.
 5. Renaming code in scope is possible in RStudio! To see what I'm talking about, see [Elizabeth Eisenhauer's tweet](https://twitter.com/LizStats/status/1310979707329040384).
@@ -34,7 +34,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 1. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due 2020-10-20 at Noon.
-    - If you need another revision after today, it will be due at **TIME TO BE SPECIFIED BY DR LOVE**
+    - If you need another revision, the deadline (either today at 6 PM or tomorrow at noon) is specified on Canvas.
 2. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
 3. Before Class 15 (2020-10-13), you should have read Spiegelhalter's Introduction and Chapters 1-9.
 
