@@ -600,7 +600,7 @@ Do what you did in Analysis 1.
 
 Your first paragraph in this response should provide a clear restatement of your research question, and then a clear and appropriate response to your research question, motivated by your results.
 
-Then, write a paragraph to summarize the key limitations of your work, using the guidance from Analyses 2 and 3.
+Then, write a paragraph to summarize the key limitations of your work, as you did in the previous analyses.
 
 # Session Information
 
