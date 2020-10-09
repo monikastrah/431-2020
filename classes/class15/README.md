@@ -18,7 +18,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Remember that 431 is cancelled on Thursday 2020-10-15. Dr. Love will be at AHRQ Study Section. 
     - Class 16 will be held on Tuesday 2020-10-20.
-2. A detailed outline (with all necessary elements for the Analyses sections) of Project A [is now available](https://thomaselove.github.io/431-2020-projectA/examples.html). 
+2. A [detailed outline](https://thomaselove.github.io/431-2020-projectA/examples.html) (with all necessary elements for the Analyses sections) of Project A [is now available](https://thomaselove.github.io/431-2020-projectA/examples.html). 
     - As you should know by now, I have delayed Project A's deadline to Friday **2020-10-30** at 5 PM.
     - I have set up Canvas to accept Project A work (Report .Rmd and .html, plus the video(s)) starting 2020-10-15, and [the self-evaluation form](http://bit.ly/431-2020-projectA-self-evaluation) will go live on 2020-10-16. Submit the report and videos before doing the self-evaluation.
 3. How do we tell a compelling story through visuals? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), you might be interested in [the Visualization section](https://stat150.blog/post/02-visualization/) and the links it provides.
@@ -30,7 +30,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 1. There will be a Minute Paper after Class 15 due at Noon Wednesday 2020-10-14.
 2. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
 3. [Project A](https://thomaselove.github.io/431-2020-projectA/) is now due on **2020-10-30** at Noon.
-    - A detailed outline for the Analyses [is now available](https://thomaselove.github.io/431-2020-projectA/examples.html).
 
 ## One Last Thing
 
