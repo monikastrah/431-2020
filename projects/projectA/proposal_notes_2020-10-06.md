@@ -1,10 +1,10 @@
 # Project A Proposal Status
 
-As of `2020-10-08 7:30 PM` | Solo Projects | Pair Projects | Projects | Students
+As of `2020-10-08 8:10 PM` | Solo Projects | Pair Projects | Projects | Students
 ------ | -----: | -------: | ------: | -------:
 **Submitted Work** | **40** | **15** | **55** | **70**
-Approved by Dr. Love | 34 | 14 | 48 | 62
-Under Review by Dr. Love | 3 | 0 | 3 | 3
+Approved by Dr. Love | 36 | 14 | 50 | 64
+Under Review by Dr. Love | 1 | 0 | 1 | 1
 Revision due at Noon Friday | 2 | 1 | 3 | 4
 On Hold | 1 | 0 | 1 | 1
 
