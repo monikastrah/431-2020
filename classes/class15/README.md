@@ -33,5 +33,5 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-Still to come.
+Today, we'll look at [The Economist's Presidential Election Forecast](https://projects.economist.com/us-2020-forecast/president).
 
