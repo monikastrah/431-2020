@@ -37,3 +37,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 Today, we'll look at [The Economist's Election Forecast](https://projects.economist.com/us-2020-forecast/house) starting with the House of Representatives.
 
+Today just before class there was a [Reddit AMA on the statistics behind voting](https://www.reddit.com/r/politics/comments/jae0m8/we_are_stat_professors_with_the_american/), featuring Mary Gray from American U and Andrew Gelman from Columbia U. Sorry that I only learned about this as it ended.
+
+
+
+
