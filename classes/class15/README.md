@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> Quote to come.
+> If you think that statistics has nothing to say about what you do or how you could do it better, then you are either wrong or in need of a more interesting job. ([Stephen Senn](https://twitter.com/stephensenn))
 
 ## Today's Slides
 
