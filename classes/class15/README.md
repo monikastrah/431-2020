@@ -21,7 +21,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - Class 16 will be held at the usual time on Tuesday 2020-10-20.
 3. A [detailed outline](https://thomaselove.github.io/431-2020-projectA/examples.html) (with all necessary elements for the Analyses sections) of Project A [is now available](https://thomaselove.github.io/431-2020-projectA/examples.html). 
     - As you should know by now, I have delayed Project A's deadline to Friday **2020-10-30** at 5 PM.
-    - Canvas will accept your Project A work (Report .Rmd and .html, plus the video(s)) starting 2020-10-15, and [the self-evaluation form](http://bit.ly/431-2020-projectA-self-evaluation) will go live on 2020-10-16. Submit the report and videos before doing the self-evaluation.
+    - Canvas will accept your Project A work (Report .Rmd and .html, plus the video(s)) starting 2020-10-15, and [the self-evaluation form](http://bit.ly/431-2020-projectA-self-evaluation) will go live on 2020-10-16. Submit the report and videos **before** doing the self-evaluation.
 4. **Want to learn more Github and version control?** Visit the [Github Learning Lab](https://lab.github.com/).
 5. How do we tell a compelling story through visuals? From the stat150 project and [Kelly Bodwin](https://twitter.com/kellybodwin), you might be interested in [the Visualization section](https://stat150.blog/post/02-visualization/) and the links it provides.
 6. Want to work with census microdata in R? The [tidycensus](https://walker-data.com/tidycensus/index.html) package can help. 
