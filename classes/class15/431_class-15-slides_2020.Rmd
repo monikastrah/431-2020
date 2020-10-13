@@ -218,8 +218,10 @@ tidy(app1, conf.int = T, conf.level = 0.90) %>% kable(dig = 2)
 aug1 <- augment(app1, dm431_cc)
 
 aug1 %>% select(subject, statin, ldl, .fitted, .resid) %>%
-  head()
+  slice(1, 6, 206, 394)
 ```
+
+Here, I'm just using `slice` to pick out four values from the distribution (two with statin, two without and two with a positive and two with a negative residual.)
 
 ## Residual Plots for Example 1 `app1`?
 
@@ -253,7 +255,7 @@ p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
 - The point estimate for $\mu_S - \mu_N$ is `r round_half_up(res1$estimate, 2)`
 - The 90% confidence interval for $\mu_S - \mu_N$ is (**`r round_half_up(res1$conf.low, 2)`**, **`r round_half_up(res1$conf.high, 2)`**)
 - There is some evidence of non-Normality in the residuals after this regression model. 
-  - Perhaps the assumption that the difference $mu_S - \mu_N$ is Normally distributed is in question. This will eventually lead to alternatives to the t test, discussed later in these slides.
+  - Perhaps the assumption that the difference $\mu_S - \mu_N$ is Normally distributed is in question. This will eventually lead to alternatives to the t test, discussed later in these slides.
   
 But for now, let's look at an example where we compare means across more than just two groups.
 
