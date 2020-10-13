@@ -27,6 +27,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 6. Want to work with census microdata in R? The [tidycensus](https://walker-data.com/tidycensus/index.html) package can help. 
 7. I also recommend [sociome](https://github.com/NikKrieger/sociome), a package developed by Nik Krieger, a former student in this class, that helps the user to operationalize social determinants of health data (specifically measures of area deprivation) into their research, and that makes substantial use of the tools in [tidycensus](https://walker-data.com/tidycensus/index.html).
 
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class15/images/wissel.png)
+
 ## What Should I Be Working On?
 
 1. [Minute Paper after Class 15](http://bit.ly/431-2020-minute-15) due at Noon tomorrow.
