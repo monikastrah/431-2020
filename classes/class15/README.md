@@ -35,5 +35,5 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-Today, we'll look at [The Economist's Election Forecast](https://projects.economist.com/us-2020-forecast/president).
+Today, we'll look at [The Economist's Election Forecast](https://projects.economist.com/us-2020-forecast/house) starting with the House of Representatives.
 
