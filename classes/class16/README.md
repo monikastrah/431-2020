@@ -21,7 +21,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## In The News
 
 1. [ASA Board Releases 2020 Census Quality Indicators](https://www.amstat.org/ASA/News/ASA-Board-Releases-2020-Census-Quality-Indicators.aspx)
-    - 2020-10-13: The American Statistical Association Board of Directors endorses the recommendations of the [2020 Census Quality Indicators report](https://www.amstat.org/asa/files/pdfs/POL-2020CensusQualityIndicators.pdf), written by a task force of census experts to shed light on the quality, accuracy, and coverage of the 2020 Census counts, and urges prompt action by the federal government.  
+    - 2020-10-13: The American Statistical Association Board of Directors endorses the recommendations of the [2020 Census Quality Indicators report](https://www.amstat.org/asa/files/pdfs/POL-2020CensusQualityIndicators.pdf), written by a task force of census experts to shed light on the quality, accuracy, and coverage of the 2020 Census counts, and urges prompt action by the federal government.
+2. There is a [Symposium on Climate Action and Health](https://theoec.salsalabs.org/occaclimateandhealther2020/index.html) starting this evening and continuing through Friday 2020-10-23 which is free to all who would like to attend.
+    - This unique conference will enlighten health professionals and students on climate change’s impacts on human health. The symposium will not only educate participants but inspire motivation and provide the tools to develop solutions to counteract the health effects of climate change. I'll be attending a couple of the sessions.
 
 ## What Should I Be Working On?
 
