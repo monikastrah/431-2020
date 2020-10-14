@@ -18,6 +18,11 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Details to come.
 
+## In The News
+
+1. [ASA Board Releases 2020 Census Quality Indicators](https://www.amstat.org/ASA/News/ASA-Board-Releases-2020-Census-Quality-Indicators.aspx)
+    - 2020-10-13: The American Statistical Association Board of Directors endorses the recommendations of the [2020 Census Quality Indicators report](https://www.amstat.org/asa/files/pdfs/POL-2020CensusQualityIndicators.pdf), written by a task force of census experts to shed light on the quality, accuracy, and coverage of the 2020 Census counts, and urges prompt action by the federal government.  
+
 ## What Should I Be Working On?
 
 1. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
