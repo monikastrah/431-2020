@@ -17,7 +17,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-Coming soon.
+1. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
+2. Project B Instructions will be made available by Sunday 2020-11-01.
 
 ## What Should I Be Working On?
 
