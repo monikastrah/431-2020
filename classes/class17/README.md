@@ -20,8 +20,8 @@ Coming soon.
 
 ## What Should I Be Working On?
 
-1. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due 2020-10-26 at 9 PM.
-2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is now due on **2020-10-30** at Noon.
+1. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due Monday 2020-10-26 at 9 PM.
+2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due Friday **2020-10-30** at Noon.
 
 ## One Last Thing
 
