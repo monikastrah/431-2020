@@ -6,7 +6,7 @@
 
 After Class | due | Link to Minute Paper Form | Link to Dr. Love's Feedback
 :----------: | :------: | :--------: | :----------:
-15 (2020-10-13) | 2020-10-14 NOON | http://bit.ly/431-2020-minute-15 | To come.
+15 (2020-10-13) | 2020-10-14 NOON | http://bit.ly/431-2020-minute-15 | http://bit.ly/431-2020-min15-feedback
 
 ### Completed Minute Papers
 
