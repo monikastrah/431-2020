@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> Quote to come.
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/images/rq.png)
 
 ## Today's Slides
 
@@ -15,8 +15,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 - **Lindsay Petrenchik (and her dog), Joe Powell, Katrina Prantzalos, Dipak Upadhyaya, Long Vu** and **Sam Waddell** (37-39 and 51-53 from the Introductory Student Videos in our Shared Google Drive)
 
 ## Advice on Developing a Research Question
-
-![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/images/rq.png)
 
 - A question is expressed so as to elicit information, and **ends with a question mark**. 
 - The question must be one that lends itself well to the use of a regression model (you are welcome to adapt any regression modeling strategy connected to the 432 course) to develop an answer.
