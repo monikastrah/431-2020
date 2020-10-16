@@ -1,0 +1,955 @@
+---
+title: "431 Class 17"
+author: "thomaselove.github.io/431"
+date: "2020-10-22"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+options(width = 55)
+```
+
+## Today's Agenda
+
+Comparing Population Means with the Analysis of Variance
+
+- Indicator Variable Regression Analysis
+  - Interpreting the ANOVA table
+  - ANOVA assumptions and the Kruskal-Wallis test
+- The Problem of Multiple Comparisons
+  - Bonferroni pairwise testing
+  - Tukey HSD pairwise comparisons
+
+## Today's Setup and Data
+
+```{r load_packages, message = FALSE}
+knitr::opts_chunk$set(comment = NA) 
+options(dplyr.summarise.inform = FALSE) 
+
+library(readxl) # to read in an .xlsx file
+library(ggrepel) # to help label residual plots
+library(patchwork)
+library(knitr)
+library(magrittr)
+library(janitor)
+library(broom)
+library(tidyverse)
+
+theme_set(theme_bw())
+```
+
+## Today's Data (`ohio_2020.xlsx`)
+
+`ohio_2020.xlsx` rows describe one of Ohio's 88 counties in terms of:
+
+- `FIPS` code (basically an identifier for mapping) 
+- `state` and `county` name
+- health outcomes (standardized: more positive means **better** outcomes, because we've taken the negative of the Z score CHR provides)
+- health behavior ranking (1-88, we'll divide into 4 groups)
+- clinical care ranking (1-88, we'll split into 3 groups)
+- proportion of county residents who live in rural areas
+- median income, in dollars
+- proportion of votes in the 2016 Presidential Election for Pres. Trump
+
+### Sources (these bullets are links)
+
+- [County Health Rankings](https://www.countyhealthrankings.org/app/ohio/2020/downloads) (2020 Ohio Data)
+- [Wikipedia for 2016 Election Results](https://en.wikipedia.org/wiki/2016_United_States_presidential_election_in_Ohio#By_county)
+
+## Importing the Data / Creating some Factors
+
+```{r}
+ohio20 <- read_xlsx("data/ohio_2020.xlsx") %>%
+  mutate(behavior = Hmisc::cut2(rk_behavior, g = 4),
+         clin_care = Hmisc::cut2(rk_clin_care, g = 3)) %>%
+  mutate(behavior = fct_recode(behavior,
+            "Best" = "[ 1,23)", "High" = "[23,45)",
+            "Low" = "[45,67)", "Worst" = "[67,88]")) %>%
+  mutate(clin_care = fct_recode(clin_care,
+            "Strong" = "[ 1,31)", "Middle" = "[31,60)",
+            "Weak" = "[60,88]")) %>%
+  select(FIPS, state, county, outcomes, behavior, clin_care, 
+         everything())
+```
+
+## A Quick Look at the Data
+
+```{r}
+ohio20 %>% filter(county == "Cuyahoga") %>%
+  select(FIPS, county, outcomes, behavior, clin_care) 
+```
+
+```{r, fig.height = 2}
+ggplot(ohio20, aes(x = "", y = outcomes)) + geom_violin() +
+  geom_boxplot(width = 0.4) + coord_flip() + labs(x = "")
+```
+
+## Use `inspect` to inspect the data frame?
+
+```{r, message = FALSE}
+ohio20 %>% select(outcomes, behavior, clin_care) %>%
+  mosaic::inspect()
+```
+
+## Key Measure Details
+
+- **outcomes** = quantity that describes the county's premature death and quality of life results, weighted equally and standardized (z scores).
+  - Higher (more positive) values indicate better outcomes in this county.
+- **behavior** = (Best/High/Low/Worst) reflecting adult smoking, obesity, food environment, inactivity, exercise, drinking, alcohol-related driving deaths, sexually tranmitted infections and teen births. 
+  - Counties in the Best group had the best behavior results.
+- **clin_care** = (Strong/Middle/Weak) reflects rates of uninsured, care providers, preventable hospital stays, diabetes monitoring and mammography screening.
+  - Strong means that clinical care is strong in this county.
+
+## Today's Planned Analytic Questions
+
+1. How do average health outcomes vary across groups of counties defined by health behavior?
+
+2. Do groups of counties defined by clinical care show substantial differences in average health outcomes?
+
+# Health Outcomes compared across Health Behavior Groups
+
+## Question 1
+
+Do average health outcomes differ by health behavior?
+
+```{r, echo = FALSE}
+ggplot(ohio20, aes(x = behavior, y = outcomes, 
+                   fill = behavior)) +
+  geom_violin(alpha = 0.25) +
+  geom_boxplot(width = 0.25) +
+  guides(fill = FALSE) + 
+  scale_fill_brewer(palette = "Spectral", direction = -1) +
+  theme_bw() +
+  labs(x = "Health Behavior Group", 
+       y = "Health Outcomes (higher = better health)",
+       title = "Health Outcomes across Behavior Groups",
+       subtitle = "Ohio's 88 counties, 2020 County Health Rankings",
+       caption = "Source: https://www.countyhealthrankings.org/app/ohio/2020/downloads")
+```
+
+## Question 1 Numerical Summaries
+
+How do average health outcomes vary across groups of counties defined by health behavior?
+
+```{r}
+mosaic::favstats(outcomes ~ behavior, data = ohio20) %>%
+  rename(na = missing) %>% knitr::kable(digits = 2)
+```
+
+Note that there is no missing data here.
+
+## Analysis of Variance (ANOVA) testing: Question 1
+
+Does the mean `outcomes` result differ detectably across the `behavior` groups?
+
+$$
+H_0: \mu_{Best} = \mu_{High} = \mu_{Low} = \mu_{Worst} \mbox{ vs. } H_A: \mbox{At least one } \mu \mbox{ is different.}
+$$
+
+To test this set of hypotheses, we will build a linear model to predict each county's outcome based on what behavior group the county is in.
+
+- We then look at whether the `behavior` group effect has a statistically detectable impact on the model's predictions of `outcomes`. 
+
+## Building the Linear Model: Question 1
+
+Can we detect differences in the population means of `outcomes` across the four `behavior` groups, using a 10% significance level? 
+
+```{r}
+model_one <- lm(outcomes ~ behavior, data = ohio20)
+tidy(model_one, conf.int = 0.90) %>% 
+  select(term, estimate, std.error, 
+         conf.low, conf.high, p.value) %>% kable(dig = 2)
+```
+
+How do we interpret this result?
+
+## Interpreting the Indicator Variables
+
+The regression model (`model_one`) equation is 
+
+```
+outcomes = 0.96 - 0.71 behaviorHigh 
+                    - 1.14 behaviorLow 
+                      - 2.01 behaviorWorst
+```
+
+What do the indicator variables mean?
+
+group  | `behaviorHigh` | `behaviorLow` | `behaviorWorst`
+----: | :-------: | :--------: | :--------:
+Best  | 0 | 0 | 0
+High  | 1 | 0 | 0
+Low   | 0 | 1 | 0
+Worst | 0 | 0 | 1
+
+- So what is the predicted `outcomes` score for a county in the High behavior group, according to this model?
+
+## Interpreting the Indicator Variables
+
+The regression model (`model_one`) equation is 
+
+```
+outcomes = 0.96 - 0.71 behaviorHigh 
+                    - 1.14 behaviorLow 
+                      - 2.01 behaviorWorst
+```
+
+What predictions does the model make?
+
+group  | `High` | `Low` | `Worst` | Prediction
+----: | :-----: | :------: | :------: | --------------
+Best  | 0 | 0 | 0 | 0.96
+High  | 1 | 0 | 0 | 0.96 - 0.71 = 0.25
+Low   | 0 | 1 | 0 | 0.96 - 1.14 = -0.18
+Worst | 0 | 0 | 1 | 0.96 - 2.01 = -1.05
+
+Do these predictions make sense?
+
+## Interpreting the Indicator Variables
+
+The regression model (`model_one`) equation is 
+
+```
+outcomes = 0.96 - 0.71 behaviorHigh 
+                    - 1.14 behaviorLow 
+                      - 2.01 behaviorWorst
+```
+
+Sample means are...
+
+```{r}
+ohio20 %>% group_by(behavior) %>%
+  summarize(n = n(), mean = round_half_up(mean(outcomes),2)) %>% kable()
+```
+
+
+## ANOVA for the Linear Model: Question 1
+
+Are there statistically detectable differences in mean outcome across the behavior group means?
+
+$$
+H_0: \mu_{Best} = \mu_{High} = \mu_{Low} = \mu_{Worst} \mbox{ vs. } H_A: \mbox{At least one } \mu \mbox{ is different.}
+$$
+
+```{r}
+anova(model_one)
+```
+
+## So, what's in the ANOVA table? (df)
+
+The ANOVA table reports here on a single **factor** (behavior group) with 4 levels, and on the residual variation in health **outcomes**.
+
+```{r, echo = FALSE}
+anova(model_one)[1:4]
+```
+
+**Degrees of Freedom** (df) is an index of sample size...
+
+- df for our factor (behavior) is one less than the number of categories. We have four behavior groups, so 3 degrees of freedom.
+- Adding df(behavior) + df(Residuals) = 3 + 84 = 87 = df(Total), one less than the number of observations (counties) in Ohio.
+- *n* observations and *g* groups yield $n - g$ residual df in a one-factor ANOVA table.
+
+## So, what's in the ANOVA table? (Sum of Squares)
+
+```{r, echo = FALSE}
+anova(model_one)[1:4]
+```
+
+**Sum of Squares** (`Sum Sq`, or SS) is an index of variation...
+
+- SS(factor), here SS(`behavior`) measures the amount of variation accounted for by the `behavior` groups in our `model_one`.
+- The total variation in `outcomes` to be explained by the model is SS(factor) + SS(Residuals) = SS(Total) in a one-factor ANOVA table.
+- We describe the proportion of variation explained by a one-factor ANOVA model with $\eta^2$ ("eta-squared": same as Multiple $R^2$)
+
+$$
+\eta^2 = \frac{SS(\mbox{behavior})}{SS(\mbox{Total})} = \frac{46.421}{46.421+22.519} = \frac{46.421}{68.94} \approx 0.673
+$$
+
+## So, what's in the ANOVA table? (MS and F)
+
+```{r, echo = FALSE}
+anova(model_one)[1:4]
+```
+
+**Mean Square** (`Mean Sq`, or MS) = Sum of Squares / df
+
+$$
+MS(\mbox{behavior}) = \frac{SS(\mbox{behavior})}{df(\mbox{behavior})} = \frac{46.421}{3} \approx 15.4736
+$$
+
+- MS(Residuals) estimates the **residual variance**, the square of the residual standard deviation (residual standard error in earlier work).
+- The ratio of MS values is the ANOVA **F value**.
+
+$$
+{\mbox{ANOVA }} F = \frac{MS(\mbox{behavior})}{MS(\mbox{Residuals})} = \frac{15.4736}{0.2681} \approx 57.718
+$$
+
+
+## So, what's in the ANOVA table? (p value)
+
+```{r}
+tidy(anova(model_one)) %>% kable(dig = 3)
+```
+
+- The *p* value is derived from the ANOVA F statistic, as compared to the F distribution.
+- Which F distribution is specified by the two degrees of freedom values, as the F table is indexed by both a numerator and a denominator df.
+
+```{r}
+pf(57.718, df1 = 3, df2 = 84, lower.tail = FALSE)
+```
+
+## Alternative ways to show ANOVA results
+
+```{r}
+glance(model_one) %>% select(r.squared, statistic, df, df.residual, p.value)
+```
+
+```{r}
+summary(aov(model_one))
+```
+
+So, what's the conclusion? Is this a surprise?
+
+## ANOVA Assumptions
+
+The assumptions behind analysis of variance are tthose behind a linear model. Of specific interest are:
+
+- The samples obtained from each group are independent.
+- Ideally, the samples from each group are a random sample from the population described by that group.
+- In the population, the variance of the outcome in each group is equal. (This is less of an issue if our study involves a balanced design.)
+- In the population, we have Normal distributions of the outcome in each group.
+
+Happily, the ANOVA F test is fairly robust to violations of the Normality assumption.
+
+## Residual Plots for `model_one`
+
+```{r, echo = FALSE}
+aug_one <- augment(model_one, ohio20)
+
+p1 <- ggplot(aug_one, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "red") +
+  geom_text_repel(data = aug_one %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = county)) +
+  labs(title = "model_one Residuals vs. Fitted",
+       x = "Fitted Value from model_one",
+       y = "Residuals from model_one")
+
+p2 <- ggplot(aug_one, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "model_one Residuals",
+       y = "")
+
+p3 <- ggplot(aug_one, aes(y = .resid, x = "")) +
+  geom_violin(fill = "aquamarine") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Can we avoid assuming equal population variances?
+
+Yes, but this isn't exciting if we have a balanced design.
+
+```{r}
+oneway.test(outcomes ~ behavior, data = ohio20)
+```
+
+- Note that this approach uses a fractional degrees of freedom calculation in the denominator.
+
+## The Kruskal-Wallis Test
+
+If you thought the data were severely skewed, you might try:
+
+```{r}
+kruskal.test(outcomes ~ behavior, data = ohio20)
+```
+
+- $H_0$: The four `behavior` groups have the same center to their `outcomes` distributions.
+- $H_A$: At least one group has a shifted distribution, with a different center to its `outcomes`.
+
+What would be the conclusion here?
+
+# Health Outcomes compared across Clinical Care Groups
+
+## Question 2
+
+Do groups of counties defined by clinical care show meaningful differences in average health outcomes?
+
+```{r, echo = FALSE}
+ggplot(ohio20, aes(x = clin_care, y = outcomes, 
+                   fill = clin_care)) +
+  geom_violin(alpha = 0.5) +
+  geom_boxplot(width = 0.25, notch = TRUE, 
+               col = c("white", "black", "black")) +
+  guides(fill = FALSE) + 
+  scale_fill_viridis_d(option = "C") +
+  theme_bw() +
+  labs(x = "Clinical Care Ranking (groups)", 
+       y = "Health Outcomes (higher = better health)",
+       title = "Health Outcomes across County Clinical Care Ranking",
+       subtitle = "Ohio's 88 counties, 2020 County Health Rankings",
+       caption = "Source: https://www.countyhealthrankings.org/app/ohio/2020/downloads")
+```
+
+## Question 2 Numerical Summaries
+
+Do groups of counties defined by clinical care show meaningful differences in average health outcomes?
+
+```{r}
+mosaic::favstats(outcomes ~ clin_care, data = ohio20) %>%
+  rename(na = missing) %>% knitr::kable(digits = 2)
+```
+
+## Question 2 Analysis of Variance
+
+```{r}
+model_two <- lm(outcomes ~ clin_care, data = ohio20)
+
+anova(model_two)
+```
+
+## Residual Plots for `model_two`
+
+```{r, echo = FALSE}
+aug_two <- augment(model_two, ohio20)
+
+p1 <- ggplot(aug_two, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "red") +
+  geom_text_repel(data = aug_two %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = county)) +
+  labs(title = "model_two Residuals vs. Fitted",
+       x = "Fitted Value from model_two",
+       y = "Residuals from model_two")
+
+p2 <- ggplot(aug_two, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "model_two Residuals",
+       y = "")
+
+p3 <- ggplot(aug_two, aes(y = .resid, x = "")) +
+  geom_violin(fill = "aquamarine") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Question 2 Kruskal-Wallis test
+
+```{r}
+kruskal.test(outcomes ~ clin_care, data = ohio20)
+```
+
+
+## K-Sample Study Design, Comparing Means
+
+1. What is the outcome under study?
+2. What are the (in this case, $K \geq 2$) treatment/exposure groups?
+3. Were the data in fact collected using independent samples?
+4. Are the data random samples from the population(s) of interest? Or is there at least
+a reasonable argument for generalizing from the samples to the population(s)?
+5. What is the significance level (or, the confidence level) we require?
+6. Are we doing one-sided or two-sided testing? (usually 2-sided)
+7. What does the distribution of each individual sample tell us about which inferential procedure to use?
+8. Are there statistically meaningful differences between population means?
+9. If an overall test rejects the null, can we identify pairwise comparisons of means that show detectable differences using an appropriate procedure that protects against Type I error expansion due to multiple comparisons?
+
+# Multiple Comparisons
+
+## What's Left to do? (Multiple Comparisons)
+
+9. If an overall test rejects the null, can we identify pairwise comparisons of means that show detectable differences using an appropriate procedure that protects against Type I error expansion due to multiple comparisons?
+
+Yes. There are two methods we'll study to identify specific pairs of means where we have statistically detectable differences, while dealing with the problem of multiple comparisons.
+
+- Bonferroni pairwise comparisons
+- Tukey's HSD (Honestly Significant Differences) approach
+
+## Compare `behavior` group means of `outcomes`?
+
+ANOVA tells is that there is strong evidence that they aren't all the same. Which ones are different from which?
+
+```{r}
+anova(lm(outcomes ~ behavior, data = ohio20))
+```
+
+Is, for example, Best detectably different from Worst?
+
+## Could we just run a bunch of t tests?
+
+This approach assumes that you need to make no adjustment for the fact that you are doing multiple comparisons, simultaneously.
+
+```{r}
+pairwise.t.test(ohio20$outcomes, ohio20$behavior, 
+                p.adjust.method = "none")
+```
+
+## The problem of Multiple Comparisons
+
+- The more comparisons you do simultaneously, the more likely you are to make an error.
+
+In the worst case scenario, suppose you do two tests - first A vs. B and then A vs. C, each at the $\alpha = 0.10$ level.
+
+- What is the combined error rate across those two t tests?
+
+## The problem of Multiple Comparisons
+
+In the worst case scenario, suppose you do two tests - first A vs. B and then A vs. C, each at the $\alpha = 0.10$ level.
+
+- What is the combined error rate across those two t tests?
+
+Run the first test. Make a Type I error 10% of the time.
+
+A vs B Type I error | Probability
+-----------: | -----------
+Yes | 0.1
+No  | 0.9
+
+Now, run the second test. Assume (perhaps wrongly) that comparing A to C is independent of your A-B test result. What is the error rate now?
+
+
+## The problem of Multiple Comparisons
+
+In the worst case scenario, suppose you do two tests - first A vs. B and then A vs. C, each at the $\alpha = 0.10$ level.
+
+- What is the combined error rate across those two t tests?
+
+Assuming there is a 10% chance of making an error in either test, independently ...
+
+-- | Error in A vs. C  | No Error | Total
+----------------------: | --------: | --------: | ----:
+Type I error in A vs. B | 0.01 | 0.09 | 0.10
+No Type I error in A-B  | 0.09 | 0.81 | 0.90
+Total                   | 0.10 | 0.90 | 1.00
+
+So you will make an error in the A-B or A-C comparison **19%** of the time, rather than the nominal $\alpha = 0.10$ error rate.
+
+## But in our case, we're building SIX tests
+
+1. Best vs. High
+2. Best vs. Low
+3. Best vs. Worst
+4. High vs. Low
+5. High vs. Worst
+6. Low vs. Worst
+
+and if they were independent, and each done at a 5% error rate, we could still wind up with an error rate of 
+
+$.05 + (.95)(.05) + (.95)(.95)(.05) + (.95)^3(.05) + (.95)^4(.05) + (.95)^5(.05)$ = .265
+
+Or worse, if they're not independent.
+
+## The Bonferroni Method
+
+If we do 6 tests, we could reduce the necessary $\alpha$ to 0.05 / 6 = 0.0083 and that maintains an error rate no higher than $\alpha = 0.05$ across the 6 tests.
+
+- Or, R can adjust the *p* values directly...
+
+```{r}
+pairwise.t.test(ohio20$outcomes, ohio20$behavior, 
+                p.adjust.method = "bonferroni")
+```
+
+We still detect a meaningful difference between each pair of groups.
+
+## Tukey Honestly Significant Differences (HSD)
+
+Tukey's HSD approach is a better choice for pre-planned comparisons with a balanced (or nearly balanced) design. It provides confidence intervals and an adjusted *p* value for each comparison.
+
+- Let's run some confidence intervals to yield an overall 99% confidence level, even with 6 tests...
+
+```{r, eval = FALSE}
+TukeyHSD(aov(lm(outcomes ~ behavior, data = ohio20)), 
+         conf.level = 0.99, ordered = TRUE)
+```
+
+Output on the next slide...
+
+## Tukey HSD Output
+
+```{r, echo = FALSE}
+TukeyHSD(aov(lm(outcomes ~ behavior, data = ohio20)), 
+         conf.level = 0.99, ordered = TRUE)
+```
+
+
+## Tidying the Tukey HSD confidence intervals
+
+```{r}
+model_one <- lm(outcomes ~ behavior, data = ohio20)
+tukey_one <- tidy(TukeyHSD(aov(model_one), 
+                           ordered = TRUE, 
+                           conf.level = 0.99))
+tukey_one %>% rename(null = null.value) %>% kable(dig = 3)
+```
+
+## Plotting Your Tukey HSD intervals, Approach 1
+
+```{r, echo = FALSE}
+ggplot(tukey_one, aes(x = reorder(contrast, -estimate), 
+                      y = estimate)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high)) + 
+  geom_hline(yintercept = 0, col = "red", 
+             linetype = "dashed") +
+  geom_text(aes(label = round(estimate,2)), nudge_x = -0.2) +
+  theme_bw() +
+  labs(x = "Contrast between Behavior Groups", 
+       y = "Estimated Effect, with 99% Tukey HSD interval",
+       title = "Estimated Effects, with Tukey HSD 99% Confidence Intervals",
+       subtitle = "Comparing Outcomes by Behavior Group, ohio20 data")
+```
+
+## Code for Plot on Previous Slide
+
+```{r, eval = FALSE}
+ggplot(tukey_one, aes(x = reorder(contrast, -estimate), 
+                      y = estimate)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high)) + 
+  geom_hline(yintercept = 0, col = "red", 
+             linetype = "dashed") +
+  geom_text(aes(label = round(estimate,2)), nudge_x = -0.2) +
+  theme_bw() +
+  labs(x = "Contrast between Behavior Groups", 
+       y = "Estimated Effect, with 99% Tukey HSD interval",
+       title = "Estimated Effects, with Tukey HSD 99% Confidence Intervals",
+       subtitle = "Comparing Outcomes by Behavior Group, ohio20 data")
+```
+
+## Question 2: 90% Tukey HSD intervals, tidying
+
+```{r}
+model_two <- lm(outcomes ~ clin_care, data = ohio20)
+tukey_two <- tidy(TukeyHSD(aov(model_two), 
+                           ordered = TRUE, 
+                           conf.level = 0.90))
+tukey_two %>% select(-term, -null.value) %>% kable(dig = 3)
+```
+
+## Plotting Question 2 Tukey HSD intervals
+
+```{r, echo = FALSE}
+ggplot(tukey_two, aes(x = reorder(contrast, -estimate), 
+                      y = estimate)) +
+  geom_crossbar(aes(ymin = conf.low, ymax = conf.high), 
+                fatten = 1) + 
+  geom_hline(yintercept = 0, col = "red", 
+             linetype = "dashed") +
+  geom_text(aes(label = round(estimate,2)), nudge_y = 0.1) +
+  theme_bw() +
+  labs(x = "Contrast between Clinical Care Groups", 
+       y = "Estimated Effect, with 90% Tukey HSD interval",
+       title = "Estimated Effects, with Tukey HSD 90% Confidence Intervals",
+       subtitle = "Comparing Outcomes by Clinical Care Group, ohio20 data")
+```
+
+## Code for Question 2 Tukey HSD plot
+
+```{r, eval = FALSE}
+ggplot(tukey_two, aes(x = reorder(contrast, -estimate), 
+                      y = estimate)) +
+  geom_crossbar(aes(ymin = conf.low, ymax = conf.high), 
+                fatten = 1) + 
+  geom_hline(yintercept = 0, col = "red", 
+             linetype = "dashed") +
+  geom_text(aes(label = round(estimate,2)), nudge_y = 0.1) +
+  theme_bw() +
+  labs(x = "Contrast between Clinical Care Groups", 
+       y = "Estimated Effect, with 90% Tukey HSD interval",
+       title = "Estimated Effects, with Tukey HSD 90% Confidence Intervals",
+       subtitle = "Comparing Outcomes by Clinical Care Group, ohio20 data")
+```
+
+# Coming Up Next Time: Comparisons using Paired/Matched Samples
+
+# FOR SELF-STUDY: ANOVA Examples about President Trump's 2016 Votes by County
+
+## Question 3 (Education)
+
+We have some additional variables in `ohio20`, specifically:
+
+- `trump16` = proportion of the vote cast in 2016 in the county that went to President Trump
+- `somecollege` = percentage of adults ages 25-44 with some post-secondary education in the county
+
+Let's break Ohio's counties into 5 groups based on `somecollege`...
+
+```{r}
+ohio20 <- ohio20 %>% 
+  mutate(trump16 = 100*trump16) %>%
+  mutate(educ = Hmisc::cut2(somecollege, g = 5)) %>%
+  mutate(educ = fct_recode(educ, "Least" = "[20.4,50.3)", 
+          "Low" = "[50.3,54.3)", "Middle" = "[54.3,59.7)", 
+          "High" = "[59.7,67.1)", "Most" = "[67.1,85.1]"))
+```
+
+Did President Trump's vote percentage in 2016 vary meaningfully across groups of counties defined by educational attainment?
+
+## Trump 2016 % by Educational Attainment
+
+```{r, echo = FALSE}
+ggplot(ohio20, aes(x = educ, y = trump16, fill = educ)) +
+  geom_violin(alpha = 0.25) +
+  geom_boxplot(width = 0.25) +
+  guides(fill = FALSE) + 
+  scale_fill_brewer(palette = "Spectral", direction = -1) +
+  theme_bw() +
+  labs(x = "Education Group (2020 County Health Rankings)", 
+       y = "Proportion of Vote for Trump in 2016 Election",
+       title = "Proportion of Trump Vote by 'Some College' Group",
+       subtitle = "Ohio's 88 counties")
+```
+
+## Numerical Comparison
+
+```{r}
+mosaic::favstats(trump16 ~ educ, data = ohio20) %>%
+  rename(na = missing) %>% kable(digits = 2)
+```
+
+## Analysis of Variance (ANOVA) testing: Question 3
+
+Does the mean `trump16` result differ detectably across the `educ` groups?
+
+```{r}
+model_3 <- lm(trump16 ~ educ, data = ohio20)
+
+tidy(model_3, conf.int = 0.90) %>% 
+  select(term, estimate, std.error, 
+         conf.low, conf.high, p.value) %>% kable(dig = 2)
+```
+
+## ANOVA for the Linear Model: Question 3
+
+```{r}
+anova(model_3)
+```
+
+```{r}
+glance(model_3) %>% 
+  select(r.squared, statistic, df, df.residual, p.value)
+```
+
+So, what's the conclusion?
+
+## Residual Plots for `model_3`
+
+```{r, echo = FALSE}
+aug_3 <- augment(model_3, ohio20)
+
+p1 <- ggplot(aug_3, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "red") +
+  geom_text_repel(data = aug_3 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = county)) +
+  labs(title = "model_3 Residuals vs. Fitted",
+       x = "Fitted Value from model_3",
+       y = "Residuals from model_3")
+
+p2 <- ggplot(aug_3, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "model_3 Residuals",
+       y = "")
+
+p3 <- ggplot(aug_3, aes(y = .resid, x = "")) +
+  geom_violin(fill = "aquamarine") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Does Kruskal-Wallis give a very different result?
+
+```{r}
+kruskal.test(trump16 ~ educ, data = ohio20)
+```
+
+## Tukey HSD 90% confidence intervals: Example 3
+
+```{r}
+tukey_3 <- tidy(TukeyHSD(aov(model_3), 
+                         ordered = TRUE, 
+                         conf.level = 0.90))
+tukey_3 %>% select(-null.value) %>% kable(dig = 3)
+```
+
+## Plotting Tukey HSD intervals for Example 3
+
+```{r, echo = FALSE}
+ggplot(tukey_3, aes(x = reorder(contrast, -estimate), 
+                      y = estimate)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high)) + 
+  geom_hline(yintercept = 0, col = "red", 
+             linetype = "dashed") +
+  geom_label(aes(label = round_half_up(estimate,1))) +
+  coord_flip() +
+  labs(x = "Contrast between Education Groups", 
+       y = "Estimated Effect, with 90% Tukey HSD interval",
+       title = "Estimated Effects, with Tukey HSD 90% Confidence Intervals",
+       subtitle = "Comparing Trump16 Vote % by Education Group, ohio20 data")
+```
+
+## Code for Previous Slide
+
+```{r, eval = FALSE}
+ggplot(tukey_3, aes(x = reorder(contrast, -estimate), 
+                      y = estimate)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high)) + 
+  geom_hline(yintercept = 0, col = "red", 
+             linetype = "dashed") +
+  geom_label(aes(label = round_half_up(estimate,1))) +
+  coord_flip() +
+  labs(x = "Contrast between Education Groups", 
+   y = "Estimated Effect, with 90% Tukey HSD interval",
+   title = "Estimated Effects, with Tukey HSD 90% Confidence Intervals",
+   subtitle = "Comparing Trump16 Vote % by Education Group, ohio20 data")
+```
+
+## Question 4 ()
+
+Let's break Ohio's counties into 4 groups based on their median `income`...
+
+```{r}
+ohio20 <- ohio20 %>% 
+  mutate(income = Hmisc::cut2(income, g = 4)) %>%
+  mutate(income = fct_recode(income, "Lowest" = "[40416, 48792)", 
+          "Low" = "[48792, 53904)", "High" = "[53904, 60828)", 
+          "Highest" = "[60828,103536]"))
+```
+
+Did President Trump's vote percentage in 2016 vary meaningfully across income?
+
+## Trump 2016 % by Income
+
+```{r, echo = FALSE}
+ggplot(ohio20, aes(x = income, y = trump16, fill = income)) +
+  geom_violin(alpha = 0.25) +
+  geom_boxplot(width = 0.25) +
+  guides(fill = FALSE) + 
+  scale_fill_brewer(palette = "Spectral", direction = -1) +
+  theme_bw() +
+  labs(x = "Income Group (2020 County Health Rankings)", 
+       y = "Proportion of Vote for Trump in 2016 Election",
+       title = "Proportion of Trump Vote by Income Group",
+       subtitle = "Ohio's 88 counties")
+```
+
+## Numerical Comparison
+
+```{r}
+mosaic::favstats(trump16 ~ income, data = ohio20) %>%
+  rename(na = missing) %>% kable(digits = 2)
+```
+
+## Analysis of Variance (ANOVA) testing
+
+Does the mean `trump16` result differ detectably across the `income` groups?
+
+```{r}
+model_4 <- lm(trump16 ~ income, data = ohio20)
+
+tidy(model_4, conf.int = 0.90) %>% 
+  select(term, estimate, std.error, 
+         conf.low, conf.high, p.value) %>% kable(dig = 2)
+```
+
+## ANOVA for the Linear Model
+
+```{r}
+anova(model_4)
+```
+
+```{r}
+glance(model_4) %>% 
+  select(r.squared, statistic, df, df.residual, p.value)
+```
+
+So, what's the conclusion?
+
+## Residual Plots for `model_4`
+
+```{r, echo = FALSE}
+aug_4 <- augment(model_4, ohio20)
+
+p1 <- ggplot(aug_4, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = F,
+              lty = "dashed", col = "red") +
+  geom_text_repel(data = aug_4 %>% 
+                    slice_max(abs(.resid), n = 3), 
+                  aes(label = county)) +
+  labs(title = "model_4 Residuals vs. Fitted",
+       x = "Fitted Value from model_4",
+       y = "Residuals from model_4")
+
+p2 <- ggplot(aug_4, aes(sample = .resid)) +
+  geom_qq() + geom_qq_line(col = "red") + 
+  labs(title = "model_4 Residuals",
+       y = "")
+
+p3 <- ggplot(aug_4, aes(y = .resid, x = "")) +
+  geom_violin(fill = "aquamarine") +
+  geom_boxplot(width = 0.5) + 
+  labs(y = "", x = "")
+
+p1 + p2 + p3 + plot_layout(widths = c(5, 4, 1))
+```
+
+## Does Kruskal-Wallis give a different result?
+
+```{r}
+kruskal.test(trump16 ~ income, data = ohio20)
+```
+
+## Tukey HSD 90% confidence intervals: Income Groups
+
+```{r}
+tukey_4 <- tidy(TukeyHSD(aov(model_4), 
+                         ordered = TRUE, 
+                         conf.level = 0.90))
+tukey_4 %>% select(-null.value) %>% kable(dig = 3)
+```
+
+## Plotting Tukey HSD intervals (Income Groups)
+
+```{r, echo = FALSE}
+ggplot(tukey_4, aes(x = reorder(contrast, -estimate), 
+                      y = estimate)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high)) + 
+  geom_hline(yintercept = 0, col = "red", 
+             linetype = "dashed") +
+  geom_label(aes(label = round_half_up(estimate,2))) +
+  coord_flip() +
+  labs(x = "Contrast between Income Groups", 
+       y = "Estimated Effect, with 90% Tukey HSD interval",
+       title = "Estimated Effects, with Tukey HSD 90% Confidence Intervals",
+       subtitle = "Comparing Trump16 Vote % by Income Group, ohio20 data")
+```
+
+## K-Sample Study Design, Comparing Means
+
+1. What is the outcome under study?
+2. What are the (in this case, $K \geq 2$) treatment/exposure groups?
+3. Were the data in fact collected using independent samples?
+4. Are the data random samples from the population(s) of interest? Or is there at least
+a reasonable argument for generalizing from the samples to the population(s)?
+5. What is the significance level (or, the confidence level) we require?
+6. Are we doing one-sided or two-sided testing? (usually 2-sided)
+7. What does the distribution of each individual sample tell us about which inferential procedure to use?
+8. Are there statistically meaningful differences between population means?
+9. If an overall test rejects the null, can we identify pairwise comparisons of means that show detectable differences using an appropriate procedure that protects against Type I error expansion due to multiple comparisons?
+
