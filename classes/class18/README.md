@@ -24,7 +24,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. There will be a Minute Paper after Class 18 due at Noon Wednesday 2020-10-28.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due on Friday **2020-10-30** at Noon.
-    - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html).
+    - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html), and check out [my advice from Class 16](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/README.md#advice-on-developing-a-research-question) on developing your research questions.
 
 ## One Last Thing
 
