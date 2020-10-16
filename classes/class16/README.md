@@ -14,6 +14,34 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - **Lindsay Petrenchik (and her dog), Joe Powell, Katrina Prantzalos, Dipak Upadhyaya, Long Vu** and **Sam Waddell** (37-39 and 51-53 from the Introductory Student Videos in our Shared Google Drive)
 
+## Advice in Developing a Research Question
+
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/images/rq.png)
+
+- A question is expressed so as to elicit information, and **ends with a question mark**. 
+- The question must be one that lends itself well to the use of a regression model (you are welcome to adapt any regression modeling strategy connected to the 432 course) to develop an answer.
+- You can study anything you like, so long as you steer clear of things that Dr. Love thinks are inappropriate for a course project.
+
+Straightforward questions with a clear link to models we’ve studied or studying are the best option.
+
+Jeff Leek, in his book [How to be a Modern Scientist](https://leanpub.com/modernscientist) has some excellent advice on this. In particular, identify a research question that:
+
+- is concrete, (and for which you can find useful data), and that
+- solves a real problem, and that
+- gives you an opportunity to do something new,
+- that you will feel ownership of, and
+- that you want to work on.
+
+I’ll add that your research question needs to be reasonable and plausible given the constraints on your time and energy. This is the time to develop something that can work in this setting, not try to boil the ocean. 
+
+In addition to the examples I provided in [my outline for the Project A analyses](https://thomaselove.github.io/431-2020-projectA/examples.html), research questions that begin with:
+
+- "How effectively can we predict whether ..."
+- "What can a linear model tell us about ..."
+- "How strong is the association between ..."
+
+often yield reasonable choices for Project A, not to suggest that those are the only reasonable choices.
+
 ## Announcements
 
 1. Feedback on the most recent [Minute Paper (after Class 15)](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md) is available.
