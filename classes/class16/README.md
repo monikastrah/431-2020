@@ -14,7 +14,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - **Lindsay Petrenchik (and her dog), Joe Powell, Katrina Prantzalos, Dipak Upadhyaya, Long Vu** and **Sam Waddell** (37-39 and 51-53 from the Introductory Student Videos in our Shared Google Drive)
 
-## Advice in Developing a Research Question
+## Advice on Developing a Research Question
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/images/rq.png)
 
@@ -40,7 +40,7 @@ In addition to the examples I provided in [my outline for the Project A analyses
 - "What can a linear model tell us about ..."
 - "How strong is the association between ..."
 
-often yield reasonable choices for Project A, not to suggest that those are the only reasonable choices.
+often yield reasonable choices for Project A, not to suggest that those are the only reasonable choices. Try not to use the exact same style of research question in all three Analyses in your Project A. Mix things up a bit. I also strongly recommend you avoid the use of the word "correlate" in a research question. Everything is correlated with everything else, at least a little.
 
 ## Announcements
 
