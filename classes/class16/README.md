@@ -61,4 +61,4 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 
 ## One Last Thing
 
-To come.
+- You might be interested in reading [What Pollsters Have Changed Since 2016 — And What Still Worries Them About 2020](https://fivethirtyeight.com/features/what-pollsters-have-changed-since-2016-and-what-still-worries-them-about-2020/) by Geoffrey Skelley and Nathaniel Rakich at FiveThirtyEight posted 2020-10-13.
