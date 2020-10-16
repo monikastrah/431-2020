@@ -18,6 +18,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 1. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due tomorrow **2020-10-30** at Noon.
+    - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html).
+
 2. After the Project, the next item will be Lab 06, which is due Monday 2020-11-09 at noon.
 
 ## One Last Thing
