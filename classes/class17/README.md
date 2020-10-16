@@ -8,7 +8,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Today's Slides
 
-- Class 17 slides will be available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class17/431_class-17-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class17/431_class-17-slides_2020.Rmd).
+- Class 17 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class17/431_class-17-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class17/431_class-17-slides_2020.Rmd).
 
 ## Who Will We Meet Today?
 
@@ -16,7 +16,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-Coming soon.
+1. Data Sources for today's slides are
+    - [County Health Rankings 2020 Ohio Data](https://www.countyhealthrankings.org/app/ohio/2020/downloads)
+    - [Wikipedia 2016 US presidential election results by county in Ohio](https://en.wikipedia.org/wiki/2016_United_States_presidential_election_in_Ohio#By_county)
 
 ## What Should I Be Working On?
 
