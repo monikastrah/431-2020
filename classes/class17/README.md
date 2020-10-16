@@ -24,6 +24,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due Monday 2020-10-26 at 9 PM.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due Friday **2020-10-30** at Noon.
+    - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html).
 
 ## One Last Thing
 
