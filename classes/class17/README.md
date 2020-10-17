@@ -23,6 +23,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 1. [Lab 05](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab05/lab05.md) is due Monday 2020-10-26 at 9 PM.
+    - Dr. Love revised Question 7 and placed a note about Questions 7 and 8 in the instructions on 2020-10-17. Please be sure you take a look.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due Friday **2020-10-30** at Noon.
     - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html). If you're having trouble with research questions, check out [my advice from Class 16](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/README.md#advice-on-developing-a-research-question).
 
