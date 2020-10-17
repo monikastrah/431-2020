@@ -1,6 +1,6 @@
 Lab 05
 ================
-Last Edited 2020-10-04 21:03:36
+Last Edited 2020-10-17 11:05:06
 
 Lab 05 includes 8 questions. Be sure to respond to each question by the
 deadline posted on the [Course
@@ -130,18 +130,26 @@ in light of your response to Question 4.
 
 # Question 7. (15 points)
 
-Produce and interpret an appropriate confidence interval for a relevant
-population **mean** that addresses the key question from the study,
-following the requirements of the principal investigator. Be sure to
-show and describe the R code that led to your selected confidence
-interval, and describe how your responses to prior Questions led you to
-select this approach.
+Produce an appropriate confidence interval for a relevant population
+**mean** that addresses the key question from the study, following the
+requirements of the principal investigator. Be sure to show and describe
+the R code that led to your selected confidence interval, and describe
+how your responses to prior Questions led you to select this approach.
 
 # Question 8. (15 points)
 
 Interpret your confidence interval from Question 7 in the context of the
 request by the project’s principal investigator using complete English
 sentences.
+
+## (NEW\!) Note on Questions 7 and 8
+
+Dr. Love adjusted the prompt in Question 7 to remove the phrase “and
+interpret” on 2020-10-17, so as to clarify what you need to do. Question
+7 is meant to require you to (a) build the CI and (b) motivate your
+choice as to why you built the CI using the tool you selected. Question
+8 is meant to require you to put that CI into the context of the problem
+you’re studying and the PI’s request.
 
 # Grading
 
