@@ -12,7 +12,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Who Will We Meet Today?
 
-- **Lindsay Petrenchik (and her dog), Joe Powell, Katrina Prantzalos, Dipak Upadhyaya, Long Vu** and **Sam Waddell** (37-39 and 51-53 from the Introductory Student Videos in our Shared Google Drive)
+- **Lindsay Petrenchik (and her dog), Joe Powell, Katrina Prantzalos, Dipak Upadhyaya, Long Vu** and **Sam Waddell** (37-39 and 51-53 from the Introductory Student Videos in our Shared Google Drive). Also, I'd like to apologize to Will Patterson for misspelling his name in the Class 15 list (now fixed.)
 
 ## Advice on Developing a Research Question
 
