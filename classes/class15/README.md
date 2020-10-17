@@ -12,7 +12,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Who Will We Meet Today?
 
-- **Ritu Narahari, Rod Nault, Jennifer Nguyen, Callie Ogland-Hand, Aman Pande** and **Will Paterson** (31-36 from the Introductory Student Videos in our Shared Google Drive)
+- **Ritu Narahari, Rod Nault, Jennifer Nguyen, Callie Ogland-Hand, Aman Pande** and **Will Patterson** (31-36 from the Introductory Student Videos in our Shared Google Drive)
 
 ## Announcements
 
