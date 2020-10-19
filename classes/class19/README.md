@@ -21,7 +21,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html), and check out [my advice from Class 16](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/README.md#advice-on-developing-a-research-question) on developing your research questions.
     - Make sure you submit all necessary materials (.Rmd, .HTML and video file(s)) to Canvas by noon and complete [the self-evaluation form](http://bit.ly/431-2020-projectA-self-evaluation).
 
-2. After the Project, the next item will be Lab 06, which is due Monday 2020-11-09 at noon.
+2. After the Project, [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md) is due Monday 2020-11-09 at 9 PM.
 
 ## One Last Thing
 
