@@ -1,12 +1,12 @@
 Lab 06
 ================
-Last Edited 2020-10-19 12:32:04
+Last Edited 2020-10-19 12:36:27
 
 Lab 06 includes 4 questions, worth a total of 100 points. Be sure to
 respond to each question by the deadline posted on the [Course
 Calendar](https://thomaselove.github.io/431/calendar.html).
 
-You are welcome (encouraged, really) to discuss Lab 05 with Dr. Love,
+You are welcome (encouraged, really) to discuss Lab 06 with Dr. Love,
 the teaching assistants and even your colleagues, but your answer must
 be prepared by you alone. Don’t be afraid to ask questions, either via
 [Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab06
