@@ -1,0 +1,112 @@
+---
+title: "Lab 06"
+date: "Last Edited `r Sys.time()`"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Lab 06 includes 4 questions, worth a total of 100 points. Be sure to respond to each question by the deadline posted on the [Course Calendar](https://thomaselove.github.io/431/calendar.html). 
+
+You are welcome (encouraged, really) to discuss Lab 05 with Dr. Love, the teaching assistants and even your colleagues, but your answer must be prepared by you alone. Don't be afraid to ask questions, either via [Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab06 folder), at [TA office hours](https://thomaselove.github.io/431/contact.html) or before/after class.
+
+We have not provided a template for this Lab. Please include properly numbered sections (including numbered subsections for Question 2's several sub-questions), a table of contents, and use an attractive theme (such as `theme_bw()`) for your visualizations.
+
+## Submitting your Response
+
+Build your entire response as an R Markdown file. Then knit the file to create an HTML document. Submit both your R Markdown file and the HTML output file to [Canvas in the Lab 06 section of the Assignments folder](https://canvas.case.edu) by the deadline specified in [the Course Calendar](https://thomaselove.github.io/431/calendar.html).
+
+# Question 1 (25 points)
+
+In a study of risk factors for peripheral arterial disease among persons 55-74 years of age, suppose you want to compare mean LDL cholesterol levels (measured in mmol/liter) across four different populations of subjects. 
+
+- Group 1 includes patients with intermittent claudication or interruptions in movement.
+- Group 2 includes patients with major asymptomatic disease.
+- Group 3 includes patients with minor asymptomatic disease.
+- Group 4 includes those patients with no evidence of disease at all.
+
+Assume that the `pad.xlsx` data (containing three columns of data: `subjectID`, `LDL` and `Group`) provided for you describe random samples selected from each of these populations.
+
+Your job is to complete an appropriate analysis of these data which provide meaningful information about what can be learned from them. Present your code, and explain what you develop in complete sentences, being sure to ingest the data appropriately, describe the characteristics of the sample used to generate your conclusions, specify the linear model you develop, assess assumptions carefully and produce an overall comparison across the four Groups, as well as meaningful information about pairwise comparisons across the Groups. Use a 99% significance level for all elements of Question 1.
+
+**Note** Should you wish to convert these LDL cholesterol levels from mmol/liter to mg/dl, you would need to multiply the value in mmol/liter by 38.67.
+
+# Question 2 (35 points)
+
+Suppose that you are interested in examining the effects of the transition from fetal to postnatal circulation among premature infants, and that you plan to use a 90% confidence level. For each of 18 healthy newborns, respiratory rate is measured once when the infant is less than 15 days old (Time 1), and once when he or she is more than 25 days old (Time 2). 
+
+The respiratory rate data are presented in the table below and also (in a different format) in the `circ.csv` data set provided to you.
+
+Subject | Time 1 | Time 2
+------- | ------: | ------:
+1 | 54 | 50
+2 | 78 | 72
+3 | 66 | 76
+4 | 56 | 58
+5 | 62 | 46
+6 | 35 | 42
+7 | 38 | 40
+8 | 80 | 42
+9 | 48 | 36
+10 | 48 | 46
+11 | 68 | 45
+12 | 26 | 40
+13 | 48 | 42
+14 | 27 | 40
+15 | 43 | 46
+16 | 67 | 31
+17 | 52 | 44
+18 | 88 | 68
+
+Question 2 contains six sub-questions.
+
+### Question 2a (5 points)
+
+What is the outcome under study?
+
+### Question 2b (5 points)
+
+What are the treatment/exposure groups?
+
+### Question 2c (5 points)
+
+Were the data collected using matched / paired samples or independent samples? What do you need to do (if anything) to manage or rearrange the data for analyses?
+
+### Question 2d (5 points)
+
+Are the data a random sample from the population(s) of interest? Is there at least a reasonable argument for generalizing from the sample to the population(s) or is there insufficient information provided on this point?
+
+### Question 2e (5 points)
+
+If we have paired samples, what does the distribution of sample paired differences tell us about which inferential procedure to use? If we instead have independent samples, what does the distribution of each individual sample tell us about which inferential procedure to use?
+
+### Question 2f (10 points)
+
+Finally, produce and interpret an appropriate confidence interval for a relevant population **mean** that addresses the key question from the study. Be sure to show and describe the R code that led to your selected confidence interval, and then interpret that interval in context using complete English sentences.
+
+# Question 3 (15 points)
+
+Rosenberg et al. (1980) studied the relationship between coffee drinking and myocardial infarction in young women aged 30-49 years.  This retrospective study included 487 cases hospitalized for the occurrence of a myocardial infarction (MI).  Nine hundred eight controls hospitalized for an acute condition (trauma, acute cholecystitis, acute respiratory diseases, and appendicitis) were selected. Data for consumption of five or more cups of coffee can be summarized as follows.
+
+Cups Per Day | MI | Controls
+---------- | --- | ---
+5 or more | 152 | 183
+less than 5 | 335 | 797
+
+Develop an appropriate comparison of the risk of an MI for heavy (5 or more cups per day) coffee drinkers as compared to those who drink less than 5 cups of coffee per day. Use a 10% significance level for this question. Be sure to provide your code, and interpret your results in the context of the study.
+
+**Note** The original paper (which you should not be reading to complete this Lab, but are welcome to look at if you are curious) is Rosenberg L et al. (1980) Coffee drinking and myocardial infarction in young women.  *Amer J Epidemiology*, 112, 39-53.
+
+# Question 4 (25 points)
+
+In class, we've been discussing two sets of probabilistic forecasts of the upcoming U.S. Presidential, Senate and House Elections, one built by *The Economist* and one built by *FiveThirtyEight*. In *The Art of Statistics* Spiegelhalter discusses some of the issues involved in creating and assessing probabilistic forecasts. 
+
+Write an essay to describe some relevant thoughts about two issues. 
+
+1. Identify (and cite properly) some of the arguments provided at the forecasting source you choose (*The Economist* or *FiveThirtyEight*) about how their models should be interpreted, and connect, compare and contrast that information with what you've been reading about in Spiegelhalter. 
+
+2. In addition, we'd like you to write a few sentences to discuss the question of what conclusions can or should be drawn after the 2020 election results are known that cannot be drawn prior to the election.
+
+A complete essay should include multiple paragraphs, complete English sentences, and 200 to 300 words. To help you understand the length we are looking for, this set of Question 4 instructions is 173 words long.
