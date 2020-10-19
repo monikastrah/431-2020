@@ -60,12 +60,10 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is now due on **2020-10-30** at Noon.
     - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html).
 
-## Following the Election Closely?
-
-I recommend
+## The US Election
 
 - There's a great interactive plot at [Flush With Cash, Biden Eclipses Trump in War for the Airwaves](https://www.nytimes.com/interactive/2020/10/17/us/politics/trump-biden-campaign-ad-spending.html) by Nick Corasaniti, Weiyi Cai and Denise Lu at The New York Times, 2020-10-17.
 - [8 Tips to Stay Sane in the Final 15 Days Of The Campaign](https://fivethirtyeight.com/features/8-tips-to-stay-sane-in-the-final-15-days-of-the-campaign/) by Nate Silver at FiveThirtyEight posted 2020-10-18.
 - [What Pollsters Have Changed Since 2016 — And What Still Worries Them About 2020](https://fivethirtyeight.com/features/what-pollsters-have-changed-since-2016-and-what-still-worries-them-about-2020/) by Geoffrey Skelley and Nathaniel Rakich at FiveThirtyEight posted 2020-10-13.
-- [The Economist's Forecast](https://projects.economist.com/us-2020-forecast/president) and [The FiveThirtyEight Forecast](https://projects.fivethirtyeight.com/2020-election-forecast/)
+- Forecast Links: [The Economist](https://projects.economist.com/us-2020-forecast/president) and [FiveThirtyEight](https://projects.fivethirtyeight.com/2020-election-forecast/).
 
