@@ -42,16 +42,17 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 
 ## Announcements
 
-1. Feedback on the most recent [Minute Paper (after Class 15)](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md) is available.
-2. The Project A instructions now include:
+1. Today is [World Statistics Day](https://worldstatisticsday.org/)!
+2. Feedback on the most recent [Minute Paper (after Class 15)](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers/README.md) is available.
+3. The Project A instructions now include:
     - a [summary of the proposals](https://thomaselove.github.io/431-2020-projectA/prop_summary.html) which includes [some important instructions on Cleaning Your Variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), and 
     - a [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html), containing (about) [40 things you should check in your report before submitting it](https://thomaselove.github.io/431-2020-projectA/check_final.html). 
     - I believe I have now given you all of the guidance you'll receive from me, outside of responding to questions on Piazza. 
-3. [ASA Board Releases 2020 Census Quality Indicators](https://www.amstat.org/ASA/News/ASA-Board-Releases-2020-Census-Quality-Indicators.aspx)
+4. [ASA Board Releases 2020 Census Quality Indicators](https://www.amstat.org/ASA/News/ASA-Board-Releases-2020-Census-Quality-Indicators.aspx)
     - 2020-10-13: The American Statistical Association Board of Directors endorses the recommendations of the [2020 Census Quality Indicators report](https://www.amstat.org/asa/files/pdfs/POL-2020CensusQualityIndicators.pdf), written by a task force of census experts to shed light on the quality, accuracy, and coverage of the 2020 Census counts, and urges prompt action by the federal government.
-4. There is a [Symposium on Climate Action and Health](https://theoec.salsalabs.org/occaclimateandhealther2020/index.html) starting this evening and continuing through Friday 2020-10-23 which is free to all who would like to attend.
+5. There is a [Symposium on Climate Action and Health](https://theoec.salsalabs.org/occaclimateandhealther2020/index.html) starting this evening and continuing through Friday 2020-10-23 which is free to all who would like to attend.
     - This unique conference will enlighten health professionals and students on climate change’s impacts on human health. The symposium will not only educate participants but inspire motivation and provide the tools to develop solutions to counteract the health effects of climate change. I'll be attending a couple of the sessions.
-5. [Build a Trump vs Biden Prediction Model with R From Scratch](https://medium.com/swlh/build-a-trump-vs-biden-prediction-model-with-r-from-scratch-fa66aee9f5c2), should you so desire.
+6. [Build a Trump vs Biden Prediction Model with R From Scratch](https://medium.com/swlh/build-a-trump-vs-biden-prediction-model-with-r-from-scratch-fa66aee9f5c2), should you so desire.
 
 ## What Should I Be Working On?
 
