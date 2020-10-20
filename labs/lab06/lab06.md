@@ -1,6 +1,6 @@
 Lab 06
 ================
-Last Edited 2020-10-19 12:36:27
+Last Edited 2020-10-19 21:22:31
 
 Lab 06 includes 4 questions, worth a total of 100 points. Be sure to
 respond to each question by the deadline posted on the [Course
@@ -57,6 +57,9 @@ significance level for all elements of Question 1.
 **Note** Should you wish to convert these LDL cholesterol levels from
 mmol/liter to mg/dl, you would need to multiply the value in mmol/liter
 by 38.67.
+
+**Note** The `TukeyHSD` function takes a `conf.level` argument to
+specify something other than the default 0.95.
 
 # Question 2 (35 points)
 

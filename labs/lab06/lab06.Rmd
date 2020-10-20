@@ -33,6 +33,8 @@ Your job is to complete an appropriate analysis of these data which provide mean
 
 **Note** Should you wish to convert these LDL cholesterol levels from mmol/liter to mg/dl, you would need to multiply the value in mmol/liter by 38.67.
 
+**Note** The `TukeyHSD` function takes a `conf.level` argument to specify something other than the default 0.95.
+
 # Question 2 (35 points)
 
 Suppose that you are interested in examining the effects of the transition from fetal to postnatal circulation among premature infants, and that you plan to use a 90% confidence level. For each of 18 healthy newborns, respiratory rate is measured once when the infant is less than 15 days old (Time 1), and once when he or she is more than 25 days old (Time 2). 
