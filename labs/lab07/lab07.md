@@ -1,11 +1,31 @@
 Lab 07
 ================
-Last Edited 2020-10-19 21:22:53
+Last Edited 2020-10-19 21:34:34
 
 # General Instructions
 
 There are ten questions on this assignment. Please make sure to respond
 to all ten.
+
+You are welcome (encouraged, really) to discuss Lab 07 with Dr. Love,
+the teaching assistants and even your colleagues, but your answer must
+be prepared by you alone. Don’t be afraid to ask questions, either via
+[Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab07
+folder), at [TA office
+hours](https://thomaselove.github.io/431/contact.html) or before/after
+class.
+
+We have not provided a template for this Lab. Please include properly
+numbered sections, a table of contents, and use an attractive theme
+(such as `theme_bw()`) for your visualizations.
+
+## Submitting your Response
+
+Build your entire response as an R Markdown file. Then knit the file to
+create an HTML document. Submit both your R Markdown file and the HTML
+output file to [Canvas in the Lab 07 section of the Assignments
+folder](https://canvas.case.edu) by the deadline specified in [the
+Course Calendar](https://thomaselove.github.io/431/calendar.html).
 
 # Question 1 (10 points)
 
