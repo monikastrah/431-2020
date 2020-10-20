@@ -17,10 +17,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Advice on Developing a Research Question
 
 - A question is expressed so as to elicit information, and **ends with a question mark**. 
-- The question must be one that lends itself well to the use of a regression model (you are welcome to adapt any regression modeling strategy connected to the 432 course) to develop an answer.
-- You can study anything you like, so long as you steer clear of things that Dr. Love thinks are inappropriate for a course project.
+- The question must be one that lends itself well to the use of (the required regression model approaches) to develop an answer.
 
-Straightforward questions with a clear link to models we’ve studied or studying are the best option.
+Straightforward questions with a clear link to the models we're using are the best option.
 
 Jeff Leek, in his book [How to be a Modern Scientist](https://leanpub.com/modernscientist) has some excellent advice on this. In particular, identify a research question that:
 
@@ -38,7 +37,7 @@ In addition to the examples I provided in [my outline for the Project A analyses
 - "What can a linear model tell us about ..."
 - "How strong is the association between ..."
 
-often yield reasonable choices for Project A, not to suggest that those are the only reasonable choices. Try not to use the exact same style of research question in all three Analyses in your Project A. Mix things up a bit. I also strongly recommend you avoid the use of the word "correlate" in a research question. Everything is correlated with everything else, at least a little.
+often yield reasonable choices for Project A, not to suggest that those are the only reasonable choices. Try not to use the exact same style of research question in all three Analyses in your Project A. Mix things up a bit. I also strongly recommend you avoid the use of the word "correlate" in a research question. Everything is correlated with everything else, at least a little. Seeing whether something "correlates" with something else is therefore uninteresting.
 
 ## Announcements
 
