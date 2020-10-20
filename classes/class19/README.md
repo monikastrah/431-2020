@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> Quote coming soon.
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class19/images/dahly.png)
 
 ## Today's Slides
 
