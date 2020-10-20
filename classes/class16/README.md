@@ -69,5 +69,6 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 - [8 Tips to Stay Sane in the Final 15 Days Of The Campaign](https://fivethirtyeight.com/features/8-tips-to-stay-sane-in-the-final-15-days-of-the-campaign/) by Nate Silver at FiveThirtyEight posted 2020-10-18.
 - [What Pollsters Have Changed Since 2016 — And What Still Worries Them About 2020](https://fivethirtyeight.com/features/what-pollsters-have-changed-since-2016-and-what-still-worries-them-about-2020/) by Geoffrey Skelley and Nathaniel Rakich at FiveThirtyEight posted 2020-10-13.
 - You may be interested in Conor Kelly's [summary comparison of 2016 and 2020](https://public.tableau.com/profile/ckelly2528#!/vizhome/PollingAverages/MAIN).
+- The [Gallup poll](https://news.gallup.com/poll/321599/voter-turnout-appears-steady-enthusiasm-running-high.aspx) has a net +53 on whether voters are more enthusiastic (71%) or less enthusiastic (18%) than usual to vote. As [Nate Silver tweets](https://twitter.com/natesilver538/status/1316195240605343745?s=11) this is usually a pretty reliable indicator of turnout, and appears to be the highest spread ever recorded on that question.
 - Forecast Links: [The Economist](https://projects.economist.com/us-2020-forecast/president) and [FiveThirtyEight](https://projects.fivethirtyeight.com/2020-election-forecast/).
 
