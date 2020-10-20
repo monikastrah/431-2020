@@ -19,6 +19,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
 2. Project B Instructions will be made available by Sunday 2020-11-01.
+3. This [Cheat Sheet on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
 
 ## What Should I Be Working On?
 
