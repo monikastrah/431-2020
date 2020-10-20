@@ -4,7 +4,7 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-> Quote coming soon.
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class18/images/gelfand.png)
 
 ## Today's Slides
 
