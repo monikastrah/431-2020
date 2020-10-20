@@ -158,8 +158,8 @@ Four Approaches
 2. Also: direct call to t test with pooled variance estimate
 
 ```{r}
-t.test(ldl ~ statin, data = dm431_cc, alt = "two.sided", mu = 0,
-       var.equal = TRUE, conf.level = 0.90)
+t.test(ldl ~ statin, data = dm431_cc, alt = "two.sided", 
+       mu = 0, var.equal = TRUE, conf.level = 0.90)
 ```
 
 ## `t` test can be tidied
@@ -218,8 +218,8 @@ Welch's t test is the default `t.test` in R.
 - Sensible approach when assuming Normal populations is OK, but we don't want to assume the two populations have the same variance (as pooled t requires)
 
 ```{r}
-t.test(ldl ~ statin, data = dm431_cc, alt = "two.sided", mu = 0,
-       conf.level = 0.90)
+t.test(ldl ~ statin, data = dm431_cc, alt = "two.sided", 
+       mu = 0, conf.level = 0.90)
 ```
 
 ## Welch `t` test can also be tidied
