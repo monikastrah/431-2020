@@ -21,6 +21,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
     - [Wikipedia 2016 US presidential election results by county in Ohio](https://en.wikipedia.org/wiki/2016_United_States_presidential_election_in_Ohio#By_county)
 2. Want to take a look at [current activity](https://community.rstudio.com/tag/table-contest) in the RStudio Table Contest?
 3. The [NFL Big Data Bowl](https://operations.nfl.com/the-game/big-data-bowl/) is an annual sports analytics contest, and releases a lot of interesting data. Here's a [thread from Asma Toumi on wrangling those data using R](https://twitter.com/asmae_toumi/status/1317510643369598981).
+4. Here's a nice tutorial if you're struggling with data wrangling and the key verbs of `dplyr`: [Dive into dplyr](https://www.kaggle.com/jessemostipak/dive-into-dplyr-tutorial-1) featuring the Palmer Penguins, by Jesse Mostipak.
 
 
 
