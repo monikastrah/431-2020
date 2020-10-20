@@ -53,6 +53,7 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 6. There is a [Symposium on Climate Action and Health](https://theoec.salsalabs.org/occaclimateandhealther2020/index.html) starting this evening and continuing through Friday 2020-10-23 which is free to all who would like to attend.
     - This unique conference will enlighten health professionals and students on climate change’s impacts on human health. The symposium will not only educate participants but inspire motivation and provide the tools to develop solutions to counteract the health effects of climate change. I'll be attending a couple of the sessions.
 7. Interested in building a career in data science? Check out [the podcast](https://podcast.bestbook.cool/), and [the book](https://www.manning.com/books/build-a-career-in-data-science?a_aid=buildcareer&a_bid=76784b6a).
+8. Lots of new stuff posted to the [COVID-19 page](https://github.com/THOMASELOVE/covid19) if you're interested.
 
 ## What Should I Be Working On?
 
