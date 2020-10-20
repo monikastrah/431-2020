@@ -53,7 +53,8 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 5. There is a [Symposium on Climate Action and Health](https://theoec.salsalabs.org/occaclimateandhealther2020/index.html) starting this evening and continuing through Friday 2020-10-23 which is free to all who would like to attend.
     - This unique conference will enlighten health professionals and students on climate change’s impacts on human health. The symposium will not only educate participants but inspire motivation and provide the tools to develop solutions to counteract the health effects of climate change. I'll be attending a couple of the sessions.
 6. [Build a Trump vs Biden Prediction Model with R From Scratch](https://medium.com/swlh/build-a-trump-vs-biden-prediction-model-with-r-from-scratch-fa66aee9f5c2), should you so desire.
-7. [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md) and [Lab 07](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab07/lab07.md) have now been posted, and are due on in November at the deadlines specified on the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
+7. Interested in building a career in data science? Check out [the podcast](https://podcast.bestbook.cool/), and [the book](https://www.manning.com/books/build-a-career-in-data-science?a_aid=buildcareer&a_bid=76784b6a).
+8. [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md) and [Lab 07](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab07/lab07.md) have now been posted, and are due on in November at the deadlines specified on the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
 
 ## What Should I Be Working On?
 
@@ -67,5 +68,6 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 - There's a great interactive plot at [Flush With Cash, Biden Eclipses Trump in War for the Airwaves](https://www.nytimes.com/interactive/2020/10/17/us/politics/trump-biden-campaign-ad-spending.html) by Nick Corasaniti, Weiyi Cai and Denise Lu at The New York Times, 2020-10-17.
 - [8 Tips to Stay Sane in the Final 15 Days Of The Campaign](https://fivethirtyeight.com/features/8-tips-to-stay-sane-in-the-final-15-days-of-the-campaign/) by Nate Silver at FiveThirtyEight posted 2020-10-18.
 - [What Pollsters Have Changed Since 2016 — And What Still Worries Them About 2020](https://fivethirtyeight.com/features/what-pollsters-have-changed-since-2016-and-what-still-worries-them-about-2020/) by Geoffrey Skelley and Nathaniel Rakich at FiveThirtyEight posted 2020-10-13.
+- You may be interested in Conor Kelly's [summary comparison of 2016 and 2020](https://public.tableau.com/profile/ckelly2528#!/vizhome/PollingAverages/MAIN).
 - Forecast Links: [The Economist](https://projects.economist.com/us-2020-forecast/president) and [FiveThirtyEight](https://projects.fivethirtyeight.com/2020-election-forecast/).
 
