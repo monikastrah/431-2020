@@ -53,7 +53,7 @@ often yield reasonable choices for Project A, not to suggest that those are the 
 5. There is a [Symposium on Climate Action and Health](https://theoec.salsalabs.org/occaclimateandhealther2020/index.html) starting this evening and continuing through Friday 2020-10-23 which is free to all who would like to attend.
     - This unique conference will enlighten health professionals and students on climate change’s impacts on human health. The symposium will not only educate participants but inspire motivation and provide the tools to develop solutions to counteract the health effects of climate change. I'll be attending a couple of the sessions.
 6. [Build a Trump vs Biden Prediction Model with R From Scratch](https://medium.com/swlh/build-a-trump-vs-biden-prediction-model-with-r-from-scratch-fa66aee9f5c2), should you so desire.
-7. [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md) has now been posted, and is due on 2020-11-09 at 9 PM.
+7. [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md) and Lab 07 have now been posted, and are due on in November at the deadlines specified on the [Course Calendar](https://thomaselove.github.io/431/calendar.html).
 
 ## What Should I Be Working On?
 
