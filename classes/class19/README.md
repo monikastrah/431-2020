@@ -5,6 +5,7 @@
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class19/images/dahly.png)
+Note the follow-on thread at https://twitter.com/statsepi/status/1316062166764716042
 
 ## Today's Slides
 
