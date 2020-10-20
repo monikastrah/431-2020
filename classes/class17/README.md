@@ -24,6 +24,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 4. [Dive into dplyr](https://www.kaggle.com/jessemostipak/dive-into-dplyr-tutorial-1) featuring the Palmer Penguins, by Jesse Mostipak, is a nice tutorial if you're struggling with data wrangling and the key verbs of `dplyr`.
 5. Want to build a footnote in R Markdown? Try `^[Footnotegoeshere]`.
 6. Want to [annotate and/or add arrows to your plots](http://jenrichmond.rbind.io/post/idhtg-how-to-annotate-plots/)? Jen Richmond has [a nice post](http://jenrichmond.rbind.io/post/idhtg-how-to-annotate-plots/) featuring the Palmer Penguins!
+
+![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class17/images/richmond.png)
+
 7. Want beautiful color schemes for your work? Want to read about some great tips for using color well in `ggplot2`? Visit [this thread from Grace Deathlier](https://twitter.com/dna_heligrace/status/1316059171821821952). For example, [here's](https://twitter.com/dna_heligrace/status/1316059171821821952) a tip about [using schemecolor.com](https://www.schemecolor.com/) to set up manual scales.
 
 ![](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class17/images/deathlier.png)
