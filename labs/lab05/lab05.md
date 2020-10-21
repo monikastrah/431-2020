@@ -1,6 +1,6 @@
 Lab 05
 ================
-Last Edited 2020-10-17 11:05:06
+Last Edited 2020-10-21 13:54:48
 
 Lab 05 includes 8 questions. Be sure to respond to each question by the
 deadline posted on the [Course
@@ -115,8 +115,8 @@ samples? How do you know?
 
 # Question 6. (15 points)
 
-Answer either part 1 **or** 2 of this question, whichever is appropriate
-in light of your response to Question 4.
+Answer either part 1 **or** 2 of this question, making the appropriate
+selection in light of your response to the previous question.
 
 1.  If we have paired samples, what does the distribution of sample
     paired differences tell us about which inferential procedure to use?
