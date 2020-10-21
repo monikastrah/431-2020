@@ -40,4 +40,5 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## One Last Thing
 
-Coming soon.
+- [Explore The Ways Trump Or Biden Could Win The Election](https://projects.fivethirtyeight.com/trump-biden-election-map/)
+    - Pick the winner of each state to see how FiveThirtyEight’s presidential forecast would change.
