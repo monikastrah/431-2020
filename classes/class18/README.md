@@ -19,7 +19,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
 2. Project B Instructions will be made available by Sunday 2020-11-01.
-3. This [Cheat Sheet on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
+3. This [Cheat Sheet from Novartis on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
+4. The [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) by Yihui Xie, Christophe Dervieux and Emily Riederer is now complete and online. It has some really interesting material in it that I hope to find the time to explore soon.
 
 ## What Should I Be Working On?
 
