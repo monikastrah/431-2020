@@ -38,7 +38,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due Friday **2020-10-30** at Noon.
     - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html). If you're having trouble with research questions, check out [my advice from Class 16](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/README.md#advice-on-developing-a-research-question).
 
-## One Last Thing
+## Two Last Things
 
 - [Explore The Ways Trump Or Biden Could Win The Election](https://projects.fivethirtyeight.com/trump-biden-election-map/)
     - Pick the winner of each state to see how FiveThirtyEight’s presidential forecast would change.
