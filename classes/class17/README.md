@@ -42,3 +42,5 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - [Explore The Ways Trump Or Biden Could Win The Election](https://projects.fivethirtyeight.com/trump-biden-election-map/)
     - Pick the winner of each state to see how FiveThirtyEight’s presidential forecast would change.
+    
+- Tonight from 7 to 8:30 PM, CWRU is hosting a virtual panel event entitled "[Election 2020: The Future of Healthcare Policy](https://weatherhead.case.edu/events/2020/10/22/healthcare-across-the-aisle)". Some friends and colleagues of mine are involved. I encourage you to register if you're interested.
