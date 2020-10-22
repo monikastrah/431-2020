@@ -318,7 +318,7 @@ So, what's the conclusion? Is this a surprise?
 
 ## ANOVA Assumptions
 
-The assumptions behind analysis of variance are tthose behind a linear model. Of specific interest are:
+The assumptions behind analysis of variance are those of a linear model. Of specific interest are:
 
 - The samples obtained from each group are independent.
 - Ideally, the samples from each group are a random sample from the population described by that group.
