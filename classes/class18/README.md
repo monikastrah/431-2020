@@ -8,7 +8,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Today's Slides
 
-- Class 18 slides will be available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class18/431_class-18-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class18/431_class-18-slides_2020.Rmd).
+- Class 18 slides are available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class18/431_class-18-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class18/431_class-18-slides_2020.Rmd).
 
 ## Who Will We Meet Today?
 
@@ -17,14 +17,15 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-1. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
-2. Project B Instructions will be made available by Sunday 2020-11-01.
-3. This [Cheat Sheet from Novartis on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
-4. The [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) by Yihui Xie, Christophe Dervieux and Emily Riederer is now complete and online. It has some really interesting material in it that I hope to find the time to explore soon.
+1. There is a [Minute Paper after Class 18](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers), due tomorrow at noon.
+2. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
+3. Project B Instructions will be made available by Sunday 2020-11-01.
+4. This [Cheat Sheet from Novartis on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
+5. The [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) by Yihui Xie, Christophe Dervieux and Emily Riederer is now complete and online. It has some really interesting material in it that I hope to find the time to explore soon.
 
 ## What Should I Be Working On?
 
-1. There will be a Minute Paper after Class 18 due at Noon Wednesday 2020-10-28.
+1. [Minute Paper after Class 18](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) due at Noon tomorrow 2020-10-28.
 2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due on Friday **2020-10-30** at Noon.
     - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html), and check out [my advice from Class 16](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/README.md#advice-on-developing-a-research-question) on developing your research questions.
 
