@@ -6,7 +6,10 @@
 
 After Class | due | Link to Minute Paper Form | Link to Dr. Love's Feedback
 :----------: | :------: | :--------: | :----------:
-15 (2020-10-13) | 2020-10-14 NOON | http://bit.ly/431-2020-minute-15 | http://bit.ly/431-2020-min15-feedback
+18 (2020-10-27) | 2020-10-28 NOON | To come. | To come.
+21 (2020-11-10) | 2020-11-11 NOON | To come. | To come.
+23 (2020-11-17) | 2020-11-18 NOON | To come. | To come.
+25 (2020-12-01) | 2020-12-02 NOON | To come. | To come.
 
 ### Completed Minute Papers
 
@@ -17,6 +20,7 @@ After Class | due | Link to Minute Paper Form | Link to Dr. Love's Feedback
 7 (2020-09-15) | 2020-09-16 | http://bit.ly/431-2020-minute-07 | http://bit.ly/431-2020-minute-07-feedback
 9 (2020-09-22) | 2020-09-23 | http://bit.ly/431-2020-minute-09 | http://bit.ly/431-2020-minute-09-feedback
 11 (2020-09-29) | 2020-09-30 NOON | http://bit.ly/431-2020-minute-11 | http://bit.ly/431-2020-min11-feedback
+15 (2020-10-13) | 2020-10-14 NOON | http://bit.ly/431-2020-minute-15 | http://bit.ly/431-2020-min15-feedback
 
 **Dr. Love's records about submission of minute papers** are found in the course grading roster at http://bit.ly/431-2020-grades. 
 
