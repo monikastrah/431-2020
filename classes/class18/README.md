@@ -19,6 +19,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 1. There is a [Minute Paper after Class 18](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers), due tomorrow at noon.
 2. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
+3. I fixed a typo in Section 6 (at the top) of the outline for Project A. I doubt it will matter much to you. No change in what is required, just a clarification. 
+    - R Markdown file is still [here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/example_projectA_proposal/full-projectA-love.Rmd) on Github. HTML is still visible at https://rpubs.com/TELOVE/projA-full-431-2020.
 3. Project B Instructions will be made available by Sunday 2020-11-01.
 4. This [Cheat Sheet from Novartis on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
 5. The [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) by Yihui Xie, Christophe Dervieux and Emily Riederer is now complete and online. It has some really interesting material in it that I hope to find the time to explore soon.
