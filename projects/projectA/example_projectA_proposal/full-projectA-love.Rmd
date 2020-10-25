@@ -553,9 +553,9 @@ Then, in your second and final paragraph in this section, provide a brief descri
 
 # Analysis 3
 
-## The Variables
+In this section you will build a linear regression model to predict your outcome using one of your two quantitative predictors (it's your choice) and the `state` (which should be a factor in your model with Ohio as the baseline category.)
 
-In this section you will describe a plot to build a linear regression model to predict your outcome using one of your two quantitative predictors (it's your choice) and the `state` (which should be a factor in your model with Ohio as the baseline category.) 
+## The Variables
 
 - Do everything in this section that I recommended for the Variables section in Analysis 1.
 
