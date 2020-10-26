@@ -1,6 +1,6 @@
 Lab 07
 ================
-Last Edited 2020-10-19 21:34:34
+Last Edited 2020-10-25 22:21:51
 
 # General Instructions
 
@@ -33,7 +33,9 @@ Find an example of a visualization designed to support a comparison of
 at least two population means or medians using either paired or
 independent samples in a published work (online or not) for which you
 can find the complete sourcing information, and which was built no
-earlier than January 1, 2016.
+earlier than January 1, 2016. You want to pick a visualization that you
+think you can improve, either because it’s not designed well, or because
+it’s misleading with regard to the comparison it’s designed to support.
 
 Provide the complete reference and a copy of the image itself (including
 any captions or titles) and surrounding material for the visualization.
