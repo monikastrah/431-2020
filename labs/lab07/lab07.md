@@ -1,6 +1,6 @@
 Lab 07
 ================
-Last Edited 2020-10-25 22:21:51
+Last Edited 2020-10-25 23:36:57
 
 # General Instructions
 
@@ -147,6 +147,10 @@ whether or not the subject is `active`. What fraction of the variation
 in PDS levels is explained by this model? How much more of that
 variation is explained than by the model including group membership
 alone? How do you know?
+
+# Session Information
+
+Please include a `sessionInfo()` chunk at the end of your document.
 
 ### Footnotes
 

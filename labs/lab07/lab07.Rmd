@@ -94,6 +94,10 @@ This is a pre-planned comparison, but the sample sizes differ across the groups 
 
 Specify the linear model regression equation used to predict our PDS outcome on the basis of group membership, but now also adjusting for whether or not the subject is `active`. What fraction of the variation in PDS levels is explained by this model? How much more of that variation is explained than by the model including group membership alone? How do you know?
 
+# Session Information
+
+Please include a `sessionInfo()` chunk at the end of your document.
+
 ### Footnotes {-}
 
 [^1]: The motivating article is Stephan Y Sutin AR Terracciano A (2016) Feeling Older and Risk of Hospiatlization: Evidence from Three Longitudinal Cohorts, *Health Psychology*, [available as a PDF here](https://www.apa.org/pubs/journals/releases/hea-hea0000335.pdf).
