@@ -15,7 +15,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
-2. Project B Instructions will be made available by Sunday 2020-11-01.
+2. It is my intention that Project B Instructions will be available by Thursday 2020-11-05. Sorry for the change.
+3. Instructions for all remaining labs are now posted, including [Labs 06, 07 and 08](https://github.com/THOMASELOVE/431-2020/tree/master/labs).
 
 ## What Should I Be Working On?
 
