@@ -112,3 +112,11 @@ Write an essay to describe some relevant thoughts about two issues.
 2. In addition, we'd like you to write a few sentences to discuss the question of what conclusions can or should be drawn after the 2020 election results are known that cannot be drawn prior to the election.
 
 A complete essay should include multiple paragraphs, complete English sentences, and 200 to 300 words. To help you understand the length we are looking for, this set of Question 4 instructions is 173 words long.
+
+# Add the Session Information
+
+Adding a `sessionInfo()` chunk at the end of your document helps with reproducibility. 
+
+```{r}
+sessionInfo()
+```
