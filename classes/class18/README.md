@@ -25,6 +25,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 5. Instructions for all remaining labs are now posted, including [Labs 06, 07 and 08](https://github.com/THOMASELOVE/431-2020/tree/master/labs).
 6. This [Cheat Sheet from Novartis on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
 7. The [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) by Yihui Xie, Christophe Dervieux and Emily Riederer is now complete and online. It has some really interesting material in it that I hope to find the time to explore soon.
+8. I've been asked to let you know about the opportunity to join [the COVID-19 Data Project](https://commmunitycommons.us3.list-manage.com/track/click?u=e59ebb44d8095e98a3aa8718f&id=3a2c41e76b&e=44fe02db1b) as an emergency data relief intern. The project is backed by BroadStreet, a data and software company for social good. Learn more at https://learn.broadstreet.io/internships/
 
 ## What Should I Be Working On?
 
