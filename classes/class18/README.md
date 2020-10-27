@@ -42,5 +42,6 @@ A few election interactives:
 - [2020 Presidential Election Interactive Map](https://www.270towin.com/) at 270towin. Also check out their [2020 Presidential Simulation](https://www.270towin.com/2020-simulation/) to see outcomes appear based on actual poll closing times.
 - [Explore The Ways Trump Or Biden Could Win The Election](https://projects.fivethirtyeight.com/trump-biden-election-map/) at FiveThirtyEight, and the related article [We’re Letting You Mess With Our Presidential Forecast, But Try Not To Make The Map Too Weird](https://fivethirtyeight.com/features/were-letting-you-mess-with-our-presidential-forecast-but-try-not-to-make-the-map-too-weird) by Nate Silver posted 2020-10-21.
     
-Also perhaps worth your time:
+Also worth your time:
 - [Polling 101: What Happened To The Polls In 2016 — And What You Should Know About Them In 2020](https://fivethirtyeight.com/videos/polling-101-what-happened-to-the-polls-in-2016-and-what-you-should-know-about-them-in-2020/) on YouTube, from Dhrumil Mehta, Michael Tabb and Anna Rothschild at FiveThirtyEight.
+- [Reverse-engineering the problematic tail behavior of the Fivethirtyeight presidential election forecast](https://statmodeling.stat.columbia.edu/2020/10/24/reverse-engineering-the-problematic-tail-behavior-of-the-fivethirtyeight-presidential-election-forecast/) by Andrew Gelman 2020-10-24.
