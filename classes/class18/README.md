@@ -31,7 +31,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## What Should I Be Working On?
 
 1. [Minute Paper after Class 18](https://github.com/THOMASELOVE/431-2020/blob/master/minutepapers) due at Noon tomorrow 2020-10-28.
-2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due on Friday **2020-10-30** at Noon.
+2. [Project A](https://thomaselove.github.io/431-2020-projectA/) is due on Friday **2020-10-30** at 5 PM.
     - Don't forget to [clean your variables](https://thomaselove.github.io/431-2020-projectA/prop_summary.html), use the [headings for the Analyses specified in the outline](https://thomaselove.github.io/431-2020-projectA/examples.html), and review the [final report checklist](https://thomaselove.github.io/431-2020-projectA/check_final.html) in addition to the [final submission instructions](https://thomaselove.github.io/431-2020-projectA/final.html), and check out [my advice from Class 16](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class16/README.md#advice-on-developing-a-research-question) on developing your research questions.
     - We aim to get feedback to you on all Project A materials on Thursday 2020-11-12, in case you are curious.
 3. After the project, the next deadline is for [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md), due 2020-11-09.
