@@ -46,3 +46,4 @@ A few election interactives:
 Also worth your time:
 - [Polling 101: What Happened To The Polls In 2016 — And What You Should Know About Them In 2020](https://fivethirtyeight.com/videos/polling-101-what-happened-to-the-polls-in-2016-and-what-you-should-know-about-them-in-2020/) on YouTube, from Dhrumil Mehta, Michael Tabb and Anna Rothschild at FiveThirtyEight.
 - [Reverse-engineering the problematic tail behavior of the Fivethirtyeight presidential election forecast](https://statmodeling.stat.columbia.edu/2020/10/24/reverse-engineering-the-problematic-tail-behavior-of-the-fivethirtyeight-presidential-election-forecast/) by Andrew Gelman 2020-10-24.
+- [2020 General Election Early Vote Statistics](https://electproject.github.io/Early-Vote-2020G/index.html) by Michael McDonald, University of Florida and the [United States Election Project](http://www.electproject.org/)
