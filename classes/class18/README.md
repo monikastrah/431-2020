@@ -21,6 +21,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 2. Remember that we do not have 431 class or TA office hours next Tuesday 2020-11-03, Election Day.
 3. I fixed a typo in Section 6 (at the top) of the outline for Project A. I doubt it will matter much to you. No change in what is required, just a clarification. 
     - R Markdown file is still [here](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/example_projectA_proposal/full-projectA-love.Rmd) on Github. HTML is still visible at https://rpubs.com/TELOVE/projA-full-431-2020.
+    - Item 4 in the Final Checklist says "All packages are loaded near the top of the document (as opposed to partway through) and `echo = FALSE` is used to suppress the messages created when loading packages." That should be `message = FALSE`. I'll fix it after class.
 4. It is my intention that Project B Instructions will be available by Thursday 2020-11-05. Sorry for the change.
 5. Instructions for all remaining labs are now posted, including [Labs 06, 07 and 08](https://github.com/THOMASELOVE/431-2020/tree/master/labs).
 6. This [Cheat Sheet from Novartis on Graphics Principles](https://github.com/GraphicsPrinciples/CheatSheet/blob/master/NVSCheatSheet.pdf) is well worth your time.
