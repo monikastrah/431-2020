@@ -37,6 +37,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 A few election interactives:
 
+- [The Two Americas Financing the Trump and Biden Campaigns](https://www.nytimes.com/interactive/2020/10/25/us/politics/trump-biden-campaign-donations.html) by Shane Goldmacher, Ella Koeze, Rachel Shorey and Lazaro Gamio at *The New York Times* 2020-10-25.
 - [The Battleground States Biden and Trump Need to Win 270](https://www.nytimes.com/interactive/2020/us/elections/election-states-biden-trump.html) by Josh Holder and Alexander Burns at *The New York Times*
 - [2020 Presidential Election Interactive Map](https://www.270towin.com/) at 270towin. Also check out their [2020 Presidential Simulation](https://www.270towin.com/2020-simulation/) to see outcomes appear based on actual poll closing times.
 - [Explore The Ways Trump Or Biden Could Win The Election](https://projects.fivethirtyeight.com/trump-biden-election-map/) at FiveThirtyEight, and the related article [We’re Letting You Mess With Our Presidential Forecast, But Try Not To Make The Map Too Weird](https://fivethirtyeight.com/features/were-letting-you-mess-with-our-presidential-forecast-but-try-not-to-make-the-map-too-weird) by Nate Silver posted 2020-10-21.
