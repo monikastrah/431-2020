@@ -532,7 +532,7 @@ Hmisc::smean.cl.boot(dm431$dbp_chg, conf.int = 0.99)
 
 Define $\mu_d$ = population mean difference (DBP now minus DBP two years ago)
 
-Approach | *p* value | 95% CI for $\mu_d$ 
+Approach | *p* value | 99% CI for $\mu_d$ 
 :-------:|:--------:|:----------------:
 t Test    | 0.0008 | (-3.57, -0.48) 
 Wilcoxon  | 0.0020 | (-3.50, -0.50) 
