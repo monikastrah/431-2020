@@ -37,9 +37,10 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 **Do you think that we will know the election results on election night?**
 
-- My best guess at present is that it's about a 25-30% chance that the networks will declare a winner on Election Night.
+- My best guess at present is that it's at most a 25-30% chance that the networks will declare a winner on Election Night.
 - It is important to remember that [no state certifies official results on Election Night and a big part of the reason (even in states without mail-in voting) is that thousands of military ballots come in after Election Day](https://twitter.com/beckerdavidj/status/1321139899970527235).
 - No network decision desk will call an election in any state until [one candidate has at least a 99.5% chance of winning that state](https://fivethirtyeight.com/videos/the-decision-desk-wont-project-the-winner-of-a-state-until-its-99-5-sure/).
+- There will most probably be some elements of a "red mirage" if the vote totals remain high for in-person voting on election day as they are in pre-election day voting (especially in the Northern states where mail-in ballot counting at the county level is going to be delayed until after 11/3.)
 - I think it extremely unlikely (well less than a 1 in 100 chance) that the President will win by enough to be declared the victor on Election Night. 
 - It’s much more likely that former VP Biden could win a state that he doesn’t absolutely need to win that might be called relatively early (candidates include Florida, North Carolina or Arizona) by enough to be clearly the victor on Election Night. I'll use the 538 "[choose your own adventure](https://projects.fivethirtyeight.com/trump-biden-election-map/)" tool to help me think about this.
     - As of 1 AM, the President had an 11% chance to win, and VP Biden had an 88% chance according to the 538 Model.
