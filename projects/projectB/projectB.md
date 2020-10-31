@@ -1,8 +1,7 @@
 Project B
 ================
 
-Details on Project B will appear here in time for you to complete the
-necessary work.
+Details on Project B will appear on November 5. A link to the instructions will be placed here.
 
 I am not certain yet about many issues regarding Project B, but I do
 know something about what makes an acceptable data set for this Project.
@@ -20,7 +19,7 @@ know something about what makes an acceptable data set for this Project.
         categories,
   - include a complete description of how the data were gathered, so
     that information must be publicly available,
-  - be in your hands no later than November 1,
+  - be in your hands well before Thanksgiving,
   - be shared with a statistician (Professor Love) following [Jeff
     Leek’s guide to sharing data with a
     statistician](https://github.com/jtleek/datasharing). This means you
@@ -62,7 +61,7 @@ questions for the same data.
     and he’ll produce a partial list of such repositories with the full
     instructions.
 
-## Wait until October to worry about this
+## Don't worry about this yet
 
 TAs and Dr. Love will field questions about the appropriateness of data
-sets for Project B starting in October.
+sets for Project B starting after class on November 5.
