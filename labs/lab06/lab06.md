@@ -52,7 +52,7 @@ characteristics of the sample used to generate your conclusions, specify
 the linear model you develop, assess assumptions carefully and produce
 an overall comparison across the four Groups, as well as meaningful
 information about pairwise comparisons across the Groups. Use a 99%
-significance level for all elements of Question 1.
+confidence level (i.e. a 1% significance level) for all elements of Question 1.
 
 **Note** Should you wish to convert these LDL cholesterol levels from
 mmol/liter to mg/dl, you would need to multiply the value in mmol/liter
