@@ -1,6 +1,6 @@
 Lab 07
 ================
-Last Edited 2020-11-02 09:08:05
+Last Edited 2020-11-02 10:07:06
 
 # General Instructions
 
@@ -48,9 +48,10 @@ why your change (or changes) would be an improvement.
 
 ## Setup for Questions 3-8
 
-These questions and the simulated data you will use to answer them are
-motivated in part by an article\[1\] in *Health Psychology* by Stephan
-et al. Quoting from that article:
+These questions and the [simulated data you will
+use](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab07/data)
+to answer them are motivated in part by an article\[1\] in *Health
+Psychology* by Stephan et al. Quoting from that article:
 
 > Subjective age is a biopsychosocial marker of aging with a range of
 > health-related implications.
@@ -77,7 +78,9 @@ You’ll need to figure out the best way to calculate it.
 
 # Question 3 (10 points)
 
-The same data appear in the `lab07a.csv` and the `lab07b.csv` files.
+The same data appear in the `lab07a.csv` and the `lab07b.csv` files,
+[available to you
+here](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab07/data).
 What is the difference between the two files, and which of the two files
 is more useful for fitting an ANOVA to compare the PDS means across the
 three groups of study participants? Why?

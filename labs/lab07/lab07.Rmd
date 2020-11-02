@@ -32,7 +32,7 @@ Provide your best suggestion as to how either the visualization or the compariso
 
 ## Setup for Questions 3-8 {-}
 
-These questions and the simulated data you will use to answer them are motivated in part by an article[^1] in *Health Psychology* by Stephan et al. Quoting from that article:
+These questions and the [simulated data you will use](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab07/data) to answer them are motivated in part by an article[^1] in *Health Psychology* by Stephan et al. Quoting from that article:
 
 > Subjective age is a biopsychosocial marker of aging with a range of health-related implications.
 
@@ -48,7 +48,7 @@ and we will use this PDS measure as a key outcome in the work below. You'll need
 
 # Question 3 (10 points)
 
-The same data appear in the `lab07a.csv` and the `lab07b.csv` files. What is the difference between the two files, and which of the two files is more useful for fitting an ANOVA to compare the PDS means across the three groups of study participants? Why?
+The same data appear in the `lab07a.csv` and the `lab07b.csv` files, [available to you here](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab07/data). What is the difference between the two files, and which of the two files is more useful for fitting an ANOVA to compare the PDS means across the three groups of study participants? Why?
 
 ## The `lab07a.csv` file includes 1041 rows on these five variables:
 
