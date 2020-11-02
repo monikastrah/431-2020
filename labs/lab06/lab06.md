@@ -1,6 +1,6 @@
 Lab 06
 ================
-Last Edited 2020-11-02 09:02:57
+Last Edited 2020-11-02 10:03:42
 
 Lab 06 includes 4 questions, worth a total of 100 points. Be sure to
 respond to each question by the deadline posted on the [Course
@@ -45,8 +45,9 @@ subjects.
   - Group 4 includes those patients with no evidence of disease at all.
 
 Assume that the `pad.xlsx` data (containing three columns of data:
-`subjectID`, `LDL` and `Group`) provided for you describe random samples
-selected from each of these populations.
+`subjectID`, `LDL` and `Group`) [provided for
+you](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab06/data)
+describe random samples selected from each of these populations.
 
 Your job is to complete an appropriate analysis of these data which
 provide meaningful information about what can be learned from them.
@@ -75,7 +76,8 @@ newborns, respiratory rate is measured once when the infant is less than
 (Time 2).
 
 The respiratory rate data are presented in the table below and also (in
-a different format) in the `circ.csv` data set provided to you.
+a different format) in the `circ.csv` data set [provided to
+you](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab06/data).
 
 | Subject | Time 1 | Time 2 |
 | ------- | -----: | -----: |

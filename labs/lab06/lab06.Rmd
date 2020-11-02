@@ -27,7 +27,7 @@ In a study of risk factors for peripheral arterial disease among persons 55-74 y
 - Group 3 includes patients with minor asymptomatic disease.
 - Group 4 includes those patients with no evidence of disease at all.
 
-Assume that the `pad.xlsx` data (containing three columns of data: `subjectID`, `LDL` and `Group`) provided for you describe random samples selected from each of these populations.
+Assume that the `pad.xlsx` data (containing three columns of data: `subjectID`, `LDL` and `Group`) [provided for you](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab06/data) describe random samples selected from each of these populations.
 
 Your job is to complete an appropriate analysis of these data which provide meaningful information about what can be learned from them. Present your code, and explain what you develop in complete sentences, being sure to ingest the data appropriately, describe the characteristics of the sample used to generate your conclusions, specify the linear model you develop, assess assumptions carefully and produce an overall comparison across the four Groups, as well as meaningful information about pairwise comparisons across the Groups. Use a 99% confidence level for all elements of Question 1.
 
@@ -39,7 +39,7 @@ Your job is to complete an appropriate analysis of these data which provide mean
 
 Suppose that you are interested in examining the effects of the transition from fetal to postnatal circulation among premature infants, and that you plan to use a 90% confidence level. For each of 18 healthy newborns, respiratory rate is measured once when the infant is less than 15 days old (Time 1), and once when he or she is more than 25 days old (Time 2). 
 
-The respiratory rate data are presented in the table below and also (in a different format) in the `circ.csv` data set provided to you.
+The respiratory rate data are presented in the table below and also (in a different format) in the `circ.csv` data set [provided to you](https://github.com/THOMASELOVE/431-2020/tree/master/labs/lab06/data).
 
 Subject | Time 1 | Time 2
 ------- | ------: | ------:
