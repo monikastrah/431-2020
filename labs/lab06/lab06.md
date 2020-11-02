@@ -1,10 +1,14 @@
 Lab 06
 ================
-Last Edited 2020-10-25 23:38:01
+Last Edited 2020-11-02 09:02:57
 
 Lab 06 includes 4 questions, worth a total of 100 points. Be sure to
 respond to each question by the deadline posted on the [Course
-Calendar](https://thomaselove.github.io/431/calendar.html).
+Calendar](https://thomaselove.github.io/431/calendar.html). On
+2020-11-02, Dr. Love revised Question 4 to simplify the required essay.
+If you’d already written the more complicated essay we originally
+requested, that’s fine, and there’s no need to change to this simpler
+essay.
 
 You are welcome (encouraged, really) to discuss Lab 06 with Dr. Love,
 the teaching assistants and even your colleagues, but your answer must
@@ -52,7 +56,7 @@ characteristics of the sample used to generate your conclusions, specify
 the linear model you develop, assess assumptions carefully and produce
 an overall comparison across the four Groups, as well as meaningful
 information about pairwise comparisons across the Groups. Use a 99%
-confidence level (i.e. a 1% significance level) for all elements of Question 1.
+confidence level for all elements of Question 1.
 
 **Note** Should you wish to convert these LDL cholesterol levels from
 mmol/liter to mg/dl, you would need to multiply the value in mmol/liter
@@ -166,22 +170,15 @@ the upcoming U.S. Presidential, Senate and House Elections, one built by
 Statistics* Spiegelhalter discusses some of the issues involved in
 creating and assessing probabilistic forecasts.
 
-Write an essay to describe some relevant thoughts about two issues.
+Write an essay to identify (and cite properly) some of the arguments
+provided at the forecasting source you choose (*The Economist* or
+*FiveThirtyEight*) about how their models should be interpreted, and
+connect, compare and contrast that information with what you’ve been
+reading about in Spiegelhalter.
 
-1.  Identify (and cite properly) some of the arguments provided at the
-    forecasting source you choose (*The Economist* or *FiveThirtyEight*)
-    about how their models should be interpreted, and connect, compare
-    and contrast that information with what you’ve been reading about in
-    Spiegelhalter.
-
-2.  In addition, we’d like you to write a few sentences to discuss the
-    question of what conclusions can or should be drawn after the 2020
-    election results are known that cannot be drawn prior to the
-    election.
-
-A complete essay should include multiple paragraphs, complete English
-sentences, and 200 to 300 words. To help you understand the length we
-are looking for, this set of Question 4 instructions is 173 words long.
+A complete essay should include complete English sentences, and 150 to
+250 words. To help you understand the length we are looking for, this
+set of Question 4 instructions is 125 words long.
 
 # Add the Session Information
 

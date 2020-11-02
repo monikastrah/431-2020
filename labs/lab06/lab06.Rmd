@@ -8,7 +8,7 @@ output: github_document
 knitr::opts_chunk$set(comment = NA)
 ```
 
-Lab 06 includes 4 questions, worth a total of 100 points. Be sure to respond to each question by the deadline posted on the [Course Calendar](https://thomaselove.github.io/431/calendar.html). 
+Lab 06 includes 4 questions, worth a total of 100 points. Be sure to respond to each question by the deadline posted on the [Course Calendar](https://thomaselove.github.io/431/calendar.html). On 2020-11-02, Dr. Love revised Question 4 to simplify the required essay. If you'd already written the more complicated essay we originally requested, that's fine, and there's no need to change to this simpler essay.
 
 You are welcome (encouraged, really) to discuss Lab 06 with Dr. Love, the teaching assistants and even your colleagues, but your answer must be prepared by you alone. Don't be afraid to ask questions, either via [Piazza](https://piazza.com/case/fall2020/pqhs431) (use the lab06 folder), at [TA office hours](https://thomaselove.github.io/431/contact.html) or before/after class.
 
@@ -29,7 +29,7 @@ In a study of risk factors for peripheral arterial disease among persons 55-74 y
 
 Assume that the `pad.xlsx` data (containing three columns of data: `subjectID`, `LDL` and `Group`) provided for you describe random samples selected from each of these populations.
 
-Your job is to complete an appropriate analysis of these data which provide meaningful information about what can be learned from them. Present your code, and explain what you develop in complete sentences, being sure to ingest the data appropriately, describe the characteristics of the sample used to generate your conclusions, specify the linear model you develop, assess assumptions carefully and produce an overall comparison across the four Groups, as well as meaningful information about pairwise comparisons across the Groups. Use a 99% significance level for all elements of Question 1.
+Your job is to complete an appropriate analysis of these data which provide meaningful information about what can be learned from them. Present your code, and explain what you develop in complete sentences, being sure to ingest the data appropriately, describe the characteristics of the sample used to generate your conclusions, specify the linear model you develop, assess assumptions carefully and produce an overall comparison across the four Groups, as well as meaningful information about pairwise comparisons across the Groups. Use a 99% confidence level for all elements of Question 1.
 
 **Note** Should you wish to convert these LDL cholesterol levels from mmol/liter to mg/dl, you would need to multiply the value in mmol/liter by 38.67.
 
@@ -101,17 +101,13 @@ Develop an appropriate comparison of the risk of an MI for heavy (5 or more cups
 
 **Note** The original paper (which you should not be reading to complete this Lab, but are welcome to look at if you are curious) is Rosenberg L et al. (1980) Coffee drinking and myocardial infarction in young women.  *Amer J Epidemiology*, 112, 39-53.
 
-# Question 4 (25 points)
+# Question 4 (25 points) 
 
 In class, we've been discussing two sets of probabilistic forecasts of the upcoming U.S. Presidential, Senate and House Elections, one built by *The Economist* and one built by *FiveThirtyEight*. In *The Art of Statistics* Spiegelhalter discusses some of the issues involved in creating and assessing probabilistic forecasts. 
 
-Write an essay to describe some relevant thoughts about two issues. 
+Write an essay to identify (and cite properly) some of the arguments provided at the forecasting source you choose (*The Economist* or *FiveThirtyEight*) about how their models should be interpreted, and connect, compare and contrast that information with what you've been reading about in Spiegelhalter. 
 
-1. Identify (and cite properly) some of the arguments provided at the forecasting source you choose (*The Economist* or *FiveThirtyEight*) about how their models should be interpreted, and connect, compare and contrast that information with what you've been reading about in Spiegelhalter. 
-
-2. In addition, we'd like you to write a few sentences to discuss the question of what conclusions can or should be drawn after the 2020 election results are known that cannot be drawn prior to the election.
-
-A complete essay should include multiple paragraphs, complete English sentences, and 200 to 300 words. To help you understand the length we are looking for, this set of Question 4 instructions is 173 words long.
+A complete essay should include complete English sentences, and 150 to 250 words. To help you understand the length we are looking for, this set of Question 4 instructions is 125 words long.
 
 # Add the Session Information
 
