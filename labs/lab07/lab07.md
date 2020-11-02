@@ -1,11 +1,11 @@
 Lab 07
 ================
-Last Edited 2020-10-25 23:36:57
+Last Edited 2020-11-02 09:08:05
 
 # General Instructions
 
-There are ten questions on this assignment. Please make sure to respond
-to all ten.
+There are eight questions on this assignment. Please make sure to
+respond to all eight.
 
 You are welcome (encouraged, really) to discuss Lab 07 with Dr. Love,
 the teaching assistants and even your colleagues, but your answer must
@@ -40,28 +40,13 @@ it’s misleading with regard to the comparison it’s designed to support.
 Provide the complete reference and a copy of the image itself (including
 any captions or titles) and surrounding material for the visualization.
 
-# Question 2 (10 points)
-
-In a few sentences, describe the purpose of the comparison being made in
-your example from Question 1. Explain its context and why it is
-important. Specify the research question that this comparison (and the
-accompanying p value or confidence interval based inference, if
-available) is providing to the reader.
-
-# Question 3 (10 points)
-
-In a few sentences, describe the visualization that you found which
-relates to the comparison being made in your example from Question 1.
-Explain what you believe the visualization is trying to do. Specify why
-it is or is not effective, in your view.
-
-# Question 4 (10 points)
+# Question 2 (15 points)
 
 Provide your best suggestion as to how either the visualization or the
 comparison that you found in Question 1 might be improved, and explain
 why your change (or changes) would be an improvement.
 
-## Setup for Questions 5-10
+## Setup for Questions 3-8
 
 These questions and the simulated data you will use to answer them are
 motivated in part by an article\[1\] in *Health Psychology* by Stephan
@@ -90,7 +75,7 @@ A measure used by Stephan et al. is the proportional discrepancy score
 and we will use this PDS measure as a key outcome in the work below.
 You’ll need to figure out the best way to calculate it.
 
-# Question 5 (10 points)
+# Question 3 (10 points)
 
 The same data appear in the `lab07a.csv` and the `lab07b.csv` files.
 What is the difference between the two files, and which of the two files
@@ -113,25 +98,25 @@ three groups of study participants? Why?
   - `years` = age (as specified by age\_type) in years
   - `active` = 1 if active, 0 if not
 
-# Question 6 (10 points)
+# Question 4 (10 points)
 
 Calculate and compare the sample PDS means across the three groups, and
 specify the rank order (highest to lowest) of the sampled PDS means.
 
-# Question 7 (10 points)
+# Question 5 (15 points)
 
 Produce a graphical summary to compare the three groups that allows you
 to assess the Normality and Equal Variances assumptions of an ANOVA to
 compare the PDS means across the three groups. What conclusion do you
 draw about ANOVA assumptions in this setting?
 
-# Question 8 (10 points)
+# Question 6 (10 points)
 
 Now do the actual comparison of the PDS means of the three groups (A, B
 and C) using an analysis of variance. What conclusion do you draw, using
 a **90%** confidence level?
 
-# Question 9 (10 points)
+# Question 7 (15 points)
 
 This is a pre-planned comparison, but the sample sizes differ across the
 groups being compared. Obtain the results from a Tukey HSD method and
@@ -139,7 +124,7 @@ then a Bonferroni approach for pairwise comparisons of the population
 PDS means, in each case again using a 90% confidence level\[2\]. Do your
 conclusions differ using these two approaches?
 
-# Question 10 (10 points)
+# Question 8 (15 points)
 
 Specify the linear model regression equation used to predict our PDS
 outcome on the basis of group membership, but now also adjusting for
