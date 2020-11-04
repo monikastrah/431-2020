@@ -1,0 +1,634 @@
+---
+title: "431 Class 20 Extra Slides"
+author: "thomaselove.github.io/431"
+date: "2020-11-05"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    colortheme: "whale"
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r set-options, echo=FALSE, cache=FALSE, message = FALSE}
+options(width = 55)
+```
+
+## What is in these Extra Slides
+
+Important supplemental examples related to Class 20
+
+1. Working with a 2x2 table: Statin use in the `dm431` sample comparing Medicaid patients to the Uninsured
+
+2. Working with a 5x2 table: Statin use by practice in the `dm431` sample
+
+3. Three-Way Table: Auto Accidents in Alberta, Canada
+
+4. Three-Way Table: Admissions to UC/Berkeley and Simpson's Paradox
+
+5. Three-Way Table: A Meta-Analysis of Niacin and Heart Disease
+
+## Today's Setup and Data
+
+```{r load_packages, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment = NA) 
+options(dplyr.summarise.inform = FALSE) 
+
+library(Epi) # new today - for twoby2
+library(vcd) # new today - for Woolf test
+library(janitor)
+library(knitr)
+library(magrittr)
+library(mosaic) # not usually something I load
+library(broom)
+library(tidyverse)
+
+theme_set(theme_bw())
+
+dm431 <- readRDS("data/dm431_2020.Rds")
+source("data/Love-boost.R")
+```
+
+# Extra Example 1: Statin use in Medicaid vs. Uninsured within the `dm431` study.
+
+## Statin use in Medicaid vs. Uninsured
+
+In the `dm431` data, suppose we want to know whether statin prescriptions are more common among Medicaid patients than Uninsured subjects. So, we want a two-way table with "Medicaid", "Statin" in the top left.
+
+```{r}
+dm431 %>% 
+  filter(insurance %in% c("Medicaid", "Uninsured")) %>%
+  tabyl(insurance, statin)
+```
+
+But we want the tabyl just to show the levels of insurance we're studying...
+
+## Obtaining a 2x2 Table from a tibble
+
+We want to know whether statin prescriptions are more common among Medicaid patients than Uninsured subjects.. So, we want a two-way table with "Medicaid", "Uninsured" in the top left.
+
+```{r}
+dm431 %>% 
+  filter(insurance %in% c("Medicaid", "Uninsured")) %>%
+  droplevels() %>%
+  tabyl(insurance, statin)
+```
+
+But we want Medicaid in the top row (ok) and "statin = yes" in the left column (must fix)...
+
+## Building and Releveling Factors in the tibble
+
+```{r}
+exam1 <- dm431 %>%
+  filter(insurance %in% c("Medicaid", "Uninsured")) %>%
+  droplevels() %>%
+  mutate(insur_f = fct_relevel(insurance, "Medicaid"),
+         statin_f = fct_recode(factor(statin), 
+                        statin = "1", no_statin = "0"),
+         statin_f = fct_relevel(statin_f, "statin"))
+
+exam1 %>% tabyl(insur_f, statin_f)
+```
+
+Since Medicaid was already on top, we didn't *have to* set `insur_f`.
+
+## Adding percentages
+
+```{r}
+exam1 %>% tabyl(insur_f, statin_f) %>%
+  adorn_totals(where = c("row", "col")) %>%
+  adorn_percentages(denom = "row") %>%
+  adorn_pct_formatting(digits = 1) %>%
+  adorn_ns(position = "front") %>%
+  adorn_title(row = "Insurance", col = "Statin Status")
+```
+
+## Running `twoby2` against a data table
+
+The `twoby2` function from the `Epi` package can operate with tables (but not, alas, `tabyl`s) generated from data.
+
+**Original Data**
+
+```{r, eval = FALSE}
+twoby2(exam1 %$% table(insur_f, statin_f))
+```
+
+(output on next slide)
+
+**With Bayesian Augmentation**
+
+```{r, eval = FALSE}
+twoby2(exam1 %$% table(insur_f, statin_f) + 2)
+```
+
+(output on the slide after that)
+
+---
+
+```
+2 by 2 table analysis: 
+------------------------------------------------------ 
+Outcome   : statin 
+Comparing : Medicaid vs. Uninsured 
+
+          statin no_statin    P(statin) 95% conf. interval
+Medicaid      83        17       0.8300    0.7434   0.8916
+Uninsured     29        15       0.6591    0.5090   0.7829
+
+                                   95% conf. interval
+             Relative Risk: 1.2593    1.0003   1.5854
+         Sample Odds Ratio: 2.5254    1.1202   5.6933
+Conditional MLE Odds Ratio: 2.5074    1.0252   6.1298
+    Probability difference: 0.1709    0.0218   0.3307
+
+             Exact P-value: 0.0299 
+        Asymptotic P-value: 0.0255 
+------------------------------------------------------
+```
+
+---
+
+```
+2 by 2 table analysis: 
+------------------------------------------------------ 
+Outcome   : statin 
+Comparing : Medicaid vs. Uninsured 
+
+          statin no_statin    P(statin) 95% conf. interval
+Medicaid      85        19       0.8173    0.7312   0.8803
+Uninsured     31        17       0.6458    0.5023   0.7671
+
+                                   95% conf. interval
+             Relative Risk: 1.2655    1.0071   1.5901
+         Sample Odds Ratio: 2.4533    1.1327   5.3136
+Conditional MLE Odds Ratio: 2.4375    1.0464   5.6838
+    Probability difference: 0.1715    0.0245   0.3261
+
+             Exact P-value: 0.0251 
+        Asymptotic P-value: 0.0228 
+------------------------------------------------------
+```
+
+# Extra Example 2. Statin Use by Practice in the `dm431` study
+
+## `dm431`: Statin Use by Practice
+
+```{r}
+dm431 %>% tabyl(practice, statin)
+```
+
+Is there an association between rates of statin usage and practice?
+
+## Include the Percentages
+
+```{r}
+dm431 %>% tabyl(practice, statin) %>%
+  adorn_totals(where = "row") %>%
+  adorn_percentages() %>% adorn_pct_formatting() %>%
+  adorn_ns(position = "front") %>% adorn_title()
+```
+
+Does $H_0$ hold up well?
+
+## Chi-Square Test
+
+```{r}
+dm431 %>% tabyl(practice, statin) %>% chisq.test()
+```
+
+The association we see isn't strong enough to be detectable by this method. Is this because of the sample sizes?
+
+## Expected Counts for Practice - Statin Association
+
+This is a $5 \times 2$ two-way table.
+
+```{r}
+tab52 <- dm431 %>% tabyl(practice, statin) %>% chisq.test()
+tab52$expected
+```
+
+The expected frequencies look like they are 10 or more (with one slight exception.)
+
+## `assocplot` for practice $\times$ statin
+
+Which practice might we look at most closely?
+
+```{r}
+assocplot(table(dm431$practice, dm431$statin))
+```
+
+# Extra Example 3: Auto Accidents in Alberta, Canada
+
+## Alberta Automobile Accidents
+
+Prior to the enactment of seatbelt legislation in the province of Alberta, Canada, a sample of 86,769 auto accident reports were studied. For each report, we categorize:
+
+- driver condition (normal, been drinking)
+- was the driver wearing a seatbelt (yes, no)
+- the injury level of the driver (none, minimal, minor, or major/fatal)
+
+Source: Jobson JD, Table 6.23 *Applied Multivariate Data Analysis: Volume II: Categorical and Multivariate Methods*
+
+So this is going to become a 2 $\times$ 2 $\times$ 4 table.
+
+## A Two-Way Table
+
+Ignoring the driver condition for a moment, here is the 2 $\times$ 4 table of seatbelt use and injury level.
+
+-- | None | Minimal | Minor | Major | Total
+-------: | -----: | -----: | -----: | -----: | -----:
+No Seatbelt | 65963 | 4000 | 2642 | 303 | 72908
+Seatbelt    | 12813 | 647 | 359 | 42 | 13861
+Total | 78776 | 4647 | 3001 | 345 | 86769
+
+## Calculating Probabilities using the Two-Way Table
+
+We can calculate *marginal* probabilities from the table, like...
+
+$$
+Pr(\mbox{Seatbelt}) = \frac{13861}{86769} = .160, \mbox{ and } Pr(\mbox{No injury}) = \frac{78776}{86769} = .908,
+$$
+
+and we can calculate *conditional* probabilities, like ...
+
+$$
+Pr(\mbox{No injury} | \mbox{Seatbelt}) = \frac{12813}{13861} = 0.924
+$$
+
+and
+
+$$
+Pr(\mbox{No injury} | \mbox{No Seatbelt}) = \frac{65963}{72908} = 0.904 
+$$
+
+## Three-Way Contingency Table (four 2 $\times$ 2)
+
+We have **four** 2 $\times$ 2 tables, 
+
+- Injury = None (Odds Ratio = 2.57, 95% CI: 2.29, 2.89)
+
+No Injury | Been Drinking | Normal
+---------: | -----------: | -----------:
+No Seatbelt | 3992 | 61971
+Seatbelt    | 313 | 12500 
+
+- Injury = Minimal (Odds Ratio = 1.92, 95% CI: 1.39, 2.65)
+
+Minimal | Been Drinking | Normal
+---------: | -----------: | -----------:
+No Seatbelt | 481 | 3519
+Seatbelt    | 43 | 604 
+
+## Three-Way Contingency Table (four 2 $\times$ 2)
+
+and ...
+
+- Injury = Minor (Odds Ratio = 3.73, 95% CI: 2.20, 6.34)
+
+Minor | Been Drinking | Normal
+---------: | -----------: | -----------:
+No Seatbelt | 370 | 2272
+Seatbelt    | 15 | 344 
+
+- Injury = Major (Odds Ratio = 2.65, 95% CI: 0.91, 7.68)
+
+Major | Been Drinking | Normal
+---------: | -----------: | -----------:
+No Seatbelt | 66 | 237
+Seatbelt    | 4 | 38 
+
+## Placing the Data in R
+
+```{r}
+condition <- c(rep("Normal", 8), rep("Been_Drinking", 8))
+seatbelt <- c(rep(c(rep("Yes", 4), rep("No", 4)), 2))
+injury <- c(rep(c("None", "Minimal", "Minor", "Major"), 4))
+counts <- c(12500, 604, 344, 38, 61971, 3519, 2272, 237,
+            313, 43, 15, 4, 3992, 481, 370, 66)
+
+aaa <- tibble(condition, seatbelt, injury, counts) %>%
+  mutate(injury = fct_relevel(injury, "None", "Minimal",
+                              "Minor", "Major"))
+```
+
+## Viewing the Table
+
+```{r}
+big_tab <- aaa %$% xtabs(counts ~ seatbelt + condition + injury)
+big_tab %>% ftable()
+```
+
+We're trying to estimate the odds ratio for "been drinking" given that the driver is "not wearing a seatbelt" as compared to when the driver is wearing a seatbelt, assuming that it is the same across all four injury types. We have: 
+
+- row = condition (been drinking or normal)
+- column = seatbelt (no or yes)
+- strata = injury (four levels)
+
+## Can we assume that each injury level has a common odds ratio?
+
+Recall that the sample odds ratios we saw were:
+
+No Injury | Minimal | Minor | Major
+-------: | ------: | ------: | ------:
+2.57 | 1.92 | 3.73 | 2.65
+
+The Woolf test assesses the null hypothesis of a common "condition and seatbelt" odds ratio across the four injury types. This (that a common odds ratio can be assumed to exist for each of the four injury types) is a key assumption of the Cochran-Mantel-Haenszel test. 
+
+## Can we assume that each injury level has a common odds ratio?
+
+```{r}
+woolf_test(big_tab)
+```
+
+Our conclusion from the Woolf test is that we are able to retain the null hypothesis of homogeneous odds ratios. So it's not crazy to fit a CMH test (that requires that all of the population odds ratios to be the same.)
+
+## Running the Cochran-Mantel-Haenszel test
+
+So, we can use the Cochran-Mantel-Haenszel test to make inferences about the population odds ratio (for the driver having been drinking given no seatbelt rather than seatbelt) accounting for the four injury types. We'll use a 90% confidence interval, and the results appear on the next slide.
+
+```{r, eval = FALSE}
+mantelhaen.test(big_tab, conf.level = .90)
+```
+
+## Complete CMH output (Edited to fit on the screen)
+
+```{r, eval = FALSE}
+mantelhaen.test(big_tab, conf.level = .90)
+```
+
+```
+Mantel-Haenszel chi-squared test with continuity correction
+
+data:  big_tab
+Mantel-Haenszel X-squared = 314, df = 1, p-value < 2.2e-16
+
+alt. hypothesis: true common odds ratio is not equal to 1
+
+90 percent confidence interval: 2.327467 2.784538
+sample estimates: common odds ratio 2.545765  
+```
+
+What can we conclude in this case?
+
+## Alternate Specification of Three-Way Table
+
+We also have **two** of these 2 $\times$ 4 tables:
+
+- Driver had been drinking
+
+Been Drinking | None | Minimal | Minor | Major | Total
+-------: | -----: | -----: | -----: | -----: | -----:
+No Seatbelt | 3992 | 481 | 370 | 66 | 4909
+Seatbelt    | 313 | 43 | 15 | 4 | 375
+Total | 4305 | 524 | 385 | 70 | 5284
+
+- Driver had not been drinking (was "Normal")
+
+Normal | None | Minimal | Minor | Major | Total
+-------: | -----: | -----: | -----: | -----: | -----:
+No Seatbelt | 61971 | 3519 |  2272 | 237 | 67999
+Seatbelt    | 12500 | 604 | 344 | 38 | 13486
+Total | 74471 | 4123 | 2616 | 275 | 81485
+
+## Could we have run the test changing the roles?
+
+We ran this originally using four (strata) to identify four 2 (row) $\times$ 2 (column) tables.
+
+If we did this with two strata (been drinking vs. normal), on a 2 (row - seatbelt or not) $\times$ 4 (column - injury type) table, we'd no longer get an odds ratio, but we would be able to obtain a p value for the null hypothesis of no relationship between seatbelt use and injury type, accounting for drinking status.
+
+To get it, we'd just rearrange the big table (strata goes last):
+
+```{r}
+big_tab2 <- 
+  aaa %$% xtabs(counts ~ seatbelt + injury + condition)
+```
+
+## Results when Strata = drinking status
+
+```{r}
+woolf_test(big_tab2)
+```
+
+```{r}
+mantelhaen.test(big_tab2)
+```
+
+
+
+# Extra Example 4: Admissions to Departments at the University of California at Berkeley and Simpson's Paradox
+
+## The UC Berkeley Student Admissions Example
+
+The UCBAdmissions data set contains aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973, classified by whether the applicant was admitted, and their sex.
+
+```{r show UCBAdmissions data}
+ftable(UCBAdmissions)
+```
+
+Do the data show evidence of sex bias in admission practices?
+
+## Summarizing Department D
+
+In Department D, we have 
+
+Department D | Males | Females 
+------------:|  ------: | ------: 
+Admitted       | 138         | 131
+Not Admitted   | 279         | 244
+Applicants     | `r 138+279` | `r 131+244`
+
+Pr(Admitted if Male) = $\frac{138}{138+279}$ = `r round(138/(138+279),3)`
+
+Odds(Admitted if Male) = $\frac{138}{279}$ = `r round(138/279,2)`
+
+Pr(Admitted if Female) = $\frac{131}{131+244}$ = `r round(131/(131+244),3)`
+
+Odds(Admitted if Female) = $\frac{131}{244}$ = `r round(131/244,2)`
+
+Odds Ratio (Admit for Male vs Female) = $\frac{138*244}{131*279}$ = `r round((138*244)/(131*279), 2)`
+
+## Can we use the Cochran-Mantel-Haenszel test?
+
+Are the odds ratios similar across departments?
+
+Department          | A | B | C | D | E | F
+-------------------:| ---: | ---: | ---: | ---: | ---: | ---: 
+Admitted Males      | 512 | 353 | 120 | 138 | 53 | 22
+Male Applicants     | `r 512+313` | `r 353+207` |`r 120+205` |`r 138+279` |`r 53+138` |`r 22+351`
+Admitted Females   | 89 | 17 | 202 | 131 |  94 |  24
+Female Applicants  | `r 89+19` | `r 17+8` | `r 202+391` | `r 131+244` | `r 94+299` | `r 24+317`
+Pr(Admit if Male)   | `r round(512/(512+313),2)` | `r round(353/(353+207),2)` | `r round(120/(120+205),2)` | `r round(138/(138+279),2)` | `r round(53/(53+138),2)` | `r round(22/(22+351),2)`
+Pr(Admit if Female)   | `r round(89/(89+19),2)` | `r round(17/(17+8),2)` | `r round(202/(202+391),2)` | `r round(131/(131+244),2)` | `r round(94/(94+299),2)` | `r round(24/(24+317),2)`
+Odds(Admit if Male) | `r round(512/313,2)` | `r round(353/207,2)` |`r round(120/205,2)` |`r round(138/279,2)` |`r round(53/138,2)` |`r round(22/351,2)`
+Odds(Admit if Female) | `r round(89/19,2)` | `r round(17/8,2)` | `r round(202/391,2)` | `r round(131/244,2)` | `r round(94/299,2)` | `r round(24/317,2)`
+**Odds Ratio** | `r round((512*19)/(313*89), 2)` | `r round((353*8)/(207*17), 2)` | `r round((120*391)/(202*205), 2)` | `r round((138*244)/(131*279), 2)` | `r round((53*299)/(94*138), 2)` | `r round((22*317)/(351*24), 2)` 
+
+## Can we use a Cochran-Mantel-Haenszel test?
+
+A Cochran-Mantel-Haenszel test describes a single combined odds ratio accounting for department. This assumes that the population odds ratio for admission by sex is identical for each of the six strata (departments).
+
+- Does that seem reasonable?
+- Or is there a three-way interaction here, where the odds ratios for admission by sex differ significantly across departments?
+
+Department | A | B | C | D | E | F
+----------:| ---: | ---: | ---: | ---: | ---: | ---: 
+**Odds Ratio** | `r round((512*19)/(313*89), 2)` | `r round((353*8)/(207*17), 2)` | `r round((120*391)/(202*205), 2)` | `r round((138*244)/(131*279), 2)` | `r round((53*299)/(94*138), 2)` | `r round((22*317)/(351*24), 2)` 
+
+How can we test this?
+
+## Woolf Test for Interaction in UCB Admissions
+
+- $H_0$: There is no three-way interaction. 
+    + Odds ratios are homogenous, and we may proceed with the CMH test.)
+- $H_A$: There is a meaningful three-way interaction. 
+    + CMH test is inappropriate because there are significantly different odds ratios across the departments.
+
+```{r}
+woolf_test(UCBAdmissions)
+```
+
+## What's Going On Here?
+
+Department | A | B | C | D | E | F
+----------:| ---: | ---: | ---: | ---: | ---: | ---: 
+Pr(Admit if Male)   | `r round(512/(512+313),2)` | `r round(353/(353+207),2)` | `r round(120/(120+205),2)` | `r round(138/(138+279),2)` | `r round(53/(53+138),2)` | `r round(22/(22+351),2)`
+Pr(Admit if Female)   | `r round(89/(89+19),2)` | `r round(17/(17+8),2)` | `r round(202/(202+391),2)` | `r round(131/(131+244),2)` | `r round(94/(94+299),2)` | `r round(24/(24+317),2)`
+Pr (Admitted, regardless of sex) | `r round((512+89)/(825+108),2)` | `r round((353+17)/(560+25),2)` | `r round((120+202)/(325+593),2)` | `r round((138+131)/(417+375),2)` | `r round((53+94)/(191+393),2)` | `r round((22+24)/(373+341),2)`
+% of Applicants who are Female | 11.6 | 4.3 | 64.6 | 47.3 | 67.3 | 47.8
+
+- Females used to apply more to departments with lower admission rates.
+- This is a famous example related to what is called Simpson's Paradox.
+
+## Simpson's Paradox
+
+> A trend appears in several different groups of data but disappears or reverses when these groups are combined.
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Simpson%27s_paradox)
+
+> Simpson's paradox can also arise in correlations, in which two variables appear to have (say) a positive correlation towards one another, when in fact they have a negative correlation, the reversal having been brought about by a "lurking" confounder.
+
+Example: Murder rates and ice cream sales
+
+# Extra Example 5: A Meta-Analysis of Niacin and Heart Disease
+
+## Niacin and Heart Disease Meta-Analysis
+
+Duggal et al (2010) did a meta-analysis\footnote{Duggal JK et al. 2010. Effect of niacin therapy on cardiovascular outcomes in patients with coronary artery disease. J Cardiovasc Pharmacology \& Therapeutics 15: 158-166. My Source: \color{blue}{http://www.biostathandbook.com/cmh.html}} of 5 placebo-controlled studies (AFREGS, ARBITER2, CLAS1, FATS and HATS) of niacin and heart disease, where the primary outcome was the need to do a coronary artery revascularization procedure. 
+
+For example, the FATS study had these results:
+
+FATS      | Revascularization | No Revasc. 
+--------: | :-----------: | :----------:
+Niacin    |  2 | 46  
+Placebo   | 11 | 41
+
+FATS is just one of the five studies, and this table exists in each!
+
+## Exploring the FATS study
+
+FATS      | Revascularization | No Revasc. 
+--------: | :-----------: | :----------:
+Niacin    |  2 | 46  
+Placebo   | 11 | 41
+
+- Pr(revascularization | Niacin) = $\frac{2}{2+46}$ = `r round(2/48,3)`
+- Odds(revascularization | Niacin) = $\frac{2}{46}$ = `r round(2/46,3)`
+- Pr(revascularization | Placebo) = $\frac{11}{11+41}$ = `r round(11/52, 3)` 
+- Odds(revascularization | Placebo) = $\frac{11}{41}$ = `r round(11/41,3)`
+
+and so the Odds Ratio = $\frac{2*41}{11*46}$ = `r round((2*41)/(11*46), 2)`.
+
+But that is just the result for the FATS study.
+
+## Building the Meta-Analysis Table
+
+```{r data for meta analysis}
+study <- c(rep("FATS", 4), rep("AFREGS", 4), 
+           rep("ARBITER2", 4), rep("HATS", 4), 
+           rep("CLAS1", 4))
+treat <- c(rep(c("Niacin", "Niacin", 
+                 "Placebo", "Placebo"),5))
+outcome <- c(rep(c("Revasc.", "No Rev."), 10))
+counts <- c(2, 46, 11, 41, 4, 67, 12, 60, 1, 86, 
+            4, 76, 1, 37, 6, 32, 2, 92, 1, 93)
+meta <- data.frame(study, treat, outcome, counts) %>% tbl_df
+meta$treat <- fct_relevel(meta$treat, "Niacin")
+meta$outcome <- fct_relevel(meta$outcome, "Revasc.")
+meta.tab <- xtabs(counts ~ treat + outcome + study, 
+                  data = meta)
+```
+
+## Five Studies in the Meta-Analysis
+
+```{r ftable for meta.tab}
+ftable(meta.tab)
+```
+
+The three variables we are studying are: 
+
+- `treat` (2 levels: Niacin/Placebo), 
+- `outcome` (2 levels: Revascularization or No Revascularization) across 
+- `study` (5 levels: AFREGS, ARBITER2, CLAS1, FATS, HATS) 
+
+## Cochran-Mantel-Haenszel Test
+
+The Cochran-Mantel-Haenszel test is designed to test whether the rate of revascularization is the same across the two levels of the treatment (i.e. Niacin or Placebo). 
+
+- We *could* do this by simply adding up the results across the five studies, but that wouldn't be wise, because the studies used different populations and looked for revascularization after different lengths of time.
+- But we can account for the differences between studies to some extent by adjusting for study as a stratifying variable in a CMH test.
+- The big assumption we'll have to make, though, is that the odds ratio for  revascularization given Niacin instead of Placebo does not change across the studies. Is this reasonable in our case?
+
+## Looking at the Study-Specific Odds Ratios
+
+We'll calculate the odds ratios, comparing revascularization odds with niacin vs. placebo, within each separate study. 
+
+Study   | Rev N | Rev P | NoRev N | NoRev P | Odds Ratio
+------: | ---: | ---: | ---: | ---: | :------------------:
+AFREGS  | 4 | 67 | 12 | 60 | $\frac{4*60}{67*12}$ = `r round((4*60)/(67*12), 2)`
+ARBITER2  | 1 | 86 | 4 | 76 | `r round((1*76)/(86*4), 2)`
+CLAS1  | 2 | 92 | 1 | 93 | `r round((2*93)/(92*1), 2)`
+FATS  | 2 | 46 | 11 | 41 | `r round((2*41)/(46*11), 2)`
+HATS  | 1 | 37 | 6 | 32 | `r round((1*32)/(37*6), 2)`
+
+The table shows patient counts for the categories in each of the respective two-by-two tables (Rev N = Revascularization and Niacin, NoRev P = No Revascularization and Placebo, etc.)
+
+## Can we assume a Common Odds Ratio?
+
+The Woolf test checks a key assumption for the Cochran-Mantel-Haenszel test. The Woolf test assesses the null hypothesis of a common odds ratio across the five studies.
+
+```{r}
+woolf_test(meta.tab)
+```
+
+Our conclusion from the Woolf test is that we are able to retain the null hypothesis of homogeneous odds ratios. So it's not crazy to fit a test that requires that all of the odds ratios be the same in the population.
+
+## Running the Cochran-Mantel-Haenszel test
+
+So, we can use the Cochran-Mantel-Haenszel test to make inferences about the population odds ratio (for revascularization given niacin rather than placebo) accounting for the five studies. We'll use a 90% confidence interval, and the results appear on the next slide.
+
+```{r, eval = FALSE}
+mantelhaen.test(meta.tab, conf.level = .90)
+```
+
+## Complete CMH output
+
+```{r CMH for meta.tab code only, eval=FALSE}
+mantelhaen.test(meta.tab, conf.level = .90)
+```
+
+```
+Mantel-Haenszel chi-squared test with continuity correction
+
+data:  meta.tab
+Mantel-Haenszel 
+X-squared = 12.746, df = 1, p-value = 0.0003568
+
+alt. hypothesis: true common odds ratio is not equal to 1
+
+90 percent confidence interval: 0.1468942 0.4968686
+sample estimates: common odds ratio 0.2701612 
+```
+
+What can we conclude in this case?
+
