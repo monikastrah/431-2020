@@ -15,8 +15,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 1. In response to a [Piazza question](https://piazza.com/class/kdg1ivfsee12rr?cid=299), I wound up adding a simplifying hint to [the end of Question 1 on Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md). Please take a look.
     - In doing the Lab, I suggest you simply assume equal population variances and run an ANOVA and then a Tukey HSD comparison, so that things are simple.
     - In the answer sketch, we'll show some alternatives that involve potentially more appealing choices given the difference in sample size and sample variances of LDL across the four comparison groups.
-2. Project B Instructions will be available by Thursday 2020-11-05. 
-3. Project A grades will be available by Thursday 2020-11-12.
+2. Grades on Lab 05 are [now posted](http://bit.ly/431-2020-grades).
+3. Project B Instructions will be available by Thursday 2020-11-05. 
+4. Project A grades will be available by Thursday 2020-11-12.
 
 ## What Should I Be Working On?
 
