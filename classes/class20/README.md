@@ -12,8 +12,9 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## Announcements
 
-1. Project B Instructions will be available by Thursday 2020-11-05. 
-2. Project A grades will be available by Thursday 2020-11-12.
+1. I added a large, simplifying hint to [the end of Question 1 on Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md). Please take a look.
+2. Project B Instructions will be available by Thursday 2020-11-05. 
+3. Project A grades will be available by Thursday 2020-11-12.
 
 ## What Should I Be Working On?
 
