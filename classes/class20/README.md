@@ -12,9 +12,11 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 ## The Extra Materials for Class 20 are provided below.
 
-- Class 20 Extra Slides [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.pdf)
-- Class 20 Extra Slides in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.Rmd)
+I've provided a set of 5 extra examples to help you understand the material in Class 20, for you to watch in your own time. You'll find everything you need at the links below.
+
+- Class 20 Extra Slides can be found [in PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.pdf) and in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.Rmd).
 - The video files for Dr. Love's presentation of the "extra" material will be posted to our Shared Google Drive in the **Class 20 Extra** folder.
+    - There is one video file for each of the five "extra" examples.
 
 ## Announcements
 
