@@ -4,19 +4,24 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-- **Quote to come.**
+- Sometimes things aren't clear right way. That's where you need to be patient and perservere and see where things lead. (Mary Pierce)
+- Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. (attributed to John Quincy Adams)
 
 ## Today's Slides
 
 - Class 20 slides are now available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/431_class-20-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/431_class-20-slides_2020.Rmd).
-
+    - These are the main slides, which we'll discuss in class as usual.
+    
 ## The Extra Materials for Class 20 are provided below.
 
-I've provided a set of 5 pre-recorded extra examples to help you understand the material in Class 20, for you to watch and review in your own time. You'll find everything you need at the links below. These materials are not optional as they introduce a couple of ideas not presented in the main materials for Class 20, but you are welcome to either watch the videos or peruse the slides (or both.)
+I've developed slides for and pre-recorded commentary on five extra examples to help you understand the material in Class 20.
 
 - Class 20 Extra Slides (for all five examples) can be found [in PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.pdf) and in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.Rmd).
 - The video files for Dr. Love's presentation of the "extra" material will be posted to our Shared Google Drive in the **Class 20 Extra** folder.
-    - There is one video file for each of the five "extra" examples.
+    - There will be a separate video file for each of the five "extra" examples.
+- The goal is for you to watch my presentation and/or review the slides in your own time, prior to the end of the Thanksgiving break. 
+- These materials are not optional as they introduce a couple of ideas not presented in the main materials for Class 20, but you are welcome to watch the videos or peruse the slides (or both) in whatever manner suits you.
+- If you have questions about these "extra" materials, please use the **class_slides** folder in Piazza to ask us about them.
 
 ## Announcements
 
