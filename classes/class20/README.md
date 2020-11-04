@@ -4,8 +4,9 @@
 :-----------: | :--------------: | :----------: | :---------: | :-------------: | :-----------: | :------------:
 for everything | for deadlines | expectations | from Dr. Love | ways to get help | zoom information | for downloads
 
-- Sometimes things aren't clear right way. That's where you need to be patient and perservere and see where things lead. (Mary Pierce)
-- Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. (attributed to John Quincy Adams)
+> Sometimes things aren't clear right way. That's where you need to be patient and perservere and see where things lead. (Mary Pierce)
+
+> Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. (attributed to John Quincy Adams)
 
 ## Today's Slides
 
