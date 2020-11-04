@@ -6,8 +6,6 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 > Sometimes things aren't clear right way. That's where you need to be patient and perservere and see where things lead. (Mary Pierce)
 
-> Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. (attributed to John Quincy Adams)
-
 ## Today's Slides
 
 - Class 20 slides are now available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/431_class-20-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/431_class-20-slides_2020.Rmd).
@@ -36,6 +34,8 @@ I've developed slides for and pre-recorded commentary on five extra examples to 
 ## What Should I Be Working On?
 
 1. [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md) is due Monday 2020-11-09 at 9 PM.
+
+> Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. (attributed to John Quincy Adams)
 
 ## One Last Thing
 
