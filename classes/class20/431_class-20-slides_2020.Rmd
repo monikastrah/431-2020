@@ -20,6 +20,10 @@ options(width = 55)
 - Comparing Proportions using Independent Samples
   - Working with 2x2 Tables
   - Working with more general two-way tables
+  - Cochran Conditions and Checking Assumptions
+- Stratifying a 2x2 Table by a Third Categorical Variable
+  - The Cochran-Mantel-Haenszel Test for a Three-Way Table
+  - The Woolf test to check assumptions
 
 ## Today's Setup and Data
 
@@ -27,7 +31,8 @@ options(width = 55)
 knitr::opts_chunk$set(comment = NA) 
 options(dplyr.summarise.inform = FALSE) 
 
-library(Epi) # new today
+library(Epi) # new today - for twoby2
+library(vcd) # new today - for Woolf test
 library(janitor)
 library(knitr)
 library(magrittr)
@@ -290,128 +295,13 @@ Conditional MLE Odds Ratio: 1.1664    0.4837   2.8243
 ```
 
 
+## Visit the extra slides / recording
 
-## Example B: Statin use in Medicaid vs. Uninsured
-
-In the `dm431` data, suppose we want to know whether statin prescriptions are more common among Medicaid patients than Uninsured subjects. So, we want a two-way table with "Medicaid", "Statin" in the top left.
-
-```{r}
-dm431 %>% 
-  filter(insurance %in% c("Medicaid", "Uninsured")) %>%
-  tabyl(insurance, statin)
-```
-
-But we want the tabyl just to show the levels of insurance we're studying...
-
-## Obtaining a 2x2 Table from a tibble
-
-We want to know whether statin prescriptions are more common among Medicaid patients than Uninsured subjects.. So, we want a two-way table with "Medicaid", "Uninsured" in the top left.
-
-```{r}
-dm431 %>% 
-  filter(insurance %in% c("Medicaid", "Uninsured")) %>%
-  droplevels() %>%
-  tabyl(insurance, statin)
-```
-
-But we want Medicaid in the top row (ok) and "statin = yes" in the left column (must fix)...
-
-## Building and Releveling Factors in the tibble
-
-```{r}
-exampleB <- dm431 %>%
-  filter(insurance %in% c("Medicaid", "Uninsured")) %>%
-  droplevels() %>%
-  mutate(insur_f = fct_relevel(insurance, "Medicaid"),
-         statin_f = fct_recode(factor(statin), 
-                        statin = "1", no_statin = "0"),
-         statin_f = fct_relevel(statin_f, "statin"))
-
-exampleB %>% tabyl(insur_f, statin_f)
-```
-
-Since Medicaid was already on top, we didn't *have to* set `insur_f`.
-
-## Adding percentages
-
-```{r}
-exampleB %>% tabyl(insur_f, statin_f) %>%
-  adorn_totals(where = c("row", "col")) %>%
-  adorn_percentages(denom = "row") %>%
-  adorn_pct_formatting(digits = 1) %>%
-  adorn_ns(position = "front") %>%
-  adorn_title(row = "Insurance", col = "Statin Status")
-```
-
-## Running `twoby2` against a data table
-
-The `twoby2` function from the `Epi` package can operate with tables (but not, alas, `tabyl`s) generated from data.
-
-**Original Data**
-
-```{r, eval = FALSE}
-twoby2(exampleB %$% table(insur_f, statin_f))
-```
-
-(output on next slide)
-
-**With Bayesian Augmentation**
-
-```{r, eval = FALSE}
-twoby2(exampleB %$% table(insur_f, statin_f) + 2)
-```
-
-(output on the slide after that)
-
----
-
-```
-2 by 2 table analysis: 
------------------------------------------------------- 
-Outcome   : statin 
-Comparing : Medicaid vs. Uninsured 
-
-          statin no_statin    P(statin) 95% conf. interval
-Medicaid      83        17       0.8300    0.7434   0.8916
-Uninsured     29        15       0.6591    0.5090   0.7829
-
-                                   95% conf. interval
-             Relative Risk: 1.2593    1.0003   1.5854
-         Sample Odds Ratio: 2.5254    1.1202   5.6933
-Conditional MLE Odds Ratio: 2.5074    1.0252   6.1298
-    Probability difference: 0.1709    0.0218   0.3307
-
-             Exact P-value: 0.0299 
-        Asymptotic P-value: 0.0255 
-------------------------------------------------------
-```
-
----
-
-```
-2 by 2 table analysis: 
------------------------------------------------------- 
-Outcome   : statin 
-Comparing : Medicaid vs. Uninsured 
-
-          statin no_statin    P(statin) 95% conf. interval
-Medicaid      85        19       0.8173    0.7312   0.8803
-Uninsured     31        17       0.6458    0.5023   0.7671
-
-                                   95% conf. interval
-             Relative Risk: 1.2655    1.0071   1.5901
-         Sample Odds Ratio: 2.4533    1.1327   5.3136
-Conditional MLE Odds Ratio: 2.4375    1.0464   5.6838
-    Probability difference: 0.1715    0.0245   0.3261
-
-             Exact P-value: 0.0251 
-        Asymptotic P-value: 0.0228 
-------------------------------------------------------
-```
+Extra Example 1: Statin use in Medicaid vs. Uninsured within the `dm431` study.
 
 # Measuring Association using Categorical Variables with Chi-Squared Tests: Working with Two-Way Tables
 
-## A Two-Way Table
+## A Two-Way Table with 4 rows and 3 columns
 
 ```{r}
 dm431 %>% tabyl(insurance, tobacco)
@@ -419,7 +309,7 @@ dm431 %>% tabyl(insurance, tobacco)
 
 Is tobacco use status associated with insurance type?
 
-- Two factors here (insurance, tobacco)
+- Two factors here (insurance, tobacco) so we call it a two-way table
 - This is a $4 \times 3$ table, with 4 rows and 3 columns.
 
 ## Is tobacco use associated with insurance type?
@@ -453,6 +343,16 @@ Total           96         164        171          431
 
 Since all of these expected counts exceed 10, the Pearson $\chi^2$ test should provide a reasonably accurate approximate *p* value for $H_0$: rows and columns are independent.
 
+## Chi-Square Assumptions
+
+- We assume that the expected count, under the null hypothesized model of independence, will be **at least 5** (and ideally at least 10) in each cell. 
+- If that is not the case, then the $\chi^2$ test is likely to give unreliable results. 
+
+### The Cochran Conditions: R's warning approach
+
+The *Cochran conditions* require us to have no cells with zero and at least 80% of the cells in our table with expected counts of 5 or higher. That's what R uses to warn you of trouble.
+
+- Don't meet the standards? Consider collapsing categories.
 
 ## `dm431` association of tobacco with insurance
 
@@ -474,8 +374,6 @@ chisq.test(tab43)$observed
 
 ```{r}
 chisq.test(tab43)$residuals
-
-chisq.test(tab43)$stdres
 ```
 
 ## Augmented test using `mosaic::xchisq.test()`
@@ -548,56 +446,196 @@ mosaicplot(tab43, color = TRUE, dir = c("h", "v"))
 assocplot(tab43)
 ```
 
-## A Second Example (Statin Use by Practice)
+## Visit the extra slides / recording
 
-```{r}
-dm431 %>% tabyl(practice, statin)
+Extra Example 2. Statin Use by Practice in the `dm431` study
+
+# Cochran-Mantel-Haensel Test for a three-way table (technically a set of $2 \times 2$ tables)
+
+## Kidney Stone Treatment Example
+
+Suppose we compare the success rates of two treatments for kidney stones.
+
+- Treatment A (all open surgical procedures): 273/350 patients (78%) had a successful result.
+- Treatment B (percutaneous nephrolithotomy - less invasive): 289/350 were successful (83%).
+
+Kidney Stones | Successful Outcome | Bad Outcome 
+------------: | -----------------: | -----------:
+A (open surgery) | 273 (78%) | 77 (22%) | 350
+B (less invasive) | 289 (83%) | 61 (17%) | 350
+
+Which approach would you choose?
+
+- Sources: [\color{blue}{Wikipedia}](https://en.wikipedia.org/wiki/Simpson%27s_paradox) and
+Charig CR et al. (1986) PMID 3083922.
+
+## Kidney Stones, `twobytwo` results
+
+```{r, eval = FALSE}
+twobytwo(273, 77, 289, 61, "A", "B", "Success", "Bad")
 ```
 
-Is there an association between rates of statin usage and practice?
+```
+2 by 2 table analysis: 
+-------------------------------------------------- 
+Outcome   : Success        Comparing : A vs. B 
 
-## Include the Percentages
+  Success Bad    P(Success) 95% conf. interval
+A     273  77        0.7800    0.7336   0.8203
+B     289  61        0.8257    0.7823   0.8620
 
-```{r}
-dm431 %>% tabyl(practice, statin) %>%
-  adorn_totals(where = "row") %>%
-  adorn_percentages() %>% adorn_pct_formatting() %>%
-  adorn_ns(position = "front") %>% adorn_title()
+                                95% conf. interval
+         Relative Risk:  0.9446    0.8776   1.0168
+     Sample Odds Ratio:  0.7483    0.5146   1.0883
+Probability difference: -0.0457   -0.1045   0.0133
+
+Exact P-value: 0.154    Asymptotic P-value: 0.1292 
+--------------------------------------------------
 ```
 
-Does $H_0$ hold up well?
+## Kidney Stones: A Third Variable
 
-## Chi-Square Test
+But this comparison may be misleading.
 
-```{r}
-dm431 %>% tabyl(practice, statin) %>% chisq.test()
+Some kidney stones are small, and some are large.
+
+- Open Surgery (A) used in 87 small stones, and 263 large ones.
+- Less Invasive (B) used in 270 small stones, and 80 large ones.
+
+Could that bias our results? 
+
+- Should we account for this difference in "size mix"?
+
+## Kidney Stone results stratified by stone size
+
+- For small stones, the odds ratio for a successful outcome comparing A to B is 2.08 (95% CI 0.84, 5.11)
+
+**Small** Stones | Successful Outcome | Bad Outcome 
+------------: | -----------------: | -----------:
+A (open surgery) | 81 (93%) | 6 (7%) | 87
+B (less invasive) | 234 (87%) | 36 (13%) | 270
+
+- For large stones, that odds ratio is 1.23 (95% CI 0.71, 2.12)
+
+**Large** Stones | Successful Outcome | Bad Outcome 
+------------: | -----------------: | -----------:
+A (open surgery) | 192 (73%) | 71 (27%) | 263
+B (less invasive) | 55 (69%) | 25 (31%) | 80
+
+### Aggregated Data: % with Successful Outcome
+
+- 78% of Treatment A subjects, 83% of Treatment B
+
+## What We Have Here is a Three-Way Table
+
+- rows: which treatment was received (A or B)
+- columns: was the outcome Successful or Bad?
+- *strata* or *layers*: was the stone Small or Large?
+
+```
+Size  Treatment  Good  Bad  Total  % Good
+----- ---------  ----  ---  -----  ------
+Small     A        81    6     87     93
+Small     B       234   36    270     87
+Large     A       192   71    263     73
+Large     B        55   25     80     69
 ```
 
-The association we see isn't strong enough to be detectable by this method. Is this because of the sample sizes?
+We'll talk about three-way and larger contingency tables more in 432, but in 431, we focus on the situation where a 2x2 table is repeated over multiple strata (categories in a third variable.)
 
-## Expected Counts for Practice - Statin Association
+## Cochran-Mantel-Haenszel Test
 
-This is a $5 \times 2$ two-way table.
+The Cochran-Mantel-Haenszel test is designed to test whether the rate of a successful (Good) outcome is the same across the two levels of the treatment (i.e. A or B.) 
 
-```{r}
-tab52 <- dm431 %>% tabyl(practice, statin) %>% chisq.test()
-tab52$expected
-```
+- We *could* do this by simply adding up the results across the stone sizes, but that wouldn't be wise, because the stone size is likely to be related to the outcome and the choice of procedure.
+- But we can account for the differences between stone sizes to some extent by adjusting for stone size as a stratifying variable in a CMH test.
+- The big assumption we'll have to make, though, is that the odds ratio for a good outcome for treatment A versus treatment B is the same for small stones and large stones. Is this reasonable here? We'll use a Woolf test to decide.
 
-The expected frequencies look like they are 10 or more (with one slight exception.)
+But first, let's get the data into a useful form.
 
-## `assocplot` for practice $\times$ statin
-
-Which practice might we look at most closely?
+## Building the Three-Way Table
 
 ```{r}
-assocplot(table(dm431$practice, dm431$statin))
+stone <- c(rep("Small", 4), rep("Large", 4))
+treat <- c(rep(c("A", "A", "B", "B"), 2))
+result <- c(rep(c("Good", "Bad"), 4))
+counts <- c(81, 6, 234, 36, 192, 71, 55, 25)
+
+kidney_dat <- tibble(stone, treat, result, counts)
 ```
+
+## What do we have so far?
+
+```{r}
+kidney_dat
+```
+
+## The Three-Way Table
+
+```{r}
+big.tab <- xtabs(counts ~ treat + result + stone, 
+                 data = kidney_dat)
+big.tab
+```
+
+## Three-Way Table as a "Flat" Table
+
+```{r}
+ftable(big.tab)
+```
+
+## Can we assume a Common Odds Ratio?
+
+- Recall the sample odds ratio in small stones was 2.08 and in large stones was 1.23
+
+The Woolf test checks a key assumption for the Cochran-Mantel-Haenszel test. The Woolf test assesses the null hypothesis of a common odds ratio across the two stone sizes.
+
+```{r}
+woolf_test(big.tab)
+```
+
+Our conclusion from the Woolf test is that we are able to retain the null hypothesis of homogeneous odds ratios. So it's not crazy to fit a test that requires that all of the odds ratios be the same in the population.
+
+## Running the Cochran-Mantel-Haenszel test
+
+So, we can use the Cochran-Mantel-Haenszel test to make inferences about the population odds ratio (for revascularization given niacin rather than placebo) accounting for the five studies. We'll use a 90% confidence interval, and the results appear on the next slide.
+
+```{r, eval = FALSE}
+mantelhaen.test(big.tab, conf.level = .90)
+```
+
+## Complete CMH output (Edited to fit on the screen)
+
+```{r, eval = FALSE}
+mantelhaen.test(big.tab, conf.level = .90)
+```
+
+```
+Mantel-Haenszel chi-squared test with continuity correction
+
+data:  big.tab
+Mantel-Haenszel X-squared = 2.0913, df = 1, p-value = 0.1481
+
+alt. hypothesis: true common odds ratio is not equal to 1
+
+90 percent confidence interval: 0.4708539 1.0145392
+sample estimates: common odds ratio 0.6911583  
+```
+
+What can we conclude in this case?
+
+## Visit the extra slides / recording
+
+Extra Example 3: Auto Accidents in Alberta, Canada
+
+Extra Example 4: Admissions to Departments at the University of California at Berkeley and Simpson's Paradox
+
+Extra Example 5: A Meta-Analysis of Niacin and Heart Disease
 
 ## What's Next?
 
-- Mantel-Haenszel test for comparing a series of 2x2 tables.
+Power and sample size considerations are coming in Class 21.
+
 - I'll skip paired comparisons of proportions in 431 this year.
 
-Then we'll move on to power and sample size considerations.
 
