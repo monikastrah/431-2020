@@ -10,6 +10,12 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 
 - Class 20 slides are now available in [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/431_class-20-slides_2020.pdf), as well as in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/431_class-20-slides_2020.Rmd).
 
+## The Extra Materials for Class 20 are provided below.
+
+- Class 20 Extra Slides [PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.pdf)
+- Class 20 Extra Slides in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.Rmd)
+- The video files for Dr. Love's presentation of the "extra" material will be posted to our Shared Google Drive in the **Class 20 Extra** folder.
+
 ## Announcements
 
 1. In response to a [Piazza question](https://piazza.com/class/kdg1ivfsee12rr?cid=299), I wound up adding a simplifying hint to [the end of Question 1 on Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md). Please take a look.
