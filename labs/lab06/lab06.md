@@ -1,6 +1,6 @@
 Lab 06
 ================
-Last Edited 2020-11-02 10:03:42
+Last Edited 2020-11-04 11:52:16
 
 Lab 06 includes 4 questions, worth a total of 100 points. Be sure to
 respond to each question by the deadline posted on the [Course
@@ -65,6 +65,42 @@ by 38.67.
 
 **Note** The `TukeyHSD` function takes a `conf.level` argument to
 specify something other than the default 0.95.
+
+## Hint for Question 1
+
+Short Version: I encourage you to make the simplifying assumption of
+“I’m going to proceed as if I can assume equal population variances
+here” in doing the Lab.
+
+Longer Version:
+
+Looking at the data in Question 1, I would probably be more comfortable
+using `oneway.test` without assuming equal variances for the main
+comparison across all four groups, rather than an analysis of variance.
+
+  - but if you use ANOVA, that’s fine. Just explain why you’re doing
+    that.
+
+If I used `oneway.test` without assuming equal variances, then that
+would usually lead me to do one of two things in judging pairwise
+comparisons:
+
+  - running a Bonferroni or Holm set of *p* values with
+    `pairwise.t.test` while setting the parameter `pool.sd = FALSE`, so
+    that I might have something like `pairwise.t.test(x = LDL, g =
+    Group, pool.sd = FALSE, p.adjust = "bonferroni")` in my response,
+    rather than leaving out the `pool.sd = FALSE` and just using the
+    default assumption.
+  - running a Tukey-Kramer procedure instead of a Tukey HSD, since the
+    Tukey-Kramer is more appropriate with a substantially unbalanced
+    design. This requires learning something about a new package to get
+    the Tukey-Kramer to run, which is not something I was looking for
+    you to do,
+
+and so while I will describe each of those ideas in the answer sketch, I
+encourage you to make the simplifying assumption of “I’m going to
+proceed as if I can assume equal population variances here” in doing the
+Lab.
 
 # Question 2 (35 points)
 
