@@ -16,7 +16,7 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 I've developed slides for and pre-recorded commentary on five extra examples to help you understand the material in Class 20.
 
 - Class 20 Extra Slides (for all five examples) can be found [in PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.pdf) and in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.Rmd).
-- The video files for Dr. Love's presentation of the "extra" material will be posted to our Shared Google Drive in the **Class 20 Extra** folder.
+- The video files for Dr. Love's presentation of the "extra" material will be posted to our Shared Google Drive in the **Class 20 Extra Videos** [folder](https://drive.google.com/drive/folders/1fVDvQavNJoRoJbjmKNX8yRAhugjWtSb9?usp=sharing).
     - There will be a separate video file for each of the five "extra" examples.
 - The goal is for you to watch my presentation and/or review the slides in your own time, prior to the end of the Thanksgiving break. 
 - These materials are not optional as they introduce a couple of ideas not presented in the main materials for Class 20, but you are welcome to watch the videos or peruse the slides (or both) in whatever manner suits you.
