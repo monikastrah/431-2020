@@ -30,15 +30,15 @@ I've developed slides for and pre-recorded commentary on five extra examples to 
     - In doing the Lab, I suggest you simply assume equal population variances and run an ANOVA and then a Tukey HSD comparison, so that things are simple.
     - In the answer sketch, we'll show some alternatives that involve potentially more appealing choices given the difference in sample size and sample variances of LDL across the four comparison groups.
 2. Grades on Lab 05 are [now posted](http://bit.ly/431-2020-grades).
-3. Project B Instructions will probably be available by Thursday 2020-11-05, but I'm struggling with how to shrink the request. 
+3. Project B Instructions will be posted as soon as possible.
+    - I'll share a few things now on my screen today, but complete instructions will follow soon. Take what you see in class today as tentative.
 4. Project A grades will be available by Thursday 2020-11-12.
 
 ## What Should I Be Working On?
 
 1. [Lab 06](https://github.com/THOMASELOVE/431-2020/blob/master/labs/lab06/lab06.md) is due Monday 2020-11-09 at 9 PM.
 
-> Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. (attributed to John Quincy Adams)
-
 ## One Last Thing
 
-To come.
+> Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. (attributed to John Quincy Adams)
+
