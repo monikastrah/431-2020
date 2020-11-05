@@ -16,8 +16,8 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 I've developed slides for and pre-recorded commentary on five extra examples to help you understand the material in Class 20.
 
 - Class 20 Extra Slides (for all five examples) can be found [in PDF format](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.pdf) and in [R Markdown](https://github.com/THOMASELOVE/431-2020/blob/master/classes/class20/extra/431_class-20-extra-slides_2020.Rmd).
-- The video files for Dr. Love's presentation of the "extra" material will be posted to our Shared Google Drive in the **Class 20 Extra Videos** [folder](https://drive.google.com/drive/folders/1fVDvQavNJoRoJbjmKNX8yRAhugjWtSb9?usp=sharing).
-    - There will be a separate video file for each of the five "extra" examples. Each runs between 4 and 10 minutes.
+- The video files for Dr. Love's presentation of the "extra" material are available now in our Shared Google Drive in the **Class 20 Extra Videos** [folder](https://drive.google.com/drive/folders/1fVDvQavNJoRoJbjmKNX8yRAhugjWtSb9?usp=sharing). You'll need to be logged into Google via CWRU in order to see the folder or the files, of course.
+    - Each of the five "extra" examples has a pre-recorded video. Each runs between 4 and 10 minutes, and I encourage you to watch them all, and in order.
     - Example 1 is about a 2x2 table.
     - Example 2 is about a two-way table with 5 rows and 2 columns.
     - Examples 3, 4 and 5 are about three-way tables, and make use of the Woolf test and the Cochran-Mantel-Haenszel approach. Example 4 also discusses Simpson's Paradox, and Example 5 also discusses some basic ideas about meta-analysis.
@@ -30,7 +30,7 @@ I've developed slides for and pre-recorded commentary on five extra examples to 
     - In doing the Lab, I suggest you simply assume equal population variances and run an ANOVA and then a Tukey HSD comparison, so that things are simple.
     - In the answer sketch, we'll show some alternatives that involve potentially more appealing choices given the difference in sample size and sample variances of LDL across the four comparison groups.
 2. Grades on Lab 05 are [now posted](http://bit.ly/431-2020-grades).
-3. Project B Instructions will be available by Thursday 2020-11-05. 
+3. Project B Instructions will probably be available by Thursday 2020-11-05, but I'm struggling with how to shrink the request. 
 4. Project A grades will be available by Thursday 2020-11-12.
 
 ## What Should I Be Working On?
