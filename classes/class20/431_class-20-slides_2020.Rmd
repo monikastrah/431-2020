@@ -341,7 +341,7 @@ Uninsured       11 ( 9.8)   13 (16.7)  20 (17.5)    44
 Total           96         164        171          431
 ```
 
-Since all of these expected counts exceed 10, the Pearson $\chi^2$ test should provide a reasonably accurate approximate *p* value for $H_0$: rows and columns are independent.
+Since all of these expected counts exceed 5, the Pearson $\chi^2$ test should provide a reasonably accurate approximate *p* value for $H_0$: rows and columns are independent.
 
 ## Chi-Square Assumptions
 
@@ -370,11 +370,17 @@ chisq.test(tab43)$expected
 chisq.test(tab43)$observed
 ```
 
-## Can obtain residuals (observed - expected)
+## Can obtain residuals 
 
 ```{r}
 chisq.test(tab43)$residuals
 ```
+
+These are Pearson residuals - think of them as standardized, like Z scores.
+
+- Values greater than 2 or less than -2 indicate especially poorly fit cells.
+- Cells with positive residuals have higher observed counts than the independence model would predict.
+- Cells with negative residuals have lower observed counts than independence predicts.
 
 ## Augmented test using `mosaic::xchisq.test()`
 
@@ -561,7 +567,8 @@ treat <- c(rep(c("A", "A", "B", "B"), 2))
 result <- c(rep(c("Good", "Bad"), 4))
 counts <- c(81, 6, 234, 36, 192, 71, 55, 25)
 
-kidney_dat <- tibble(stone, treat, result, counts)
+kidney_dat <- tibble(stone, treat, result, counts) %>%
+  mutate(result = fct_relevel(factor(result), "Good"))
 ```
 
 ## What do we have so far?
@@ -598,13 +605,17 @@ Our conclusion from the Woolf test is that we are able to retain the null hypoth
 
 ## Running the Cochran-Mantel-Haenszel test
 
-So, we can use the Cochran-Mantel-Haenszel test to make inferences about the population odds ratio (for revascularization given niacin rather than placebo) accounting for the five studies. We'll use a 90% confidence interval, and the results appear on the next slide.
+We then use the Cochran-Mantel-Haenszel test to make inferences about the population odds ratio. Here we define this odds ratio as the odds of a Good result for those on treat A divided by the odds of a Good result for those on treat B, while adjusting for the size of the stone. We know this is the odds ratio of interest by looking at the flattened table, and observing which `treat` and `result` are shown first.
 
-```{r, eval = FALSE}
-mantelhaen.test(big.tab, conf.level = .90)
+```{r}
+ftable(big.tab)
 ```
 
+- Sample odds ratio in small stones was 2.08 and in large stones was 1.23
+
 ## Complete CMH output (Edited to fit on the screen)
+
+We'll use a 90% confidence interval.
 
 ```{r, eval = FALSE}
 mantelhaen.test(big.tab, conf.level = .90)
@@ -618,8 +629,8 @@ Mantel-Haenszel X-squared = 2.0913, df = 1, p-value = 0.1481
 
 alt. hypothesis: true common odds ratio is not equal to 1
 
-90 percent confidence interval: 0.4708539 1.0145392
-sample estimates: common odds ratio 0.6911583  
+90 percent confidence interval: 0.9856691 2.1238011
+sample estimates: common odds ratio 1.446847   
 ```
 
 What can we conclude in this case?
