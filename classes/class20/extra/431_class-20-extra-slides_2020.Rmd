@@ -552,7 +552,7 @@ treat <- c(rep(c("Niacin", "Niacin",
 outcome <- c(rep(c("Revasc.", "No Rev."), 10))
 counts <- c(2, 46, 11, 41, 4, 67, 12, 60, 1, 86, 
             4, 76, 1, 37, 6, 32, 2, 92, 1, 93)
-meta <- data.frame(study, treat, outcome, counts) %>% tbl_df
+meta <- tibble(study, treat, outcome, counts)
 meta$treat <- fct_relevel(meta$treat, "Niacin")
 meta$outcome <- fct_relevel(meta$outcome, "Revasc.")
 meta.tab <- xtabs(counts ~ treat + outcome + study, 
