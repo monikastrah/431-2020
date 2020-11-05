@@ -21,8 +21,7 @@ I've developed slides for and pre-recorded commentary on five extra examples to 
     - Example 1 is about a 2x2 table
     - Example 2 is about a two-way table with 5 rows and 2 columns
     - Examples 3, 4 and 5 are about three-way tables, and make use of the Woolf test and the Cochran-Mantel-Haenszel approach. Example 4 also discusses Simpson's Paradox, and Example 5 also discusses some basic ideas about meta-analysis.
-- The idea is for you to watch my presentation and/or review the slides in your own time, prior to the end of the Thanksgiving break. 
-- These materials are labeled as extra but they introduce a few ideas not presented in the main materials for Class 20.
+- The idea is for you to watch my presentation and/or review the slides in your own time, prior to the end of the Thanksgiving break. These materials are labeled as extra but they introduce a few ideas not presented in the main materials for Class 20.
 - If you have questions about these "extra" materials, please use the **class_slides** folder in Piazza to ask us about them.
 
 ## Announcements
