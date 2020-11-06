@@ -13,4 +13,5 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 ## Announcements
 
 1. On 2020-12-04, the San Francisco chapter of the American Statistical Association is hosting a pair of keynote speakers and a panel discussion on [A Positive Outlook During the Covid Era: how statistics could contribute to a better 2021](http://www.sfasa.org/Dec42020mtg.html). Registration is [free and required](https://www.eventbrite.com/e/2020-sfasa-holiday-celebration-tickets-127577564931), if you are interested.
-2. More to come. 
+2. The [ggplot2 book](https://ggplot2-book.org/) by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen is ramping up its third edition. If you're looking for a cookbook, though, I'd recommend the [R Graphics Cookbook](https://r-graphics.org/) by Winston Chang.
+3. More to come. 
