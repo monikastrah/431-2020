@@ -25,4 +25,4 @@ for everything | for deadlines | expectations | from Dr. Love | ways to get help
 2. [Lab 07](https://github.com/THOMASELOVE/431-2020/blob/master/labs/README.md) is due at 9 PM on Monday 2020-11-16.
 3. The Project B [Study 2 Data Plan](https://thomaselove.github.io/431-2020-projectB/your5.html) is due at noon on Thursday 2020-11-19.
 4. Be sure to watch the five extra videos associated with Class 20, that you'll find in the **Class 20 Extra Videos** folder in our Shared Google Drive, before we return from Thanksgiving Break on 2020-11-30.
-5. [Lab 08] is due at 9 PM on Monday 2020-11-30.
+5. [Lab 08](https://github.com/THOMASELOVE/431-2020/blob/master/labs/README.md) is due at 9 PM on Monday 2020-11-30.
