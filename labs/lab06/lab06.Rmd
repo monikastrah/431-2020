@@ -107,7 +107,7 @@ Finally, produce and interpret an appropriate confidence interval for a relevant
 
 # Question 3 (15 points)
 
-Rosenberg et al. (1980) studied the relationship between coffee drinking and myocardial infarction in young women aged 30-49 years.  This retrospective study included 487 cases hospitalized for the occurrence of a myocardial infarction (MI).  Nine hundred eight controls hospitalized for an acute condition (trauma, acute cholecystitis, acute respiratory diseases, and appendicitis) were selected. Data for consumption of five or more cups of coffee can be summarized as follows.
+Rosenberg et al. (1980) studied the relationship between coffee drinking and myocardial infarction in young women aged 30-49 years.  This retrospective study included 487 cases hospitalized for the occurrence of a myocardial infarction (MI).  Nine hundred eighty controls hospitalized for an acute condition (trauma, acute cholecystitis, acute respiratory diseases, and appendicitis) were selected. Data for consumption of five or more cups of coffee can be summarized as follows.
 
 Cups Per Day | MI | Controls
 ---------- | --- | ---
@@ -116,7 +116,18 @@ less than 5 | 335 | 797
 
 Develop an appropriate comparison of the risk of an MI for heavy (5 or more cups per day) coffee drinkers as compared to those who drink less than 5 cups of coffee per day. Use a 10% significance level for this question. Be sure to provide your code, and interpret your results in the context of the study.
 
-**Note** The original paper (which you should not be reading to complete this Lab, but are welcome to look at if you are curious) is Rosenberg L et al. (1980) Coffee drinking and myocardial infarction in young women.  *Amer J Epidemiology*, 112, 39-53.
+**Note 1** The original paper (which you should not be reading to complete this Lab, but are welcome to look at if you are curious) is Rosenberg L et al. (1980) Coffee drinking and myocardial infarction in young women.  *Amer J Epidemiology*, 112, 39-53.
+
+**Note 2** The way I *should* have asked this question (to make it easier to avoid falling into a trap) follows...
+
+Consider the following cross-sectional study of the relationship between coffee drinking and myocardial infarction in young women aged 30-49 years. There were 487 women in the study who were  hospitalized for the occurrence of a myocardial infarction (MI).  These were compared to 980 young women hospitalized for an acute condition (trauma, acute cholecystitis, acute respiratory diseases, and appendicitis.) Data for consumption of five or more cups of coffee can be summarized as follows.
+
+Cups Per Day | MI Hosp. | Other Hosp.
+---------- | :---: | :---:
+5 or more | 152 | 183
+less than 5 | 335 | 797
+
+Develop an appropriate comparison of the probability or odds of an MI for heavy (5 or more cups per day) coffee drinkers as compared to those who drink less than 5 cups of coffee per day. Use a 10% significance level for this question. Be sure to provide your code, and interpret your results in  context.
 
 # Question 4 (25 points) 
 
